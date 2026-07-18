@@ -6,12 +6,13 @@ This section is where I will build those connections. Each note should explain w
 
 ## Planned Notes
 
-1. `01-materials-and-engineering-design.md`
-2. `02-atomic-structure-and-bonding.md`
-3. `03-crystal-structure-and-defects.md`
-4. `04-mechanical-properties-and-failure.md`
-5. `05-phase-diagrams-and-processing.md`
-6. `06-semiconductor-inspection-connections.md`
+1. `01-course-overview.md` - Course scope, learning goals, and the connections between the main topics
+2. `02-material-properties-and-selection.md` - Material categories, property trade-offs, and engineering selection
+3. `03-atomic-bonding-and-structure.md` - Atomic bonding, crystal structures, and their influence on material behavior
+4. `04-crystal-defects-and-microstructure.md` - Vacancies, diffusion, dislocations, and microstructural development
+5. `05-mechanical-properties-and-failure.md` - Tensile behavior, creep, fracture, fatigue, and toughness
+6. `06-processing-and-material-performance.md` - Phase diagrams, heat treatment, and processing-structure-property relationships
+7. `07-semiconductor-inspection-reflection.md` - Reflections on connecting materials science with semiconductor inspection
 
 ## Note Structure
 
