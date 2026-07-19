@@ -1,27 +1,20 @@
 # Materials Science
 
-Materials science becomes much easier to understand when the topics are connected. Atomic bonding affects crystal structure; defects influence diffusion and deformation; processing changes the final properties of a material. Studying each idea separately is useful, but it is not enough.
+This section connects atomic bonding, crystal structure, defects, processing, and material performance. The notes follow the main topics in the UC Davis course while adding links to semiconductor manufacturing and inspection.
 
-This section is where I will build those connections. Each note should explain why the topic matters, identify the important concepts and relationships, and include formulas or examples when they help. And when a concept relates to semiconductor manufacturing or inspection, I will make that link explicit.
+## Completed Notes
+
+1. [Course Overview](./01-course-overview.md) — Course structure, ten core topics, learning goals, and the connection to semiconductor inspection.
+2. [Material Properties and Engineering Selection](./02-material-properties-and-selection.md) — Material families, property trade-offs, selection methods, and inspection-related examples.
 
 ## Planned Notes
 
-1. `01-course-overview.md` - Course scope, learning goals, and the connections between the main topics
-2. `02-material-properties-and-selection.md` - Material categories, property trade-offs, and engineering selection
-3. `03-atomic-bonding-and-structure.md` - Atomic bonding, crystal structures, and their influence on material behavior
-4. `04-crystal-defects-and-microstructure.md` - Vacancies, diffusion, dislocations, and microstructural development
-5. `05-mechanical-properties-and-failure.md` - Tensile behavior, creep, fracture, fatigue, and toughness
-6. `06-processing-and-material-performance.md` - Phase diagrams, heat treatment, and processing-structure-property relationships
-7. `07-semiconductor-inspection-reflection.md` - Reflections on connecting materials science with semiconductor inspection
+3. `03-atomic-bonding-and-structure.md` — Atomic bonding, crystal structures, and their influence on material behavior.
+4. `04-crystal-defects-and-microstructure.md` — Vacancies, diffusion, dislocations, and microstructural development.
+5. `05-mechanical-properties-and-failure.md` — Tensile behavior, creep, fracture, fatigue, and toughness.
+6. `06-processing-and-material-performance.md` — Phase diagrams, heat treatment, and processing–structure–property relationships.
+7. `07-semiconductor-inspection-reflection.md` — Connections between materials science, defect evidence, and semiconductor inspection.
 
-## Note Structure
+## Approach
 
-Most notes will include:
-
-- Why the topic matters
-- Key concepts in my own words
-- Important relationships, equations, or diagrams
-- Connections to semiconductor manufacturing or visual inspection
-- Engineering reflections and references
-
-The format can change when the subject needs something different. Clear understanding matters more than forcing every topic into the same template.
+Each note identifies the main concept, the conditions that limit its use, and the evidence needed to verify an engineering interpretation. I include formulas and examples when they help explain a relationship or test whether a result is reasonable.

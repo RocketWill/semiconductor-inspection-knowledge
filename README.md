@@ -1,15 +1,25 @@
 # Semiconductor Inspection Knowledge
 
-This repository is my learning notebook for materials science and semiconductor inspection. I use it to connect atomic structure with material properties, processing, defects, and the inspection problems that appear in real manufacturing work.
+A learning portfolio connecting materials science, semiconductor manufacturing, and inspection engineering.
 
-It starts with one section: [`01-materials-science`](./01-materials-science/). The notes will focus on relationships between concepts, not isolated definitions. Formulas and examples still matter, but the real test is whether I can explain why a result makes sense (and catch the gaps when I cannot).
+## Current Focus
 
-That is the point.
+- Processing–structure–properties–performance relationships
+- Material properties, defects, and failure mechanisms
+- Practical connections to semiconductor manufacturing and optical inspection
 
-## Current Scope
+## Notes
 
-- Materials science fundamentals
-- Connections between structure, properties, processing, and performance
-- Links between material defects and semiconductor inspection
+### 01. Materials Science
 
-But this is not meant to become a collection of polished summaries. I want each note to show how I understood the topic, how I checked it, and where it connects to practical engineering decisions.
+- [Course Overview](./01-materials-science/01-course-overview.md)
+- [Material Properties and Engineering Selection](./01-materials-science/02-material-properties-and-selection.md)
+- [Section Roadmap](./01-materials-science/README.md)
+
+## Learning Source
+
+- UC Davis / Coursera — *Materials Science: 10 Things Every Engineer Should Know*
+
+## Purpose
+
+I write these notes in my own words and focus on relationships between concepts rather than isolated definitions. A visible anomaly is only a clue. Each chapter connects course concepts with engineering constraints, defect interpretation, and the measurements needed to verify a possible cause.

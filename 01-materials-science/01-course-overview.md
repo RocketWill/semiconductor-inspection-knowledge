@@ -1,6 +1,10 @@
 # 材料科學課程總覽：先看懂材料，再回頭理解檢測
 
-> 這篇整理 [UC Davis 的 Materials Science: 10 Things Every Engineer Should Know](https://www.coursera.org/learn/materials-science) 課程主線。我的目的不是把十個主題各自濃縮成一段定義，而是先回答一個更重要的問題：這些分散的知識，最後要怎麼連回材料行為與半導體檢測？後續筆記會再分別處理材料選擇、原子結構、晶體缺陷、機械性質、失效與製程。
+## English Summary
+
+The ten core topics in the UC Davis materials science course form one connected structure in this chapter. Processing changes a material's structure; that structure affects measurable properties, and those properties influence engineering performance. The chapter also introduces the six material families, common failure mechanisms, and thermally activated processes. Its final section applies the same reasoning to semiconductor inspection: a detected feature is evidence, not yet a root cause. Reaching an engineering conclusion still requires material mechanisms, process history, and follow-up measurements.
+
+> 這篇整理 [UC Davis 的 Materials Science: 10 Things Every Engineer Should Know](https://www.coursera.org/learn/materials-science) 課程主線。內容不會把十個主題各自濃縮成一段定義，而是先說明這些分散的知識如何連回材料行為與半導體檢測。後續筆記會再分別處理材料選擇、原子結構、晶體缺陷、機械性質、失效與製程。
 
 如果只想先抓住整門課，可以記得這句話：**製程改變結構，結構決定性質，性質最後會反映在元件性能上；當性能出現異常時，檢測結果又會帶著我們沿著這條路往回找。**
 
@@ -62,7 +66,7 @@ flowchart LR
 
 例如高硬度並不必然代表更好的零件。若材料因此失去韌性，微小裂紋可能更容易快速擴展；若選用高導熱材料卻忽略熱膨脹係數差異，溫度循環後仍可能產生界面應力與分層。因此，工程分析真正要處理的是不同性質之間的取捨，而不是找到某一項數值最高的材料。
 
-> **我目前的理解：** 性質回答的是「材料會怎麼反應」，性能回答的則是「這個反應放進實際情境後，是否仍然可接受」。兩者不能直接畫上等號。
+> **概念區分：** 性質回答的是「材料會怎麼反應」，性能回答的則是「這個反應放進實際情境後，是否仍然可接受」。兩者不能直接畫上等號。
 
 ![小黑將材料從製程搬運到結構、性質與性能的工作台](../assets/01-course-overview-illustrations/01-processing-structure-properties-performance.png)
 
@@ -83,7 +87,7 @@ flowchart LR
 
 ## 4. 工程選材：不是挑選「最強」的材料
 
-工程選材不是從資料表中挑出一個「最強」的材料，而是先把功能、限制和風險說清楚，再找出能夠實際製造並穩定使用的材料與製程組合。我會把這個判斷過程拆成七個步驟：
+工程選材不是從資料表中挑出一個「最強」的材料，而是先把功能、限制和風險說清楚，再找出能夠實際製造並穩定使用的材料與製程組合。這個判斷過程可以拆成七個步驟：
 
 1. **定義功能**：零件或薄膜需要完成什麼工作？
 2. **列出限制條件**：載重、溫度、尺寸、化學環境、電性與可靠度要求是什麼？
@@ -99,7 +103,7 @@ flowchart LR
 
 ## 5. 十個核心主題
 
-接下來的十個主題不是彼此獨立的十堂課，而是在回答同一件事：結構如何形成性質，這些性質又如何影響材料的工程使用。我會用以下順序理解它們：
+接下來的十個主題不是彼此獨立的十堂課，而是在回答同一件事：結構如何形成性質，這些性質又如何影響材料的工程使用。課程內容可以依照以下順序理解：
 
 ### Thing 1：六大工程材料與「結構決定性質」
 
@@ -182,7 +186,7 @@ flowchart LR
 
 ![小黑從晶圓表面缺陷向下追查材料、微結構與製程根因](../assets/01-course-overview-illustrations/03-semiconductor-inspection-root-cause.png)
 
-檢測工具可以提高我們看見異常的能力，但儀器輸出本身還不是結論。它仍然需要結合材料機制、製程背景與交叉驗證，才有辦法轉化成可靠判斷。對我而言，真正需要建立的不是「看到某種外觀就回答某個根因」的配對能力，而是先區分觀察與推論，再比較多個可能機制，最後知道下一個最值得取得的證據是什麼。
+檢測工具可以提高看見異常的能力，但儀器輸出本身還不是結論。它仍然需要結合材料機制、製程背景與交叉驗證，才有辦法轉化成可靠判斷。較可靠的分析方式不是「看到某種外觀就回答某個根因」，而是先區分觀察與推論，再比較多個可能機制，最後判斷下一個最值得取得的證據是什麼。
 
 ## 8. 後續筆記如何延伸
 
@@ -195,13 +199,13 @@ flowchart LR
 - `06-processing-and-material-performance.md`：利用相圖、TTT 圖與熱處理說明製程如何控制結果。
 - `07-semiconductor-inspection-reflection.md`：將材料機制、缺陷證據與實際檢測判斷重新整合。
 
-## 9. 回頭看：這篇真正想留下什麼？
+## 9. 重點整理
 
 - 材料科學的核心不是背誦材料名稱，而是建立製程、結構、性質與性能之間的因果關係。
 - 材料分類能提供初步判斷，但真正的工程選擇仍需要考慮使用情境、製程限制與性質取捨。
 - 課程十個主題從原子與晶體缺陷出發，延伸到變形、失效、相變與半導體導電行為。
 - 半導體檢測看到的是異常訊號；要判斷根因，仍需要材料知識、製程背景與驗證方法共同支持。
-- 這份筆記的目標不是收集越多結論越好，而是讓我們能夠解釋結果、辨認假設，並知道下一步應該取得什麼證據。
+- 整理材料科學內容時，除了記錄結論外，也需要說明結果、辨認假設，並判斷下一步應該取得什麼證據。
 
 ## 參考資料
 
