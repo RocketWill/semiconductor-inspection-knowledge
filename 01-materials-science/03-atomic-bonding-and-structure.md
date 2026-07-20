@@ -91,11 +91,10 @@ $$
 - **原子堆積因子（atomic packing factor, APF）**：
 
 $$
-\mathrm{APF}
-=
-\frac{\text{晶胞內原子占據的體積}}
-{\text{晶胞總體積}}
+\mathrm{APF}=\frac{V_{\mathrm{atoms}}}{V_{\mathrm{cell}}}
 $$
+
+其中，$V_{\mathrm{atoms}}$ 是晶胞內原子占據的總體積，$V_{\mathrm{cell}}$ 是晶胞的總體積。
 
 - **晶向與晶面**：分別以 $[uvw]$ 和 $(hkl)$ 表示；等價方向族與晶面族則寫成 $\langle uvw\rangle$ 和 $\{hkl\}$。
 
