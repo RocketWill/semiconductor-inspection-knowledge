@@ -6,10 +6,10 @@ This section connects atomic bonding, crystal structure, defects, processing, an
 
 1. [Course Overview](./01-course-overview.md) — Course structure, ten core topics, learning goals, and the connection to semiconductor inspection.
 2. [Material Properties and Engineering Selection](./02-material-properties-and-selection.md) — Material families, property trade-offs, selection methods, and inspection-related examples.
+3. [Atomic Bonding and Crystal Structure](./03-atomic-bonding-and-structure.md) — Bonding, crystal structures, silicon orientation, and their influence on material behaviour.
 
 ## Planned Notes
 
-3. `03-atomic-bonding-and-structure.md` — Atomic bonding, crystal structures, and their influence on material behavior.
 4. `04-crystal-defects-and-microstructure.md` — Vacancies, diffusion, dislocations, and microstructural development.
 5. `05-mechanical-properties-and-failure.md` — Tensile behavior, creep, fracture, fatigue, and toughness.
 6. `06-processing-and-material-performance.md` — Phase diagrams, heat treatment, and processing–structure–property relationships.

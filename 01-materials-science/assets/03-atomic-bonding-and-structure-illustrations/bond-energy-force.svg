@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <rect width="1200" height="560" fill="#fff"/>
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif;fill:#222} .axis{stroke:#222;stroke-width:2} .guide{stroke:#777;stroke-width:1.5;stroke-dasharray:7 7} .curve{fill:none;stroke:#1769aa;stroke-width:5} .zero{stroke:#bbb;stroke-width:1.5} .label{font-size:22px} .small{font-size:18px}
+  </style>
+  <text x="300" y="40" text-anchor="middle" class="label">位能 U(r)</text>
+  <line x1="75" y1="440" x2="535" y2="440" class="axis"/><line x1="75" y1="480" x2="75" y2="70" class="axis"/>
+  <path d="M105 85 C145 180 180 335 245 403 C300 450 395 405 520 335" class="curve"/>
+  <line x1="277" y1="440" x2="277" y2="412" class="guide"/>
+  <circle cx="277" cy="412" r="7" fill="#e4572e"/>
+  <text x="277" y="474" text-anchor="middle" class="small">平衡距離 r₀</text>
+  <text x="88" y="105" class="small">短距離排斥</text><text x="394" y="320" class="small">長距離吸引趨近於零</text>
+  <text x="510" y="470" class="small">原子間距 r →</text><text x="28" y="92" class="small">U</text>
+
+  <text x="900" y="40" text-anchor="middle" class="label">原子間作用力 F(r) = −dU/dr</text>
+  <line x1="675" y1="280" x2="1135" y2="280" class="zero"/><line x1="675" y1="480" x2="675" y2="70" class="axis"/><line x1="675" y1="440" x2="1135" y2="440" class="axis"/>
+  <path d="M705 90 C750 180 790 250 830 280 C875 320 930 360 975 348 C1030 333 1070 300 1120 288" class="curve"/>
+  <line x1="830" y1="440" x2="830" y2="280" class="guide"/>
+  <circle cx="830" cy="280" r="7" fill="#e4572e"/>
+  <text x="830" y="474" text-anchor="middle" class="small">r₀</text>
+  <text x="700" y="112" class="small">排斥力 F &gt; 0</text><text x="944" y="338" class="small">吸引力 F &lt; 0</text>
+  <text x="1110" y="470" class="small">r →</text><text x="638" y="92" class="small">F</text>
+  <text x="600" y="535" text-anchor="middle" class="small">平衡位置是位能最低點，也是合力為零的位置；平衡附近曲線越陡，通常代表材料越不容易發生彈性伸長。</text>
+</svg>
