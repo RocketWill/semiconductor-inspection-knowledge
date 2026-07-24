@@ -33,9 +33,7 @@ This note asks how imperfections in a crystal become measurable material behavio
 
 平衡空位比例常寫成：
 
-$$
-\frac{N_v}{N}=A\exp\left(-\frac{Q_v}{k_{\mathrm B}T}\right)
-$$
+$$\frac{N_v}{N}=A\exp\left(-\frac{Q_v}{k_{\mathrm B}T}\right)$$
 
 其中：
 
@@ -74,35 +72,19 @@ $$
 
 假設某材料的空位形成能為：
 
-$$
-Q_v=1.0\ \mathrm{eV/atom}
-$$
+$$Q_v=1.0\ \mathrm{eV/atom}$$
 
 比較 $500\ \mathrm K$ 與 $1000\ \mathrm K$ 的空位比例。若前因子 $A$ 在兩個溫度下相同，則：
 
-$$
-\frac{(N_v/N)_{1000}}{(N_v/N)_{500}}
-=
-\exp\left[
--\frac{Q_v}{k_{\mathrm B}}
-\left(
-\frac{1}{1000}-\frac{1}{500}
-\right)
-\right]
-$$
+$$\frac{(N_v/N)_{1000}}{(N_v/N)_{500}}=\exp\left[-\frac{Q_v}{k_{\mathrm B}}\left(\frac{1}{1000}-\frac{1}{500}\right)\right]$$
 
 代入：
 
-$$
-k_{\mathrm B}=8.617\times10^{-5}\ \mathrm{eV/K}
-$$
+$$k_{\mathrm B}=8.617\times10^{-5}\ \mathrm{eV/K}$$
 
 可得：
 
-$$
-\frac{(N_v/N)_{1000}}{(N_v/N)_{500}}
-\approx 1.1\times10^5
-$$
+$$\frac{(N_v/N)_{1000}}{(N_v/N)_{500}}\approx 1.1\times10^5$$
 
 結果表示溫度從 $500\ \mathrm K$ 提高到 $1000\ \mathrm K$ 時，平衡空位比例可能增加約五個數量級。這個例子也能說明，熱處理溫度的改變不能只看成「加熱得更快」，因為缺陷數量與擴散能力本身也會隨溫度產生非常大的變化。
 
@@ -128,9 +110,7 @@ $$
 
 擴散係數常表示為：
 
-$$
-D=D_0\exp\left(-\frac{Q_d}{RT}\right)
-$$
+$$D=D_0\exp\left(-\frac{Q_d}{RT}\right)$$
 
 其中：
 
@@ -144,9 +124,7 @@ $$
 
 取自然對數後：
 
-$$
-\ln D=\ln D_0-\frac{Q_d}{R}\frac{1}{T}
-$$
+$$\ln D=\ln D_0-\frac{Q_d}{R}\frac{1}{T}$$
 
 因此在 $\ln D$ 對 $1/T$ 的圖上，斜率為 $-Q_d/R$。
 
@@ -156,38 +134,23 @@ $$
 
 已知銅在黃銅中的擴散係數在 $400^\circ\mathrm C$ 時為：
 
-$$
-D_1=1.0\times10^{-20}\ \mathrm{m^2/s}
-$$
+$$D_1=1.0\times10^{-20}\ \mathrm{m^2/s}$$
 
 若 $Q_d=195\ \mathrm{kJ/mol}$，估算 $600^\circ\mathrm C$ 時的 $D_2$。先換成絕對溫度：
 
-$$
-T_1=673\ \mathrm K,\qquad T_2=873\ \mathrm K
-$$
+$$T_1=673\ \mathrm K,\qquad T_2=873\ \mathrm K$$
 
 將兩個 Arrhenius 式相除，可消去未知的 $D_0$：
 
-$$
-\ln\left(\frac{D_2}{D_1}\right)
-=
-\frac{Q_d}{R}
-\left(
-\frac{1}{T_1}-\frac{1}{T_2}
-\right)
-$$
+$$\ln\left(\frac{D_2}{D_1}\right)=\frac{Q_d}{R}\left(\frac{1}{T_1}-\frac{1}{T_2}\right)$$
 
 代入 $Q_d=195000\ \mathrm{J/mol}$ 與 $R=8.314\ \mathrm{J/(mol\cdot K)}$：
 
-$$
-\ln\left(\frac{D_2}{D_1}\right)\approx7.99
-$$
+$$\ln\left(\frac{D_2}{D_1}\right)\approx7.99$$
 
 因此：
 
-$$
-D_2\approx2.9\times10^{-17}\ \mathrm{m^2/s}
-$$
+$$D_2\approx2.9\times10^{-17}\ \mathrm{m^2/s}$$
 
 雖然溫度只提高 $200^\circ\mathrm C$，擴散係數卻增加約三個數量級。計算完成後，可以先檢查結果的基本趨勢：溫度升高時 $D$ 應該變大；若結果相反，通常需要重新確認溫度倒數的順序或負號。
 
@@ -197,28 +160,19 @@ $$
 
 一維穩態擴散通量為：
 
-$$
-J=-D\frac{\mathrm dC}{\mathrm dx}
-$$
+$$J=-D\frac{\mathrm dC}{\mathrm dx}$$
 
 其中 $J$ 表示單位時間通過單位面積的物質量，負號表示淨擴散方向由高濃度指向低濃度。
 
 例如：
 
-$$
-D=2.0\times10^{-12}\ \mathrm{m^2/s}
-$$
+$$D=2.0\times10^{-12}\ \mathrm{m^2/s}$$
 
-$$
-\frac{\mathrm dC}{\mathrm dx}
-=-5.0\times10^7\ \mathrm{mol/m^4}
-$$
+$$\frac{\mathrm dC}{\mathrm dx}=-5.0\times10^7\ \mathrm{mol/m^4}$$
 
 則：
 
-$$
-J=1.0\times10^{-4}\ \mathrm{mol/(m^2\cdot s)}
-$$
+$$J=1.0\times10^{-4}\ \mathrm{mol/(m^2\cdot s)}$$
 
 正號表示通量朝所定義的正 $x$ 方向。這裡的負號不是額外的能量損失，而是在描述濃度下降方向與物質移動方向之間的關係。
 
@@ -226,11 +180,7 @@ $$
 
 當濃度分布會隨時間改變時，需使用菲克第二定律。對一維且 $D$ 為常數的情況：
 
-$$
-\frac{\partial C}{\partial t}
-=
-D\frac{\partial^2 C}{\partial x^2}
-$$
+$$\frac{\partial C}{\partial t}=D\frac{\partial^2 C}{\partial x^2}$$
 
 第一定律回答「目前有多少物質通過」，第二定律則回答「某個位置的濃度接下來如何改變」。在摻雜、滲碳或薄膜互擴散問題中，這項差別比背下公式更重要。
 
@@ -272,9 +222,7 @@ $$
 
 晶粒細化通常能增加晶界數量並提高金屬降伏強度，常以 Hall–Petch 關係描述：
 
-$$
-\sigma_y=\sigma_0+k_y d^{-1/2}
-$$
+$$\sigma_y=\sigma_0+k_y d^{-1/2}$$
 
 其中 $d$ 為平均晶粒尺寸。不過這個關係有適用範圍，也不能直接套用到所有材料、所有晶粒尺度或所有溫度條件。
 
