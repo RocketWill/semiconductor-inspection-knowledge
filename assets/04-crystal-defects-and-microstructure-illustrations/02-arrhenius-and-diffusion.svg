@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <rect width="1200" height="560" fill="#fff"/>
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif;fill:#222}.title{font-size:23px;font-weight:600}.label{font-size:18px}.small{font-size:16px}
+    .axis{stroke:#222;stroke-width:2}.guide{stroke:#bbb;stroke-width:1.5;stroke-dasharray:6 5}.blue{stroke:#1769aa;stroke-width:5;fill:none}.red{stroke:#d84b38;stroke-width:4;fill:none}.orange{stroke:#e8952e;stroke-width:4;fill:none}
+  </style>
+  <text x="300" y="36" text-anchor="middle" class="title">Arrhenius 線性化</text>
+  <line x1="80" y1="455" x2="540" y2="455" class="axis"/><line x1="80" y1="455" x2="80" y2="70" class="axis"/>
+  <path d="M120 115 L500 405" class="blue"/>
+  <text x="310" y="240" class="label">斜率 = −Q/R</text><text x="490" y="486" class="label">1/T →</text><text x="22" y="88" class="label">ln D</text>
+  <text x="100" y="105" class="small">高溫</text><text x="470" y="435" class="small">低溫</text>
+  <text x="300" y="525" text-anchor="middle" class="small">注意：橫軸往右代表溫度降低</text>
+  <text x="900" y="36" text-anchor="middle" class="title">非穩態濃度分布隨時間展寬</text>
+  <line x1="675" y1="455" x2="1135" y2="455" class="axis"/><line x1="675" y1="455" x2="675" y2="70" class="axis"/>
+  <line x1="710" y1="120" x2="710" y2="455" class="guide"/>
+  <path d="M710 125 C765 150 785 230 825 310 C870 398 980 430 1120 440" class="red"/>
+  <path d="M710 125 C790 165 835 240 890 315 C945 390 1035 425 1120 438" class="orange"/>
+  <path d="M710 125 C825 175 890 250 955 320 C1010 380 1070 415 1120 430" class="blue"/>
+  <text x="815" y="175" class="small" fill="#d84b38">t₁</text><text x="900" y="235" class="small" fill="#e8952e">t₂</text><text x="985" y="300" class="small" fill="#1769aa">t₃</text>
+  <text x="1080" y="486" class="label">深度 x →</text><text x="620" y="88" class="label">濃度 C</text>
+  <text x="900" y="525" text-anchor="middle" class="small">t₃ &gt; t₂ &gt; t₁：時間增加後，擴散影響範圍向內延伸</text>
+</svg>

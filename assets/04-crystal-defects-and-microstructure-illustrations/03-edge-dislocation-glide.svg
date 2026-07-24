@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#fff"/>
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif;fill:#222}.title{font-size:24px;font-weight:600}.label{font-size:18px}
+    .atom{fill:#f5f5f5;stroke:#333;stroke-width:2}.core{fill:#f6a24a;stroke:#a85013;stroke-width:2}.arrow{stroke:#d43b2f;stroke-width:4;fill:none;marker-end:url(#m)}
+  </style>
+  <defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#d43b2f"/></marker></defs>
+  <text x="600" y="38" text-anchor="middle" class="title">刃狀差排滑移：局部重排逐步完成整體位移</text>
+  <g transform="translate(120 85)">
+    <g class="atom">
+      <circle cx="0" cy="0" r="15"/><circle cx="70" cy="0" r="15"/><circle cx="140" cy="0" r="15"/><circle cx="210" cy="0" r="15"/><circle cx="280" cy="0" r="15"/>
+      <circle cx="0" cy="70" r="15"/><circle cx="70" cy="70" r="15"/><circle cx="140" cy="70" r="15"/><circle cx="210" cy="70" r="15"/><circle cx="280" cy="70" r="15"/>
+      <circle cx="0" cy="140" r="15"/><circle cx="70" cy="140" r="15"/><circle cx="140" cy="140" r="15"/><circle cx="210" cy="140" r="15"/><circle cx="280" cy="140" r="15"/>
+      <circle cx="0" cy="210" r="15"/><circle cx="70" cy="210" r="15"/><circle cx="140" cy="210" r="15"/><circle cx="210" cy="210" r="15"/><circle cx="280" cy="210" r="15"/>
+    </g>
+    <g class="core"><circle cx="140" cy="35" r="15"/><circle cx="140" cy="105" r="15"/></g>
+    <line x1="140" y1="20" x2="140" y2="125" stroke="#a85013" stroke-width="5"/>
+    <text x="140" y="285" text-anchor="middle" class="label">額外半原子平面的邊緣</text>
+  </g>
+  <path d="M485 220H685" class="arrow"/><text x="585" y="195" text-anchor="middle" class="label">施加剪應力，差排核心移動</text>
+  <g transform="translate(790 85)">
+    <g class="atom">
+      <circle cx="0" cy="0" r="15"/><circle cx="70" cy="0" r="15"/><circle cx="140" cy="0" r="15"/><circle cx="210" cy="0" r="15"/><circle cx="280" cy="0" r="15"/>
+      <circle cx="0" cy="70" r="15"/><circle cx="70" cy="70" r="15"/><circle cx="140" cy="70" r="15"/><circle cx="210" cy="70" r="15"/><circle cx="280" cy="70" r="15"/>
+      <circle cx="0" cy="140" r="15"/><circle cx="70" cy="140" r="15"/><circle cx="140" cy="140" r="15"/><circle cx="210" cy="140" r="15"/><circle cx="280" cy="140" r="15"/>
+      <circle cx="35" cy="210" r="15"/><circle cx="105" cy="210" r="15"/><circle cx="175" cy="210" r="15"/><circle cx="245" cy="210" r="15"/><circle cx="315" cy="210" r="15"/>
+    </g>
+    <path d="M0 175H315" stroke="#d43b2f" stroke-width="4" stroke-dasharray="8 6"/>
+    <text x="157" y="285" text-anchor="middle" class="label">差排通過後留下永久滑移</text>
+  </g>
+  <text x="600" y="475" text-anchor="middle" class="label">只需依序改變差排核心附近的鍵結，不必讓整個晶面同時滑動。</text>
+</svg>

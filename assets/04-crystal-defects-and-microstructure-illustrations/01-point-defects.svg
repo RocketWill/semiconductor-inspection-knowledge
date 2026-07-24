@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#fff"/>
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif;fill:#222}
+    .title{font-size:24px;font-weight:600}.label{font-size:18px}.atom{fill:#dceaf7;stroke:#246b9e;stroke-width:2}
+    .host{fill:#f5f5f5;stroke:#333;stroke-width:2}.solute{fill:#f6a24a;stroke:#a85013;stroke-width:2}
+    .vac{fill:none;stroke:#d43b2f;stroke-width:3;stroke-dasharray:6 5}.grid{stroke:#ddd;stroke-width:1}
+  </style>
+  <text x="600" y="38" text-anchor="middle" class="title">點缺陷：差別在於哪個晶格位置被改變</text>
+  <g transform="translate(55 80)">
+    <text x="120" y="0" text-anchor="middle" class="label">空位 vacancy</text>
+    <g class="grid"><path d="M20 30H220M20 100H220M20 170H220M50 10V200M120 10V200M190 10V200"/></g>
+    <g class="host"><circle cx="50" cy="30" r="17"/><circle cx="120" cy="30" r="17"/><circle cx="190" cy="30" r="17"/><circle cx="50" cy="100" r="17"/><circle cx="190" cy="100" r="17"/><circle cx="50" cy="170" r="17"/><circle cx="120" cy="170" r="17"/><circle cx="190" cy="170" r="17"/></g>
+    <circle cx="120" cy="100" r="21" class="vac"/><text x="120" y="228" text-anchor="middle" class="label">正常位置少一個原子</text>
+  </g>
+  <g transform="translate(345 80)">
+    <text x="120" y="0" text-anchor="middle" class="label">自間隙 self-interstitial</text>
+    <g class="grid"><path d="M20 30H220M20 100H220M20 170H220M50 10V200M120 10V200M190 10V200"/></g>
+    <g class="host"><circle cx="50" cy="30" r="17"/><circle cx="120" cy="30" r="17"/><circle cx="190" cy="30" r="17"/><circle cx="50" cy="100" r="17"/><circle cx="120" cy="100" r="17"/><circle cx="190" cy="100" r="17"/><circle cx="50" cy="170" r="17"/><circle cx="120" cy="170" r="17"/><circle cx="190" cy="170" r="17"/></g>
+    <circle cx="85" cy="65" r="12" class="atom"/><text x="120" y="228" text-anchor="middle" class="label">母材原子進入間隙</text>
+  </g>
+  <g transform="translate(635 80)">
+    <text x="120" y="0" text-anchor="middle" class="label">替位雜質 substitutional</text>
+    <g class="grid"><path d="M20 30H220M20 100H220M20 170H220M50 10V200M120 10V200M190 10V200"/></g>
+    <g class="host"><circle cx="50" cy="30" r="17"/><circle cx="120" cy="30" r="17"/><circle cx="190" cy="30" r="17"/><circle cx="50" cy="100" r="17"/><circle cx="190" cy="100" r="17"/><circle cx="50" cy="170" r="17"/><circle cx="120" cy="170" r="17"/><circle cx="190" cy="170" r="17"/></g>
+    <circle cx="120" cy="100" r="21" class="solute"/><text x="120" y="228" text-anchor="middle" class="label">外來原子取代母材位置</text>
+  </g>
+  <g transform="translate(925 80)">
+    <text x="120" y="0" text-anchor="middle" class="label">間隙雜質 interstitial</text>
+    <g class="grid"><path d="M20 30H220M20 100H220M20 170H220M50 10V200M120 10V200M190 10V200"/></g>
+    <g class="host"><circle cx="50" cy="30" r="17"/><circle cx="120" cy="30" r="17"/><circle cx="190" cy="30" r="17"/><circle cx="50" cy="100" r="17"/><circle cx="120" cy="100" r="17"/><circle cx="190" cy="100" r="17"/><circle cx="50" cy="170" r="17"/><circle cx="120" cy="170" r="17"/><circle cx="190" cy="170" r="17"/></g>
+    <circle cx="85" cy="65" r="12" class="solute"/><text x="120" y="228" text-anchor="middle" class="label">較小外來原子進入間隙</text>
+  </g>
+  <text x="600" y="455" text-anchor="middle" class="label">示意圖只表示拓撲差異；實際晶格會因原子尺寸與鍵結產生局部應變。</text>
+</svg>
