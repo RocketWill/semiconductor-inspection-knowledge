@@ -1,16 +1,30 @@
-# 原子鍵結與晶體結構：從原子排列理解材料行為
+# Atomic Bonding and Crystal Structure
+
+## 原子鍵結與晶體結構：從原子排列理解材料行為
+
+> **Learning Context**
+>
+> In optical inspection, I usually work with signals that have already reached the surface or image level: brightness, texture, edges, cracks, and spatial patterns. This chapter moves one level deeper. I studied atomic bonding and crystal structure to understand why stiffness, thermal expansion, conductivity, deformation, and orientation-dependent behavior are connected rather than isolated entries in a specification table.
+>
+> The goal is not to infer crystal structure directly from an AOI image. It is to recognize when atomic arrangement offers a physically plausible hypothesis, and to identify what additional evidence would be needed to test it.
 
 ## English Summary
 
-This note follows one question: how do atomic bonds and crystal arrangement show up in measurable material behaviour? It starts with valence electrons, then uses the interatomic energy curve to explain elastic modulus and thermal expansion. SC, BCC, FCC, and HCP are compared through coordination, packing, and slip—not just unit-cell diagrams. Silicon is the useful test case. Each atom forms four directional covalent bonds in a diamond-cubic structure, so calling silicon “FCC” leaves out the two-atom basis that defines its nearest neighbours. And that distinction matters in practice: wafer orientation can affect etching, fracture, surface morphology, and inspection signals. But an optical image alone rarely identifies the crystal-level cause.
+This chapter asks how atomic bonding and crystal arrangement appear in measurable material behavior. It starts with valence electrons, then uses the interatomic energy curve to connect bonding with elastic modulus and thermal expansion. SC, BCC, FCC, and HCP are compared through coordination, packing, and slip rather than through unit-cell diagrams alone.
+
+Silicon provides the main engineering example. Each atom forms four directional covalent bonds in a diamond-cubic structure. Calling silicon “FCC” leaves out the two-atom basis that determines its nearest-neighbor arrangement and bonding behavior.
+
+For semiconductor manufacturing, crystal orientation can influence etching, fracture, surface morphology, and some electrical behavior. But orientation is only one possible explanation for a visible pattern. Optical evidence still needs to be separated from a crystal-level hypothesis and its experimental verification.
 
 ---
 
-這一篇的核心問題是：**原子之間如何鍵結與排列，為什麼會改變材料在巨觀尺度下的行為？**
+本篇主要依據先前翻譯與整理 UC Davis 課程時留下的學習筆記，並沿著一個問題展開：**原子之間如何鍵結與排列，為什麼會改變材料在巨觀尺度下的行為？**
 
 材料的彈性模數、熱膨脹、導電方式和變形傾向看起來是不同性質，不過它們都能向下追溯到原子的電子結構、鍵結方式，以及原子在空間中的排列。這並不表示只知道鍵結類型就能直接預測所有工程性質，因為缺陷、晶粒、溫度和製程同樣會改變結果；鍵結與晶體結構提供的是分析材料行為時的第一層依據。
 
-## 1. 從原子結構開始
+## 1. From Valence Electrons to Material Behavior
+
+The useful starting point is not the unit-cell drawing. It is the way valence electrons participate in bonding, because that limits how atoms can arrange, move, and respond to external energy.
 
 原子由原子核與核外電子構成，其中最外層的**價電子（valence electrons）**對鍵結與導電行為特別重要。當原子彼此靠近時，電子與原子核之間同時存在吸引和排斥作用；系統會傾向移動到能量較低且相對穩定的狀態，因此形成原子鍵結。
 
@@ -52,6 +66,8 @@ $$
 
 ![原子間位能與作用力曲線](../assets/03-atomic-bonding-and-structure-illustrations/bond-energy-force.svg)
 
+> 圖 1：作者依個人課程筆記重新繪製，用來表示原子間位能、平衡距離與回復力之間的關係。
+
 ### 3.1 彈性模數
 
 在小應變與線性彈性範圍內：
@@ -73,7 +89,11 @@ $$
 
 實際的位能井並不左右對稱。溫度升高後，原子振動振幅增加，而非對稱的位能曲線會使平均原子間距向較大的一側移動，形成熱膨脹。
 
-這也說明為什麼熱膨脹不能只理解成「原子本身變大」。改變的是原子振動狀態與平均間距。若兩種材料接合後具有不同的熱膨脹係數，溫度循環便可能累積熱應力，進一步造成翹曲、裂紋或界面分層。
+這也說明為什麼熱膨脹不能只理解成「原子本身變大」。改變的是原子振動狀態與平均間距。若兩種接合材料具有不同的熱膨脹係數，界面限制自由熱應變時便會產生熱應力。經過反覆溫度循環後，若同時出現塑性變形、黏彈行為、界面滑移或損傷，才可能進一步留下殘留應力，並形成翹曲、裂紋或界面分層。
+
+> **Engineering Takeaway**
+>
+> Bonding provides a first-order explanation for stiffness and thermal expansion. It does not predict a component's strength or reliability by itself, because defects, microstructure, geometry, interfaces, and loading history still control the measured response.
 
 ## 4. 描述晶體結構的基本語言
 
@@ -111,7 +131,7 @@ $$
 | 結構 | 每個傳統晶胞的有效原子數 | 配位數 | APF | 常見材料 | 結構與變形重點 |
 | --- | ---: | ---: | ---: | --- | --- |
 | 簡單立方（SC） | 1 | 6 | 約 0.52 | 釙 | 堆積較疏鬆，在元素晶體中少見 |
-| 體心立方（BCC） | 2 | 8 | 約 0.68 | $\alpha$-鐵、鎢、鉻 | 沒有真正的密排面；塑性對溫度與應變速率通常較敏感 |
+| 體心立方（BCC） | 2 | 8 | 約 0.68 | $\alpha$-鐵、鎢、鉻 | 沒有像 FCC 或 HCP 一樣的幾何密排面；高原子密度面常為 $\{110\}$，塑性對溫度與應變速率通常較敏感 |
 | 面心立方（FCC） | 4 | 12 | 約 0.74 | 鋁、銅、鎳 | $\{111\}\langle110\rangle$ 為主要密排滑移系統，常見 12 個滑移系統 |
 | 六方最密堆積（HCP） | 6 | 12 | 約 0.74 | 鎂、鋅、$\alpha$-鈦 | 室溫下常以基面滑移為主，可容易啟動的獨立滑移系統通常少於 FCC |
 
@@ -119,9 +139,13 @@ APF 反映硬球模型下的幾何堆積程度，不等同材料的密度、強�
 
 ### 簡單例子：為什麼 FCC 金屬通常較容易延性變形？
 
-FCC 具有密排的 $\{111\}$ 晶面和 $\langle110\rangle$ 晶向，能提供多組容易啟動的滑移系統。當外力方向改變時，晶粒通常仍能找到適合的滑移組合，因此鋁、銅等 FCC 金屬在常溫下往往具有良好延展性。
+FCC 結構通常具有多組容易啟動的 $\{111\}\langle110\rangle$ 密排滑移系統，這是許多 FCC 金屬在常溫下具有良好延展性的重要原因之一。當外力方向改變時，晶粒通常仍能找到適合的滑移組合。
 
 不過，這不是只看「12 個滑移系統」就能完成的判斷。晶粒大小、固溶原子、析出物、加工硬化與載入溫度都會改變差排移動難度。差排本身的結構與運動會在後續章節再詳細整理。
+
+> **Engineering Takeaway**
+>
+> Coordination number and APF describe geometric arrangement. Slip behavior requires another layer of information: available slip systems, lattice resistance, defects, temperature, and loading direction.
 
 ## 6. 矽的鑽石立方結構
 
@@ -140,6 +164,17 @@ FCC 具有密排的 $\{111\}$ 晶面和 $\langle110\rangle$ 晶向，能提供�
 
 普通 FCC 金屬的每個原子有 12 個最近鄰；鑽石立方矽只有 4 個最近鄰，而且鍵結具有明顯方向性。若只看晶胞外框或角點與面心位置，便容易忽略雙原子基底所造成的差異。
 
+> **Why Diamond Cubic Is Not Ordinary FCC**
+>
+> | | Ordinary FCC metal | Diamond-cubic silicon |
+> | --- | --- | --- |
+> | Basis | One atom | Two atoms |
+> | Coordination number | 12 | 4 |
+> | APF | Approximately 0.74 | Approximately 0.34 |
+> | Nearest-neighbor bonding | Commonly metallic and non-directional | Directional covalent bonding |
+>
+> The Bravais lattice is only part of the description. Adding a different basis changes the nearest neighbors, bonding geometry, and material behavior.
+
 ## 7. 晶向為什麼會影響半導體製程？
 
 單晶矽常以 $Si(100)$ 或 $Si(111)$ 等晶圓表面方向描述。不同晶面具有不同的原子排列與表面鍵結狀態，因此可能影響：
@@ -147,14 +182,18 @@ FCC 具有密排的 $\{111\}$ 晶面和 $\langle110\rangle$ 晶向，能提供�
 - 濕式蝕刻速率與形成的側壁形貌；
 - 解理與裂紋傳播方向；
 - 表面反應、氧化與薄膜成核；
-- 載子遷移率及元件方向設計；
+- 在特定元件與界面條件下，載子遷移率與元件方向設計；
 - 表面粗糙度與光學散射。
 
 以 KOH 或 TMAH 等鹼性溶液進行矽的各向異性濕式蝕刻時，$\{111\}$ 晶面通常比 $\{100\}$ 晶面蝕刻得慢，因此製程可能保留下特定斜面。不過，實際速率仍取決於溶液濃度、溫度、添加物、摻雜與表面狀態，不能把這個趨勢當成所有蝕刻條件下的固定數值。
 
 ![矽晶向、蝕刻形貌與檢測訊號](../assets/03-atomic-bonding-and-structure-illustrations/silicon-orientation-and-inspection.png)
 
-## 8. 與半導體檢測的連結
+> 圖 2：作者依個人課程筆記重新整理，用來表示矽晶向、各向異性製程形貌與檢測訊號之間可能存在的關係。
+
+## 8. Why This Matters for Semiconductor Inspection
+
+> A direction-dependent pattern in an inspection image may justify a crystallographic hypothesis, but it does not verify one. The practical task is to separate what the image shows from what crystal structure might explain, then choose a measurement that can test the proposed connection.
 
 在 AOI 或顯微影像中，同樣的亮暗差異未必來自相同原因。表面高度、粗糙度、晶向、薄膜厚度、折射率與殘留物都可能改變反射或散射訊號。因此，檢測影像比較適合被視為異常位置與形貌的線索，而不是直接等同材料根因。
 
@@ -165,7 +204,15 @@ FCC 具有密排的 $\{111\}$ 晶面和 $\langle110\rangle$ 晶向，能提供�
 3. 異常較接近幾何高低差、表面粗糙度，還是薄膜光學差異？
 4. 是否需要搭配其他量測方法確認？
 
-依問題不同，可使用 X 光繞射確認晶體方向與相組成、以電子繞射觀察局部結構，或透過 Raman 光譜分析晶格振動、應力與材料狀態。這些方法提供的資訊並不相同，應該先確認要驗證的是晶向、相、應力，還是表面形貌，再選擇量測方式。
+不同方法回答的問題並不相同，因此應該先確認要驗證的是晶向、相、應力，還是表面形貌，再選擇量測方式：
+
+| 方法 | 主要可以回答的問題 |
+| --- | --- |
+| X 光繞射（XRD） | 晶相、晶格資訊、整體取向或織構 |
+| 電子繞射 | 局部晶體結構與晶向 |
+| Raman 光譜 | 晶格振動、應力或應變、材料相與部分缺陷資訊 |
+| 光學輪廓儀或 AFM | 表面高度、粗糙度與形貌 |
+| SEM | 高倍率表面形貌、裂紋與局部結構細節 |
 
 ### 簡單判讀例子
 
@@ -177,21 +224,42 @@ FCC 具有密排的 $\{111\}$ 晶面和 $\langle110\rangle$ 晶向，能提供�
 
 這個例子無法只靠影像得到唯一答案，但可以把後續驗證從一般性的「看見異常」縮小成幾個具體假設。
 
-## 9. 易錯觀念整理
+## 9. Applied Reflection: Orientation Is a Hypothesis, Not an Image Label
 
-| 易錯說法 | 較精確的理解 |
-| --- | --- |
-| 鍵結越強，材料的所有性質都越好 | 強鍵通常提高剛性與熔點，但強度、韌性和延展性仍受缺陷與結構影響 |
-| FCC 的 APF 高，所以一定最強 | APF 只描述幾何堆積；強度還取決於差排、晶粒與微觀組織 |
-| HCP 沒有滑移系統 | HCP 具有滑移系統，但室溫下容易啟動的獨立系統通常較受限制 |
-| 矽屬於 FCC | 矽是鑽石立方結構；其布拉菲晶格是 FCC，但還有雙原子基底 |
-| 看見固定紋理就能判定晶體缺陷 | 光學影像可能同時受到幾何、薄膜、粗糙度與照明影響，需要交叉量測 |
+In an anonymized wafer-inspection project, the labels described observable conditions: whole-wafer patterns, particles, and scratch-like features. They were useful for defining classification, detection, and segmentation tasks, but they did not contain crystallographic evidence. A directional line remained a visual description.
 
-## 10. 本篇範圍與後續連結
+Before studying this chapter, I would have checked illumination, alignment, image preprocessing, and model consistency first. Those checks still come first. But I would now add another question: does the direction remain fixed relative to the wafer notch, crystal orientation, or an anisotropic process step?
 
-本篇先建立從電子結構、原子鍵結到晶體排列的基本脈絡，並用矽說明晶向如何進一步影響製程與檢測訊號。空位、間隙原子、差排、晶界與擴散將在 04-crystal-defects-and-microstructure.md 展開；彈性、塑性、斷裂與疲勞等可量測行為則留在 05-mechanical-properties-and-failure.md。這樣可以避免把鍵結直接當成所有材料性質的唯一原因。
+That question does not turn the AOI result into a crystal diagnosis (the image still measures optical contrast). It turns orientation into a testable hypothesis. A stronger investigation could compare rotated illumination, wafer orientation, process stage, surface profilometry, and, when the hypothesis survives those checks, structural characterization.
 
-## 參考資料
+## 10. Working Principles and Boundaries
 
-- UC Davis / Coursera, [Materials Science: 10 Things Every Engineer Should Know](https://www.coursera.org/learn/materials-science)
-- J. F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
+- **Bonding gives first-order trends, not a complete property prediction.** Strength, ductility, toughness, and reliability still depend on defects, microstructure, temperature, and loading.
+- **APF describes geometric packing.** It is not a direct measure of density, strength, or engineering performance.
+- **Crystal structure affects available deformation mechanisms.** Actual behavior still depends on whether those mechanisms can operate under the given conditions.
+- **Silicon should not be treated as an ordinary FCC crystal.** Its FCC Bravais lattice and two-atom basis together form the diamond-cubic structure.
+- **A direction-dependent optical pattern can support a crystallographic hypothesis.** It cannot verify a crystal-level cause without independent evidence.
+
+## 11. What Changed in My Understanding
+
+Before studying atomic bonding and crystal structure, I tended to read elastic modulus, thermal expansion, conductivity, and deformation behavior as separate values in a material specification. The interatomic energy curve made the first connection clearer: stiffness and thermal expansion both originate from how the energy changes when atomic spacing moves away from equilibrium.
+
+The silicon example changed a second part of my reasoning. I already knew that silicon wafers were described by orientations such as $(100)$ and $(111)$, but I had not clearly separated the FCC Bravais lattice from the complete diamond-cubic structure. The two-atom basis is not a minor naming detail. It changes the nearest neighbors, coordination number, packing, and bonding geometry.
+
+For inspection work, the practical change is more limited but useful. A fixed-direction feature should still be checked against illumination and image-processing effects first. If it also follows the wafer reference direction or an anisotropic process step, crystal orientation becomes a reasonable hypothesis to test. It does not become the label.
+
+## 12. Scope and Links to Other Chapters
+
+This chapter establishes the path from valence electrons and bonding to crystal arrangement, then uses silicon to connect orientation with process and inspection behavior. The next chapters continue with:
+
+- [04. Crystal Defects and Microstructure](./04-crystal-defects-and-microstructure.md): vacancies, interstitials, dislocations, grain boundaries, and diffusion; and
+- [05. Mechanical Properties and Failure](./05-mechanical-properties-and-failure.md): elastic and plastic response, creep, fracture, fatigue, and toughness.
+
+Keeping these mechanisms separate prevents bonding from becoming a one-step explanation for every measured property.
+
+## References
+
+1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
+2. James F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
+3. William D. Callister Jr. and David G. Rethwisch, *Materials Science and Engineering: An Introduction*.
+4. Xiezheng Yu et al., [“Wet Anisotropic Etching Characteristics of Si{111} in KOH-Based Solution”](https://pmc.ncbi.nlm.nih.gov/articles/PMC11780415/), *ACS Omega*, 2025.
