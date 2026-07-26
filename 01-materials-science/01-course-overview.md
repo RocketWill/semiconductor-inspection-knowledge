@@ -154,15 +154,17 @@ flowchart LR
 
 > 圖 3：作者依個人課程筆記重新整理，用來表示從檢測訊號建立並驗證材料或製程假設的過程。
 
-## 8. Applied Reflection: Defect Labels and Task Definition
+## 8. Applied Reflection: From Model Outputs to Engineering Evidence
 
-While improving an anonymized wafer-inspection workflow, I found that some labels described a condition across most of the image, such as a haze-like or ring-like pattern. Others described localized features, such as particles or scratches. Treating every label as an object-detection problem would have forced global image attributes into bounding boxes that did not represent their actual meaning.
+Several inspection projects gradually changed how I framed the work. I initially focused on converting images into reliable labels, improving the models, and making the results usable in a production workflow. Those tasks were necessary. They were not the whole problem.
 
-The practical solution was to separate the tasks. Whole-image attributes were handled as classification problems, localized defects as detection problems, and scratch geometry could be examined through segmentation when length or shape mattered. This made the outputs easier to compare with the actual meaning of each annotation instead of evaluating unrelated labels through one metric. At the time, I mainly saw this as a computer-vision decision about label scale and annotation quality.
+In an anonymized wafer-inspection project, some labels described conditions across most of the wafer image, while particles and scratches were localized features. I separated whole-image attributes into classification tasks, retained localization for particles and scratches, and reviewed the local annotations before further model comparison. At the time, I mainly saw this as a computer-vision decision about spatial meaning and evaluation.
 
-Materials science adds another distinction. A label such as “scratch” describes observed morphology; it does not establish whether the feature resulted from mechanical contact, brittle fracture, a process residue with a similar appearance, or another mechanism. The model may answer *what the feature resembles* and *where it appears*. It cannot establish *why it formed* without supporting process or material evidence.
+A transparent-product inspection project exposed a different part of the chain. Features changed under different illumination conditions, and AI-based recognition was combined with rule-based measurement when a defect had a clear geometric definition. The image was not a neutral record of the product (changing the light changed what became measurable).
 
-A separate optical-inspection project led to a related observation. Multiple illumination conditions revealed different features, and AI-based recognition was combined with rule-based measurement for defects with clear geometric definitions. The useful lesson was not that one method was universally better. It was that observation conditions and engineering definitions should determine the analysis method.
+I also worked on an AI development workflow that connected dataset review, task definition, model training, evaluation, visualization, export, and deployment. It made the inspection process easier to repeat, but it did not solve the interpretation problem for us. Materials science adds that missing boundary: a stable visual label can still describe only appearance, not the physical mechanism that produced it.
+
+I now read the workflow as a longer chain. Material and process conditions influence the signal; imaging and annotation turn the signal into data; models organize the evidence; and engineering verification is still required before a root cause can be claimed.
 
 ## 9. Connection to Industrial AI
 
