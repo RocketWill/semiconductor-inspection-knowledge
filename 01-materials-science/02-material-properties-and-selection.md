@@ -235,13 +235,24 @@ $$
 
 不過，相同外觀可能對應不同機制，因此檢測結果只能作為證據起點。較可靠的分析方式是先描述缺陷的形狀、位置與分布，接著結合材料性質和製程條件提出假設，最後再利用其他量測方法逐步確認或排除。
 
-## 8. Applied Reflection: Optical Contrast Is Not Material Identity
+## 8. Applied Reflection: Material Decisions Become Inspection Constraints
 
-In an anonymized inspection project involving a transparent polymer product, one illumination condition was not enough to reveal every defect type consistently. Different lighting arrangements emphasized different combinations of transmission, reflection, surface geometry, and edge shape. We therefore combined AI-based recognition with rule-based measurement for defects that had stable geometric definitions.
+In these inspection projects, I was not responsible for selecting the polymer formulation of a contact lens or the composition of a glass wafer. Those decisions had already been made before the inspection system was developed. My work began downstream, where the material's optical, mechanical, and surface behavior became constraints on imaging, algorithms, and system stability.
 
-That experience changed how I read an inspection image. A repeatable bright or dark region is a useful visual class, but it is not automatically a material label. The contrast may come from roughness, thickness variation, contamination, deformation, or simply the observation condition. The camera records an optical effect, not a material identity.
+This was especially clear when inspecting transparent and easily deformed products. One illumination condition did not reveal every relevant feature consistently. Different lighting arrangements emphasized transmission, reflection, surface geometry, and edge shape in different ways. We therefore combined AI-based recognition with rule-based measurement for defects that had stable geometric definitions.
 
-The same boundary appears in wafer inspection. AOI can separate recurring patterns and measure where they occur, but a class name should not imply a verified material mechanism unless process history or additional metrology supports it. The distinction looks simple on paper (it was less obvious when the same transparent surface changed under another light). In practice, it affects how the dataset is built, how errors are reviewed, and what an engineer can safely conclude from the model output.
+The material had not changed (only the way we observed it had). That made the connection between material behavior and inspection design much easier to see.
+
+A glass-wafer inspection project presented a related problem. Bright-field and dark-field images emphasized different surface responses. Localized particles and scratches needed spatial detection, while wafer-level appearance patterns required a different interpretation. One image and one algorithm were not enough.
+
+These experiences changed how I interpret material selection. A material is not only a list of stiffness, density, conductivity, or optical-property values. Once it enters a product, its transparency, reflectivity, surface quality, deformation behavior, interfaces, and environmental response determine what can be measured reliably downstream.
+
+If I were involved earlier in the selection process, I would ask two connected questions:
+
+1. Can the material and manufacturing route satisfy the functional and reliability requirements?
+2. Can the resulting process state be measured and monitored with sufficient stability?
+
+AOI cannot replace material selection. It can provide feedback on whether the selected material–process combination remains observable, repeatable, and under control.
 
 ## 9. Working Notes: Checks I Need to Keep
 
