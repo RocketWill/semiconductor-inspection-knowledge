@@ -254,7 +254,7 @@ If I were involved earlier in the selection process, I would ask two connected q
 
 AOI cannot replace material selection. It can provide feedback on whether the selected material–process combination remains observable, repeatable, and under control.
 
-## 9. Working Notes: Checks I Need to Keep
+## 9. Working Principles and Boundaries
 
 - **High elastic modulus does not mean high strength.** Stiffness and the stress required for permanent deformation or failure answer different questions.
 - **High hardness does not mean resistance to fracture.** Toughness, flaw size, and stress state still matter.
@@ -278,7 +278,7 @@ This chapter keeps only the bonding, structure, and property concepts needed for
 
 I used to read material comparisons mainly as lists of property values: higher modulus, lower density, better thermal conductivity, or greater hardness. The steel–aluminum example exposed the problem with that approach. Steel is clearly stiffer when geometry is fixed, but the comparison becomes much closer when mass is fixed and the aluminum section is allowed to grow.
 
-That changed the order of my comparison.
+I now define the required function and engineering constraints before comparing individual property values.
 
 The same change applies to inspection work. Optical contrast depends on the material, surface, interface, geometry, and illumination together. Choosing a model before clarifying those conditions may improve a metric without improving the engineering interpretation. I now treat material selection and inspection design as connected decisions: one determines how the system behaves, while the other determines which part of that behavior becomes observable.
 

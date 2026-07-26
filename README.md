@@ -1,6 +1,6 @@
 # Semiconductor Inspection Knowledge
 
-A learning portfolio connecting materials science, semiconductor manufacturing, and inspection engineering.
+A personal learning repository connecting materials science, semiconductor manufacturing, and inspection engineering.
 
 ## Current Focus
 
@@ -25,4 +25,4 @@ A learning portfolio connecting materials science, semiconductor manufacturing, 
 
 ## Purpose
 
-I write these notes in my own words and focus on relationships between concepts rather than isolated definitions. A visible anomaly is only a clue. Each chapter connects course concepts with engineering constraints, defect interpretation, and the measurements needed to verify a possible cause.
+I write these notes in my own words and focus on relationships between concepts rather than isolated definitions. When a visible anomaly appears, I treat it as a piece of evidence rather than a completed diagnosis. Each chapter connects course concepts with engineering constraints, defect interpretation, and the measurements still needed to verify a possible cause.

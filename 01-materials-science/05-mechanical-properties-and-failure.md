@@ -1,24 +1,30 @@
-# 從機械性質到失效證據：材料損傷如何累積
+# Mechanical Properties and Failure Evidence
+
+## 材料如何變形、累積損傷與失效
+
+> **Learning Context**
+>
+> In the industrial inspection projects I have worked on, labels such as scratch, crack, particle, and pattern anomaly were used for screening, localization, measurement, and traceability. They were useful operational categories. But they did not automatically identify a failure mechanism.
+>
+> I studied mechanical properties and failure to understand what additional evidence would be needed before a visible feature could be connected to yielding, creep, brittle fracture, fatigue, thermal cycling, or another material mechanism. The purpose is not to make AOI a substitute for failure analysis. It is to clarify what the inspection system can measure, what remains a hypothesis, and when material or process verification is required.
 
 ## English Summary
 
-This chapter addresses a gap between my work in AI-based optical inspection and the material mechanisms behind a visible defect. In semiconductor wafer and industrial AOI projects, my work has focused on image acquisition, data review, defect models, inspection workflows, and equipment-side validation. A model can locate a crack, scratch, particle, or pattern anomaly. But the label alone cannot establish whether the cause is overload, fatigue, creep, thermal cycling, a process condition, or even the imaging setup.
+This chapter examines what a visible defect can and cannot reveal about mechanical failure. Starting from tensile behavior, I connect stress–strain response with creep, impact, fracture toughness, and fatigue while keeping the assumptions behind each test and equation visible.
 
-I begin with the tensile curve, then add the effects of time, temperature, crack geometry, and repeated loading. The aim is not to turn every image into a failure diagnosis. It is to separate what the inspection system observes from the mechanism that still needs to be tested.
+The inspection examples come from anonymized glass-wafer and contact-lens work. Scratch segmentation can locate a feature and estimate its visible surface length. But that value is not automatically the crack size used in fracture mechanics. Depth, tip geometry, loading, residual stress, and material toughness are still missing.
 
-The most useful change is in how I would structure the evidence. Defect labels and geometry should be connected with process stage, spatial distribution, loading or thermal history, and follow-up characterization (when those records are available). That distinction matters. AOI can support localization, measurement, grouping, and trend comparison; a verified root cause still requires material or process evidence.
+The practical result is a clearer evidence chain: AOI observation, failure hypothesis, and verified root cause should be recorded separately. That distinction matters.
 
 ---
 
 ## 1. 為什麼整理這個主題？
 
-過去參與半導體晶圓和其他工業 AOI 專案時，我的工作主要集中在影像擷取、資料整理、缺陷模型、檢測流程和設備端驗證。這些方法能協助定位異常、量測尺寸，並且比較不同影像或批次之間的變化。不過，模型輸出的 crack、scratch、particle 或 pattern anomaly 仍然只是影像層級的標籤，無法單獨說明異常究竟是由瞬間超載、疲勞、潛變、熱循環，還是製程與成像條件造成。
+這一篇主要整理一個問題：**材料受到不同形式的載入後，如何產生永久變形、逐步累積損傷或突然失效，而檢測結果又能支持哪些判斷？**
 
-因此，這一篇主要整理一個問題：**材料受到不同形式的載入後，如何從材料反應逐步發展成永久變形、損傷與最終失效，而檢測結果又能支持哪些判斷？**
+拉伸、潛變、衝擊、斷裂和疲勞看起來是不同的主題，不過它們都在描述材料如何回應外力、溫度與時間。比起單獨記住每一條曲線，更需要分清楚量測值代表哪一種材料行為、測試條件如何限制結果的解讀，以及目前看到的是失效原因、損傷結果，還是仍然需要進一步驗證的線索。
 
-拉伸試驗、潛變、衝擊、斷裂和疲勞看起來是不同的主題，不過它們都在描述材料如何回應外力、溫度與時間。整理這些內容後，較重要的並不是記住每一條曲線，而是要能分清楚量測值代表哪一種材料行為、測試條件如何限制結果的解讀，以及目前看到的是失效原因、損傷結果，還是仍然需要進一步驗證的線索。
-
-失效也不一定等於零件完全斷裂。永久變形、剛性下降、尺寸漂移或表面裂紋，只要讓元件無法維持原本功能，就已經構成功能性失效。
+失效也不一定等於零件完全斷裂。永久變形、剛性下降、尺寸漂移或表面裂紋，只要使元件無法維持原本功能，就已經構成功能性失效。
 
 ## 2. 從載入條件到材料反應
 
@@ -30,8 +36,11 @@ flowchart LR
     B --> C["可回復彈性變形"]
     B --> D["塑性變形、潛變或循環損傷"]
     D --> E["局部損傷累積"]
-    E --> F["裂紋萌生與成長"]
+    E --> F["裂紋萌生與穩定成長"]
+    A --> H["既有裂紋、缺口或脆性條件"]
+    H --> I["裂紋尖端驅動力增加"]
     F --> G["功能失效或完全斷裂"]
+    I --> G
 ```
 
 在正常範圍內，彈性變形本身並不等於材料已經受到損傷，因為卸載後材料仍可以大致回復原狀。不過這張流程圖仍然只是一個簡化模型，例如脆性材料可能在幾乎沒有可見塑性變形的情況下斷裂，高溫元件可能在長時間受力後累積潛變應變，而循環載入也可能在名義應力低於降伏強度時形成疲勞裂紋。因此這張圖適合用來整理不同階段的證據，但不能視為所有材料都會依序經過的固定流程。
@@ -57,7 +66,7 @@ $$\varepsilon_{\mathrm{eng}}=\frac{L-L_0}{L_0}=\frac{\Delta L}{L_0}$$
 
 ![工程應力—應變曲線與主要機械性質](../assets/05-mechanical-properties-and-failure-illustrations/01-stress-strain-big-four.svg)
 
-> 圖 1：作者依個人課程筆記重新整理，內容對應 UC Davis 課程 Module 2。
+> 圖 1：作者依個人課程筆記重新整理；圖中標示工程應力—應變曲線的線性彈性區、降伏、加工硬化、極限抗拉強度、頸縮與斷裂位置。
 
 典型延性金屬的工程應力—應變曲線可以分成：
 
@@ -94,7 +103,11 @@ $$\varepsilon_{\mathrm{eng}}=\frac{0.05}{50}=0.001$$
 
 $$E=\frac{\sigma}{\varepsilon}=\frac{200\ \mathrm{MPa}}{0.001}=200\ \mathrm{GPa}$$
 
-這個結果接近鋼的典型數量級。除了完成計算外，還需要檢查單位和物理趨勢是否合理；如果得到遠低於一般金屬的數值，就應該回頭確認截面積、伸長量和單位換算。對我而言，能否判斷計算結果是否合理，也是確認自己是否理解公式的一部分。
+這個結果接近鋼的典型數量級。除了完成計算外，還需要檢查單位和物理趨勢是否合理；如果得到遠低於一般金屬的數值，就應該回頭確認截面積、伸長量和單位換算。
+
+> **Engineering Takeaway**
+>
+> A calculated value should be checked against its physical scale, units, specimen assumptions, and loading regime. Correct algebra does not guarantee a meaningful engineering interpretation.
 
 ### 3.1 剛性、強度、延展性與拉伸韌性
 
@@ -123,7 +136,7 @@ $$\varepsilon_{\mathrm{true}}=\ln(1+\varepsilon_{\mathrm{eng}})$$
 
 ![工程應力與真應力在頸縮後的差異](../assets/05-mechanical-properties-and-failure-illustrations/02-engineering-vs-true-stress.svg)
 
-> 圖 2：作者依個人課程筆記重新整理，內容對應 UC Davis 課程 Module 2。
+> 圖 2：作者依個人課程筆記重新整理；頸縮發生後，工程應力因仍使用原始截面積計算而下降，真應力則反映局部截面持續縮小的影響。
 
 工程應力在極限抗拉強度後下降時，很容易直接解讀成材料本身突然變弱。實際上，頸縮後截面積快速縮小，載荷與局部面積同時改變；工程應力仍用固定的 $A_0$ 計算，因此無法直接反映頸縮區的局部狀態。對許多延性金屬而言，真應力可在頸縮後繼續上升到接近斷裂。
 
@@ -139,11 +152,11 @@ $$T_{\mathrm H}=\frac{T}{T_{\mathrm m}}$$
 
 ![潛變曲線的三個階段](../assets/05-mechanical-properties-and-failure-illustrations/03-creep-three-stages.svg)
 
-> 圖 3：作者依個人課程筆記重新整理，內容對應 UC Davis 課程 Module 3。
+> 圖 3：作者依個人課程筆記重新整理；圖中比較典型潛變的三個階段，以及潛變速率由下降、近似穩定到快速增加的變化。
 
 典型潛變曲線可分為：
 
-1. **第一階段潛變**：潛變速率逐漸下降，加工硬化的影響較明顯。
+1. **第一階段潛變**：潛變速率逐漸下降。對許多金屬而言，加工硬化或其他微觀結構演化會降低潛變速率；不同材料的主導機制可能不同。
 2. **第二階段潛變**：潛變速率近似穩定，硬化與回復機制達到動態平衡。
 3. **第三階段潛變**：孔洞、晶界損傷或頸縮逐漸發展，有效截面減少，應變速率加快直到破壞。
 
@@ -169,7 +182,7 @@ Charpy 衝擊試驗以擺錘撞擊帶缺口試片，根據撞擊前後的能量�
 
 ![延性—脆性轉變的定性比較](../assets/05-mechanical-properties-and-failure-illustrations/04-ductile-brittle-transition.svg)
 
-> 圖 4：作者依個人課程筆記重新整理，內容對應 UC Davis 課程 Module 3；曲線只表示定性趨勢。
+> 圖 4：作者依個人課程筆記重新整理；圖中定性比較不同晶體結構材料的衝擊吸收能隨溫度變化的趨勢，其中部分 BCC 金屬具有較明顯的延性—脆性轉變區。
 
 這張圖只表示常見定性趨勢：
 
@@ -199,7 +212,13 @@ $$K_{\mathrm I}\geq K_{\mathrm{IC}}$$
 
 ![應力、裂紋尺寸與斷裂韌性的關係](../assets/05-mechanical-properties-and-failure-illustrations/05-fracture-toughness-critical-crack.svg)
 
-> 圖 5：作者依個人課程筆記重新整理，內容對應 UC Davis 課程 Module 4。
+> 圖 5：作者依個人課程筆記重新整理；工作應力或裂紋尺寸增加時，應力強度因子會提高，達到材料的斷裂韌性後，裂紋可能失穩成長。
+
+這裡的裂紋尺寸 $a$ 具有明確的幾何定義，不能直接用 AOI 量到的表面 scratch 長度代替。實際判斷前，仍然需要確認該特徵是否具有尖銳裂紋前緣、深度與三維幾何、相對於載荷的方向、載入模式、局部與殘留應力，以及材料在實際條件下的斷裂韌性。表面可見長度可以作為幾何證據，不過它本身不是完整的斷裂力學輸入。
+
+> **Engineering Takeaway**
+>
+> A visible scratch length is not automatically the crack size used in fracture mechanics. Depth, tip geometry, orientation, loading mode, residual stress, and material toughness must still be established.
 
 ### 簡單例題：估算臨界裂紋尺寸
 
@@ -231,15 +250,19 @@ $$a_c=\frac{1}{\pi}\left(\frac{50}{200}\right)^2\ \mathrm m\approx0.020\ \mathrm
 
 ![S–N 曲線與耐久極限的適用範圍](../assets/05-mechanical-properties-and-failure-illustrations/06-fatigue-sn-curve.svg)
 
-> 圖 6：作者依個人課程筆記重新整理，內容對應 UC Davis 課程 Module 4。
+> 圖 6：作者依個人課程筆記重新整理；S–N 曲線比較具有近似耐久極限的平台行為，以及疲勞強度隨循環數持續下降的材料。
 
 S–N 曲線以應力振幅 $S$ 對破壞循環數 $N$ 表示疲勞行為。部分鋼材可能出現近似水平的平台，稱為耐久極限；許多鋁合金與其他材料則會隨循環數增加持續下降，因此通常指定某一循環數下的疲勞強度，而不是假設存在真正的無限壽命。
 
 S–N 資料也不能脫離條件單獨使用。平均應力、表面狀態、殘留應力、腐蝕環境、溫度、載入頻率與實際載入順序，都可能改變疲勞壽命。
 
+單張影像中的線狀異常無法證明疲勞。較有力的判斷還需要重複量測中的裂紋成長、循環數與載荷歷史、可能的起裂位置，以及斷口特徵等時間與材料證據。
+
 ## 7. 從檢測異常建立失效假設
 
 ![小黑整理載入、溫度與裂紋證據](../assets/05-mechanical-properties-and-failure-illustrations/07-failure-evidence-and-verification.png)
+
+> 圖 7：作者依個人課程筆記重新整理；從載入與溫度條件出發，將 AOI 可見異常、可能的失效機制，以及仍待材料或製程方法確認的證據分開整理。
 
 檢測影像或感測器訊號通常只能先指出異常位置與變化趨勢。若要進一步判斷失效機制，可以把觀察、可能機制與待驗證證據分開記錄：
 
@@ -253,64 +276,74 @@ S–N 資料也不能脫離條件單獨使用。平均應力、表面狀態、�
 
 同一種外觀可能對應不同的材料機制，而相同的機制也可能在不同條件下呈現不同外觀。因此，異常分類適合用來縮小後續調查的範圍，但不能直接取代根因分析。
 
-### 7.1 匿名化分析情境：從晶圓表面異常到可驗證假設
+### 7.1 Applied Reflection: Measuring a Scratch Is Not Yet a Fracture Assessment
 
-以下情境建立在過去參與晶圓缺陷模型最佳化、資料複查與重新標註、檢測任務拆分，以及設備端驗證的工作經驗上。不過這些經驗並不代表我曾經完成正式的材料失效分析，因此案例中的「線狀異常」只是一個用來練習判讀流程的假設情境，不對應特定客戶、產品或已經確認的根因。
+In an anonymized glass-wafer inspection project, the workflow combined bright-field and dark-field image analysis. Particles and scratches were detected through separate processing paths, and the scratch regions were then passed to a segmentation model to estimate their visible surface length.
 
-假設晶圓 AOI 系統在固定區域或特定批次中反覆偵測到小型線狀異常，第一步不應該直接判定它是疲勞裂紋，而是先確認影像、系統和模型所提供的量測結果是否可靠：
+The measurement was useful. It supported localization, defect grouping, comparison across inspected samples, and the selection of regions for closer review. But it was not a fracture assessment (the model had no access to crack depth or stress history).
 
-| 判讀層級 | 可以先做的工作 |
+Studying fracture mechanics changed how I interpret that output. A segmented surface length is not automatically the crack dimension $a$ used in a stress-intensity calculation. The image alone does not establish whether the feature is a superficial scratch or a structural crack, whether it has a sharp crack tip, or how it is oriented relative to applied and residual stresses. Loading mode, geometry factor, crack depth, and material toughness are still missing.
+
+A more defensible workflow separates the evidence into four levels:
+
+| Level | Available information |
 | --- | --- |
-| 影像與系統 | 比較多相機或不同照明結果，檢查 trigger、晶圓定位、ROI、template 與 recipe 是否一致 |
-| 模型與資料 | 複查標註、分類與偵測任務的分工，確認小缺陷是否被縮放、裁切或類別定義影響 |
-| 空間與批次 | 量測異常長度、方向、尖端與邊緣距離，查看是否集中在固定位置、製程步驟或批次 |
-| 材料假設 | 在確認實體異常後，再考慮表面刮痕、裂紋、薄膜變化、污染或其他製程相關現象 |
-| 後續驗證 | 視問題需要安排高倍率光學、SEM、截面分析，並比對熱歷史、接觸位置與製程紀錄 |
+| Optical evidence | Location, visible length, width, orientation, and contrast |
+| Geometric hypothesis | Superficial scratch, groove, surface crack, or film feature |
+| Mechanical assessment | Local stress, crack depth, loading mode, geometry factor, and material toughness |
+| Verified decision | Supported by metrology, sectioning, process records, or mechanical testing |
 
-在這個情境中，AI 比較適合處理異常定位、尺寸量測、跨批次分群和趨勢比較，也能協助找出人工複查時不容易注意到的空間分布。不過即使模型在相同位置穩定地輸出 crack label，也只能提高「這個位置存在可重複異常」的可信度，不能直接證明疲勞、脆性破壞或熱應力是造成異常的唯一機制。
+Better segmentation improves the first level. It does not complete the remaining three.
 
-因此在實際判讀時，需要將兩個問題分開處理。檢測系統首先回答的是「哪裡不一樣」，材料和失效分析才進一步追問「為什麼不一樣，以及還需要哪些證據才能排除其他解釋」。如果直接把這兩個問題合併，模型的分類結果就很容易被誤認為已經完成根因判斷。
+> **Project Connection: A Crack Label Is an Inspection Category**
+>
+> In a separate automated contact-lens inspection project, production labels included scratches, crack marks, cracked lenses, edge roughness, bubbles, and foreign material. Multiple illumination conditions, AI models, and rule-based measurements were combined to screen these conditions consistently.
+>
+> Here, “cracked lens” was an operational acceptance category. It indicated what the inspection system should reject and where an operator should review the image; it did not establish the loading history or fracture mechanism. That distinction is easy to lose when a label already sounds like an engineering diagnosis.
 
-## 8. Connection to Industrial AI
+## 8. Connection to Industrial AI: From Defect Records to Failure Evidence
 
-機械失效問題可以同時產生數值、時間序列、影像與文字紀錄：
+Mechanical-failure analysis can involve stress–strain curves, temperature and cycle histories, equipment signals, inspection images, process records, and follow-up characterization. Industrial AI can help extract curve features, segment visible damage, compare distributions, and identify changes across repeated measurements. Image appearance alone, however, rarely distinguishes creep, fatigue, brittle fracture, process contamination, and an imaging artifact.
 
-- 拉伸試驗的載荷—位移或應力—應變資料；
-- 溫度、持續時間、循環數與載入歷史；
-- 振動、聲發射與設備狀態訊號；
-- 裂紋、斷口、晶圓表面與薄膜形貌影像；
-- 維修紀錄、製程批次與異常處理結果。
+The data model should preserve the boundary between observation and explanation. For an AOI record, that means retaining the image scale, camera and illumination path, inspection recipe, process step, wafer or batch relationship, review result, and any available loading or thermal history. A bounding box is not physical geometry: one long scratch may be split into several boxes, while one particle box may contain several nearby objects. Segmentation may give a better visible contour, but it still does not reveal depth.
 
-Industrial AI 可以協助曲線特徵擷取、異常偵測、裂紋分割、趨勢預測和剩餘壽命估計。不過如果模型輸入只有影像外觀，通常無法唯一辨認潛變、疲勞、脆性破壞或製程污染。比較合理的處理方式，是先將材料機制轉換成可以檢查的特徵，例如斜率變化、遲滯、循環數、裂紋成長速率、溫度暴露和空間分布，接著再與影像結果進行交叉比對。
+I would therefore record three different fields instead of placing everything in one defect label:
 
-對半導體檢測而言，模型標記出的 crack、scratch、particle 或 pattern anomaly 是觀測層級的標籤，不一定是機制層級的答案。如果希望模型能進一步支援工程判斷，資料設計還需要保留材料狀態、製程步驟、載入和環境條件，以及後續驗證結果。透過這些資訊，才能進一步區分「模型找到異常」和「目前的證據足以支持某個失效機制」。
+1. **AOI evidence**: what the image or sensor measured;
+2. **failure hypothesis**: which mechanisms remain plausible and why;
+3. **verified root cause**: what was supported by process records, material characterization, or testing.
 
-## 9. 學習後改變的判斷方式
+This is the distinction I want the dataset to preserve. And when a required field is unavailable, that absence should also be recorded rather than silently replaced by an assumption.
 
-在整理這些主題以前，可見缺陷比較容易被理解成分類和定位問題，也就是先取得影像、定義標籤，接著再提高模型的 precision、recall 或推論速度。這些工作仍然重要，不過材料科學補上了另一個需要判斷的層次：相同的線狀外觀可能來自不同的載入歷史和材料機制，而同一種機制也不一定會在所有成像條件下呈現相同特徵。
+## 9. What Changed in My Understanding
 
-這項理解也讓檢測資料的設計範圍變得更完整。除了 defect label 和 bounding box 外，如果條件允許，還應該保留製程階段、溫度暴露、可能的接觸位置、空間分布、批次關係和後續驗證結果。實際專案未必能取得全部欄位，不過無法取得哪些資訊，本身也應該留下紀錄。模型是否能正確分類是一個問題，現有標籤是否足以描述工程機制則是另一個問題。
+Before studying these topics, I treated a visible defect mainly as a classification and localization problem: acquire the image, define the label, and improve precision, recall, or inference time. Those tasks still matter. Mechanical behavior adds another layer, because similar line-shaped features can come from different loading histories, while the same mechanism may look different under another illumination or imaging condition.
 
-其中較重要的改變，是開始將 AOI evidence、failure hypothesis 和 verified root cause 分開記錄。前兩者可以透過資料和模型協助建立，但最後一項仍然需要材料分析、製程紀錄或實驗結果支持。這種區分不會降低 AI 在檢測中的價值，反而能讓模型輸出更清楚地對應到它實際可以支持的工程判斷。
+This changed how I think about inspection records. Defect labels and bounding boxes are useful operational outputs, but they are not sufficient descriptions of an engineering mechanism. Process stage, temperature exposure, possible contact location, spatial pattern, batch relationship, and later verification should be linked when they are available. The missing information matters too.
 
-## 容易混淆的觀念
+The practical change is simple: AOI evidence, a failure hypothesis, and a verified root cause should not be stored as if they were the same conclusion. AI can help establish the first and organize the second. The third still needs material, process, or experimental evidence.
 
-1. **剛性高不等於強度高。** 前者主要看彈性模數，後者需要指定降伏或破壞條件。
-2. **抗拉強度不是斷裂韌性。** 有裂紋的零件可能在名義應力低於抗拉強度時失效。
-3. **工程應力下降不代表局部真應力一定下降。** 頸縮後需要考慮截面快速縮小。
-4. **高溫只是潛變條件的一部分。** 同系溫度、時間、應力與材料機制都需要確認。
-5. **Charpy 衝擊能不等於 $K_{\mathrm{IC}}$。** 兩者的試片、單位與力學意義不同。
-6. **FCC 沒有明顯轉變溫度，不代表永遠不會脆性破壞。**
-7. **不是所有材料都有耐久極限。** 無平台材料應標示指定循環數下的疲勞強度。
-8. **AI 找到異常不等於找出根因。** 機制判斷仍需要材料、載入、環境與時間證據。
+## 10. Working Principles and Boundaries
 
-## 本篇範圍與下一步
+1. **Stiffness is not strength.** Elastic modulus describes resistance to elastic deformation; strength requires a specified yielding or failure condition.
+2. **Tensile strength is not fracture toughness.** A cracked component may fail below its nominal tensile strength.
+3. **A drop in engineering stress does not prove that local true stress has fallen.** Necking changes the local cross-section and stress state.
+4. **High temperature is only part of a creep condition.** Homologous temperature, time, stress, material state, and the active mechanism must also be considered.
+5. **Charpy impact energy is not $K_{\mathrm{IC}}$.** The specimens, units, and mechanical meanings are different.
+6. **The absence of a sharp transition in an FCC material does not guarantee ductile behavior under every condition.**
+7. **Not every material has a fatigue limit.** For materials without a plateau, fatigue strength should be reported at a specified number of cycles.
+8. **An AI-detected anomaly is not a verified cause.** Mechanism assessment still needs evidence about the material, loading, environment, and time.
 
-本篇先透過拉伸、潛變、衝擊、斷裂和疲勞建立失效判讀的基本架構，沒有進一步展開破壞準則、Paris law、多軸疲勞、黏彈模型和有限元素分析。這些方法都很重要，不過在使用前仍需要確認材料模型、幾何和邊界條件是否合理，否則更複雜的計算也不一定能帶來更可靠的判斷。
+## 11. Scope and Links to Other Chapters
 
-下一章將回到製程如何改變相組成與微觀組織，並整理相圖、熱處理與 TTT diagram 如何連結到最後的材料性能。
+This chapter uses tensile behavior, creep, impact testing, fracture mechanics, and fatigue to build a basic framework for reading failure evidence. It does not yet cover failure criteria, the Paris law, multiaxial fatigue, viscoelastic models, or finite-element analysis. Those methods can provide more detailed predictions, but only when the material model, geometry, loading, and boundary conditions are appropriate.
 
-## 參考資料
+The next chapter returns to how processing changes phase constitution and microstructure, then connects phase diagrams, heat treatment, and TTT diagrams with material performance.
+
+## References
 
 - UC Davis / Coursera, [Materials Science: 10 Things Every Engineer Should Know](https://www.coursera.org/learn/materials-science)
+- ASTM International, [ASTM E8/E8M-21: Standard Test Methods for Tension Testing of Metallic Materials](https://store.astm.org/e0008_e0008m-21.html)
+- ASTM International, [ASTM E23-23: Standard Test Methods for Notched Bar Impact Testing of Metallic Materials](https://store.astm.org/e0023-23.html)
+- ASTM International, [ASTM E399: Standard Test Method for Linear-Elastic Plane-Strain Fracture Toughness of Metallic Materials](https://store.astm.org/standards/e399)
 - J. F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.

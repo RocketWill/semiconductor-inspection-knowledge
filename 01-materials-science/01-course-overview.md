@@ -192,14 +192,16 @@ It is one piece of evidence that should be considered together with loading hist
 
 The most useful distinction is now between **AOI evidence**, a **failure hypothesis**, and a **verified root cause**. AI can strengthen the first two by organizing data and revealing repeatable patterns. The third still requires evidence outside the model.
 
-## 個人筆記：目前需要保留的幾個界線
+## 11. Working Principles and Boundaries
 
-- 材料分類提供的是常見趨勢，不是對個別材料的完整結論。
-- 性質必須連同試片、溫度、載入、環境與量測條件一起解讀。
-- AI 任務定義需要配合異常的尺度與標註意義，不能把所有類別都當成相同的 bounding-box 問題。
-- 檢測結果可以支持觀察與比較，但材料機制和根因仍需要其他證據驗證。
+- **Material families describe common trends, not complete conclusions.** An individual material still has to be checked in its actual composition, process state, and operating condition.
+- **A property value needs its test conditions.** Specimen geometry, temperature, loading, environment, and measurement method can all change how the value should be interpreted.
+- **The AI task should match the spatial meaning of the anomaly.** Whole-image conditions and localized defects should not automatically be treated as the same bounding-box problem.
+- **Inspection results support observation and comparison.** A material mechanism or root cause still needs evidence from the process, material analysis, or another measurement method.
 
-## 11. Chapter Roadmap
+These are basic reminders, but I keep returning to them when a convenient label starts to sound more certain than the available evidence.
+
+## 12. Chapter Roadmap
 
 | Chapter | Main question | Status |
 | --- | --- | --- |
