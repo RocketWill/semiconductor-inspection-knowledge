@@ -224,13 +224,23 @@ FCC 結構通常具有多組容易啟動的 $\{111\}\langle110\rangle$ 密排滑
 
 這個例子無法只靠影像得到唯一答案，但可以把後續驗證從一般性的「看見異常」縮小成幾個具體假設。
 
-## 9. Applied Reflection: Orientation Is a Hypothesis, Not an Image Label
+## 9. Applied Reflection: Separating Coordinate Effects from Crystal-Level Hypotheses
 
-In an anonymized wafer-inspection project, the labels described observable conditions: whole-wafer patterns, particles, and scratch-like features. They were useful for defining classification, detection, and segmentation tasks, but they did not contain crystallographic evidence. A directional line remained a visual description.
+During a six-month on-site semiconductor wafer-inspection assignment, I worked on a runtime system that combined multiple camera streams, wafer-motion tracking, trigger-based inspection, ROI and template configuration, result aggregation, and history review.
 
-Before studying this chapter, I would have checked illumination, alignment, image preprocessing, and model consistency first. Those checks still come first. But I would now add another question: does the direction remain fixed relative to the wafer notch, crystal orientation, or an anisotropic process step?
+In that kind of system, a fixed-direction pattern does not immediately imply a material or crystallographic cause. It may originate from camera angle, illumination direction, wafer motion, trigger timing, ROI alignment, image registration, or recipe configuration. The feature can look stable (and still belong to the wrong coordinate frame). My debugging process therefore began at the measurement-system level: acquisition stability, coordinate consistency, repeatability, and the relationship between the feature and the inspection setup.
 
-That question does not turn the AOI result into a crystal diagnosis (the image still measures optical contrast). It turns orientation into a testable hypothesis. A stronger investigation could compare rotated illumination, wafer orientation, process stage, surface profilometry, and, when the hypothesis survives those checks, structural characterization.
+Before studying crystal structure, I would have kept the investigation within those imaging and system-level explanations. This chapter adds another layer. If a feature remains fixed relative to the wafer rather than the camera or motion direction, persists after controlled changes in illumination, and corresponds to a known orientation or anisotropic process step, crystal orientation becomes a physically plausible hypothesis.
+
+But that still requires independent verification. I did not use XRD, Raman spectroscopy, or electron diffraction to confirm a crystal-level cause during this assignment. The AOI image therefore cannot serve as evidence of crystallographic origin.
+
+| Reference frame | Possible explanation |
+| --- | --- |
+| Camera-fixed pattern | Illumination, sensor, lens, or camera geometry |
+| Motion- or equipment-fixed pattern | Transport, trigger, alignment, or scanning process |
+| Wafer-fixed pattern | Surface condition, process anisotropy, crystal orientation, or another wafer-related mechanism |
+
+This three-frame check is now more useful to me than starting with a defect name. It shows when optical debugging is still sufficient and when material characterization may be justified.
 
 ## 10. Working Principles and Boundaries
 
@@ -246,7 +256,7 @@ Before studying atomic bonding and crystal structure, I tended to read elastic m
 
 The silicon example changed a second part of my reasoning. I already knew that silicon wafers were described by orientations such as $(100)$ and $(111)$, but I had not clearly separated the FCC Bravais lattice from the complete diamond-cubic structure. The two-atom basis is not a minor naming detail. It changes the nearest neighbors, coordination number, packing, and bonding geometry.
 
-For inspection work, the practical change is more limited but useful. A fixed-direction feature should still be checked against illumination and image-processing effects first. If it also follows the wafer reference direction or an anisotropic process step, crystal orientation becomes a reasonable hypothesis to test. It does not become the label.
+For inspection work, the practical change is more limited but useful. I now separate camera-fixed, equipment-fixed, and wafer-fixed behavior before attaching a material explanation to a directional pattern. If the feature survives the first two checks and follows the wafer reference direction or an anisotropic process step, crystal orientation becomes a reasonable hypothesis to test. It does not become the label.
 
 ## 12. Scope and Links to Other Chapters
 
