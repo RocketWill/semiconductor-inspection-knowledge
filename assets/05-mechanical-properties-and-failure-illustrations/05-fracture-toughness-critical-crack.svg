@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#fbfaf7"/>
+  <text x="56" y="48" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">裂紋越大，可容許的應力越低</text>
+  <line x1="100" y1="450" x2="890" y2="450" stroke="#263248" stroke-width="3"/>
+  <line x1="100" y1="450" x2="100" y2="82" stroke="#263248" stroke-width="3"/>
+  <text x="765" y="492" font-family="Arial, sans-serif" font-size="18" fill="#263248">裂紋尺寸 a</text>
+  <text x="20" y="94" font-family="Arial, sans-serif" font-size="18" fill="#263248">臨界應力 σc</text>
+  <path d="M125 104 C180 178 260 255 370 316 C500 387 665 420 850 436"
+        fill="none" stroke="#d84a3a" stroke-width="6"/>
+  <path d="M125 104 C180 178 260 255 370 316 C500 387 665 420 850 436 L850 450 L125 450 Z"
+        fill="#4a9b70" opacity=".12"/>
+  <path d="M100 82 L890 82 L890 450 L850 450 C665 420 500 387 370 316 C260 255 180 178 125 104 Z"
+        fill="#d84a3a" opacity=".08"/>
+  <text x="510" y="355" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#347451">Kᵢ &lt; Kᵢc：未達臨界</text>
+  <text x="485" y="150" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#a53b30">Kᵢ ≥ Kᵢc：裂紋可能失穩</text>
+  <text x="210" y="286" font-family="Arial, sans-serif" font-size="17" fill="#172033">σc = Kᵢc / (Y√πa)</text>
+  <text x="114" y="480" font-family="Arial, sans-serif" font-size="15" fill="#555">幾何因子 Y 與裂紋定義必須一致</text>
+</svg>

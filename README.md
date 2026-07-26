@@ -16,6 +16,7 @@ A learning portfolio connecting materials science, semiconductor manufacturing, 
 - [Material Properties and Engineering Selection](./01-materials-science/02-material-properties-and-selection.md)
 - [Atomic Bonding and Crystal Structure](./01-materials-science/03-atomic-bonding-and-structure.md)
 - [Crystal Defects and Microstructure](./01-materials-science/04-crystal-defects-and-microstructure.md)
+- [Mechanical Properties and Failure Evidence](./01-materials-science/05-mechanical-properties-and-failure.md)
 - [Section Roadmap](./01-materials-science/README.md)
 
 ## Learning Source

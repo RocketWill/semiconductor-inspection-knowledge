@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#fbfaf7"/>
+  <text x="56" y="48" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">工程應力—應變曲線</text>
+  <line x1="100" y1="450" x2="890" y2="450" stroke="#263248" stroke-width="3"/>
+  <line x1="100" y1="450" x2="100" y2="82" stroke="#263248" stroke-width="3"/>
+  <text x="800" y="492" font-family="Arial, sans-serif" font-size="18" fill="#263248">工程應變 ε</text>
+  <text x="30" y="94" font-family="Arial, sans-serif" font-size="18" fill="#263248">工程應力 σ</text>
+  <path d="M100 450 L238 252 C258 230 284 224 315 221 C420 208 548 150 650 136 C716 127 754 145 786 186 C820 230 841 294 852 358"
+        fill="none" stroke="#d84a3a" stroke-width="6" stroke-linecap="round"/>
+  <path d="M100 450 L238 252 L315 221 C420 208 548 150 650 136 C716 127 754 145 786 186 C820 230 841 294 852 358 L852 450 Z"
+        fill="#efb54a" opacity=".15"/>
+  <line x1="100" y1="450" x2="210" y2="292" stroke="#287bb5" stroke-width="4"/>
+  <text x="139" y="344" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#287bb5">斜率 E</text>
+  <line x1="145" y1="450" x2="257" y2="289" stroke="#287bb5" stroke-width="2" stroke-dasharray="7 6"/>
+  <circle cx="257" cy="236" r="7" fill="#287bb5"/>
+  <text x="270" y="246" font-family="Arial, sans-serif" font-size="17" fill="#172033">0.2% 偏移降伏</text>
+  <circle cx="650" cy="136" r="7" fill="#d84a3a"/>
+  <text x="606" y="105" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#172033">抗拉強度 UTS</text>
+  <line x1="852" y1="358" x2="852" y2="450" stroke="#555" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="812" y="338" font-family="Arial, sans-serif" font-size="17" fill="#172033">斷裂</text>
+  <text x="770" y="474" font-family="Arial, sans-serif" font-size="16" fill="#172033">延展性</text>
+  <text x="425" y="348" font-family="Arial, sans-serif" font-size="18" fill="#9b6500">曲線下面積 ≈ 韌性</text>
+  <text x="330" y="250" font-family="Arial, sans-serif" font-size="16" fill="#555">加工硬化</text>
+  <text x="742" y="220" font-family="Arial, sans-serif" font-size="16" fill="#555">頸縮</text>
+</svg>

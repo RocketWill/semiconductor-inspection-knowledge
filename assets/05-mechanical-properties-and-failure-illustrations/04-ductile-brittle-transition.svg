@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#fbfaf7"/>
+  <text x="56" y="48" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">Charpy 衝擊能的定性趨勢</text>
+  <line x1="100" y1="450" x2="890" y2="450" stroke="#263248" stroke-width="3"/>
+  <line x1="100" y1="450" x2="100" y2="82" stroke="#263248" stroke-width="3"/>
+  <text x="790" y="492" font-family="Arial, sans-serif" font-size="18" fill="#263248">測試溫度</text>
+  <text x="25" y="94" font-family="Arial, sans-serif" font-size="18" fill="#263248">吸收能</text>
+  <path d="M115 390 C280 390 350 380 420 295 C485 215 530 140 840 133"
+        fill="none" stroke="#d84a3a" stroke-width="6"/>
+  <path d="M115 178 C320 170 560 162 840 170" fill="none" stroke="#287bb5" stroke-width="6"/>
+  <path d="M115 356 C320 348 560 330 840 310" fill="none" stroke="#ef9c35" stroke-width="6" stroke-dasharray="10 7"/>
+  <rect x="382" y="102" width="112" height="326" fill="#d84a3a" opacity=".08"/>
+  <text x="376" y="476" font-family="Arial, sans-serif" font-size="15" fill="#8a3328">轉變溫度區</text>
+  <text x="735" y="118" font-family="Arial, sans-serif" font-size="17" fill="#d84a3a">部分 BCC</text>
+  <text x="735" y="199" font-family="Arial, sans-serif" font-size="17" fill="#287bb5">常見 FCC 趨勢</text>
+  <text x="735" y="298" font-family="Arial, sans-serif" font-size="17" fill="#b66a0a">HCP：依材料而異</text>
+  <text x="135" y="425" font-family="Arial, sans-serif" font-size="15" fill="#555">定性比較，不代表所有合金</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#fbfaf7"/>
+  <text x="56" y="48" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">S–N 曲線：循環越多，可承受的應力振幅通常越低</text>
+  <line x1="100" y1="450" x2="890" y2="450" stroke="#263248" stroke-width="3"/>
+  <line x1="100" y1="450" x2="100" y2="82" stroke="#263248" stroke-width="3"/>
+  <text x="680" y="492" font-family="Arial, sans-serif" font-size="18" fill="#263248">破壞循環數 N（對數尺度）</text>
+  <text x="18" y="94" font-family="Arial, sans-serif" font-size="18" fill="#263248">應力振幅 S</text>
+  <path d="M125 125 C250 170 370 250 505 304 C610 346 720 352 850 352"
+        fill="none" stroke="#287bb5" stroke-width="6"/>
+  <path d="M125 154 C290 210 470 283 850 408"
+        fill="none" stroke="#d84a3a" stroke-width="6"/>
+  <line x1="505" y1="304" x2="850" y2="304" stroke="#287bb5" stroke-width="2" stroke-dasharray="7 6"/>
+  <text x="650" y="290" font-family="Arial, sans-serif" font-size="17" fill="#287bb5">部分鋼材：近似耐久極限</text>
+  <circle cx="720" cy="365" r="7" fill="#d84a3a"/>
+  <line x1="720" y1="365" x2="720" y2="450" stroke="#d84a3a" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="555" y="400" font-family="Arial, sans-serif" font-size="17" fill="#d84a3a">指定 N 下的疲勞強度</text>
+  <text x="625" y="435" font-family="Arial, sans-serif" font-size="15" fill="#555">許多材料持續下降</text>
+</svg>
