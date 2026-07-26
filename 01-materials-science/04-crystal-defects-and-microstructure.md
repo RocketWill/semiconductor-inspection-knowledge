@@ -1,18 +1,30 @@
-# 晶體缺陷與微觀組織：從不完美結構理解擴散、變形與檢測
+# Crystal Defects, Diffusion, and Microstructure
+
+## 晶體缺陷、擴散與微觀組織：從不完美結構理解材料行為與檢測證據
+
+> **Learning Context**
+>
+> In computer vision, a defect usually means an observable abnormality that a model should detect or classify. Materials science uses the same word differently. Vacancies support diffusion, dislocations make plastic deformation possible, and controlled dopants create semiconductor functionality.
+>
+> I studied crystal defects to separate a structural imperfection from actual damage. The engineering question is not simply whether a defect exists, but whether its type, concentration, location, and interaction remain consistent with the process requirement. AOI cannot identify an atomic-scale defect directly. It can provide evidence that helps define what should be checked next.
 
 ## English Summary
 
-This note asks how imperfections in a crystal become measurable material behaviour. It follows defects across four scales, from point defects to three-dimensional voids and precipitates. Vacancies provide sites for diffusion, while dislocations allow permanent deformation without moving an entire crystal plane at once. That changed my starting assumption. A controlled dopant can be useful, and a vacancy may be necessary for diffusion (not every imperfection is damage). But the same mechanisms become harmful when their type, concentration, or location falls outside the process requirement. And in wafer inspection, one optical signal can still support several material-level explanations rather than one certain cause.
+This chapter examines how imperfections in a crystal become measurable material behavior. Defects are organized across four dimensional scales, from point defects to three-dimensional voids, inclusions, and precipitates. Vacancies and interstitials influence diffusion, while dislocations allow permanent deformation without requiring an entire crystal plane to move at once. Grain boundaries, interfaces, and second-phase particles connect these atomic-scale mechanisms with microstructure.
+
+The distinction I needed was that an imperfection is not automatically damage. Whether it is useful, unavoidable, or harmful depends on its type, concentration, location, interaction, and process context. For wafer inspection, optical evidence may support several material-level hypotheses, but it rarely identifies a unique atomic or microstructural cause without additional characterization.
 
 ---
 
-這一篇主要整理一個問題：**真實晶體中的缺陷，如何改變原子移動、材料變形和半導體檢測結果？**
+本篇主要依據先前翻譯與整理 UC Davis 課程時留下的學習筆記，並沿著一個問題展開：**真實晶體中的缺陷，如何改變原子移動、材料變形和半導體檢測結果？**
 
 第三章先從原子鍵結與理想晶體結構建立基本模型，不過實際材料不可能完全按照理想晶格排列。晶體中會出現空位、間隙原子、差排、晶界和第二相粒子，有些缺陷在熱力學上無法避免，有些則由摻雜、加工或熱處理引入。
 
 剛接觸這些內容時，「缺陷」很容易被理解成材料中不應該存在的錯誤。不過在整理擴散與差排的關係後，可以發現缺陷本身不一定代表材料失效。空位提供替位型原子移動的位置，差排讓金屬能在合理的應力下產生塑性變形，受控制的摻雜原子則是半導體功能的一部分。因此真正需要判斷的，不只是材料中是否存在缺陷，而是缺陷的類型、濃度、位置和尺度是否符合製程與使用需求。
 
-## 1. 缺陷可以按照尺度分類
+## 1. Defects as Functional Imperfections
+
+The first distinction is semantic but important: a material defect is not the same thing as an AI defect label. One describes a departure from an ideal structure; the other usually describes something observable in data.
 
 | 缺陷尺度 | 典型例子 | 主要影響 |
 | --- | --- | --- |
@@ -26,6 +38,8 @@ This note asks how imperfections in a crystal become measurable material behavio
 ## 2. 點缺陷：原子尺度的空缺與錯位
 
 ![空位、自間隙、替位與間隙雜質](../assets/04-crystal-defects-and-microstructure-illustrations/01-point-defects.svg)
+
+> 圖 1：作者依個人課程筆記重新繪製，用來比較空位、自間隙原子、替位雜質與間隙雜質。
 
 ### 2.1 空位
 
@@ -48,7 +62,7 @@ $$\frac{N_v}{N}=A\exp\left(-\frac{Q_v}{k_{\mathrm B}T}\right)$$
 
 ### 2.2 自間隙原子
 
-自間隙原子（self-interstitial）是母材原子離開正常位置後進入晶格間隙。由於間隙空間通常有限，自間隙原子容易造成較大的局部晶格扭曲，因此其形成能往往高於空位。
+自間隙原子（self-interstitial）是母材原子離開正常位置後進入晶格間隙。在許多緊密排列的晶體中，間隙空間有限，自間隙原子會造成較大的局部晶格扭曲，因此其形成能通常高於空位；實際數值仍然取決於材料與晶體結構。
 
 在半導體矽中，空位與自間隙原子都可能參與摻雜原子的擴散與缺陷反應。實際機制依摻雜元素、溫度、氧化條件及缺陷化學而異，不能把所有摻雜擴散都簡化成單一空位跳躍。
 
@@ -87,6 +101,10 @@ $$k_{\mathrm B}=8.617\times10^{-5}\ \mathrm{eV/K}$$
 $$\frac{(N_v/N)_{1000}}{(N_v/N)_{500}}\approx 1.1\times10^5$$
 
 結果表示溫度從 $500\ \mathrm K$ 提高到 $1000\ \mathrm K$ 時，平衡空位比例可能增加約五個數量級。這個例子也能說明，熱處理溫度的改變不能只看成「加熱得更快」，因為缺陷數量與擴散能力本身也會隨溫度產生非常大的變化。
+
+> **Engineering Takeaway**
+>
+> The equilibrium vacancy equation describes a thermodynamic population, not every defect retained after processing. Quenching, irradiation, implantation, plastic deformation, and other non-equilibrium processes may preserve additional defects.
 
 ## 4. 點缺陷如何促成固態擴散？
 
@@ -130,6 +148,10 @@ $$\ln D=\ln D_0-\frac{Q_d}{R}\frac{1}{T}$$
 
 ![Arrhenius 線性化與非穩態擴散趨勢](../assets/04-crystal-defects-and-microstructure-illustrations/02-arrhenius-and-diffusion.svg)
 
+> 圖 2：作者依個人課程筆記重新繪製，用來比較 Arrhenius 線性化與非穩態擴散中的濃度分布變化。
+
+對替位擴散而言，量測到的有效活化能可能同時包含缺陷形成與遷移的貢獻。若溫度、濃度、相組成或主導擴散路徑改變，$D_0$ 與 $Q_d$ 也可能跟著改變，因此不能將同一條 Arrhenius 直線無限制外推。
+
 ### 簡單例題：由一個溫度估算另一個溫度的擴散係數
 
 已知銅在黃銅中的擴散係數在 $400^\circ\mathrm C$ 時為：
@@ -162,7 +184,7 @@ $$D_2\approx2.9\times10^{-17}\ \mathrm{m^2/s}$$
 
 $$J=-D\frac{\mathrm dC}{\mathrm dx}$$
 
-其中 $J$ 表示單位時間通過單位面積的物質量，負號表示淨擴散方向由高濃度指向低濃度。
+其中 $J$ 為擴散通量，表示單位時間穿過單位面積的物質量；其正負號取決於座標方向與濃度梯度的定義。式中的負號表示淨擴散方向由高濃度指向低濃度。
 
 例如：
 
@@ -184,6 +206,12 @@ $$\frac{\partial C}{\partial t}=D\frac{\partial^2 C}{\partial x^2}$$
 
 第一定律回答「目前有多少物質通過」，第二定律則回答「某個位置的濃度接下來如何改變」。在摻雜、滲碳或薄膜互擴散問題中，這項差別比背下公式更重要。
 
+上述形式假設一維擴散，並在第二定律中將 $D$ 視為常數。若擴散係數隨濃度、位置或時間改變，或同時存在電場、化學反應與多組分耦合，就需要使用更一般化的模型。
+
+> **Engineering Takeaway**
+>
+> Fick's laws are continuum models. Their simplest forms require a defined concentration field and often assume a constant diffusion coefficient. Electric fields, reactions, concentration-dependent diffusivity, and changing defect populations may require a more complete model.
+
 ## 7. 差排：讓塑性變形在較低應力下發生
 
 差排（dislocation）是晶體中的線缺陷。若完美晶體要產生一個完整晶格間距的滑移，理想化模型要求整個晶面上的大量原子同時越過高能量位置，所需剪應力會非常高。
@@ -193,6 +221,8 @@ $$\frac{\partial C}{\partial t}=D\frac{\partial^2 C}{\partial x^2}$$
 整個過程可以理解成：局部原子先重新排列，接著差排向前移動，最後在晶面上留下永久滑移。
 
 ![刃狀差排滑移示意](../assets/04-crystal-defects-and-microstructure-illustrations/03-edge-dislocation-glide.svg)
+
+> 圖 3：作者依個人課程筆記重新繪製，用來表示刃狀差排透過局部鍵結重排逐步滑移。
 
 ### 7.1 刃狀、螺旋與混合差排
 
@@ -204,11 +234,9 @@ $$\frac{\partial C}{\partial t}=D\frac{\partial^2 C}{\partial x^2}$$
 
 柏格向量 $\mathbf b$ 描述差排造成的晶格位移大小與方向。差排移動的滑移面和滑移方向受到晶體結構限制，這也是第三章中 FCC、BCC 與 HCP 滑移行為不同的原因之一。
 
-### 7.2 地毯皺褶比喻
-
-可以把差排移動想成讓皺褶穿過一張重地毯。直接拖動整張地毯需要很大的力，但逐步推動一個皺褶較容易；當皺褶移到另一端後，地毯仍完成了整體位移。
-
-這個比喻適合說明「局部移動如何累積成整體位移」，不過它沒有包含晶格週期性、鍵結方向、差排應力場與滑移系統，因此不能用來取代差排的幾何定義。
+> **Analogy**
+>
+> Moving a dislocation is similar to moving a wrinkle across a heavy carpet: local motion gradually produces a larger displacement. The analogy explains why less force is required, but it does not represent lattice periodicity, Burgers vectors, dislocation stress fields, or slip systems.
 
 ## 8. 晶界與微觀組織
 
@@ -224,11 +252,17 @@ $$\frac{\partial C}{\partial t}=D\frac{\partial^2 C}{\partial x^2}$$
 
 $$\sigma_y=\sigma_0+k_y d^{-1/2}$$
 
-其中 $d$ 為平均晶粒尺寸。不過這個關係有適用範圍，也不能直接套用到所有材料、所有晶粒尺度或所有溫度條件。
+其中 $d$ 為平均晶粒尺寸。不過這個關係有適用範圍，也不能直接套用到所有材料、所有晶粒尺度或所有溫度條件。Hall–Petch 關係主要用於一定晶粒尺度範圍內的多晶材料；高度完整的單晶矽沒有一般多晶材料中的晶粒尺寸強化問題。若研究的是多晶矽、金屬薄膜或其他多晶結構，才需要進一步考慮晶界效應。
 
-整理到這裡時，最容易混淆的是「微觀組織」和「晶體結構」。晶體結構描述原子如何週期排列，例如 FCC 或 BCC；微觀組織則描述晶粒尺寸、形狀、取向、相分布與缺陷配置。兩種材料可以具有相同晶體結構，卻因微觀組織不同而呈現不同強度、擴散或破壞行為。
+### 8.1 微觀組織不只是缺陷清單
 
-## 9. 與半導體製造和檢測的連結
+整理到這裡時，最容易混淆的是「微觀組織」和「晶體結構」。晶體結構描述原子如何週期排列，例如 FCC 或 BCC；微觀組織則包含晶粒尺寸與取向、相組成、沉澱物、孔洞、界面，以及不同缺陷的空間分布。即使兩個材料具有相同化學成分和晶體結構，只要這些特徵的尺寸、數量或分布不同，性質與失效行為仍可能明顯不同。
+
+## 9. Why Crystal Defects Matter for Semiconductor Inspection
+
+> Optical inspection does not directly image vacancies, dislocations, or grain boundaries. It records changes in reflected, transmitted, scattered, or emitted signals. Those changes may be influenced by crystal defects, but they may also arise from surface geometry, thin films, contamination, illumination, or process variation.
+>
+> Materials knowledge should therefore help define plausible mechanisms and verification steps. It should not turn every visible feature into a crystal-defect label.
 
 矽晶圓通常要求高度完整的單晶結構，不過製程中仍需要面對不同形式的缺陷與非理想狀態：
 
@@ -240,9 +274,11 @@ $$\sigma_y=\sigma_0+k_y d^{-1/2}$$
 
 ![從檢測訊號追查可能的材料根因](../assets/04-crystal-defects-and-microstructure-illustrations/04-inspection-signal-and-root-causes.png)
 
+> 圖 4：作者依個人課程筆記重新整理，用來表示同一個檢測訊號可能對應多種材料與製程假設。
+
 對檢測工作而言，最重要的限制是：**AOI 看見的是表面或光學訊號，不是空位、差排或晶界本身。** 一個亮點可能來自粒子污染、表面高度、薄膜干涉、粗糙度或局部材料狀態；固定方向的線狀痕跡也可能和刮傷、滑移線、晶向或製程掃描方向有關。
 
-因此，較合理的做法是把檢測結果當成縮小假設範圍的起點，再依照問題選擇驗證方式：
+因此，較合理的做法是把檢測結果當成縮小假設範圍的起點，再依照問題選擇驗證方式。以下只整理各方法主要可以回答的問題；量測原理、解析度、取樣深度與樣品限制會留到後續的材料分析方法筆記：
 
 | 要確認的問題 | 可考慮的方法 | 主要限制 |
 | --- | --- | --- |
@@ -263,26 +299,67 @@ $$\sigma_y=\sigma_0+k_y d^{-1/2}$$
 
 只有當不同量測結果指向相同機制時，才能提高對根因判斷的信心。這個過程可能比直接替影像分類慢，不過能避免把外觀相似但來源不同的缺陷合併成同一類。
 
-## 10. 易錯觀念提醒
+## 10. Applied Reflection: Defect Labels Are Not Material Diagnoses
 
-| 易錯說法 | 較精確的理解 |
-| --- | --- |
-| 晶體缺陷代表材料品質一定不好 | 許多缺陷在有限溫度下必然存在，部分缺陷也是擴散、塑性與摻雜功能的必要條件 |
-| 溫度升高只是讓原子移動得更快 | 溫度也會改變平衡空位濃度與可啟動的缺陷機制 |
-| 空位自己攜帶物質向前擴散 | 原子跳入空位，原子與空位的淨移動方向相反 |
-| 菲克第一定律適合所有濃度問題 | 第一律主要描述穩態通量；濃度隨時間改變時需使用第二律 |
-| 材料擴散還有通用的「菲克第三定律」 | 標準擴散理論通常以第一與第二定律為主，所謂第三定律多半是題目中的干擾說法 |
-| 差排移動需要把整排原子鍵同時打斷 | 差排核心附近的原子逐步重排，因此所需應力遠低於完美晶體整體滑移 |
-| 晶界只會使材料變弱 | 晶界可以阻礙差排，但也可能加速擴散、腐蝕或高溫變形 |
-| AOI 能直接看見原子尺度缺陷 | AOI 量到的是光學響應，需要其他方法驗證材料根因 |
+In an anonymized wafer-inspection project, the dataset contained two different kinds of labels. Haze-like, residue-like, and ring-like categories described a condition across most of the wafer image. Particles and scratches described localized features. The original annotation design represented both kinds with bounding boxes, even when a box covered nearly the whole wafer.
 
-## 11. 本篇範圍與後續連結
+I reviewed the data and separated the tasks according to what the annotations actually meant. Whole-image conditions became classification tasks. Particles and scratches remained localization tasks, and the local annotations were reviewed before model comparison. At the time, this was mainly a computer-vision decision about spatial meaning, loss functions, and evaluation.
 
-本篇先把缺陷分成點、線、面與體缺陷，並集中整理兩條主線：點缺陷如何控制固態擴散，以及差排如何促成塑性變形。晶界和半導體檢測部分則用來說明這些機制如何延伸到微觀組織與工程判讀。
+Studying crystal defects introduced another distinction. None of those labels identifies an atomic or microstructural defect. A particle may be contamination, detached material, residue, or another foreign object. A scratch describes visible morphology, but the image does not establish whether mechanical contact, brittle cracking, handling, or another mechanism produced it. Haze is even broader: it can be a repeatable optical condition without uniquely identifying roughness, film thickness, composition, or microstructure.
 
-拉伸曲線、加工硬化、蠕變、斷裂與疲勞會在 `05-mechanical-properties-and-failure.md` 進一步整理；相圖、相變、TTT 圖與熱處理則留在 `06-processing-and-material-performance.md`。這樣可以避免把所有微觀組織變化都歸因於單一缺陷或單一擴散公式。
+| Level | Example from the project | Meaning |
+| --- | --- | --- |
+| Observable evidence | Particle, scratch, haze-like or ring-like contrast | What appears in the image |
+| Engineering hypothesis | Contamination, contact damage, residue, stress-related change | A plausible explanation |
+| Verified mechanism | Supported by process records or material characterization | A root cause with independent evidence |
 
-## 參考資料
+The label still matters. But it should state what was observed, not quietly claim a mechanism that the available evidence cannot support.
 
-- UC Davis / Coursera, [Materials Science: 10 Things Every Engineer Should Know](https://www.coursera.org/learn/materials-science)
-- J. F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
+## 11. What Changed in My Understanding
+
+Before studying crystal defects, I tended to interpret the word “defect” as something that should be detected, rejected, or removed. I now understand why that definition is too narrow. Vacancies support diffusion, dislocations make plastic deformation possible, grain boundaries can strengthen a polycrystal, and controlled dopants create semiconductor functionality.
+
+The engineering question is therefore not simply whether a defect exists. Its type, concentration, spatial distribution, and interaction with the process matter more. The equilibrium vacancy calculation made this especially clear: the formula describes a thermodynamic population, while a real process may preserve additional non-equilibrium defects.
+
+For inspection work, this changes how I interpret a class label. A particle, line, or contrast pattern can be valid evidence and still remain far removed from an atomic-scale mechanism. That gap is not a weakness in AOI (it is a boundary of the measurement). The useful step is to preserve the gap in the data and decide what evidence would narrow it.
+
+## 12. Connection to Industrial AI
+
+The wafer project showed that label design and model design cannot be separated. If a dataset mixes whole-image states, localized morphology, engineering hypotheses, and verified causes in one label field, the model may learn the images successfully while the output remains difficult to interpret.
+
+A more useful inspection record keeps these levels distinct:
+
+- the observable label and its spatial scale;
+- the image and measurement conditions;
+- the proposed engineering mechanism;
+- the process or batch context; and
+- the later verification result, including cases that remain unresolved.
+
+Not every production dataset can contain every field. But recording what is unknown is better than converting uncertainty into a confident class name. In practice, this lets the model support triage and verification planning without presenting a prediction as a completed diagnosis.
+
+## 13. Working Principles and Boundaries
+
+- **A crystal defect is not automatically damage.** Its meaning depends on type, concentration, location, interaction, and process context.
+- **The equilibrium vacancy equation does not describe every retained defect.** Non-equilibrium processing can preserve additional defect populations.
+- **Arrhenius behavior should not be extrapolated across a mechanism change without evidence.**
+- **Fick's simplest laws depend on stated assumptions.** Electric fields, reactions, changing diffusivity, or coupled species may require a more complete model.
+- **Dislocations enable plastic deformation.** Strength still depends on their density, interactions, obstacles, microstructure, temperature, and loading.
+- **Grain boundaries have competing effects.** They can impede dislocations while accelerating diffusion, segregation, corrosion, or high-temperature deformation.
+- **AOI measures an optical response.** It does not directly reveal an atomic-scale defect or verify a unique material mechanism.
+
+## 14. Scope and Links to Other Chapters
+
+This chapter organizes defects by scale and follows two mechanisms in detail: how point defects support solid-state diffusion, and how dislocations enable plastic deformation. Grain boundaries and microstructure then connect those mechanisms with engineering properties and inspection evidence.
+
+The next chapters continue with:
+
+- [05. Mechanical Properties and Failure](./05-mechanical-properties-and-failure.md): tensile behavior, work hardening, creep, fracture, fatigue, and toughness; and
+- `06-processing-and-material-performance.md`: phase diagrams, phase transformation, TTT diagrams, heat treatment, and process control.
+
+Keeping these topics separate prevents every microstructural change from being attributed to one defect type or one diffusion equation.
+
+## References
+
+1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
+2. James F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
+3. William D. Callister Jr. and David G. Rethwisch, *Materials Science and Engineering: An Introduction*.
