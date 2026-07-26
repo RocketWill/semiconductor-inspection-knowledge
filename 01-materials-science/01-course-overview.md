@@ -1,215 +1,214 @@
-# 材料科學課程總覽：先看懂材料，再回頭理解檢測
+# Materials Science Course Overview
+
+## 材料科學課程總覽：從材料行為到檢測證據
+
+> **Learning Context**
+>
+> My background is in computer science, industrial AI, and semiconductor inspection. I started studying materials science to build a clearer physical basis for the signals that inspection systems capture. A model can locate a scratch-like feature or classify a wafer-level pattern, but those results do not explain how the feature formed. This chapter outlines the framework I use to connect observable evidence with material behavior, process history, and engineering verification.
 
 ## English Summary
 
-The ten core topics in the UC Davis materials science course form one connected structure in this chapter. Processing changes a material's structure; that structure affects measurable properties, and those properties influence engineering performance. The chapter also introduces the six material families, common failure mechanisms, and thermally activated processes. Its final section applies the same reasoning to semiconductor inspection: a detected feature is evidence, not yet a root cause. Reaching an engineering conclusion still requires material mechanisms, process history, and follow-up measurements.
+> This chapter introduces the processing–structure–properties–performance relationship and uses it to organize ten core topics from the UC Davis course. It also compares six engineering material families and explains why material selection depends on operating conditions, manufacturing constraints, and interfaces rather than on a single property value. For semiconductor inspection, the main lesson is practical: a visible defect is evidence, not a verified root cause. Materials science helps turn that evidence into testable hypotheses.
 
-> 這篇整理 [UC Davis 的 Materials Science: 10 Things Every Engineer Should Know](https://www.coursera.org/learn/materials-science) 課程主線。內容不會把十個主題各自濃縮成一段定義，而是先說明這些分散的知識如何連回材料行為與半導體檢測。後續筆記會再分別處理材料選擇、原子結構、晶體缺陷、機械性質、失效與製程。
+---
 
-如果只想先抓住整門課，可以記得這句話：**製程改變結構，結構決定性質，性質最後會反映在元件性能上；當性能出現異常時，檢測結果又會帶著我們沿著這條路往回找。**
+本篇以先前整理的個人課程筆記為基礎，嘗試找出 UC Davis 課程各個主題之間的共同邏輯，而不是逐項重述課程內容。
 
-## 1. 什麼是材料科學？
+如果只先保留一個概念，可以記住：
 
-第一次接觸材料科學時，很容易把注意力放在材料名稱、成分和性質數值上。不過真正重要的不是「這是什麼材料」，而是材料的**製程（processing）**、**結構（structure）**、**性質（properties）**與**使用性能（performance）**如何彼此影響。換句話說，我們需要進一步追問：材料為什麼會呈現某種行為？製程改變了什麼？這些改變放進實際元件後，是否仍然符合工程需求？
+> **製程改變結構，結構影響性質，性質最後反映在元件性能上；當性能出現異常時，檢測結果則提供沿著這條路往回追查的證據。**
 
-材料科學和材料工程的關注方向有所差異，但兩者並不是完全分開的領域：
+## 1. Course Framework: Processing, Structure, Properties, and Performance
 
-- **材料科學**偏向理解機制，例如原子鍵結如何影響彈性模數、晶體缺陷如何促進擴散，以及差排移動為什麼會造成塑性變形。
-- **材料工程**偏向利用這些機制設計材料、選擇製程並控制結果，例如透過熱處理調整鋼材的顯微組織，或選擇適合晶圓製程環境的薄膜材料。
+> Processing changes a material's structure. Structure affects measurable properties, which contribute to engineering performance under specific operating conditions. Inspection enters at the other end of this chain: it records evidence of change, but further analysis is still needed before the evidence can be linked to a physical mechanism.
 
-因此，材料名稱或成分只能算是分析的起點。即使兩個零件具有相同成分，只要冷卻速率、熱處理、沉積條件或機械加工歷程不同，最後形成的晶粒、相組成、缺陷密度和殘留應力就可能不同，實際性質與使用結果也會跟著改變。**同樣的材料，不一定代表同樣的結構；同樣的結構，也不一定能在不同環境中維持相同表現。**
-
-## 2. 課程主線：製程—結構—性質—性能
-
-整門課看似包含許多分散的名詞，不過大部分問題都能放回同一條因果關係中理解：
+材料科學的核心不是背誦材料名稱或性質數值，而是理解製程、結構、性質和性能如何互相連結：
 
 ```mermaid
 flowchart LR
     A["製程 Processing<br/>沉積、熱處理、冷卻、成形"] --> B["結構 Structure<br/>原子排列、晶相、晶粒、缺陷"]
     B --> C["性質 Properties<br/>機械、電學、熱學、光學"]
     C --> D["性能 Performance<br/>元件是否可靠並符合需求"]
-    D -. "失效與檢測結果回饋" .-> A
+    D -. "失效與檢測證據" .-> E["提出可能機制"]
+    E -. "驗證後回饋" .-> A
 ```
 
-### 2.1 製程（Processing）
+這條主線可以按照四個問題理解：
 
-製程是材料所經歷的製造與處理條件，包括溫度、時間、壓力、冷卻速率、氣氛、變形量、沉積方式與後續加工。製程不只是把材料做成特定形狀，它同時決定材料內部能形成哪些結構，以及缺陷是否會被引入、消除或重新分布。
-
-### 2.2 結構（Structure）
-
-結構需要從多個尺度觀察，而不是只看材料外觀：
-
-| 尺度 | 主要觀察內容 | 可能使用的方法 |
+| 階段 | 需要回答的問題 | 常見內容 |
 | --- | --- | --- |
-| 電子與原子尺度 | 電子結構、鍵結方式、原子排列 | 光譜分析、穿透式電子顯微鏡 |
-| 晶體尺度 | 晶格、晶相、點缺陷、差排 | X 光繞射、電子顯微鏡 |
-| 顯微尺度 | 晶粒、晶界、析出物、孔洞、夾雜物 | 光學顯微鏡、SEM、EDS |
-| 巨觀尺度 | 裂紋、翹曲、表面缺陷、尺寸變化 | 目視、自動光學檢測、輪廓與尺寸量測 |
+| 製程 | 材料經歷了什麼條件？ | 溫度、時間、壓力、冷卻速率、沉積、成形與清洗 |
+| 結構 | 這些條件改變了什麼？ | 鍵結、晶格、晶相、晶粒、缺陷、界面與殘留應力 |
+| 性質 | 材料如何回應外部刺激？ | 機械、熱、電、光學與化學性質 |
+| 性能 | 放入實際元件後是否仍符合需求？ | 功能、可靠度、尺寸穩定性、壽命與失效風險 |
 
-不同尺度之間具有連續的因果關係。例如原子尺度的空孔會影響擴散，擴散會控制析出物或新相的形成，而這些顯微結構又會改變材料的強度、韌性、導電性與失效方式。
-
-### 2.3 性質（Properties）
-
-性質是材料對外部刺激的可量測反應，常見類別包括：
-
-- **機械性質**：彈性模數、降伏強度、抗拉強度、延性、韌性、硬度。
-- **熱性質**：熱傳導率、熱膨脹係數、熱容量、耐熱性。
-- **電性質**：電阻率、載子濃度、遷移率、介電性質。
-- **光學性質**：吸收、反射、透射、折射率與發光行為。
-- **化學性質**：耐腐蝕性、氧化行為與化學穩定性。
-
-性質必須連同測試條件一起解讀。材料在室溫下具有良好強度，不代表它在高溫、循環載重或腐蝕環境中仍會維持相同行為；同樣地，量測到的平均性質也不一定能反映局部缺陷所造成的風險。
-
-### 2.4 性能（Performance）
-
-性能是材料放入特定元件、環境和使用條件後，是否真的能完成預期功能。它不是材料表上的單一常數，而是材料性質、零件幾何、製程變異、載重方式、環境與使用時間共同作用的結果。
-
-例如高硬度並不必然代表更好的零件。若材料因此失去韌性，微小裂紋可能更容易快速擴展；若選用高導熱材料卻忽略熱膨脹係數差異，溫度循環後仍可能產生界面應力與分層。因此，工程分析真正要處理的是不同性質之間的取捨，而不是找到某一項數值最高的材料。
-
-> **概念區分：** 性質回答的是「材料會怎麼反應」，性能回答的則是「這個反應放進實際情境後，是否仍然可接受」。兩者不能直接畫上等號。
+檢測位於這條關係的回饋端，不過它不會自動指出唯一根因。影像、電性或尺寸量測只能先說明出現了什麼變化，後續仍需要結合材料機制、製程紀錄和其他量測，確認這些變化為什麼發生。
 
 ![小黑將材料從製程搬運到結構、性質與性能的工作台](../assets/01-course-overview-illustrations/01-processing-structure-properties-performance.png)
 
-## 3. 六大工程材料家族
+> 圖 1：作者依個人課程筆記重新整理，用來表示製程、結構、性質、性能與檢測回饋之間的關係。
 
-課程從六類工程材料開始，因為材料分類能先提供一組判斷性質的線索。不過分類只代表常見趨勢，實際結果仍會受到成分、結構、製程與使用條件影響。
+## 2. 材料科學在研究什麼？
 
-| 材料家族 | 主要結構或鍵結特徵 | 常見優勢 | 常見限制 | 半導體相關例子 |
+第一次接觸材料科學時，很容易先注意材料名稱、成分和資料表上的性質。不過，即使兩個零件具有相同成分，只要冷卻速率、熱處理、沉積條件或機械加工歷程不同，最後形成的晶粒、相組成、缺陷密度和殘留應力就可能不同，實際性質也會跟著改變。
+
+材料科學偏向理解這些變化背後的機制，例如原子鍵結如何影響彈性模數、晶體缺陷如何促進擴散，以及差排移動為什麼會造成塑性變形。材料工程則進一步利用這些關係選擇材料、設計製程並控制結果。兩者關注的階段不同，不過在處理實際工程問題時，通常需要同時使用。
+
+因此，材料名稱或成分只能算是分析的起點。相同成分不一定形成相同結構，而相同結構在不同溫度、載入與環境下，也不一定維持相同性能。
+
+## 3. Six Engineering Material Families
+
+課程先以六類工程材料建立基本分類。這些分類能提供判斷性質的線索，不過只代表常見趨勢，不能取代實際材料、製程與測試條件。
+
+| 材料家族 | 主要結構或鍵結特徵 | 常見優勢 | 常見限制 | 半導體或檢測相關例子 |
 | --- | --- | --- | --- | --- |
-| 金屬（Metals） | 金屬鍵結；多數具有晶體結構 | 強度、韌性、導電與導熱性佳，容易加工 | 密度較高，可能腐蝕或在高溫潛變 | 銅互連、鋁墊、設備結構件 |
+| 金屬（Metals） | 金屬鍵結，多數具有晶體結構 | 強度、韌性、導電與導熱性佳 | 密度較高，可能腐蝕或在高溫下潛變 | 銅互連、鋁墊、設備結構件 |
 | 陶瓷（Ceramics） | 離子鍵或共價鍵結為主 | 高硬度、耐磨、耐高溫、化學穩定 | 脆性較高，對裂紋與缺口敏感 | 氧化鋁、氮化矽、介電層 |
-| 玻璃（Glasses） | 非晶態網絡結構 | 光學性質可調、表面平滑、絕緣性佳 | 脆性、熱衝擊與缺陷敏感性 | 石英光罩基板、玻璃載板 |
-| 聚合物（Polymers） | 長鏈分子，以共價鍵和次級鍵結組成 | 輕量、容易成形、絕緣、成本較低 | 耐溫與剛性有限，可能吸濕或老化 | 光阻、封裝樹脂、黏著層 |
-| 複合材料（Composites） | 兩種以上材料形成基材與強化相 | 可針對需求組合強度、重量與熱性質 | 界面行為複雜，製程與檢測較困難 | 封裝基板、纖維強化設備零件 |
-| 半導體（Semiconductors） | 能帶結構可透過摻雜與溫度控制 | 導電性可設計，能形成主動電子元件 | 對純度、缺陷、界面與製程條件高度敏感 | 矽、碳化矽、氮化鎵 |
+| 玻璃（Glasses） | 非晶態網絡結構 | 光學性質可調、表面平滑、絕緣 | 脆性、熱衝擊與缺陷敏感性 | 石英光罩基板、玻璃晶圓與載板 |
+| 聚合物（Polymers） | 長鏈分子，以共價鍵和次級鍵結組成 | 輕量、容易成形、絕緣、成本較低 | 耐溫與剛性有限，可能吸濕、老化或潛變 | 光阻、封裝樹脂、黏著層、隱形眼鏡 |
+| 複合材料（Composites） | 基材與強化相共同組成 | 可針對需求組合強度、重量與熱性質 | 界面行為複雜，製程與檢測較困難 | 封裝基板、纖維強化設備零件 |
+| 半導體（Semiconductors） | 能帶結構可透過摻雜與溫度控制 | 導電性可設計，可形成主動電子元件 | 對純度、缺陷、界面與製程條件敏感 | 矽、碳化矽、氮化鎵 |
 
-這六個家族之間並不是彼此孤立。例如半導體元件同時包含矽或化合物半導體、金屬互連、介電陶瓷、玻璃或聚合物光阻，以及多種薄膜與界面。實際檢測時看到的缺陷，也可能來自不同材料之間的熱膨脹失配、附著力不足或化學反應，而不是單一材料本身的問題。
+半導體製造並不是只處理半導體材料。一個元件或檢測設備可能同時包含矽、金屬互連、介電陶瓷、玻璃、聚合物薄膜與多種界面。因此，影像中的異常也可能與不同材料之間的熱膨脹失配、附著、污染或光學反應有關。
 
-## 4. 工程選材：不是挑選「最強」的材料
+> **Engineering Takeaway**
+>
+> Material families are useful for an initial comparison, but they are not final selection rules. A semiconductor system combines silicon, metals, dielectrics, polymers, glasses, and their interfaces. The relevant question is therefore not which family is “best,” but whether a material and its process route can satisfy the full set of functional and integration constraints.
 
-工程選材不是從資料表中挑出一個「最強」的材料，而是先把功能、限制和風險說清楚，再找出能夠實際製造並穩定使用的材料與製程組合。這個判斷過程可以拆成七個步驟：
+## 4. 工程選材：先確認需求，再比較材料
 
-1. **定義功能**：零件或薄膜需要完成什麼工作？
-2. **列出限制條件**：載重、溫度、尺寸、化學環境、電性與可靠度要求是什麼？
-3. **建立評估指標**：哪些性質必須達到下限，哪些項目需要在彼此之間取捨？
-4. **篩選材料家族與候選材料**：先排除不符合硬性限制的選項，再比較可行方案。
-5. **納入製程與整合條件**：材料是否能被沉積、加工、接合、清洗並穩定量產？
-6. **評估全生命週期**：同時考慮成本、良率、可維護性、失效風險與環境影響。
-7. **透過試驗與檢測驗證**：確認實際材料和製程結果符合原先假設。
+工程選材不是從資料表中挑出某一項數值最高的材料，而是先確認元件需要完成什麼功能，以及哪些條件不能被違反。整理後可以將判斷流程縮成四個階段：
 
-選材判斷通常會遇到彼此衝突的條件。例如晶圓載台需要剛性與尺寸穩定性，同時又受到重量、熱膨脹、潔淨度與成本限制；保護薄膜需要阻隔能力與附著力，卻不能因此產生過大的殘留應力。這些問題沒有脫離情境的唯一答案。只有把需求、限制、製程整合與失效風險都說清楚後，我們才有辦法判斷一個方案是否真的合理。
+1. **定義功能與限制**：確認載入、溫度、尺寸、化學環境、電性、光學與可靠度需求。
+2. **篩選材料家族**：先排除不符合必要條件的選項，再比較強度、重量、成本與其他性質的取捨。
+3. **納入製程與整合條件**：確認材料是否能被沉積、加工、接合、清洗並穩定量產。
+4. **透過試驗與檢測驗證**：檢查實際製程結果是否符合原本假設，並記錄可能的失效風險。
+
+例如晶圓載台需要剛性與尺寸穩定性，同時受到重量、熱膨脹、潔淨度和成本限制；保護薄膜需要阻隔能力與附著力，卻不能產生過大的殘留應力。這些問題沒有脫離情境的唯一答案，真正需要比較的是同一個材料與製程方案能否同時滿足整組需求。
 
 ![小黑在強度、重量、成本與溫度限制之間進行材料選擇](../assets/01-course-overview-illustrations/02-engineering-material-selection.png)
 
-## 5. 十個核心主題
+> 圖 2：作者依個人課程筆記重新整理，用來表示工程選材中的多條件取捨。
 
-接下來的十個主題不是彼此獨立的十堂課，而是在回答同一件事：結構如何形成性質，這些性質又如何影響材料的工程使用。課程內容可以依照以下順序理解：
+## 5. Ten Core Topics
 
-### Thing 1：六大工程材料與「結構決定性質」
+UC Davis 課程用十個主題建立材料科學的基本架構。這些主題並不是十組彼此分開的定義，而是從原子與缺陷一路連結到變形、失效、製程和半導體行為：
 
-先建立金屬、陶瓷、玻璃、聚合物、複合材料與半導體的基本分類，再從原子鍵結與排列方式解釋不同材料為什麼會有不同的機械、熱、電與光學性質。這一項是後續所有內容的共同起點。
+| 核心主題 | 主要問題 | 後續筆記 |
+| --- | --- | --- |
+| 1. 六大工程材料 | 鍵結與結構為什麼產生不同性質？ | Chapter 02–03 |
+| 2. 點缺陷與固態擴散 | 原子如何利用空孔或間隙在固體中移動？ | Chapter 04 |
+| 3. 差排與塑性變形 | 為什麼實際材料能在較低應力下永久變形？ | Chapter 04–05 |
+| 4. 應力—應變與機械性質 | 如何區分剛性、強度、延展性與拉伸韌性？ | Chapter 05 |
+| 5. 潛變 | 應力、溫度和時間如何共同造成長期變形？ | Chapter 05 |
+| 6. 延性—脆性轉變 | 為什麼部分材料在低溫或高應變速率下更容易脆斷？ | Chapter 05 |
+| 7. 斷裂韌性 | 裂紋尺寸、應力與材料抗裂能力如何共同決定風險？ | Chapter 05 |
+| 8. 疲勞 | 為什麼低於巨觀降伏強度的循環載入仍可能造成失效？ | Chapter 05 |
+| 9. 快與慢的製程 | 相圖、擴散與冷卻速率如何控制顯微組織？ | Chapter 06 |
+| 10. 半導體導電行為 | 溫度、能隙與摻雜如何改變載子濃度和導電率？ | Chapter 07 |
 
-### Thing 2：點缺陷解釋固態擴散
+Arrhenius 關係在其中多次出現，因為空孔濃度、擴散、潛變和半導體導電行為都可能受到熱活化過程影響。不過，不同主題中的能障、前因子和適用溫度範圍並不相同，不能因為公式形式相似，就直接共用同一組解釋。
 
-真實晶體並不完美，其中會存在空孔、間隙原子與置換原子。原子可以利用這些點缺陷在固體中移動，而溫度會透過熱活化機制顯著改變空孔濃度與擴散速率。Arrhenius 關係因此成為連結溫度、時間與材料變化的重要工具。
+## 6. Learning Checkpoints
 
-### Thing 3：差排解釋塑性變形
+This chapter should provide enough foundation for me to:
 
-若整個晶面必須同時滑動，材料理論強度會遠高於實際量測值；差排的存在讓原子鍵可以局部且逐步地重新排列，因此材料能在較低應力下產生永久變形。加工硬化、晶粒細化與其他強化方式，也都和限制差排移動有關。
+- explain the processing–structure–properties–performance relationship without treating the four terms as separate definitions;
+- compare major material families while stating the limits of each generalization;
+- distinguish stiffness, strength, ductility, toughness, creep, fracture, and fatigue;
+- connect defects, diffusion, phase transformation, and thermal history to observable material behavior;
+- describe how doping, temperature, and defects affect semiconductor conductivity; and
+- separate inspection evidence, a failure hypothesis, and a verified root cause.
 
-### Thing 4：應力—應變與主要機械性質
+I use these points to check the later chapters as well. If a concept cannot help me interpret a simple engineering case, I probably do not understand it well enough yet.
 
-拉伸試驗將外力與材料變形轉換為應力—應變曲線，可以用來判讀彈性模數、降伏強度、抗拉強度與延性，並延伸到韌性的概念。重點不只在記住曲線上的位置，而是理解每個區段對應的變形與損傷機制。
+## 7. Why This Matters for Semiconductor Inspection
 
-### Thing 5：潛變
+> Semiconductor inspection often begins with a measurable anomaly: a change in brightness, shape, position, texture, or electrical response. The difficult part comes next. Similar appearances can result from different material and process mechanisms, while the same mechanism can look different under another illumination or measurement condition. Materials science does not remove this ambiguity, but it gives the investigation a better set of questions.
 
-材料在固定載重下長時間處於高溫時，仍可能逐漸產生永久變形。潛變曲線通常包含初期、穩態與加速三個階段，而溫度、應力、擴散與晶界行為會共同決定潛變速率和破壞時間。
+半導體與工業檢測經常從一個可見或可量測的異常開始，例如亮暗變化、刮痕、顆粒、殘留、裂紋、膜厚不均或圖形偏移。看到異常很重要，不過它只是分析的起點。相似外觀可能來自污染、材料剝落、蝕刻不足、沉積異常、熱應力或機械接觸；同一個製程問題，也可能因為位置和量測條件不同而呈現不同外觀。
 
-### Thing 6：延性—脆性轉變
-
-部分材料在溫度降低後，吸收衝擊能量的能力會快速下降，破壞方式也可能從明顯塑性變形轉為突然脆斷。這種轉變和晶體結構、溫度、應變速率與缺口有關，對低溫設備與結構安全特別重要。
-
-### Thing 7：斷裂韌性與臨界缺陷
-
-工程材料幾乎無法完全消除缺陷，因此設計問題不只是「有沒有裂紋」，而是現有缺陷在特定應力下是否會失穩擴展。斷裂韌性把材料抵抗裂紋擴展的能力與應力、裂紋尺寸連結起來，使缺陷判定能從外觀描述進一步轉化為工程風險。
-
-### Thing 8：疲勞
-
-材料受到反覆載重時，即使最大應力低於單次拉伸所量到的降伏或抗拉強度，裂紋仍可能在局部應力集中處萌生並逐步擴展。S–N 曲線、疲勞強度、表面狀態與載重循環因此是評估壽命的重要依據。
-
-### Thing 9：快與慢的製程
-
-平衡相圖描述材料在接近平衡條件下可能出現的相，時間—溫度—轉變（TTT）圖則補入轉變所需的時間。透過比較擴散型與無擴散型相變，可以理解冷卻速率與熱處理歷程如何形成不同顯微組織，並進一步改變硬度、強度與韌性。
-
-### Thing 10：半導體簡史與導電行為
-
-半導體的導電性位於導體和絕緣體之間，但更重要的特徵是載子濃度可以透過溫度與摻雜控制。課程比較本質半導體與外質半導體，並再次使用 Arrhenius 關係理解不同溫度區間中的導電行為。
-
-## 6. 學習目標
-
-完成這組材料科學筆記後，希望不只是看過這些名詞，而是真的能做到以下幾件事：
-
-1. **建立分類能力**：辨認主要工程材料家族，並說明其典型優勢、限制與適用條件。
-2. **建立尺度連結**：從原子鍵結、晶體結構與缺陷，一路連結到顯微組織、材料性質和元件性能。
-3. **解讀工程圖表**：能夠說明應力—應變曲線、潛變曲線、延性—脆性轉變圖、S–N 曲線、相圖與 TTT 圖所代表的物理意義。
-4. **理解熱活化過程**：運用 Arrhenius 關係判斷溫度如何影響空孔、擴散、潛變與半導體導電行為。
-5. **分析材料失效**：區分塑性變形、潛變、脆性斷裂與疲勞，並理解缺陷尺寸、應力與環境條件的影響。
-6. **進行工程選材**：根據功能、限制、製程、成本與可靠度比較候選方案，而不是只比較單一性質。
-7. **連結製程與結果**：解釋製程條件如何改變結構，並預測這些結構變化對性質和性能的影響。
-8. **建立檢測假設**：從缺陷外觀提出可能的材料與製程機制，同時區分已觀察到的證據和仍待驗證的推論。
-9. **選擇驗證方法**：依照問題尺度與資訊需求，判斷需要使用成像、成分、晶相、輪廓或電性量測中的哪一類方法。
-10. **用自己的方式重新解釋**：不只記住公式與名詞，而是能說明結果為什麼合理、假設在哪裡，以及哪些條件改變後結論可能不再成立。
-
-## 7. 為什麼這些內容和半導體檢測有關？
-
-半導體檢測經常從一個可見或可量測的異常開始，例如亮點、暗點、刮痕、顆粒、殘留、裂紋、膜厚不均或圖形偏移。看到異常很重要，不過它只是分析的起點。影像中的外觀分類不等於缺陷的根本原因：相似的外觀可能來自污染、材料剝落、蝕刻不足、沉積異常、熱應力或機械接觸；同一個製程問題，也可能因位置和量測條件不同而呈現不同外觀。
-
-因此，較可靠的分析方式不是看到某種外觀就立刻套用答案，而是先把觀察到的證據描述清楚，接著提出可能機制，再透過量測逐步確認或排除：
+因此，較可靠的分析方式是先描述觀察到的證據，接著提出可能機制，再透過其他量測逐步確認或排除：
 
 ```mermaid
 flowchart LR
-    A["檢測訊號<br/>亮度、形狀、位置、分布"] --> B["缺陷描述<br/>先記錄看見的證據"]
+    A["檢測訊號<br/>亮度、形狀、位置、分布"] --> B["缺陷描述<br/>記錄實際看見的證據"]
     B --> C["機制假設<br/>材料、結構、製程、環境"]
-    C --> D["選擇驗證方法<br/>SEM、EDS、XRD、輪廓或電性量測"]
+    C --> D["選擇驗證方法<br/>成像、成分、晶相、輪廓或電性"]
     D --> E["比對製程資料<br/>確認或排除假設"]
     E --> F["工程決策<br/>放行、監控、返工或改善製程"]
 ```
 
-材料科學在這條路徑中的作用，是提供提出假設和選擇證據的基礎：
+材料科學在這條路徑中的作用，是協助建立假設和選擇證據：
 
-- **鍵結與晶體結構**幫助判斷材料可能呈現的導電、脆性或異向性行為。
-- **點缺陷與擴散**幫助理解摻雜、氧化、污染遷移與高溫製程中的成分變化。
-- **差排與殘留應力**幫助分析滑移線、翹曲、局部變形與裂紋萌生。
-- **斷裂與疲勞**幫助評估顆粒、刮痕或微裂紋是否可能成為可靠度風險。
-- **相變與熱處理**幫助連結溫度歷程、顯微組織和最後量測到的材料性質。
-- **半導體載子行為**幫助理解摻雜、缺陷能階、溫度與電性異常之間的關係。
+| 材料概念 | 可以協助判斷的問題 |
+| --- | --- |
+| 鍵結與晶體結構 | 導電、脆性、異向性與光學反應 |
+| 點缺陷與擴散 | 摻雜、氧化、污染遷移與高溫製程中的成分變化 |
+| 差排與殘留應力 | 滑移線、翹曲、局部變形與裂紋萌生 |
+| 斷裂與疲勞 | 刮痕或微裂紋是否可能發展成可靠度風險 |
+| 相變與熱處理 | 溫度歷程、顯微組織與最終性質 |
+| 半導體載子行為 | 摻雜、缺陷能階、溫度與電性異常 |
 
 ![小黑從晶圓表面缺陷向下追查材料、微結構與製程根因](../assets/01-course-overview-illustrations/03-semiconductor-inspection-root-cause.png)
 
-檢測工具可以提高看見異常的能力，但儀器輸出本身還不是結論。它仍然需要結合材料機制、製程背景與交叉驗證，才有辦法轉化成可靠判斷。較可靠的分析方式不是「看到某種外觀就回答某個根因」，而是先區分觀察與推論，再比較多個可能機制，最後判斷下一個最值得取得的證據是什麼。
+> 圖 3：作者依個人課程筆記重新整理，用來表示從檢測訊號建立並驗證材料或製程假設的過程。
 
-## 8. 後續筆記如何延伸
+## 8. Applied Reflection: Defect Labels and Task Definition
 
-這篇總覽先把共同架構搭起來。後續筆記會依照問題類型繼續往下拆，並且盡量把每個主題重新連回材料行為與檢測判斷：
+While improving an anonymized wafer-inspection workflow, I found that some labels described a condition across most of the image, such as a haze-like or ring-like pattern. Others described localized features, such as particles or scratches. Treating every label as an object-detection problem would have forced global image attributes into bounding boxes that did not represent their actual meaning.
 
-- `02-material-properties-and-selection.md`：比較材料家族、性質取捨與選材方法。
-- `03-atomic-bonding-and-structure.md`：整理原子鍵結、晶體結構與性質來源。
-- `04-crystal-defects-and-microstructure.md`：連結空孔、擴散、差排與顯微組織。
-- `05-mechanical-properties-and-failure.md`：解讀拉伸、潛變、轉變溫度、斷裂與疲勞。
-- `06-processing-and-material-performance.md`：利用相圖、TTT 圖與熱處理說明製程如何控制結果。
-- `07-semiconductor-inspection-reflection.md`：將材料機制、缺陷證據與實際檢測判斷重新整合。
+The practical solution was to separate the tasks. Whole-image attributes were handled as classification problems, localized defects as detection problems, and scratch geometry could be examined through segmentation when length or shape mattered. This made the outputs easier to compare with the actual meaning of each annotation instead of evaluating unrelated labels through one metric. At the time, I mainly saw this as a computer-vision decision about label scale and annotation quality.
 
-## 9. 重點整理
+Materials science adds another distinction. A label such as “scratch” describes observed morphology; it does not establish whether the feature resulted from mechanical contact, brittle fracture, a process residue with a similar appearance, or another mechanism. The model may answer *what the feature resembles* and *where it appears*. It cannot establish *why it formed* without supporting process or material evidence.
 
-- 材料科學的核心不是背誦材料名稱，而是建立製程、結構、性質與性能之間的因果關係。
-- 材料分類能提供初步判斷，但真正的工程選擇仍需要考慮使用情境、製程限制與性質取捨。
-- 課程十個主題從原子與晶體缺陷出發，延伸到變形、失效、相變與半導體導電行為。
-- 半導體檢測看到的是異常訊號；要判斷根因，仍需要材料知識、製程背景與驗證方法共同支持。
-- 整理材料科學內容時，除了記錄結論外，也需要說明結果、辨認假設，並判斷下一步應該取得什麼證據。
+A separate optical-inspection project led to a related observation. Multiple illumination conditions revealed different features, and AI-based recognition was combined with rule-based measurement for defects with clear geometric definitions. The useful lesson was not that one method was universally better. It was that observation conditions and engineering definitions should determine the analysis method.
 
-## 參考資料
+## 9. Connection to Industrial AI
 
-- [UC Davis / Coursera — Materials Science: 10 Things Every Engineer Should Know](https://www.coursera.org/learn/materials-science)
-- [NIST — Materials Design Toolkit](https://www.nist.gov/programs-projects/materials-design-toolkit)
-- [NIST — Thermodynamics and Kinetics Group](https://www.nist.gov/mml/materials-science-and-engineering-division/thermodynamics-and-kinetics-group)
-- [NIST — Structural Metrology of Advanced Manufacturing Processes](https://www.nist.gov/programs-projects/structural-metrology-advanced-manufacturing-processes)
+For industrial AI, the connection can be organized into three levels:
+
+| Level | What AI can contribute | What still requires engineering evidence |
+| --- | --- | --- |
+| Observation | Detect, classify, segment, measure, and compare visible or electrical patterns | Whether the available signal captures the relevant physical change |
+| Hypothesis support | Relate morphology, location, spatial distribution, batch history, and process context | Whether the correlation is causal and physically plausible |
+| Root-cause verification | Prioritize cases and suggest what should be checked next | Confirmation through material analysis, process records, controlled experiments, or additional metrology |
+
+This division is important because high model accuracy does not guarantee that the label represents the right engineering question. If the dataset combines evidence, interpretation, and confirmed cause into one field, the model may learn the easiest visual proxy (not necessarily the physical change we meant to measure) while concealing uncertainty in the labels.
+
+For that reason, an inspection dataset becomes more useful when it preserves the available context: process stage, illumination or measurement condition, spatial distribution, batch relationship, and later verification result. Not every project can collect every field. But missing context should remain visible rather than being silently replaced by a confident defect name.
+
+## 10. What Changed in My Understanding
+
+Before studying these topics, I mainly framed inspection work as a problem of image acquisition, label definition, model accuracy, and inference speed. Those remain necessary. But materials science introduced a second layer of judgment: the same visual category can contain different physical mechanisms, and the same mechanism may produce different signals under different observation conditions.
+
+This changed how I interpret model output.
+
+> **A bounding box or class probability is not a material diagnosis.**
+
+It is one piece of evidence that should be considered together with loading history, temperature exposure, likely contact locations, spatial distribution, and subsequent verification. In practice, some of this information may be unavailable. That limitation is part of the result.
+
+The most useful distinction is now between **AOI evidence**, a **failure hypothesis**, and a **verified root cause**. AI can strengthen the first two by organizing data and revealing repeatable patterns. The third still requires evidence outside the model.
+
+## 個人筆記：目前需要保留的幾個界線
+
+- 材料分類提供的是常見趨勢，不是對個別材料的完整結論。
+- 性質必須連同試片、溫度、載入、環境與量測條件一起解讀。
+- AI 任務定義需要配合異常的尺度與標註意義，不能把所有類別都當成相同的 bounding-box 問題。
+- 檢測結果可以支持觀察與比較，但材料機制和根因仍需要其他證據驗證。
+
+## 11. Chapter Roadmap
+
+| Chapter | Main question | Status |
+| --- | --- | --- |
+| [02. Material Properties and Engineering Selection](./02-material-properties-and-selection.md) | How do material families and property trade-offs guide engineering selection? | Completed |
+| [03. Atomic Bonding and Structure](./03-atomic-bonding-and-structure.md) | How do bonding and crystal structure shape material behavior? | Completed |
+| [04. Crystal Defects and Microstructure](./04-crystal-defects-and-microstructure.md) | How do defects affect diffusion, deformation, and inspection evidence? | Completed |
+| [05. Mechanical Properties and Failure](./05-mechanical-properties-and-failure.md) | How do materials deform and fail under load, time, and temperature? | Completed |
+| 06. Processing and Material Performance | How do phase transformations and process history control performance? | Planned |
+| 07. Semiconductor Inspection Reflection | How can materials knowledge improve the interpretation of inspection data? | Planned |
+
+## References
+
+1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
+2. James F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
