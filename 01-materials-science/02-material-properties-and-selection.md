@@ -1,33 +1,43 @@
-# 材料類型、材料性質與工程選材
+# Material Families, Property Trade-offs, and Engineering Selection
+
+## 材料家族、性質取捨與工程選材
+
+> **Learning Context**
+>
+> In inspection work, material selection is usually completed before an AOI system begins collecting images. But the selected material, surface condition, coating, interface, and thermal behavior all influence the signals that appear later. I studied engineering selection to understand these conditions more systematically, especially when a material performs well in one category but creates an integration or reliability problem somewhere else.
 
 ## English Summary
 
-Six engineering material families provide the starting point for this chapter. Their bonding, structure, and processing history shape the properties used in material selection. Those properties then become part of a practical workflow based on function, constraints, trade-offs, manufacturability, and verification. A simple steel–aluminum example shows why stiffness and weight cannot be judged separately. The semiconductor sections focus on optical contrast, thermal-expansion mismatch, thin-film interfaces, and inspection evidence. A bright AOI region, for example, may come from surface geometry, reflectivity, film interference, or contamination (the image does not distinguish them by itself). But appearance alone cannot identify the root cause.
+This chapter moves from six engineering material families to a practical selection process based on function, constraints, trade-offs, manufacturability, and verification. Bonding and structure provide useful clues, but engineering properties still need to be read together with geometry, processing, interfaces, operating conditions, and failure risks.
 
-> 這篇以 UC Davis 課程中的六大工程材料與「結構決定性質」為基礎，整理材料性質如何成為工程選材的判斷依據。內容會保留必要的分類與鍵結觀念，不過重點會放在性質取捨、製程限制、半導體應用，以及檢測結果如何協助驗證原本的選擇。
+A steel–aluminum example shows why the answer changes when the design constraint changes. For semiconductor manufacturing and inspection, the same reasoning applies to optical response, thermal-expansion mismatch, surface condition, thin-film interfaces, and contamination. AOI can reveal evidence of change. It cannot identify a material or process root cause from visual contrast alone.
 
-## 1. 六大工程材料是一份初步選單
+本篇主要依據先前翻譯與整理 UC Davis 課程時留下的學習筆記，接著將材料分類重新放回選材條件、性質取捨和檢測問題中理解。
 
-工程材料的種類非常多，如果一開始就逐一比較所有成分、牌號和製程狀態，很容易只得到一份龐大卻缺乏脈絡的資料表。因此，UC Davis 課程先將常見材料整理成六個家族，讓我們能從鍵結、結構和典型性質建立第一層判斷。
+## 1. Material Families as a Starting Point
 
-| 材料家族 | 結構與鍵結線索 | 常見性質與限制 | 半導體相關例子 |
+I do not treat the six families as a shortlist by themselves. I use them to ask an earlier question: what advantage does each family offer, and what new risk does that advantage introduce?
+
+| 材料家族 | 選材時的主要優勢 | 需要注意的工程風險 | 與檢測的關係 |
 | --- | --- | --- | --- |
-| 金屬 | 金屬鍵；多數具有晶體結構 | 導電、導熱與加工性通常較好；需注意密度、腐蝕與疲勞 | 銅互連、鋁接墊、設備結構件 |
-| 聚合物 | 分子鏈內以共價鍵為主，鏈間具有次級鍵結 | 低密度、容易成形且多半絕緣；性質對時間與溫度敏感 | 光阻、封裝樹脂、黏著層 |
-| 陶瓷 | 離子鍵、共價鍵或混合鍵結 | 高剛性、硬度與耐熱性；常溫塑性有限，對裂紋敏感 | 氧化鋁、氮化鋁、介電層 |
-| 玻璃 | 非晶態網絡結構 | 表面平滑且光學性質可調；脆性與表面刮痕需要注意 | 石英光罩、光學窗口、玻璃載板 |
-| 複合材料 | 基材結合纖維、顆粒或其他強化相 | 性質可依需求設計；界面、孔洞與方向性會影響結果 | 封裝基板、玻璃纖維強化樹脂 |
-| 半導體 | 共價晶體與可控制的能帶結構 | 導電性可透過摻雜與溫度調整；對雜質、缺陷與界面敏感 | 矽、碳化矽、氮化鎵 |
+| 金屬 | 剛性、導電、導熱與加工性 | 密度、腐蝕、疲勞與磨耗顆粒 | 反射率、熱漂移與磨耗碎屑會改變量測結果 |
+| 聚合物 | 低密度、容易成形、絕緣與光學性質可調 | 潛變、吸濕、老化與真空放氣 | 透明度、變形和表面污染會影響成像 |
+| 陶瓷 | 硬度、耐磨、絕緣與高溫穩定性 | 脆性、加工損傷與缺陷敏感性 | 表面裂紋、崩角與顆粒是常見觀察重點 |
+| 玻璃 | 透光、表面平滑且光學性質可設計 | 刮痕、脆性破壞與熱衝擊 | 薄膜干涉、表面損傷與光學畸變可能形成對比 |
+| 複合材料 | 可以針對需求調整比性質 | 異向性、孔洞與界面變異 | 紋理不均與內部缺陷可能增加判讀難度 |
+| 半導體 | 電性可以透過摻雜和結構控制 | 對純度、缺陷、表面與界面高度敏感 | 光學異常與電性異常可能互相關聯，但不一定一一對應 |
 
-這張表適合用來縮小範圍，但不能直接代替實際數據。即使屬於同一個材料家族，只要成分、晶體結構、孔隙率、晶粒、添加物或製程歷程不同，最後量測到的性質就可能有明顯差異。
+這張表的作用是縮小問題範圍，而不是直接選出答案。即使屬於同一個材料家族，只要成分、晶體結構、孔隙率、晶粒、添加物或製程歷程不同，最後量測到的性質就可能有明顯差異。分類只能提供第一層線索。
 
 ![小黑從六個材料抽屜中挑選工程材料](../assets/02-material-properties-and-selection-illustrations/01-six-material-families.png)
+
+> **Engineering Takeaway**
+>
+> A material family is useful when it narrows the search space and exposes likely risks. It becomes misleading when its typical behavior is treated as a property value for every grade, process state, or operating condition.
 
 ## 2. 從鍵結與結構理解性質來源
 
 原子的電子排列會影響鍵結方式，而鍵結又會進一步影響材料的剛性、導電、導熱、熱膨脹與變形行為。在這篇中，鍵結的用途是提供選材線索；完整的電子結構、鍵結能量與晶體排列會留到 `03-atomic-bonding-and-structure.md` 說明。
-
-### 2.1 一次鍵結與二次鍵結
 
 | 鍵結類型 | 基本方式 | 對材料性質的主要線索 |
 | --- | --- | --- |
@@ -36,13 +46,7 @@ Six engineering material families provide the starting point for this chapter. T
 | 金屬鍵 | 價電子離域並在晶格中移動 | 通常具有良好導電與導熱能力，也較容易產生塑性變形 |
 | 次級鍵結 | 分子或原子間的偶極吸引，包括凡得瓦力與氫鍵 | 會影響聚合物的柔軟度、玻璃轉移、黏著與長期蠕變 |
 
-實際材料中可能同時存在多種鍵結。例如陶瓷可能兼具離子與共價特徵；聚合物的分子鏈內是共價鍵，鏈與鏈之間的行為則受到次級鍵結影響。因此，將一個材料簡化成單一鍵結，只能作為初步理解，不能直接推導所有工程性質。
-
-### 2.2 鍵結不是唯一決定因素
-
-鍵結能幫助解釋彈性模數與導電性等基本趨勢，不過降伏強度、延展性、韌性、破壞方式與長期可靠度，還會受到晶體結構、差排、晶粒、孔洞、裂紋、相組成、溫度和製程歷程影響。
-
-例如陶瓷具有強鍵結和高剛性，但當材料內存在裂紋時，它不容易透過局部塑性變形降低裂尖應力，因此實際拉伸強度仍可能受到表面加工與缺陷尺寸限制。聚合物分子鏈內雖然具有強共價鍵，但鏈間次級鍵較弱，長期受力時仍可能發生分子鏈滑動與蠕變。
+實際材料可能同時存在多種鍵結，因此這張表只能用來判斷性質的大致方向。鍵結提供剛性、導電、熱膨脹與變形行為的第一層線索，不過實際工程性質仍然會受到晶體結構、缺陷、相組成、製程狀態與測試條件控制。這也是本篇只保留必要鍵結內容的原因，完整機制會在第三章再展開。
 
 ## 3. 選材時需要比較哪些性質？
 
@@ -74,7 +78,7 @@ $$
 \Delta L=\alpha L_0\Delta T
 $$
 
-其中 $\alpha$ 是熱膨脹係數。如果兩種接合材料的 $\alpha$ 不同，溫度改變時就會產生不同的自由伸縮量。當界面限制這些變形後，應力會逐漸累積，最後可能表現為翹曲、裂紋、分層或電性漂移。
+其中 $\alpha$ 是熱膨脹係數。如果兩種接合材料的 $\alpha$ 不同，溫度改變時就會產生不同的自由伸縮量。當界面限制材料的自由熱應變時，系統會產生熱應力。這不一定代表應力會隨時間持續累積；若材料經歷重複溫度循環，或同時伴隨塑性變形、黏彈行為、界面損傷與沉積本徵應力，才可能進一步留下殘留應力或形成累積損傷。
 
 因此，選擇高熱傳導材料並不代表熱問題已經解決。熱傳導率、熱膨脹、界面熱阻、幾何尺寸與溫度分布仍然需要一起評估。
 
@@ -90,6 +94,10 @@ $$
 
 因此，工程選材要回答的不是「哪一種材料最好」，而是「在目前的功能、限制和風險下，哪一種材料與製程組合較為合適」。如果沒有先說清楚使用條件，單純比較資料表中的最高數值，很容易得到無法對應實際需求的答案。
 
+> **Engineering Takeaway**
+>
+> Property values become useful only after the loading, geometry, environment, and failure mode are defined. A higher value may solve one constraint while making another part of the system harder to manufacture, inspect, or maintain.
+
 ## 5. 工程選材的基本流程
 
 ```mermaid
@@ -99,7 +107,9 @@ flowchart LR
     C --> D["篩選候選材料<br/>排除不符合限制者"]
     D --> E["比較製程與風險<br/>加工、整合、失效"]
     E --> F["試作與驗證<br/>量測是否符合需求"]
-    F -. "結果不符則修正條件" .-> A
+    F -. "修正需求或限制" .-> B
+    F -. "更換材料或幾何" .-> D
+    F -. "調整製程" .-> E
 ```
 
 ### 5.1 功能、限制與目標
@@ -119,7 +129,11 @@ flowchart LR
 
 ![小黑操作多重限制的材料篩選裝置](../assets/02-material-properties-and-selection-illustrations/02-engineering-selection-filter.png)
 
-## 6. 簡單例子：鋼和鋁的剛性與重量
+## 6. Worked Example: Steel, Aluminum, Stiffness, and Weight
+
+這個例子先比較相同幾何，再改成相同重量。兩次都使用鋼和鋁，不過限制條件改變後，選材結論也會跟著改變。
+
+### 6.1 相同幾何
 
 假設兩根長度與截面積相同的拉桿分別使用鋼和鋁，在相同軸向載重下，其彈性伸長量可由下式估算：
 
@@ -142,13 +156,55 @@ $$
 \approx2.9
 $$
 
-相同幾何下，鋁拉桿的彈性伸長大約是鋼的 2.9 倍；不過鋁的密度約為鋼的三分之一，因此相同體積下的重量也會明顯降低。
+相同幾何下，鋁拉桿的彈性伸長大約是鋼的 2.9 倍；不過鋁的密度約為鋼的三分之一，因此相同體積下的重量也會明顯降低。若空間固定而變形限制嚴格，鋼在這個比較中較有優勢。
 
-這個例子不能直接證明鋼或鋁比較好。它說明的是，如果幾何尺寸固定而變形限制嚴格，彈性模數可能具有較高優先性；如果允許調整截面並且需要減重，就必須同時比較剛性、密度、強度、加工方式與成本。
+### 6.2 相同重量
 
-> **計算範圍：** 這裡只比較線性彈性、軸向拉伸與相同幾何條件。載重方式和幾何改變後，適合使用的材料指標也會跟著改變。
+如果長度與材料質量固定，截面積可以利用密度 $\rho$ 表示：
 
-## 7. 半導體製造與檢測中的選材問題
+$$
+m=\rho AL
+$$
+
+因此：
+
+$$
+A=\frac{m}{\rho L}
+$$
+
+代回軸向伸長公式後可得：
+
+$$
+\delta=\frac{F\rho L^2}{mE}
+$$
+
+在相同載重、長度與質量下，需要比較的不再只是彈性模數 $E$，而是比彈性模數 $E/\rho$。使用常見近似值：
+
+$$
+\frac{E_{\mathrm{steel}}}{\rho_{\mathrm{steel}}}
+\approx\frac{200}{7.8}
+\approx25.6
+$$
+
+$$
+\frac{E_{\mathrm{Al}}}{\rho_{\mathrm{Al}}}
+\approx\frac{70}{2.7}
+\approx25.9
+$$
+
+這裡的彈性模數與密度使用一致的相對單位進行比值比較。結果顯示，鋼與鋁的比彈性模數相當接近。如果允許鋁增加截面積，在相同重量下，兩者的軸向彈性伸長可能接近。
+
+這並不代表兩種材料可以直接互換。空間限制、降伏強度、疲勞、腐蝕、接合方式、加工成本與截面形狀仍然可能改變最後的選擇。尤其在彎曲問題中，剛性還會受到截面二次矩影響，不能直接沿用軸向拉伸的結論。
+
+> **Engineering Takeaway**
+>
+> A material comparison only becomes meaningful after the design constraint is defined. Steel is stiffer for the same geometry, while steel and aluminum have similar specific modulus in this simplified axial example. Change the mass or geometry constraint, and the selection result may change as well.
+
+> **計算範圍：** 這裡只比較線性彈性與軸向拉伸，並使用概略材料數值說明選材方法。若載重模式、截面形狀、合金狀態或安全要求改變，適合使用的材料指標也需要重新確認。
+
+## 7. Why This Matters for Semiconductor Manufacturing and Inspection
+
+> In semiconductor and optical inspection systems, material choice affects more than structural performance. It changes reflectivity, transmission, thermal drift, surface stability, contamination risk, and the interfaces that may fail later. These factors shape what the camera can observe before any model begins interpreting the image.
 
 半導體系統不只包含半導體晶圓，也同時包含薄膜、金屬互連、介電層、光阻、封裝材料、晶圓載台、光學元件與設備結構。每一個位置的功能不同，因此選材時需要比較的性質也不一樣。
 
@@ -160,7 +216,7 @@ $$
 
 ### 7.2 熱膨脹失配會反映在形貌與可靠度上
 
-薄膜、基板和封裝材料在溫度循環中會產生不同程度的伸縮。當界面附著限制自由變形時，殘留應力可能逐漸累積，最後造成：
+薄膜、基板和封裝材料在溫度改變時會產生不同程度的自由伸縮。當界面限制這些變形時，首先產生的是熱應力；製程完成並回到參考溫度後仍然存在的部分，才屬於殘留應力。若系統反覆經歷溫度循環，界面還可能逐步出現疲勞與損傷累積，最後造成：
 
 - 薄膜裂紋或剝離
 - 晶圓翹曲與位置漂移
@@ -179,33 +235,44 @@ $$
 
 不過，相同外觀可能對應不同機制，因此檢測結果只能作為證據起點。較可靠的分析方式是先描述缺陷的形狀、位置與分布，接著結合材料性質和製程條件提出假設，最後再利用其他量測方法逐步確認或排除。
 
-## 8. 五個容易混淆的觀念
+## 8. Applied Reflection: Optical Contrast Is Not Material Identity
 
-1. **彈性模數高，不等於強度高。** 剛性和材料開始永久變形或破壞前能承受的應力是不同性質。
-2. **硬度高，不等於不容易斷。** 斷裂仍然和韌性、裂紋尺寸及應力狀態有關。
-3. **鍵結強，不代表材料不會脆斷。** 陶瓷缺少常溫塑性變形能力，因此容易受到裂紋限制。
-4. **材料資料表不是最終答案。** 試驗條件、材料方向和製程狀態不同，數據可能無法直接套用。
-5. **檢測外觀不等於根因。** 影像提供的是異常證據，材料與製程機制仍需要交叉驗證。
+In an anonymized inspection project involving a transparent polymer product, one illumination condition was not enough to reveal every defect type consistently. Different lighting arrangements emphasized different combinations of transmission, reflection, surface geometry, and edge shape. We therefore combined AI-based recognition with rule-based measurement for defects that had stable geometric definitions.
 
-## 9. 和其他筆記的內容分界
+That experience changed how I read an inspection image. A repeatable bright or dark region is a useful visual class, but it is not automatically a material label. The contrast may come from roughness, thickness variation, contamination, deformation, or simply the observation condition. The camera records an optical effect, not a material identity.
 
-這篇只保留選材所需的鍵結、結構與性質觀念，後續內容會分別處理：
+The same boundary appears in wafer inspection. AOI can separate recurring patterns and measure where they occur, but a class name should not imply a verified material mechanism unless process history or additional metrology supports it. The distinction looks simple on paper (it was less obvious when the same transparent surface changed under another light). In practice, it affects how the dataset is built, how errors are reviewed, and what an engineer can safely conclude from the model output.
 
-- `03-atomic-bonding-and-structure.md`：電子結構、鍵結能量、晶體結構與矽的共價鍵結。
-- `04-crystal-defects-and-microstructure.md`：空位、擴散、差排與顯微組織。
-- `05-mechanical-properties-and-failure.md`：拉伸、潛變、斷裂、疲勞與韌性。
-- `06-processing-and-material-performance.md`：相圖、TTT 圖、熱處理與製程控制。
-- `07-semiconductor-inspection-reflection.md`：將材料機制、檢測證據與實務判斷進一步整合。
+## 9. Working Notes: Checks I Need to Keep
 
-## 10. 本篇整理
+- **High elastic modulus does not mean high strength.** Stiffness and the stress required for permanent deformation or failure answer different questions.
+- **High hardness does not mean resistance to fracture.** Toughness, flaw size, and stress state still matter.
+- **Strong bonding does not prevent brittle failure.** A ceramic may be stiff and strongly bonded while remaining sensitive to cracks.
+- **A datasheet value is conditional.** Test method, orientation, temperature, process state, and specimen geometry can change the comparison.
+- **Inspection appearance is not a root cause.** An image provides evidence; the proposed material or process mechanism still needs independent verification.
 
-- 材料家族可以提供初步方向，不過實際性質仍然取決於結構、缺陷、製程和使用條件。
-- 工程選材需要先定義功能、限制與目標，再比較材料性質、製程能力和失效風險。
-- 熱、光學與界面性質會直接影響半導體製造和檢測，不能只比較機械強度。
-- AOI 能協助發現異常，但根因仍需要結合材料機制、製程資料與後續量測確認。
+These are simple checks, but I need them because several engineering terms sound interchangeable until they are placed in an actual constraint.
 
-## 參考資料
+## 10. Scope and Links to Other Chapters
 
-- [UC Davis / Coursera — Materials Science: 10 Things Every Engineer Should Know](https://www.coursera.org/learn/materials-science)
-- [NIST — Materials Design Toolkit](https://www.nist.gov/programs-projects/materials-design-toolkit)
-- [NIST — Structural Metrology of Advanced Manufacturing Processes](https://www.nist.gov/programs-projects/structural-metrology-advanced-manufacturing-processes)
+This chapter keeps only the bonding, structure, and property concepts needed for material selection. The detailed mechanisms continue in:
+
+- [03. Atomic Bonding and Structure](./03-atomic-bonding-and-structure.md): electronic structure, bonding energy, crystal structures, and covalent bonding in silicon;
+- [04. Crystal Defects and Microstructure](./04-crystal-defects-and-microstructure.md): vacancies, diffusion, dislocations, and microstructure;
+- [05. Mechanical Properties and Failure](./05-mechanical-properties-and-failure.md): tensile behavior, creep, fracture, fatigue, and toughness;
+- `06-processing-and-material-performance.md`: phase diagrams, TTT diagrams, heat treatment, and process control; and
+- `07-semiconductor-inspection-reflection.md`: a deeper connection between material mechanisms, inspection evidence, and engineering decisions.
+
+## 11. What Changed in My Understanding
+
+I used to read material comparisons mainly as lists of property values: higher modulus, lower density, better thermal conductivity, or greater hardness. The steel–aluminum example exposed the problem with that approach. Steel is clearly stiffer when geometry is fixed, but the comparison becomes much closer when mass is fixed and the aluminum section is allowed to grow.
+
+That changed the order of my comparison.
+
+The same change applies to inspection work. Optical contrast depends on the material, surface, interface, geometry, and illumination together. Choosing a model before clarifying those conditions may improve a metric without improving the engineering interpretation. I now treat material selection and inspection design as connected decisions: one determines how the system behaves, while the other determines which part of that behavior becomes observable.
+
+## References
+
+1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
+2. James F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
+3. Michael F. Ashby, [*Materials Selection in Mechanical Design*](https://shop.elsevier.com/books/materials-selection-in-mechanical-design/ashby/978-0-443-16028-8), 6th ed.
