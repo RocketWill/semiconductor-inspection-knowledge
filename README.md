@@ -24,6 +24,7 @@ A personal learning repository connecting materials science, semiconductor manuf
 ### 02. Semiconductor Characterization Fundamentals
 
 - [Carriers, Transport, and Optical Response](./02-semiconductor-characterization-fundamentals/01-carriers-transport-and-optical-response.md)
+- [p–n Junction and Diode I–V](./02-semiconductor-characterization-fundamentals/02-pn-junction-and-diode-iv.md)
 - [Section Roadmap](./02-semiconductor-characterization-fundamentals/README.md)
 
 ## Learning Source

@@ -5,7 +5,7 @@ This folder follows my study of semiconductor characterization from the underlyi
 ## Notes
 
 1. [Carriers, Transport, and Optical Response](./01-carriers-transport-and-optical-response.md) — Energy bands, carrier concentration, mobility, conductivity, and the limits of interpreting optical inspection signals.
-2. `02-pn-junction-and-diode-iv.md` — Planned.
+2. [p–n Junction and Diode I–V](./02-pn-junction-and-diode-iv.md) — Depletion-region formation, built-in voltage, diode I–V behavior, and series-resistance limits.
 3. `03-mos-capacitor-and-oxide-charge.md` — Planned.
 
 ## Learning Source
