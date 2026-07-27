@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Direct and indirect bandgap comparison</title>
+  <desc id="desc">Simplified energy versus crystal momentum diagrams comparing direct and indirect electronic transitions.</desc>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <defs>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d64a3a"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#3976b8"/>
+    </marker>
+  </defs>
+
+  <g font-family="Arial, 'Noto Sans TC', sans-serif" fill="#202020">
+    <text x="300" y="65" text-anchor="middle" font-size="28" font-weight="600">Direct bandgap</text>
+    <text x="900" y="65" text-anchor="middle" font-size="28" font-weight="600">Indirect bandgap</text>
+
+    <g stroke="#202020" stroke-width="2.5" fill="none">
+      <path d="M100 560 H510"/>
+      <path d="M125 595 V105"/>
+      <path d="M690 560 H1100"/>
+      <path d="M715 595 V105"/>
+    </g>
+    <g font-size="20">
+      <text x="485" y="595">k</text>
+      <text x="90" y="125">E</text>
+      <text x="1075" y="595">k</text>
+      <text x="680" y="125">E</text>
+    </g>
+
+    <g stroke="#1f1f1f" stroke-width="4" fill="none">
+      <path d="M145 150 Q300 350 465 150"/>
+      <path d="M145 520 Q300 330 465 520"/>
+      <path d="M735 150 C840 160 900 185 980 250 C1020 220 1045 180 1065 150"/>
+      <path d="M735 520 C780 470 810 420 850 410 C900 425 980 500 1065 520"/>
+    </g>
+
+    <g font-size="20">
+      <text x="155" y="205">Conduction band</text>
+      <text x="155" y="495">Valence band</text>
+      <text x="745" y="205">Conduction band</text>
+      <text x="745" y="495">Valence band</text>
+    </g>
+
+    <path d="M300 410 V265" stroke="#d64a3a" stroke-width="5" marker-end="url(#arrowRed)"/>
+    <text x="322" y="345" font-size="20" fill="#d64a3a">photon</text>
+
+    <path d="M850 405 L975 255" stroke="#d64a3a" stroke-width="5" marker-end="url(#arrowRed)"/>
+    <path d="M850 405 H970" stroke="#3976b8" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#arrowBlue)"/>
+    <text x="930" y="340" font-size="20" fill="#d64a3a">photon</text>
+    <text x="875" y="455" font-size="20" fill="#3976b8">phonon / Δk</text>
+
+    <g stroke="#b6b6b6" stroke-width="1.5" stroke-dasharray="6 7">
+      <path d="M300 550 V125"/>
+      <path d="M850 550 V125"/>
+      <path d="M980 550 V125"/>
+    </g>
+
+    <text x="600" y="640" text-anchor="middle" font-size="17" fill="#606060">
+      Simplified E–k relationship; curvature and energy spacing are not to scale.
+    </text>
+  </g>
+</svg>

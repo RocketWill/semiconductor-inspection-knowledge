@@ -21,9 +21,15 @@ A personal learning repository connecting materials science, semiconductor manuf
 - [Semiconductor Electrical Behavior and Inspection Evidence](./01-materials-science/07-semiconductor-inspection-reflection.md)
 - [Section Roadmap](./01-materials-science/README.md)
 
+### 02. Semiconductor Characterization Fundamentals
+
+- [Carriers, Transport, and Optical Response](./02-semiconductor-characterization-fundamentals/01-carriers-transport-and-optical-response.md)
+- [Section Roadmap](./02-semiconductor-characterization-fundamentals/README.md)
+
 ## Learning Source
 
-- UC Davis / Coursera — *Materials Science: 10 Things Every Engineer Should Know*
+1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
+2. Arizona State University, [*Fundamentals of Semiconductor Characterization*](https://www.coursera.org/learn/fundamentals-of-semiconductor-characterization), Coursera.
 
 ## Purpose
 
