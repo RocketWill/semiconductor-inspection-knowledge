@@ -208,7 +208,7 @@ TTT 圖假設材料快速到達指定溫度後等溫保持；一般工業熱處�
 
 TTT 圖仍然很有價值，因為它能把相變的時間尺度、轉變溫度與產物清楚分開。不過實際使用時，需要確認圖表對應的合金成分、先前奧氏體化條件、晶粒尺寸與量測方法，不能把一張共析鋼示意圖直接套用到其他鋼材。
 
-## 9. Applied Reflection: Process History Is Not the Same as an Inspection Recipe
+## 9. Two Recipes Note: Manufacturing History and Inspection Settings
 
 In a six-month on-site wafer-inspection assignment, I worked with trigger timing, wafer motion, multiple camera streams, ROI and template settings, inspection recipes, result aggregation, and history review. The records available to me mainly described the inspection system. They were useful when a pattern appeared only under a particular configuration or remained fixed in one coordinate system.
 
@@ -220,7 +220,7 @@ But the image still does not identify a phase or microstructure. In that assignm
 
 This changes the information I would request during an investigation. I would keep the inspection configuration and manufacturing history as separate records, then compare both with the observed pattern. Otherwise, a stable model output may hide whether the repeated signal came from the material, the process, or the way the image was acquired.
 
-## 10. Connection to Industrial AI: Linking Process Paths with Inspection Evidence
+## 10. Linking the Two Records with Industrial AI
 
 ![小黑鋪設製程與 AOI 證據，但橋中央仍待驗證](../assets/06-processing-and-material-performance-illustrations/04-process-aoi-evidence-gap.png)
 
@@ -243,15 +243,15 @@ The gap is fairly specific. Model versions and equipment settings explain how a 
 
 For this kind of system, the model should be able to report which recorded process path is associated with an observation and how stable that association is. A verified explanation still needs a physically plausible mechanism and independent evidence.
 
-## 11. What Changed in My Understanding
+## 11. What the Steel Example Corrected
 
-Before studying phase diagrams, I tended to read a material property as a value attached to a material name. The steel examples made the limitation obvious: after an appropriate and comparable austenitizing condition, the same composition can produce coarse pearlite, fine pearlite, bainite, martensite, or a mixture depending on the subsequent time–temperature path.
+I had been reading material properties as values attached to a material name. The steel examples made the limitation obvious: after an appropriate and comparable austenitizing condition, the same composition can produce coarse pearlite, fine pearlite, bainite, martensite, or a mixture depending on the subsequent time–temperature path.
 
 The phase diagram also became less universal than it first appeared. It is a map of equilibrium states, not a replay of the actual manufacturing route. TTT and CCT diagrams add kinetics, but they still depend on composition and prior conditions.
 
 For inspection work, this means a repeated visual pattern should be connected with process history before it is given a material explanation. The pattern can be real and repeatable. The mechanism can still be unresolved.
 
-## 12. Working Principles and Boundaries
+## 12. Notes Beside the Phase and TTT Diagrams
 
 1. **A phase is not the same as a microstructure.** Pearlite contains ferrite and cementite; its arrangement matters.
 2. **A phase diagram is mainly an equilibrium map.** It does not specify transformation time or guarantee the result of rapid processing.
@@ -262,11 +262,9 @@ For inspection work, this means a repeated visual pattern should be connected wi
 7. **High hardness is not a complete design target.** Toughness, residual stress, dimensional stability, and service conditions still matter.
 8. **An AOI pattern does not identify a phase.** Diffraction, microscopy, sectioning, thermal records, or another material method may still be required.
 
-## 13. Scope and Links to Other Chapters
+這裡使用的是二元相圖、共晶／共析反應和簡化的共析鋼 TTT 圖。完整 Fe–Fe₃C 相圖、析出強化、燒結、薄膜相形成與半導體熱製程都還沒有展開。
 
-This chapter uses binary phase diagrams, eutectic and eutectoid reactions, and a simplified eutectoid-steel TTT diagram to connect processing history with microstructure and performance. It does not attempt to cover the full Fe–Fe₃C diagram, precipitation hardening, sintering, polymer processing, ceramic firing, thin-film phase formation, or semiconductor thermal processing in detail.
-
-The steel example is a model for learning how equilibrium and kinetics work together. It should not be transferred directly to silicon wafers or thin films. What carries across is the need to keep composition, initial state, process path, kinetics, and verification as separate parts of the explanation. The final chapter will return to semiconductor conductivity and inspection, then connect the material mechanisms from Chapters 01–06 with the evidence available in an industrial inspection system.
+鋼的例子主要用來練習如何把平衡狀態與轉變動力學放在一起，不能直接套到矽晶圓或薄膜。可以帶到下一章的，是較基本的判斷順序：先確認材料與初始狀態，再看實際製程路徑和時間尺度，最後用獨立量測確認結果。只有 AOI 圖形時，這條路通常還走不完。
 
 ## References
 

@@ -299,7 +299,7 @@ $$\sigma_y=\sigma_0+k_y d^{-1/2}$$
 
 只有當不同量測結果指向相同機制時，才能提高對根因判斷的信心。這個過程可能比直接替影像分類慢，不過能避免把外觀相似但來源不同的缺陷合併成同一類。
 
-## 10. Applied Reflection: Defect Labels Are Not Material Diagnoses
+## 10. Label Review Note: What Does “Defect” Mean Here?
 
 In an anonymized wafer-inspection project, the dataset contained two different kinds of labels. Haze-like, residue-like, and ring-like categories described a condition across most of the wafer image. Particles and scratches described localized features. The original annotation design represented both kinds with bounding boxes, even when a box covered nearly the whole wafer.
 
@@ -315,15 +315,15 @@ Studying crystal defects introduced another distinction. None of those labels id
 
 The label still matters. But it should state what was observed, not quietly claim a mechanism that the available evidence cannot support.
 
-## 11. What Changed in My Understanding
+## 11. A Change in the Way I Read Defect Labels
 
-Before studying crystal defects, I tended to interpret the word “defect” as something that should be detected, rejected, or removed. I now understand why that definition is too narrow. Vacancies support diffusion, dislocations make plastic deformation possible, grain boundaries can strengthen a polycrystal, and controlled dopants create semiconductor functionality.
+The word “defect” initially sounded like something that should be detected, rejected, or removed. That interpretation turned out to be too narrow. Vacancies support diffusion, dislocations make plastic deformation possible, grain boundaries can strengthen a polycrystal, and controlled dopants create semiconductor functionality.
 
 The engineering question is therefore not simply whether a defect exists. Its type, concentration, spatial distribution, and interaction with the process matter more. The equilibrium vacancy calculation made this especially clear: the formula describes a thermodynamic population, while a real process may preserve additional non-equilibrium defects.
 
 For inspection work, this changes how I interpret a class label. A particle, line, or contrast pattern can be valid evidence and still remain far removed from an atomic-scale mechanism. That gap is not a weakness in AOI (it is a boundary of the measurement). The useful step is to preserve the gap in the data and decide what evidence would narrow it.
 
-## 12. Connection to Industrial AI
+## 12. What I Would Keep in the Dataset
 
 The wafer project showed that label design and model design cannot be separated. If a dataset mixes whole-image states, localized morphology, engineering hypotheses, and verified causes in one label field, the model may learn the images successfully while the output remains difficult to interpret.
 
@@ -337,26 +337,11 @@ A more useful inspection record keeps these levels distinct:
 
 Not every production dataset can contain every field. But recording what is unknown is better than converting uncertainty into a confident class name. In practice, this lets the model support triage and verification planning without presenting a prediction as a completed diagnosis.
 
-## 13. Working Principles and Boundaries
+這一章仍有幾個容易用過頭的模型。平衡空位公式不包含所有由非平衡製程保留下來的缺陷；Arrhenius 關係跨越機制改變後，不能直接外推；最簡化的 Fick 定律也假設了特定的擴散條件。它們適合建立第一層理解，不適合替所有微觀組織變化提供同一個答案。
 
-- **A crystal defect is not automatically damage.** Its meaning depends on type, concentration, location, interaction, and process context.
-- **The equilibrium vacancy equation does not describe every retained defect.** Non-equilibrium processing can preserve additional defect populations.
-- **Arrhenius behavior should not be extrapolated across a mechanism change without evidence.**
-- **Fick's simplest laws depend on stated assumptions.** Electric fields, reactions, changing diffusivity, or coupled species may require a more complete model.
-- **Dislocations enable plastic deformation.** Strength still depends on their density, interactions, obstacles, microstructure, temperature, and loading.
-- **Grain boundaries have competing effects.** They can impede dislocations while accelerating diffusion, segregation, corrosion, or high-temperature deformation.
-- **AOI measures an optical response.** It does not directly reveal an atomic-scale defect or verify a unique material mechanism.
+因此，在 label review 時會先問一個很普通的問題：這個名稱描述的是影像外觀、推測的工程機制，還是已經驗證的原因？如果答案不清楚，先把欄位拆開，通常比繼續調模型更有用。
 
-## 14. Scope and Links to Other Chapters
-
-This chapter organizes defects by scale and follows two mechanisms in detail: how point defects support solid-state diffusion, and how dislocations enable plastic deformation. Grain boundaries and microstructure then connect those mechanisms with engineering properties and inspection evidence.
-
-The next chapters continue with:
-
-- [05. Mechanical Properties and Failure](./05-mechanical-properties-and-failure.md): tensile behavior, work hardening, creep, fracture, fatigue, and toughness; and
-- `06-processing-and-material-performance.md`: phase diagrams, phase transformation, TTT diagrams, heat treatment, and process control.
-
-Keeping these topics separate prevents every microstructural change from being attributed to one defect type or one diffusion equation.
+這裡的範圍先停在點缺陷、擴散、差排、晶界與微觀組織。下一章才把這些機制放進載入、時間與失效條件中。
 
 ## References
 

@@ -10,10 +10,7 @@ This section connects atomic bonding, crystal structure, defects, processing, an
 4. [Crystal Defects and Microstructure](./04-crystal-defects-and-microstructure.md) — Point defects, diffusion, dislocations, grain boundaries, and inspection-related interpretation.
 5. [Mechanical Properties and Failure Evidence](./05-mechanical-properties-and-failure.md) — Tensile behavior, creep, fracture toughness, fatigue, and the limits of scratch and crack measurements in industrial inspection.
 6. [Processing, Phase Transformations, and Material Performance](./06-processing-and-material-performance.md) — Phase diagrams, transformation kinetics, heat-treatment paths, and their connection to inspection evidence.
-
-## Planned Notes
-
-7. `07-semiconductor-inspection-reflection.md` — Connections between materials science, defect evidence, and semiconductor inspection.
+7. [Semiconductor Electrical Behavior and Inspection Evidence](./07-semiconductor-inspection-reflection.md) — Energy bands, doping, carrier behavior, evidence boundaries, and practical inspection records.
 
 ## Approach
 

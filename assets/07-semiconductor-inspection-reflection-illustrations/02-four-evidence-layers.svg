@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#222}
+    .title{font-size:31px;font-weight:680}
+    .head{font-size:24px;font-weight:680}
+    .body{font-size:20px}
+    .small{font-size:18px;fill:#555}
+    .card{fill:#fff;stroke:#252525;stroke-width:2.5}
+  </style>
+  <text x="600" y="55" text-anchor="middle" class="title">同一個異常，需要不同證據回答不同問題</text>
+
+  <g transform="translate(55,105)">
+    <rect width="255" height="455" rx="18" class="card"/>
+    <rect width="255" height="72" rx="18" fill="#eaf3fa"/>
+    <rect y="54" width="255" height="18" fill="#eaf3fa"/>
+    <text x="128" y="45" text-anchor="middle" class="head">光學證據</text>
+    <text x="24" y="118" class="small">可回答</text>
+    <text x="24" y="155" class="body">位置與形貌</text>
+    <text x="24" y="190" class="body">大小、對比與分布</text>
+    <text x="24" y="225" class="body">是否重複出現</text>
+    <line x1="24" y1="258" x2="231" y2="258" stroke="#d8d8d8"/>
+    <text x="24" y="300" class="small">不能單獨確認</text>
+    <text x="24" y="337" class="body">載子濃度</text>
+    <text x="24" y="372" class="body">漏電機制</text>
+    <text x="24" y="407" class="body">缺陷能階</text>
+  </g>
+
+  <g transform="translate(335,105)">
+    <rect width="255" height="455" rx="18" class="card"/>
+    <rect width="255" height="72" rx="18" fill="#fff0e7"/>
+    <rect y="54" width="255" height="18" fill="#fff0e7"/>
+    <text x="128" y="45" text-anchor="middle" class="head">電性證據</text>
+    <text x="24" y="118" class="small">可回答</text>
+    <text x="24" y="155" class="body">電阻與漏電</text>
+    <text x="24" y="190" class="body">I–V／C–V 行為</text>
+    <text x="24" y="225" class="body">載子壽命與遷移率</text>
+    <line x1="24" y1="258" x2="231" y2="258" stroke="#d8d8d8"/>
+    <text x="24" y="300" class="small">不能單獨確認</text>
+    <text x="24" y="337" class="body">表面形貌</text>
+    <text x="24" y="372" class="body">污染來源</text>
+    <text x="24" y="407" class="body">完整製程因果</text>
+  </g>
+
+  <g transform="translate(615,105)">
+    <rect width="255" height="455" rx="18" class="card"/>
+    <rect width="255" height="72" rx="18" fill="#fff8df"/>
+    <rect y="54" width="255" height="18" fill="#fff8df"/>
+    <text x="128" y="45" text-anchor="middle" class="head">製程證據</text>
+    <text x="24" y="118" class="small">可回答</text>
+    <text x="24" y="155" class="body">批次與設備</text>
+    <text x="24" y="190" class="body">Recipe 與時間</text>
+    <text x="24" y="225" class="body">異常從何時開始</text>
+    <line x1="24" y1="258" x2="231" y2="258" stroke="#d8d8d8"/>
+    <text x="24" y="300" class="small">不能單獨確認</text>
+    <text x="24" y="337" class="body">材料是否已改變</text>
+    <text x="24" y="372" class="body">哪個機制主導</text>
+    <text x="24" y="407" class="body">是否具有電性影響</text>
+  </g>
+
+  <g transform="translate(895,105)">
+    <rect width="255" height="455" rx="18" class="card"/>
+    <rect width="255" height="72" rx="18" fill="#edf5eb"/>
+    <rect y="54" width="255" height="18" fill="#edf5eb"/>
+    <text x="128" y="45" text-anchor="middle" class="head">材料分析</text>
+    <text x="24" y="118" class="small">可回答</text>
+    <text x="24" y="155" class="body">成分與晶相</text>
+    <text x="24" y="190" class="body">應力與界面</text>
+    <text x="24" y="225" class="body">微觀結構</text>
+    <line x1="24" y1="258" x2="231" y2="258" stroke="#d8d8d8"/>
+    <text x="24" y="300" class="small">不能單獨確認</text>
+    <text x="24" y="337" class="body">完整時間順序</text>
+    <text x="24" y="372" class="body">設備條件變化</text>
+    <text x="24" y="407" class="body">量產因果鏈</text>
+  </g>
+
+  <path d="M165 600 H1035" stroke="#d13b32" stroke-width="4" stroke-linecap="round"/>
+  <text x="600" y="642" text-anchor="middle" class="body" fill="#d13b32">證據需要互相連結，但不能互相取代</text>
+</svg>

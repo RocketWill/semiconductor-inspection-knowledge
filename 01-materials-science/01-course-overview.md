@@ -154,7 +154,7 @@ flowchart LR
 
 > 圖 3：作者依個人課程筆記重新整理，用來表示從檢測訊號建立並驗證材料或製程假設的過程。
 
-## 8. Applied Reflection: From Model Outputs to Engineering Evidence
+## 8. Project Note: Where the Model Output Stops
 
 Several inspection projects gradually changed how I framed the work. I initially focused on converting images into reliable labels, improving the models, and making the results usable in a production workflow. Those tasks were necessary. They were not the whole problem.
 
@@ -166,9 +166,9 @@ I also worked on an AI development workflow that connected dataset review, task 
 
 I now read the workflow as a longer chain. Material and process conditions influence the signal; imaging and annotation turn the signal into data; models organize the evidence; and engineering verification is still required before a root cause can be claimed.
 
-## 9. Connection to Industrial AI
+## 9. Evidence Chain Checklist
 
-For industrial AI, the connection can be organized into three levels:
+整理到這裡後，我把檢測系統中的證據分成三層。這不是一套固定流程，比較像是遇到異常時會回頭確認的清單：
 
 | Level | What AI can contribute | What still requires engineering evidence |
 | --- | --- | --- |
@@ -176,32 +176,13 @@ For industrial AI, the connection can be organized into three levels:
 | Hypothesis support | Relate morphology, location, spatial distribution, batch history, and process context | Whether the correlation is causal and physically plausible |
 | Root-cause verification | Prioritize cases and suggest what should be checked next | Confirmation through material analysis, process records, controlled experiments, or additional metrology |
 
-This division is important because high model accuracy does not guarantee that the label represents the right engineering question. If the dataset combines evidence, interpretation, and confirmed cause into one field, the model may learn the easiest visual proxy (not necessarily the physical change we meant to measure) while concealing uncertainty in the labels.
+這三層需要分開，因為模型準確率高，不代表標籤對應到正確的工程問題。如果資料集把觀察、解釋與確認後的原因放在同一個欄位，模型可能只學到最容易辨識的視覺線索，標籤中的不確定性反而被藏起來。
 
-For that reason, an inspection dataset becomes more useful when it preserves the available context: process stage, illumination or measurement condition, spatial distribution, batch relationship, and later verification result. Not every project can collect every field. But missing context should remain visible rather than being silently replaced by a confident defect name.
+因此，檢測資料除了影像和標籤，最好也保留當時能取得的製程階段、照明或量測條件、空間分布、批次關係和後續驗證結果。實際專案不一定拿得到所有欄位。哪些資料缺少，也應該是紀錄的一部分。
 
-## 10. What Changed in My Understanding
+這一章帶來的主要改變，是不再把影像擷取、標籤定義、模型準確率和推論速度視為完整的檢測問題。它們仍然重要，不過 bounding box 或 class probability 只是一項證據。當標籤開始聽起來比現有證據更確定時，就需要回到上面的三層重新檢查。
 
-Before studying these topics, I mainly framed inspection work as a problem of image acquisition, label definition, model accuracy, and inference speed. Those remain necessary. But materials science introduced a second layer of judgment: the same visual category can contain different physical mechanisms, and the same mechanism may produce different signals under different observation conditions.
-
-This changed how I interpret model output.
-
-> **A bounding box or class probability is not a material diagnosis.**
-
-It is one piece of evidence that should be considered together with loading history, temperature exposure, likely contact locations, spatial distribution, and subsequent verification. In practice, some of this information may be unavailable. That limitation is part of the result.
-
-The most useful distinction is now between **AOI evidence**, a **failure hypothesis**, and a **verified root cause**. AI can strengthen the first two by organizing data and revealing repeatable patterns. The third still requires evidence outside the model.
-
-## 11. Working Principles and Boundaries
-
-- **Material families describe common trends, not complete conclusions.** An individual material still has to be checked in its actual composition, process state, and operating condition.
-- **A property value needs its test conditions.** Specimen geometry, temperature, loading, environment, and measurement method can all change how the value should be interpreted.
-- **The AI task should match the spatial meaning of the anomaly.** Whole-image conditions and localized defects should not automatically be treated as the same bounding-box problem.
-- **Inspection results support observation and comparison.** A material mechanism or root cause still needs evidence from the process, material analysis, or another measurement method.
-
-These are basic reminders, but I keep returning to them when a convenient label starts to sound more certain than the available evidence.
-
-## 12. Chapter Roadmap
+## 10. Chapter Roadmap
 
 | Chapter | Main question | Status |
 | --- | --- | --- |
@@ -210,7 +191,7 @@ These are basic reminders, but I keep returning to them when a convenient label 
 | [04. Crystal Defects and Microstructure](./04-crystal-defects-and-microstructure.md) | How do defects affect diffusion, deformation, and inspection evidence? | Completed |
 | [05. Mechanical Properties and Failure](./05-mechanical-properties-and-failure.md) | How do materials deform and fail under load, time, and temperature? | Completed |
 | [06. Processing and Material Performance](./06-processing-and-material-performance.md) | How do phase transformations and process history control performance? | Completed |
-| 07. Semiconductor Inspection Reflection | How can materials knowledge improve the interpretation of inspection data? | Planned |
+| [07. Semiconductor Electrical Behavior and Inspection Evidence](./07-semiconductor-inspection-reflection.md) | How can materials and electrical knowledge improve the interpretation of inspection evidence? | Completed |
 
 ## References
 

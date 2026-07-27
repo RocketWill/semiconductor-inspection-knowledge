@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#222}
+    .title{font-size:31px;font-weight:680}
+    .head{font-size:22px;font-weight:680}
+    .body{font-size:18px;fill:#4c4c4c}
+    .box{fill:#fff;stroke:#272727;stroke-width:2.5}
+    .arrow{fill:none;stroke:#dd6b2c;stroke-width:3.5;marker-end:url(#arrow)}
+    .return{fill:none;stroke:#2b78b8;stroke-width:3.5;stroke-dasharray:9 8;marker-end:url(#blueArrow)}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3 z" fill="#dd6b2c"/></marker>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3 z" fill="#2b78b8"/></marker>
+  </defs>
+
+  <text x="600" y="52" text-anchor="middle" class="title">Inspection evidence chain</text>
+
+  <g transform="translate(50,100)">
+    <rect width="260" height="105" rx="16" class="box"/>
+    <text x="130" y="35" text-anchor="middle" class="head">製造脈絡</text>
+    <text x="130" y="67" text-anchor="middle" class="body">製程、批次、設備、時間</text>
+    <text x="130" y="91" text-anchor="middle" class="body">材料規格與初始狀態</text>
+  </g>
+  <g transform="translate(50,250)">
+    <rect width="260" height="105" rx="16" class="box"/>
+    <text x="130" y="35" text-anchor="middle" class="head">檢測脈絡</text>
+    <text x="130" y="67" text-anchor="middle" class="body">相機、光源、Trigger、ROI</text>
+    <text x="130" y="91" text-anchor="middle" class="body">Recipe 與座標系統</text>
+  </g>
+  <g transform="translate(50,400)">
+    <rect width="260" height="105" rx="16" class="box"/>
+    <text x="130" y="35" text-anchor="middle" class="head">AI 觀察</text>
+    <text x="130" y="67" text-anchor="middle" class="body">Class、Box、Mask、Score</text>
+    <text x="130" y="91" text-anchor="middle" class="body">尺寸、位置與分布</text>
+  </g>
+
+  <g transform="translate(405,245)">
+    <rect width="245" height="120" rx="20" fill="#f6f6f6" stroke="#272727" stroke-width="3"/>
+    <text x="123" y="48" text-anchor="middle" class="head">Evidence Record</text>
+    <text x="123" y="80" text-anchor="middle" class="body">保留來源、關係與未知值</text>
+  </g>
+
+  <g transform="translate(745,110)">
+    <rect width="240" height="95" rx="16" class="box"/>
+    <text x="120" y="40" text-anchor="middle" class="head">工程假設</text>
+    <text x="120" y="69" text-anchor="middle" class="body">機制與替代解釋</text>
+  </g>
+  <g transform="translate(745,260)">
+    <rect width="240" height="95" rx="16" class="box"/>
+    <text x="120" y="40" text-anchor="middle" class="head">驗證需求</text>
+    <text x="120" y="69" text-anchor="middle" class="body">需要什麼額外量測？</text>
+  </g>
+  <g transform="translate(745,410)">
+    <rect width="240" height="95" rx="16" class="box"/>
+    <text x="120" y="40" text-anchor="middle" class="head">驗證結果</text>
+    <text x="120" y="69" text-anchor="middle" class="body">電性／材料／製程證據</text>
+  </g>
+
+  <g transform="translate(1015,245)">
+    <rect width="145" height="120" rx="18" fill="#eaf3fa" stroke="#2b78b8" stroke-width="3"/>
+    <text x="73" y="43" text-anchor="middle" class="head">Agent</text>
+    <text x="73" y="74" text-anchor="middle" class="body">查詢與整理</text>
+    <text x="73" y="99" text-anchor="middle" class="body">不替代驗證</text>
+  </g>
+
+  <path d="M310 152 C365 152 365 265 405 285" class="arrow"/>
+  <path d="M310 302 H405" class="arrow"/>
+  <path d="M310 452 C365 452 365 345 405 325" class="arrow"/>
+  <path d="M650 285 C700 270 700 178 745 158" class="arrow"/>
+  <path d="M865 205 V260" class="arrow"/>
+  <path d="M865 355 V410" class="arrow"/>
+  <path d="M745 458 C680 458 680 370 625 350" class="return"/>
+  <path d="M1015 285 H985" class="return"/>
+  <path d="M1015 325 C980 340 975 395 940 410" class="return"/>
+
+  <text x="600" y="605" text-anchor="middle" class="body">模型可以協助建立關聯；根因仍需物理機制與獨立證據支持</text>
+</svg>

@@ -18,6 +18,7 @@ A personal learning repository connecting materials science, semiconductor manuf
 - [Crystal Defects and Microstructure](./01-materials-science/04-crystal-defects-and-microstructure.md)
 - [Mechanical Properties and Failure Evidence](./01-materials-science/05-mechanical-properties-and-failure.md)
 - [Processing, Phase Transformations, and Material Performance](./01-materials-science/06-processing-and-material-performance.md)
+- [Semiconductor Electrical Behavior and Inspection Evidence](./01-materials-science/07-semiconductor-inspection-reflection.md)
 - [Section Roadmap](./01-materials-science/README.md)
 
 ## Learning Source

@@ -276,7 +276,7 @@ S–N 資料也不能脫離條件單獨使用。平均應力、表面狀態、�
 
 同一種外觀可能對應不同的材料機制，而相同的機制也可能在不同條件下呈現不同外觀。因此，異常分類適合用來縮小後續調查的範圍，但不能直接取代根因分析。
 
-### 7.1 Applied Reflection: Measuring a Scratch Is Not Yet a Fracture Assessment
+### 7.1 Project Case: Measuring a Scratch Is Not Yet a Fracture Assessment
 
 In an anonymized glass-wafer inspection project, the workflow combined bright-field and dark-field image analysis. Particles and scratches were detected through separate processing paths, and the scratch regions were then passed to a segmentation model to estimate their visible surface length.
 
@@ -301,7 +301,7 @@ Better segmentation improves the first level. It does not complete the remaining
 >
 > Here, “cracked lens” was an operational acceptance category. It indicated what the inspection system should reject and where an operator should review the image; it did not establish the loading history or fracture mechanism. That distinction is easy to lose when a label already sounds like an engineering diagnosis.
 
-## 8. Connection to Industrial AI: From Defect Records to Failure Evidence
+## 8. Measurement Boundary Note: From a Visible Line to a Failure Claim
 
 Mechanical-failure analysis can involve stress–strain curves, temperature and cycle histories, equipment signals, inspection images, process records, and follow-up characterization. Industrial AI can help extract curve features, segment visible damage, compare distributions, and identify changes across repeated measurements. Image appearance alone, however, rarely distinguishes creep, fatigue, brittle fracture, process contamination, and an imaging artifact.
 
@@ -315,15 +315,15 @@ I would therefore record three different fields instead of placing everything in
 
 This is the distinction I want the dataset to preserve. And when a required field is unavailable, that absence should also be recorded rather than silently replaced by an assumption.
 
-## 9. What Changed in My Understanding
+## 9. What the Current Measurement Can and Cannot Support
 
-Before studying these topics, I treated a visible defect mainly as a classification and localization problem: acquire the image, define the label, and improve precision, recall, or inference time. Those tasks still matter. Mechanical behavior adds another layer, because similar line-shaped features can come from different loading histories, while the same mechanism may look different under another illumination or imaging condition.
+A visible defect used to enter my workflow mainly as a classification and localization problem: acquire the image, define the label, then improve precision, recall, or inference time. Those tasks still matter. Mechanical behavior adds another layer, because similar line-shaped features can come from different loading histories, while the same mechanism may look different under another illumination or imaging condition.
 
 This changed how I think about inspection records. Defect labels and bounding boxes are useful operational outputs, but they are not sufficient descriptions of an engineering mechanism. Process stage, temperature exposure, possible contact location, spatial pattern, batch relationship, and later verification should be linked when they are available. The missing information matters too.
 
 The practical change is simple: AOI evidence, a failure hypothesis, and a verified root cause should not be stored as if they were the same conclusion. AI can help establish the first and organize the second. The third still needs material, process, or experimental evidence.
 
-## 10. Working Principles and Boundaries
+## 10. Failure Terms I Need to Keep Separate
 
 1. **Stiffness is not strength.** Elastic modulus describes resistance to elastic deformation; strength requires a specified yielding or failure condition.
 2. **Tensile strength is not fracture toughness.** A cracked component may fail below its nominal tensile strength.
@@ -334,11 +334,9 @@ The practical change is simple: AOI evidence, a failure hypothesis, and a verifi
 7. **Not every material has a fatigue limit.** For materials without a plateau, fatigue strength should be reported at a specified number of cycles.
 8. **An AI-detected anomaly is not a verified cause.** Mechanism assessment still needs evidence about the material, loading, environment, and time.
 
-## 11. Scope and Links to Other Chapters
+這一章先停在拉伸行為、潛變、衝擊、斷裂韌性與疲勞。Paris law、多軸疲勞、黏彈性模型和有限元素分析都還沒有展開。這不是因為它們不重要，而是目前的影像案例連裂紋深度、載入與邊界條件都不完整，直接使用更複雜的模型不會讓結論自動變可靠。
 
-This chapter uses tensile behavior, creep, impact testing, fracture mechanics, and fatigue to build a basic framework for reading failure evidence. It does not yet cover failure criteria, the Paris law, multiaxial fatigue, viscoelastic models, or finite-element analysis. Those methods can provide more detailed predictions, but only when the material model, geometry, loading, and boundary conditions are appropriate.
-
-The next chapter returns to how processing changes phase constitution and microstructure, then connects phase diagrams, heat treatment, and TTT diagrams with material performance.
+目前比較實際的做法，是先把可見長度、寬度、方向和對比記錄好，再明確寫下缺少的機械證據。量得更精細，和知道它為什麼失效，是兩件事。
 
 ## References
 

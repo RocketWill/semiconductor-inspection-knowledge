@@ -235,7 +235,7 @@ $$
 
 不過，相同外觀可能對應不同機制，因此檢測結果只能作為證據起點。較可靠的分析方式是先描述缺陷的形狀、位置與分布，接著結合材料性質和製程條件提出假設，最後再利用其他量測方法逐步確認或排除。
 
-## 8. Applied Reflection: Material Decisions Become Inspection Constraints
+## 8. Project Note: Material Decisions Become Inspection Constraints
 
 In these inspection projects, I was not responsible for selecting the polymer formulation of a contact lens or the composition of a glass wafer. Those decisions had already been made before the inspection system was developed. My work began downstream, where the material's optical, mechanical, and surface behavior became constraints on imaging, algorithms, and system stability.
 
@@ -254,7 +254,7 @@ If I were involved earlier in the selection process, I would ask two connected q
 
 AOI cannot replace material selection. It can provide feedback on whether the selected material–process combination remains observable, repeatable, and under control.
 
-## 9. Working Principles and Boundaries
+## 9. Constraint-First Selection Note
 
 - **High elastic modulus does not mean high strength.** Stiffness and the stress required for permanent deformation or failure answer different questions.
 - **High hardness does not mean resistance to fracture.** Toughness, flaw size, and stress state still matter.
@@ -262,25 +262,18 @@ AOI cannot replace material selection. It can provide feedback on whether the se
 - **A datasheet value is conditional.** Test method, orientation, temperature, process state, and specimen geometry can change the comparison.
 - **Inspection appearance is not a root cause.** An image provides evidence; the proposed material or process mechanism still needs independent verification.
 
-These are simple checks, but I need them because several engineering terms sound interchangeable until they are placed in an actual constraint.
+這幾項看起來像基礎提醒，不過放進實際限制後才容易看出差異。鋼與鋁的例子就是如此：固定幾何時，鋼明顯較不容易產生彈性變形；固定重量並允許鋁增加截面後，結果就接近許多。先問「什麼條件不能改」，再比較材料數值，比直接尋找某一項最高性質可靠。
 
-## 10. Scope and Links to Other Chapters
+同樣的順序也適用於檢測設計。透明度、反射率、表面狀態、幾何與照明共同決定可觀察的訊號。如果這些條件還沒有釐清，就先選擇模型，最後可能只是改善指標，卻沒有改善工程判讀。
 
-This chapter keeps only the bonding, structure, and property concepts needed for material selection. The detailed mechanisms continue in:
+這一章暫時保留一個選材順序：
 
-- [03. Atomic Bonding and Structure](./03-atomic-bonding-and-structure.md): electronic structure, bonding energy, crystal structures, and covalent bonding in silicon;
-- [04. Crystal Defects and Microstructure](./04-crystal-defects-and-microstructure.md): vacancies, diffusion, dislocations, and microstructure;
-- [05. Mechanical Properties and Failure](./05-mechanical-properties-and-failure.md): tensile behavior, creep, fracture, fatigue, and toughness;
-- `06-processing-and-material-performance.md`: phase diagrams, TTT diagrams, heat treatment, and process control; and
-- `07-semiconductor-inspection-reflection.md`: a deeper connection between material mechanisms, inspection evidence, and engineering decisions.
+1. 先寫下功能與不能違反的限制；
+2. 再確認載入、溫度、環境、幾何和製程狀態；
+3. 選擇與限制相符的材料指標，而不是比較所有性質；
+4. 最後確認選定的材料—製程組合是否能被穩定量測和監控。
 
-## 11. What Changed in My Understanding
-
-I used to read material comparisons mainly as lists of property values: higher modulus, lower density, better thermal conductivity, or greater hardness. The steel–aluminum example exposed the problem with that approach. Steel is clearly stiffer when geometry is fixed, but the comparison becomes much closer when mass is fixed and the aluminum section is allowed to grow.
-
-I now define the required function and engineering constraints before comparing individual property values.
-
-The same change applies to inspection work. Optical contrast depends on the material, surface, interface, geometry, and illumination together. Choosing a model before clarifying those conditions may improve a metric without improving the engineering interpretation. I now treat material selection and inspection design as connected decisions: one determines how the system behaves, while the other determines which part of that behavior becomes observable.
+後續章節會再拆解鍵結、缺陷、失效與製程歷史。這裡先不把它們一次展開。
 
 ## References
 

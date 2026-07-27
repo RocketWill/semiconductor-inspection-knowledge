@@ -224,7 +224,7 @@ FCC 結構通常具有多組容易啟動的 $\{111\}\langle110\rangle$ 密排滑
 
 這個例子無法只靠影像得到唯一答案，但可以把後續驗證從一般性的「看見異常」縮小成幾個具體假設。
 
-## 9. Applied Reflection: Separating Coordinate Effects from Crystal-Level Hypotheses
+## 9. Debugging Note: Which Reference Frame Does the Pattern Follow?
 
 During a six-month on-site semiconductor wafer-inspection assignment, I worked on a runtime system that combined multiple camera streams, wafer-motion tracking, trigger-based inspection, ROI and template configuration, result aggregation, and history review.
 
@@ -242,7 +242,7 @@ But that still requires independent verification. I did not use XRD, Raman spect
 
 This three-frame check is now more useful to me than starting with a defect name. It shows when optical debugging is still sufficient and when material characterization may be justified.
 
-## 10. Working Principles and Boundaries
+## 10. Checks I Would Make Before Using a Crystal-Level Explanation
 
 - **Bonding gives first-order trends, not a complete property prediction.** Strength, ductility, toughness, and reliability still depend on defects, microstructure, temperature, and loading.
 - **APF describes geometric packing.** It is not a direct measure of density, strength, or engineering performance.
@@ -250,22 +250,17 @@ This three-frame check is now more useful to me than starting with a defect name
 - **Silicon should not be treated as an ordinary FCC crystal.** Its FCC Bravais lattice and two-atom basis together form the diamond-cubic structure.
 - **A direction-dependent optical pattern can support a crystallographic hypothesis.** It cannot verify a crystal-level cause without independent evidence.
 
-## 11. What Changed in My Understanding
+原子間位能曲線讓兩個原本分開記憶的性質連在一起：彈性模數和熱膨脹都與原子間距偏離平衡位置時，能量曲線的形狀有關。矽的例子則補上另一個容易混淆的地方。FCC Bravais lattice 加上 two-atom basis 才構成完整的 diamond-cubic structure；後者會改變最近鄰、配位數、堆積方式與鍵結幾何，不能只因為看到 FCC 就沿用金屬 FCC 的直覺。
 
-Before studying atomic bonding and crystal structure, I tended to read elastic modulus, thermal expansion, conductivity, and deformation behavior as separate values in a material specification. The interatomic energy curve made the first connection clearer: stiffness and thermal expansion both originate from how the energy changes when atomic spacing moves away from equilibrium.
+回到檢測現場，這一章留下的是一個 debugging 順序：
 
-The silicon example changed a second part of my reasoning. I already knew that silicon wafers were described by orientations such as $(100)$ and $(111)$, but I had not clearly separated the FCC Bravais lattice from the complete diamond-cubic structure. The two-atom basis is not a minor naming detail. It changes the nearest neighbors, coordination number, packing, and bonding geometry.
+1. 圖形是否固定在 camera frame？
+2. 是否跟著設備運動或掃描方向？
+3. 旋轉 wafer 或改變照明後，圖形是否仍跟著 wafer frame？
+4. 是否存在已知的晶向或異向性製程，可以提出可驗證的假設？
+5. 現有資料是否包含 XRD、Raman 或其他能確認晶體層級原因的證據？
 
-For inspection work, the practical change is more limited but useful. I now separate camera-fixed, equipment-fixed, and wafer-fixed behavior before attaching a material explanation to a directional pattern. If the feature survives the first two checks and follows the wafer reference direction or an anisotropic process step, crystal orientation becomes a reasonable hypothesis to test. It does not become the label.
-
-## 12. Scope and Links to Other Chapters
-
-This chapter establishes the path from valence electrons and bonding to crystal arrangement, then uses silicon to connect orientation with process and inspection behavior. The next chapters continue with:
-
-- [04. Crystal Defects and Microstructure](./04-crystal-defects-and-microstructure.md): vacancies, interstitials, dislocations, grain boundaries, and diffusion; and
-- [05. Mechanical Properties and Failure](./05-mechanical-properties-and-failure.md): elastic and plastic response, creep, fracture, fatigue, and toughness.
-
-Keeping these mechanisms separate prevents bonding from becoming a one-step explanation for every measured property.
+前兩層還沒有排除以前，急著談晶向通常太早。即使圖形最後跟著 wafer reference direction，晶體方向也只是下一個值得測試的解釋，不應直接變成缺陷標籤。
 
 ## References
 

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#222}
+    .title{font-size:30px;font-weight:650}
+    .label{font-size:23px;font-weight:560}
+    .small{font-size:19px;fill:#4a4a4a}
+    .band{stroke:#202020;stroke-width:5;stroke-linecap:round}
+    .fermi{stroke:#2b78b8;stroke-width:4;stroke-dasharray:12 10}
+    .level{stroke:#dd6b2c;stroke-width:4;stroke-dasharray:7 8}
+    .arrow{stroke:#d13b32;stroke-width:4;fill:none;marker-end:url(#arrow)}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#d13b32"/>
+    </marker>
+  </defs>
+
+  <text x="600" y="55" text-anchor="middle" class="title">本徵與摻雜半導體的簡化能帶示意</text>
+
+  <g transform="translate(65,105)">
+    <text x="155" y="0" text-anchor="middle" class="title">本徵半導體</text>
+    <line x1="30" y1="90" x2="280" y2="90" class="band"/>
+    <line x1="30" y1="350" x2="280" y2="350" class="band"/>
+    <line x1="30" y1="220" x2="280" y2="220" class="fermi"/>
+    <text x="0" y="98" class="label">E<tspan baseline-shift="sub" font-size="16">C</tspan></text>
+    <text x="0" y="358" class="label">E<tspan baseline-shift="sub" font-size="16">V</tspan></text>
+    <text x="292" y="228" class="small">E<tspan baseline-shift="sub" font-size="14">F</tspan> 接近能隙中央</text>
+    <path d="M92 333 C92 285, 92 190, 92 108" class="arrow"/>
+    <text x="110" y="155" class="small">熱激發</text>
+    <circle cx="92" cy="83" r="9" fill="#2b78b8"/>
+    <circle cx="92" cy="350" r="10" fill="#fff" stroke="#d13b32" stroke-width="4"/>
+    <text x="155" y="405" text-anchor="middle" class="small">電子與電洞成對產生</text>
+  </g>
+
+  <g transform="translate(445,105)">
+    <text x="155" y="0" text-anchor="middle" class="title">n 型</text>
+    <line x1="30" y1="90" x2="280" y2="90" class="band"/>
+    <line x1="30" y1="350" x2="280" y2="350" class="band"/>
+    <line x1="30" y1="145" x2="280" y2="145" class="level"/>
+    <line x1="30" y1="175" x2="280" y2="175" class="fermi"/>
+    <text x="0" y="98" class="label">E<tspan baseline-shift="sub" font-size="16">C</tspan></text>
+    <text x="0" y="358" class="label">E<tspan baseline-shift="sub" font-size="16">V</tspan></text>
+    <text x="290" y="151" class="small">施體能階</text>
+    <text x="290" y="183" class="small">E<tspan baseline-shift="sub" font-size="14">F</tspan> 上移</text>
+    <path d="M125 138 C125 126, 125 113, 125 101" class="arrow"/>
+    <circle cx="125" cy="83" r="9" fill="#2b78b8"/>
+    <text x="155" y="405" text-anchor="middle" class="small">電子為多數載子</text>
+  </g>
+
+  <g transform="translate(825,105)">
+    <text x="155" y="0" text-anchor="middle" class="title">p 型</text>
+    <line x1="30" y1="90" x2="280" y2="90" class="band"/>
+    <line x1="30" y1="350" x2="280" y2="350" class="band"/>
+    <line x1="30" y1="295" x2="280" y2="295" class="level"/>
+    <line x1="30" y1="265" x2="280" y2="265" class="fermi"/>
+    <text x="0" y="98" class="label">E<tspan baseline-shift="sub" font-size="16">C</tspan></text>
+    <text x="0" y="358" class="label">E<tspan baseline-shift="sub" font-size="16">V</tspan></text>
+    <text x="290" y="301" class="small">受體能階</text>
+    <text x="290" y="273" class="small">E<tspan baseline-shift="sub" font-size="14">F</tspan> 下移</text>
+    <path d="M125 343 C125 332, 125 316, 125 303" class="arrow"/>
+    <circle cx="125" cy="350" r="10" fill="#fff" stroke="#d13b32" stroke-width="4"/>
+    <text x="155" y="405" text-anchor="middle" class="small">電洞為多數載子</text>
+  </g>
+
+  <g transform="translate(80,580)">
+    <line x1="0" y1="0" x2="1040" y2="0" stroke="#d6d6d6" stroke-width="2"/>
+    <circle cx="110" cy="42" r="8" fill="#2b78b8"/>
+    <text x="130" y="49" class="small">電子</text>
+    <circle cx="285" cy="42" r="9" fill="#fff" stroke="#d13b32" stroke-width="4"/>
+    <text x="305" y="49" class="small">電洞</text>
+    <line x1="455" y1="42" x2="515" y2="42" class="fermi"/>
+    <text x="530" y="49" class="small">費米能階</text>
+    <line x1="720" y1="42" x2="780" y2="42" class="level"/>
+    <text x="795" y="49" class="small">摻雜能階</text>
+  </g>
+</svg>
