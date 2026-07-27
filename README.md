@@ -1,12 +1,30 @@
 # Semiconductor Inspection Knowledge
 
-A personal learning repository connecting materials science, semiconductor manufacturing, and inspection engineering.
+A personal after-work learning repository connecting materials science, semiconductor fundamentals, characterization, and industrial inspection.
+
+## Why I Keep These Notes
+
+My work has mainly been in computer vision, industrial inspection software, and AI deployment. Across semiconductor and optical-inspection projects, that has meant dealing with cameras, datasets, defect models, runtime systems, and production traceability.
+
+After several years of working on these systems, a gap in my own understanding became clear. The systems could detect, classify, and measure visible abnormalities. But the image alone could not always explain how those signals related to material structure, processing history, electrical behavior, or a failure mechanism (especially when the model output looked convincing).
+
+This repository records how I have been working through that gap after work. It does not replace formal materials analysis or semiconductor characterization. The purpose is more practical: to understand what an inspection result can support, what still remains a hypothesis, and what evidence would be needed next.
 
 ## Current Focus
 
 - Processing–structure–properties–performance relationships
 - Material properties, defects, and failure mechanisms
-- Practical connections to semiconductor manufacturing and optical inspection
+- Carrier transport and semiconductor electrical behavior
+- I–V and C–V interpretation under stated measurement conditions
+- Connections among optical inspection, process context, and later verification
+
+## Where to Start
+
+For a short introduction to the repository, these three notes show the main learning direction:
+
+1. [Semiconductor Electrical Behavior and Inspection Evidence](./01-materials-science/07-semiconductor-inspection-reflection.md) — how electrical behavior, optical evidence, runtime context, and verification fit together.
+2. [Crystal Defects and Microstructure](./01-materials-science/04-crystal-defects-and-microstructure.md) — why an AI defect label is not the same thing as an atomic or microstructural defect.
+3. [MOS Capacitor C–V and Oxide Charge](./02-semiconductor-characterization-fundamentals/03-mos-capacitor-and-oxide-charge.md) — an example of working from a physical model to a measured curve while keeping the assumptions visible.
 
 ## Notes
 
@@ -33,6 +51,14 @@ A personal learning repository connecting materials science, semiconductor manuf
 1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
 2. Arizona State University, [*Fundamentals of Semiconductor Characterization*](https://www.coursera.org/learn/fundamentals-of-semiconductor-characterization), Coursera.
 
-## Purpose
+## Language Note
 
-I write these notes in my own words and focus on relationships between concepts rather than isolated definitions. When a visible anomaly appears, I treat it as a piece of evidence rather than a completed diagnosis. Each chapter connects course concepts with engineering constraints, defect interpretation, and the measurements still needed to verify a possible cause.
+The English sections explain the learning context, project connections, engineering judgment, and limits of interpretation. The Chinese sections keep the more detailed technical explanations, equations, and worked examples. They serve different purposes rather than repeating the same content.
+
+## Note on Project Examples
+
+Project examples are limited to systems and engineering methods I personally worked on. Screenshots use mock or anonymized data. Customer datasets, proprietary production images, confidential equipment parameters, and internal documents are not included.
+
+## How I Write These Notes
+
+I use formulas and small examples when they help check a relationship or expose a mistaken assumption. Project connections are included when they add useful context, and their limits are stated directly. A visible anomaly is evidence, not a completed diagnosis. That distinction matters.

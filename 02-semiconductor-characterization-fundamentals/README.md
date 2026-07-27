@@ -1,6 +1,6 @@
 # Semiconductor Characterization Fundamentals
 
-This folder follows my study of semiconductor characterization from the underlying physics. I am starting with carriers, transport, and optical response before moving to p-n junctions and MOS capacitors. The order matters to me. Before connecting a measured signal with inspection data, I need to understand what the measurement actually supports and where that interpretation stops.
+This section begins with carriers, transport, and optical response, then moves through p–n junctions, diode I–V behavior, and MOS capacitor C–V response. That order helped me follow the physical mechanism before trying to interpret the measured curve. It also made the limits easier to see.
 
 ## Notes
 
@@ -14,4 +14,4 @@ This folder follows my study of semiconductor characterization from the underlyi
 
 ## Note on Scope
 
-這一部分以課程內容和個人學習紀錄為主，再逐步連回過去的 AOI、camera runtime 與資料系統經驗。專案案例主要用來說明量測條件和資料脈絡，不代表曾經操作 Hall measurement、四點探針或其他電性表徵設備。
+These notes follow the course content and connect it with previous work in AOI, camera runtime, and industrial data systems where the link is useful. The project examples are mainly about measurement context and traceability. They do not imply hands-on experience with Hall measurement, four-point probes, or other electrical-characterization equipment.
