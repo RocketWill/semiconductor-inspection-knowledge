@@ -209,7 +209,7 @@ These are basic reminders, but I keep returning to them when a convenient label 
 | [03. Atomic Bonding and Structure](./03-atomic-bonding-and-structure.md) | How do bonding and crystal structure shape material behavior? | Completed |
 | [04. Crystal Defects and Microstructure](./04-crystal-defects-and-microstructure.md) | How do defects affect diffusion, deformation, and inspection evidence? | Completed |
 | [05. Mechanical Properties and Failure](./05-mechanical-properties-and-failure.md) | How do materials deform and fail under load, time, and temperature? | Completed |
-| 06. Processing and Material Performance | How do phase transformations and process history control performance? | Planned |
+| [06. Processing and Material Performance](./06-processing-and-material-performance.md) | How do phase transformations and process history control performance? | Completed |
 | 07. Semiconductor Inspection Reflection | How can materials knowledge improve the interpretation of inspection data? | Planned |
 
 ## References

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">共析鋼的簡化 TTT 圖</title>
+  <desc id="desc">時間為對數軸的簡化等溫轉變圖，標示珠光體、貝氏體、麻田散鐵開始溫度，以及三條不同的時間溫度路徑。</desc>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <style>
+    .axis{stroke:#222;stroke-width:3;fill:none}
+    .start{stroke:#d7672f;stroke-width:5;fill:none}
+    .finish{stroke:#3778a8;stroke-width:5;fill:none}
+    .path1{stroke:#6d6d6d;stroke-width:4;fill:none;stroke-dasharray:10 7}
+    .path2{stroke:#d38a22;stroke-width:4;fill:none}
+    .path3{stroke:#c73d32;stroke-width:4;fill:none}
+    .ms{stroke:#c73d32;stroke-width:3;stroke-dasharray:12 8}
+    .main{font:25px -apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#222}
+    .small{font:20px -apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#444}
+    .orange{fill:#d7672f}.blue{fill:#3778a8}.red{fill:#c73d32}
+  </style>
+  <line class="axis" x1="130" y1="570" x2="1080" y2="570"/>
+  <line class="axis" x1="130" y1="570" x2="130" y2="70"/>
+  <text class="main" x="560" y="630">時間（對數尺度）</text>
+  <text class="main" x="48" y="345" transform="rotate(-90 48 345)">溫度</text>
+  <text class="small" x="130" y="600">短</text>
+  <text class="small" x="1035" y="600">長</text>
+  <text class="small" x="78" y="115">高</text>
+  <text class="small" x="78" y="560">低</text>
+  <path class="start" d="M820 145 C480 165 360 250 390 325 C415 390 520 430 700 450"/>
+  <path class="finish" d="M1015 145 C690 170 560 255 585 330 C610 395 725 430 910 450"/>
+  <text class="small orange" x="770" y="125">轉變開始</text>
+  <text class="small blue" x="965" y="125">轉變完成</text>
+  <text class="main" x="760" y="235">波來鐵</text>
+  <text class="main" x="735" y="390">貝氏體</text>
+  <line class="ms" x1="130" y1="485" x2="1080" y2="485"/>
+  <text class="main red" x="930" y="475">Mₛ</text>
+  <text class="main" x="800" y="535">麻田散鐵區</text>
+  <path class="path1" d="M235 95 L235 205 L920 205"/>
+  <text class="small" x="850" y="190">高溫等溫：波來鐵</text>
+  <path class="path2" d="M285 95 L285 365 L820 365"/>
+  <text class="small orange" x="820" y="350">較低溫等溫：貝氏體</text>
+  <path class="path3" d="M335 95 L335 535"/>
+  <text class="small red" x="350" y="525">快速降至 Mₛ 以下：麻田散鐵</text>
+  <text class="small" x="445" y="300">鼻尖：擴散能力與相變驅動力的競爭</text>
+</svg>

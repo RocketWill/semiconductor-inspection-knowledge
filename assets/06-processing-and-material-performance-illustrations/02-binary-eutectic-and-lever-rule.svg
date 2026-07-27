@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">簡化二元共晶相圖與槓桿定則</title>
+  <desc id="desc">溫度對成分的簡化二元共晶相圖，標示液相線、共晶點、相區、等溫連線及槓桿定則使用的成分位置。</desc>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <style>
+    .axis{stroke:#222;stroke-width:3;fill:none}
+    .curve{stroke:#d7672f;stroke-width:5;fill:none}
+    .guide{stroke:#3778a8;stroke-width:3;stroke-dasharray:10 8;fill:none}
+    .point{fill:#c73d32}
+    .main{font:26px -apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#222}
+    .small{font:21px -apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#444}
+    .blue{fill:#3778a8}
+    .red{fill:#c73d32}
+  </style>
+  <line class="axis" x1="130" y1="555" x2="1080" y2="555"/>
+  <line class="axis" x1="130" y1="555" x2="130" y2="80"/>
+  <path class="curve" d="M130 130 C310 170 430 250 590 380"/>
+  <path class="curve" d="M1080 145 C900 185 760 265 590 380"/>
+  <line class="curve" x1="130" y1="380" x2="1080" y2="380"/>
+  <path class="curve" d="M340 380 C330 425 320 475 280 555"/>
+  <path class="curve" d="M870 380 C880 425 890 475 930 555"/>
+  <text class="main" x="570" y="135">液相 L</text>
+  <text class="main" x="285" y="285">L + α</text>
+  <text class="main" x="820" y="295">L + β</text>
+  <text class="main" x="610" y="525">α + β</text>
+  <text class="main" x="185" y="475">α</text>
+  <text class="main" x="985" y="475">β</text>
+  <text class="small" x="40" y="320" transform="rotate(-90 40 320)">溫度</text>
+  <text class="small" x="555" y="630">成分（wt% B）</text>
+  <text class="small" x="115" y="590">0</text>
+  <text class="small" x="1040" y="590">100</text>
+  <circle class="point" cx="590" cy="380" r="10"/>
+  <text class="small red" x="615" y="368">共晶點</text>
+  <line class="guide" x1="320" y1="475" x2="890" y2="475"/>
+  <line class="guide" x1="510" y1="475" x2="510" y2="555"/>
+  <circle class="point" cx="320" cy="475" r="7"/>
+  <circle class="point" cx="510" cy="475" r="7"/>
+  <circle class="point" cx="890" cy="475" r="7"/>
+  <text class="small blue" x="278" y="515">Cα = 20</text>
+  <text class="small blue" x="467" y="540">C0 = 40</text>
+  <text class="small blue" x="850" y="515">Cβ = 80</text>
+  <text class="small blue" x="520" y="455">等溫連線（tie line）</text>
+  <text class="small" x="735" y="80">液相線以上：完全液態</text>
+  <text class="small" x="735" y="112">溶解度線之間：α + β 共存</text>
+</svg>

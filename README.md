@@ -17,6 +17,7 @@ A personal learning repository connecting materials science, semiconductor manuf
 - [Atomic Bonding and Crystal Structure](./01-materials-science/03-atomic-bonding-and-structure.md)
 - [Crystal Defects and Microstructure](./01-materials-science/04-crystal-defects-and-microstructure.md)
 - [Mechanical Properties and Failure Evidence](./01-materials-science/05-mechanical-properties-and-failure.md)
+- [Processing, Phase Transformations, and Material Performance](./01-materials-science/06-processing-and-material-performance.md)
 - [Section Roadmap](./01-materials-science/README.md)
 
 ## Learning Source
