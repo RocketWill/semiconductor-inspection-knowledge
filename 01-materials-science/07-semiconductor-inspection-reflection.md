@@ -188,15 +188,25 @@ This distinction is useful because an operational label does not need to be phys
 
 ## 9. Runtime Note: A Defect Record Needs Context
 
-Looking back at the wafer runtime, I realized that it preserved more context than a simple defect result. A passing wafer was treated as a session rather than a collection of unrelated frames. Camera identity, trigger reason, direction, sample timing, measurements, and final aggregation could be traced through that session.
+The Vision Console and wafer runtime were developed as connected tools, although their jobs were different. The console helped establish an imaging setup: camera streams, exposure and gain, ROI, lightweight CV operations, snapshots, and presets. The runtime then used the confirmed camera and recipe settings for acquisition and inspection.
 
-At the time, I mainly designed this structure for runtime stability, debugging, and traceability. After studying semiconductor materials, I see another use for it: these fields describe how an observation was produced. The Vision Console adds related context through stream identity, ROI shape, image-processing settings, and camera parameters.
+![Vision Console 的 demo stream、ROI 與即時影像調整畫面](../assets/project-screenshots/vision-console/demo-stream-and-roi.jpeg)
+
+> Figure 4: A demo-stream view from the Vision Console I helped develop for a multi-camera inspection setting at a major semiconductor manufacturer in Taiwan. Production images are not reproduced. The screen shows how ROI and basic image processing could be checked before those settings were used by the inspection runtime.
+
+![Vision Console 與 wafer inspection runtime 的配套關係](../assets/project-screenshots/vision-console/console-runtime-relationship.svg)
+
+> Figure 5: A reconstructed note on the relationship between the two tools. The console establishes how an image is acquired; the runtime uses that configuration to execute inspection and retain the operational context.
+
+The runtime preserved more context than a simple defect result. A passing wafer was treated as a session rather than a collection of unrelated frames. Camera identity, trigger reason, direction, sample timing, measurements, and final aggregation could be traced through that session.
+
+At the time, this structure was mainly useful for runtime stability, debugging, and traceability. After studying semiconductor materials, I read the same fields as a record of how an observation was produced.
 
 But they still do not describe what the wafer experienced before inspection. Upstream process steps, thermal exposure, material specification, electrical tests, and later characterization would need separate links. A runtime record can explain the inspection path; it cannot fill in the missing material history.
 
 ![匿名化的 wafer inspection runtime 即時操作畫面](../assets/07-semiconductor-inspection-reflection-illustrations/06-wafer-runtime-live-anonymized.png)
 
-> 圖 4：作者開發的 wafer inspection runtime 匿名化展示畫面。系統使用 mock 影片呈現多相機狀態、ROI、trigger、session 與即時量測資訊；Logo 與本機路徑已移除。這張圖用來說明觀察如何產生，不代表畫面本身已經確認材料或電性原因。
+> 圖 6：作者開發的 wafer inspection runtime 匿名化展示畫面。系統使用 mock 影片呈現多相機狀態、ROI、trigger、session 與即時量測資訊；Logo 與本機路徑已移除。這張圖用來說明觀察如何產生，不代表畫面本身已經確認材料或電性原因。
 
 ## 10. Looking Back at the Tools I Have Built
 
@@ -215,11 +225,11 @@ The connection appeared only after I placed the projects beside the material con
 
 ![匿名化的 wafer inspection history 與結果彙整畫面](../assets/07-semiconductor-inspection-reflection-illustrations/07-wafer-runtime-history-anonymized.png)
 
-> 圖 5：作者開發的 wafer inspection runtime 匿名化展示畫面。History 將 session、wafer、時間、檢測結果與量測欄位保留在同一筆紀錄中；畫面資料來自 mock 影片，不包含客戶生產資料。
+> 圖 7：作者開發的 wafer inspection runtime 匿名化展示畫面。History 將 session、wafer、時間、檢測結果與量測欄位保留在同一筆紀錄中；畫面資料來自 mock 影片，不包含客戶生產資料。
 
 ![材料導向檢測的 evidence chain 架構](../assets/07-semiconductor-inspection-reflection-illustrations/05-materials-aware-evidence-architecture.svg)
 
-> 圖 6：作者依個人課程筆記與系統實作經驗重新整理；這張圖是學習後畫出的 evidence chain 草圖，不是已部署的 production architecture。Agent 可以協助查詢和整理，但不替代驗證。
+> 圖 8：作者依個人課程筆記與系統實作經驗重新整理；這張圖是學習後畫出的 evidence chain 草圖，不是已部署的 production architecture。Agent 可以協助查詢和整理，但不替代驗證。
 
 我不預期每個專案一開始就具備所有欄位。不過在把 inspection result 當成工程證據以前，至少會檢查以下幾個層次：
 

@@ -301,9 +301,27 @@ $$\sigma_y=\sigma_0+k_y d^{-1/2}$$
 
 ## 10. Label Review Note: What Does “Defect” Mean Here?
 
-In an anonymized wafer-inspection project, the dataset contained two different kinds of labels. Haze-like, residue-like, and ring-like categories described a condition across most of the wafer image. Particles and scratches described localized features. The original annotation design represented both kinds with bounding boxes, even when a box covered nearly the whole wafer.
+In an anonymized wafer-inspection project, the dataset contained two different kinds of labels. Some categories described a condition across most of the wafer image. Particles and scratches described local features with meaningful positions. The original annotation design represented both kinds with bounding boxes, even when a box covered nearly the whole wafer.
 
-I reviewed the data and separated the tasks according to what the annotations actually meant. Whole-image conditions became classification tasks. Particles and scratches remained localization tasks, and the local annotations were reviewed before model comparison. At the time, this was mainly a computer-vision decision about spatial meaning, loss functions, and evaluation.
+I reviewed the data and separated the tasks according to what the annotations actually meant. Whole-image conditions became classification tasks. Particles and scratches remained detection tasks, and the local annotations were reviewed before model comparison. One wafer could therefore have a global classification result and several local detections at the same time. This sounds ordinary after the schema has been corrected. It was less obvious in the original labels.
+
+```text
+Wafer record
+├── Global classification result
+└── Local detections
+    ├── particle
+    └── scratch
+```
+
+![匿名化晶圓案例中的局部檢測運行結果](../assets/project-screenshots/wafer/detection-runtime-example.png)
+
+> Figure 5: Detection outputs from the anonymized wafer case. The image shows local particle and scratch results only. A wafer-level appearance class belongs to a separate classification record rather than being forced into another full-image box.
+
+The revised workflow also improved the measured precision and recall, but I would not attribute that change to one model. Task definition, annotation review, dataset preparation, training, and post-processing changed together.
+
+![匿名化晶圓案例重新設計前後的 precision 與 recall 比較](../assets/project-screenshots/wafer/precision-recall-comparison.jpg)
+
+> Figure 6: A comparison retained in the related [model-evaluation repository](https://github.com/RocketWill/N_Glass-Wafer-Model-Evaluation-Results). The result is useful as a project check, not as evidence that task separation alone produced the full improvement.
 
 Studying crystal defects introduced another distinction. None of those labels identifies an atomic or microstructural defect. A particle may be contamination, detached material, residue, or another foreign object. A scratch describes visible morphology, but the image does not establish whether mechanical contact, brittle cracking, handling, or another mechanism produced it. Haze is even broader: it can be a repeatable optical condition without uniquely identifying roughness, film thickness, composition, or microstructure.
 
@@ -325,7 +343,7 @@ For inspection work, this changes how I interpret a class label. A particle, lin
 
 ## 12. What I Would Keep in the Dataset
 
-The wafer project showed that label design and model design cannot be separated. If a dataset mixes whole-image states, localized morphology, engineering hypotheses, and verified causes in one label field, the model may learn the images successfully while the output remains difficult to interpret.
+The wafer project showed that label design and model design cannot be separated. If a dataset mixes whole-image states, local morphology, engineering hypotheses, and verified causes in one label field, the model may learn the images successfully while the output remains difficult to interpret.
 
 A more useful inspection record keeps these levels distinct:
 

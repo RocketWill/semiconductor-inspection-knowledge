@@ -243,6 +243,26 @@ This was especially clear when inspecting transparent and easily deformed produc
 
 The material had not changed (only the way we observed it had). That made the connection between material behavior and inspection design much easier to see.
 
+The contact-lens system eventually used three anonymized imaging paths. Path A covered the center and edge at two focal positions. Path B concentrated on the intermediate region, while Path C emphasized the center.
+
+When the same feature appeared in both Path A focal positions, the results were merged through a spatial-overlap rule similar to NMS. The reason was fairly practical: one focus sometimes missed a feature that became clear at another depth.
+
+![隱形眼鏡多路徑檢測流程的匿名化重製圖](../assets/project-screenshots/contact-lens/inspection-workflow-anonymized.svg)
+
+> Figure 3: A reconstructed workflow based on a contact-lens inspection system I helped develop. Path A uses two focal positions to cover the center and edge, Path B observes the intermediate region, and Path C focuses on the center. Exact lighting arrangements, internal codes, and decision thresholds are omitted.
+
+| Path A, focus 1 | Path A, focus 2 |
+| --- | --- |
+| ![Path A 焦段 1 的分割結果](../assets/project-screenshots/contact-lens/path-a-focus-1-segmentation.png) | ![Path A 焦段 2 的局部檢出](../assets/project-screenshots/contact-lens/path-a-focus-2.png) |
+
+> Figure 4: Anonymized outputs from two focal positions in the same inspection path. They are not intended as a controlled optical comparison; they record why cross-focus deduplication was needed in the production workflow.
+
+| Path B, intermediate region | Path C, center region |
+| --- | --- |
+| ![Path B 的中間區域檢出](../assets/project-screenshots/contact-lens/path-b.png) | ![Path C 的中心區域檢出](../assets/project-screenshots/contact-lens/path-c.png) |
+
+> Figure 5: Two additional anonymized paths from the same system. The images are included to show regional coverage, not to disclose the actual lighting configuration.
+
 A glass-wafer inspection project presented a related problem. Bright-field and dark-field images emphasized different surface responses. Localized particles and scratches needed spatial detection, while wafer-level appearance patterns required a different interpretation. One image and one algorithm were not enough.
 
 These experiences changed how I interpret material selection. A material is not only a list of stiffness, density, conductivity, or optical-property values. Once it enters a product, its transparency, reflectivity, surface quality, deformation behavior, interfaces, and environmental response determine what can be measured reliably downstream.

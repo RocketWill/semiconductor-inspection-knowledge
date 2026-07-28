@@ -276,11 +276,19 @@ S–N 資料也不能脫離條件單獨使用。平均應力、表面狀態、�
 
 同一種外觀可能對應不同的材料機制，而相同的機制也可能在不同條件下呈現不同外觀。因此，異常分類適合用來縮小後續調查的範圍，但不能直接取代根因分析。
 
-### 7.1 Project Case: Measuring a Scratch Is Not Yet a Fracture Assessment
+### 7.1 Project Case: A Visible Contour Is Not Yet a Fracture Assessment
 
-In an anonymized glass-wafer inspection project, the workflow combined bright-field and dark-field image analysis. Particles and scratches were detected through separate processing paths, and the scratch regions were then passed to a segmentation model to estimate their visible surface length.
+In an automated contact-lens inspection project, several imaging paths covered different regions and focal positions. Segmentation models recorded visible contours, while rule-based checks handled conditions with stable geometric definitions. The default length, width, and area values were measured in pixels. When a user supplied a px-to-mm calibration value, the software could convert them to millimetres.
 
-The measurement was useful. It supported localization, defect grouping, comparison across inspected samples, and the selection of regions for closer review. But it was not a fracture assessment (the model had no access to crack depth or stress history).
+![隱形眼鏡局部輪廓與像素幾何量測](../assets/project-screenshots/contact-lens/path-a-focus-1-local.png)
+
+> Figure 8: An anonymized Path A result at focus 1. The contour and measurements describe the visible image geometry. Internal identifiers and the defect code have been removed.
+
+![PoseidonAI 實例分割驗證結果與可見表面輪廓](../assets/project-screenshots/03-poseidonai-segmentation-validation.png)
+
+> Figure 9: A PoseidonAI validation view from the contact-lens segmentation workflow. The left image in each pair is the prediction and the right image is the ground truth. The coloured masks describe visible contours at the selected IoU and confidence thresholds; they do not reveal depth, loading history, or a verified fracture mechanism.
+
+The measurement was useful. It supported localization, defect grouping, comparison across inspected samples, and the selection of regions for closer review. But it was not a fracture assessment. The model had no access to depth or loading history.
 
 Studying fracture mechanics changed how I interpret that output. A segmented surface length is not automatically the crack dimension $a$ used in a stress-intensity calculation. The image alone does not establish whether the feature is a superficial scratch or a structural crack, whether it has a sharp crack tip, or how it is oriented relative to applied and residual stresses. Loading mode, geometry factor, crack depth, and material toughness are still missing.
 

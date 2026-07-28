@@ -164,6 +164,10 @@ A transparent-product inspection project exposed a different part of the chain. 
 
 I also worked on an AI development workflow that connected dataset review, task definition, model training, evaluation, visualization, export, and deployment. It made the inspection process easier to repeat, but it did not solve the interpretation problem for us. Materials science adds that missing boundary: a stable visual label can still describe only appearance, not the physical mechanism that produced it.
 
+![PoseidonAI 中的分類、物件偵測與實例分割任務定義畫面](../assets/project-screenshots/01-poseidonai-task-definition.png)
+
+> Figure 4: A dataset setup screen from PoseidonAI, using demonstration data. In the workflow I developed, classification, object detection, and instance segmentation remain separate because each task preserves a different kind of spatial meaning.
+
 I now read the workflow as a longer chain. Material and process conditions influence the signal; imaging and annotation turn the signal into data; models organize the evidence; and engineering verification is still required before a root cause can be claimed.
 
 ## 9. Evidence Chain Checklist
