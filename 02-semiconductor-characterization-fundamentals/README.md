@@ -14,4 +14,4 @@ This section begins with carriers, transport, and optical response, then moves t
 
 ## Note on Scope
 
-These notes follow the course content and connect it with previous work in AOI, camera runtime, and industrial data systems where the link is useful. The project examples are mainly about measurement context and traceability. They do not imply hands-on experience with Hall measurement, four-point probes, or other electrical-characterization equipment.
+These notes connect the course content with previous work in AOI, camera runtime, and industrial data systems where the link is useful. Most project examples are about measurement context and traceability. They do not imply hands-on experience with Hall measurement or other electrical-characterization equipment.

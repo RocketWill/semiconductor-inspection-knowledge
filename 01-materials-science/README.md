@@ -12,6 +12,10 @@ This section connects atomic bonding, crystal structure, defects, processing, an
 6. [Processing, Phase Transformations, and Material Performance](./06-processing-and-material-performance.md) — Phase diagrams, transformation kinetics, heat-treatment paths, and their connection to inspection evidence.
 7. [Semiconductor Electrical Behavior and Inspection Evidence](./07-semiconductor-inspection-reflection.md) — Energy bands, doping, carrier behavior, evidence boundaries, and practical inspection records.
 
-## Approach
+## Learning Source
 
-Each note identifies the main concept, the conditions that limit its use, and the evidence needed to verify an engineering interpretation. I include formulas and examples when they help explain a relationship or test whether a result is reasonable.
+1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
+
+## A Note on This Section
+
+The main thread is the processing–structure–properties–performance relationship. I use formulas and small examples when they help me check whether a relationship makes sense. Links to semiconductor inspection are added where they fit naturally, but an optical signal alone does not verify an atomic or microstructural mechanism.

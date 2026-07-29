@@ -15,16 +15,16 @@ This repository records how I have been working through that gap after work. It 
 - Processing–structure–properties–performance relationships
 - Material properties, defects, and failure mechanisms
 - Carrier transport and semiconductor electrical behavior
-- I–V and C–V interpretation under stated measurement conditions
-- Connections among optical inspection, process context, and later verification
+- I–V, C–V, sheet-resistance, and contact-resistance measurements
+- Process-monitor warnings, optical evidence, and later verification
 
 ## Where to Start
 
-For a short introduction to the repository, these three notes show the main learning direction:
+These three notes are a reasonable place to start. Each comes from a different section of the repository:
 
-1. [Semiconductor Electrical Behavior and Inspection Evidence](./01-materials-science/07-semiconductor-inspection-reflection.md) — how electrical behavior, optical evidence, runtime context, and verification fit together.
-2. [Crystal Defects and Microstructure](./01-materials-science/04-crystal-defects-and-microstructure.md) — why an AI defect label is not the same thing as an atomic or microstructural defect.
-3. [MOS Capacitor C–V and Oxide Charge](./02-semiconductor-characterization-fundamentals/03-mos-capacitor-and-oxide-charge.md) — an example of working from a physical model to a measured curve while keeping the assumptions visible.
+1. [Crystal Defects and Microstructure](./01-materials-science/04-crystal-defects-and-microstructure.md) — why an AI defect label is not the same thing as an atomic or microstructural defect.
+2. [MOS Capacitor C–V and Oxide Charge](./02-semiconductor-characterization-fundamentals/03-mos-capacitor-and-oxide-charge.md) — an example of moving from a physical model to a measured curve while keeping the assumptions visible.
+3. [Diode Parameters and Process Monitoring](./03-electrical-characterization-and-process-monitoring/03-diode-parameters-and-process-monitoring.md) — how a curve or monitor warning can be separated into parameters before a process cause is proposed.
 
 ## Notes
 
@@ -46,19 +46,23 @@ For a short introduction to the repository, these three notes show the main lear
 - [MOS Capacitor C–V and Oxide Charge](./02-semiconductor-characterization-fundamentals/03-mos-capacitor-and-oxide-charge.md)
 - [Section Roadmap](./02-semiconductor-characterization-fundamentals/README.md)
 
-## Learning Source
+### 03. Electrical Characterization and Process Monitoring
+
+- [Resistivity, Sheet Resistance, and Four-Point Probe](./03-electrical-characterization-and-process-monitoring/01-resistivity-sheet-resistance-and-four-point-probe.md)
+- [Contact Resistance and the Transfer Length Method](./03-electrical-characterization-and-process-monitoring/02-contact-resistance-and-transfer-length-method.md)
+- [Diode Parameters and Process Monitoring](./03-electrical-characterization-and-process-monitoring/03-diode-parameters-and-process-monitoring.md)
+- [Section Roadmap](./03-electrical-characterization-and-process-monitoring/README.md)
+
+## Learning Sources
 
 1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
 2. Arizona State University, [*Fundamentals of Semiconductor Characterization*](https://www.coursera.org/learn/fundamentals-of-semiconductor-characterization), Coursera.
+3. Arizona State University, [*Electrical Characterization: Diodes*](https://www.coursera.org/learn/electrical-characterization-diodes), Coursera.
 
-## Language Note
+## About These Notes
 
 The English sections explain the learning context, project connections, engineering judgment, and limits of interpretation. The Chinese sections keep the more detailed technical explanations, equations, and worked examples. They serve different purposes rather than repeating the same content.
 
-## Note on Project Examples
-
 Project examples are limited to systems and engineering methods I personally worked on. Screenshots use mock or anonymized data. Customer datasets, proprietary production images, confidential equipment parameters, and internal documents are not included.
 
-## How I Write These Notes
-
-I use formulas and small examples when they help check a relationship or expose a mistaken assumption. Project connections are included when they add useful context, and their limits are stated directly. A visible anomaly is evidence, not a completed diagnosis. That distinction matters.
+I use formulas and small examples when they help check a relationship or expose a mistaken assumption. Project connections are included only when they add useful context, and their limits are stated directly. A visible anomaly is evidence, not a completed diagnosis.
