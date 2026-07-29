@@ -10,7 +10,7 @@
 
 ## Short English Note
 
-This note separates resistivity, sheet resistance, and the resistance of a finished structure, then follows the assumptions behind a four-point-probe measurement. The project connection is limited to wafer-map traceability: optical and electrical maps may be compared, but neither identifies a shared root cause without additional evidence.
+This note separates resistivity, sheet resistance, and the resistance of a finished structure, then follows the assumptions behind a four-point-probe measurement.
 
 ## 1. 三個名字很像，但不是同一個量
 
@@ -261,7 +261,7 @@ An inspection result was linked to a wafer session, camera, ROI, timestamp, and 
 
 An optical map and an electrical map may later show similar spatial patterns. That can justify a closer comparison, but it does not prove that they share the same cause. Before comparing them, the wafer identity, orientation, coordinate systems, sampling resolution, and acquisition conditions would all need to be aligned.
 
-The connection here is only about spatial traceability. My inspection system did not measure resistivity or sheet resistance.
+The useful connection here is spatial alignment and traceability, not an explanation of the electrical mechanism.
 
 ## 11. 目前寫在公式旁邊的檢查
 

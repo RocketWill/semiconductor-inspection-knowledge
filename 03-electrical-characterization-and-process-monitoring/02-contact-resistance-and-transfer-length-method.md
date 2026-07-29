@@ -10,7 +10,7 @@
 
 ## Short English Note
 
-This note follows current crowding, transfer length, and the assumptions behind a linear TLM fit. The project connection is limited to one software habit: fitted values should remain traceable to their raw data, geometry, fitting range, and measurement conditions.
+This note follows current crowding, transfer length, and the assumptions behind a linear TLM fit.
 
 ## 1. 先把兩種接觸問題分開
 
@@ -360,7 +360,7 @@ TLM is not closely related to the optical inspection systems I built, so I would
 
 In model evaluation, a final score was not enough if the dataset version, threshold, configuration, and raw predictions were missing. A fitted contact resistance has a similar limitation: the value is much less useful without the original spacing and resistance points, contact geometry, current range, fitting window, residuals, temperature, and sample identity.
 
-The connection ends there. My inspection systems did not measure contact resistance. This was simply a useful reminder that a fitted parameter should not become detached from the data that produced it.
+The connection is simply the habit of keeping a fitted parameter attached to the data that produced it.
 
 ## 10. 先寫在圖旁邊，避免下次又讀錯
 

@@ -10,7 +10,7 @@
 
 ## Short English Note
 
-This note separates the regions used to estimate diode parameters, then works through a polysilicon process-monitor example in which geometry, thickness, and resistivity change in the same direction. The project connection is limited to keeping warnings traceable to their measurement conditions, wafer context, and later verification.
+This note separates the regions used to estimate diode parameters, then works through a polysilicon process-monitor example in which geometry, thickness, and resistivity change in the same direction.
 
 ## 1. 這次先不重畫 p–n 接面
 
@@ -405,7 +405,7 @@ The process-monitor example reminded me of the history records in a wafer-inspec
 
 An electrical warning needs a different set of records, but the same traceability problem appears: the test structure, wafer position, measurement setup, process history, and later verification must remain connected to the value.
 
-The runtime did not measure diode parameters, sheet resistance, or dopant activation. The connection here is only the habit of keeping a warning reviewable rather than storing it as an isolated number.
+The runtime connection stops at recordkeeping; the electrical interpretation still depends on the measurement and later verification.
 
 ## 12. 這次整理後，先看的東西不太一樣了
 
