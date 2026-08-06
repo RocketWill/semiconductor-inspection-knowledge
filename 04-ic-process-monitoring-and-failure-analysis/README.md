@@ -4,11 +4,11 @@ This section came from a gap between inspection results and the manufacturing pa
 
 ## Notes
 
-This section is planned as three short notes:
+This section contains three short notes:
 
 1. [Process Flow and Evidence Layers](./01-process-flow-and-evidence-layers.md) — a working map from wafer fabrication to WAT, CP, packaging, and final test, with FEOL, MOL, and BEOL kept only to the detail needed for locating evidence.
 2. [WAT Test Structures and Yield Signals](./02-wat-test-structures-and-yield-signals.md) — the roles of the product die, scribe line, test key, specification window, wafer-level distribution, and CP yield.
-3. **Electrical Anomalies and Process Hypotheses** — a way to move from abnormal threshold voltage, saturation current, sheet resistance, or contact resistance toward a testable hypothesis without calling correlation a root cause.
+3. [Electrical Anomalies and Process Hypotheses](./03-electrical-anomalies-and-process-hypotheses.md) — a way to move from abnormal threshold voltage, saturation current, sheet resistance, or contact resistance toward a testable hypothesis without calling correlation a root cause.
 
 The detailed process sequence will not be repeated unless it helps answer a practical question: which structure was measured, which process layer may be involved, and what should be checked next.
 

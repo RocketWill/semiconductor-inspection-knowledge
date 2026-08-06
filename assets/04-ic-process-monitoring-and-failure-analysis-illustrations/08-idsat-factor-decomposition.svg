@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Normalized Idsat factor decomposition</title>
+  <desc id="desc">Four small changes in mobility, gate capacitance, geometry, and overdrive multiply to produce a normalized current of approximately 0.83.</desc>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <style>
+    .title { font:700 30px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#111827; }
+    .label { font:650 23px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#111827; }
+    .small { font:500 18px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#475569; }
+    .value { font:700 31px ui-monospace,SFMono-Regular,Menlo,monospace; fill:#2563eb; }
+    .box { fill:#f8fafc; stroke:#cbd5e1; stroke-width:2.5; rx:14; }
+    .arrow { stroke:#f59e0b; stroke-width:5; fill:none; stroke-linecap:round; }
+    .result { fill:#fff7ed; stroke:#f59e0b; stroke-width:3; rx:16; }
+    .barbg { fill:#e2e8f0; }
+    .barref { fill:#111827; }
+    .barnew { fill:#f59e0b; }
+    .warn { font:600 19px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#dc2626; }
+  </style>
+
+  <text class="title" x="600" y="55" text-anchor="middle">Small parameter shifts can multiply into a larger current change</text>
+  <text class="small" x="600" y="87" text-anchor="middle">Illustrative normalized calculation, not a fitted production-device model</text>
+
+  <g transform="translate(58,135)">
+    <rect class="box" x="0" y="0" width="225" height="175"/>
+    <text class="label" x="112.5" y="42" text-anchor="middle">Mobility μ</text>
+    <text class="value" x="112.5" y="91" text-anchor="middle">0.95</text>
+    <text class="small" x="112.5" y="124" text-anchor="middle">5% lower</text>
+    <text class="small" x="112.5" y="150" text-anchor="middle">linear factor</text>
+
+    <text class="value" x="245" y="96" text-anchor="middle" fill="#f59e0b">×</text>
+
+    <rect class="box" x="270" y="0" width="225" height="175"/>
+    <text class="label" x="382.5" y="42" text-anchor="middle">Gate capacitance Cox</text>
+    <text class="value" x="382.5" y="91" text-anchor="middle">0.97</text>
+    <text class="small" x="382.5" y="124" text-anchor="middle">3% lower</text>
+    <text class="small" x="382.5" y="150" text-anchor="middle">linear factor</text>
+
+    <text class="value" x="515" y="96" text-anchor="middle" fill="#f59e0b">×</text>
+
+    <rect class="box" x="540" y="0" width="225" height="175"/>
+    <text class="label" x="652.5" y="42" text-anchor="middle">Geometry W/L</text>
+    <text class="value" x="652.5" y="91" text-anchor="middle">0.98</text>
+    <text class="small" x="652.5" y="124" text-anchor="middle">2% lower</text>
+    <text class="small" x="652.5" y="150" text-anchor="middle">linear factor</text>
+
+    <text class="value" x="785" y="96" text-anchor="middle" fill="#f59e0b">×</text>
+
+    <rect class="box" x="810" y="0" width="275" height="175"/>
+    <text class="label" x="947.5" y="42" text-anchor="middle">Overdrive VGS − VT</text>
+    <text class="value" x="947.5" y="91" text-anchor="middle">(0.96)²</text>
+    <text class="small" x="947.5" y="124" text-anchor="middle">4% lower</text>
+    <text class="small" x="947.5" y="150" text-anchor="middle">squared in this model</text>
+  </g>
+
+  <path class="arrow" d="M600 335v55"/>
+  <path d="M600 402l-11-18h22z" fill="#f59e0b"/>
+
+  <rect class="result" x="310" y="414" width="580" height="92"/>
+  <text class="label" x="600" y="449" text-anchor="middle">0.95 × 0.97 × 0.98 × (0.96)²</text>
+  <text class="value" x="600" y="489" text-anchor="middle">≈ 0.83</text>
+
+  <g transform="translate(215,548)">
+    <text class="small" x="0" y="17">Reference</text>
+    <rect class="barbg" x="115" y="0" width="700" height="24" rx="6"/>
+    <rect class="barref" x="115" y="0" width="700" height="24" rx="6"/>
+    <text class="small" x="835" y="18">1.00</text>
+
+    <text class="small" x="0" y="61">New</text>
+    <rect class="barbg" x="115" y="44" width="700" height="24" rx="6"/>
+    <rect class="barnew" x="115" y="44" width="581" height="24" rx="6"/>
+    <text class="warn" x="714" y="63">0.83, about 17% lower</text>
+  </g>
+</svg>

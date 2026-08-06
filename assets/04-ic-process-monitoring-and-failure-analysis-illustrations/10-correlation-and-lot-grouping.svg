@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Overall correlation compared with lot-grouped data</title>
+  <desc id="desc">The combined data appear to show a strong positive trend, while the same points grouped by lot show weak within-lot trends.</desc>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <style>
+    .title { font:700 30px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#111827; }
+    .panel { font:650 23px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#111827; }
+    .small { font:500 18px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#475569; }
+    .axis { fill:none; stroke:#111827; stroke-width:2.5; stroke-linecap:round; }
+    .grid { stroke:#e2e8f0; stroke-width:1.5; }
+    .trend { fill:none; stroke:#dc2626; stroke-width:4; stroke-dasharray:9 7; }
+    .lotA { fill:#2563eb; }
+    .lotB { fill:#f59e0b; }
+    .lotC { fill:#111827; }
+    .all { fill:#64748b; opacity:0.88; }
+    .lotlineA { stroke:#2563eb; stroke-width:3; fill:none; }
+    .lotlineB { stroke:#f59e0b; stroke-width:3; fill:none; }
+    .lotlineC { stroke:#111827; stroke-width:3; fill:none; }
+    .note { fill:#f8fafc; stroke:#cbd5e1; stroke-width:2; rx:12; }
+    .warn { font:600 20px system-ui,-apple-system,"Segoe UI",sans-serif; fill:#dc2626; }
+  </style>
+
+  <text class="title" x="600" y="52" text-anchor="middle">The overall slope may come from lot grouping</text>
+  <text class="small" x="600" y="82" text-anchor="middle">Illustrative data only; no production values or fitted correlation coefficient</text>
+
+  <g transform="translate(80,125)">
+    <text class="panel" x="225" y="0" text-anchor="middle">All points combined</text>
+    <path class="grid" d="M0 90h450M0 180h450M0 270h450M112 25v335M225 25v335M337 25v335"/>
+    <path class="axis" d="M0 25v335h450"/>
+    <text class="small" x="225" y="397" text-anchor="middle">Idsat</text>
+    <text class="small" transform="translate(-48,195) rotate(-90)" text-anchor="middle">Function Min Yield</text>
+    <path class="trend" d="M35 325L420 55"/>
+    <g class="all">
+      <circle cx="55" cy="315" r="8"/><circle cx="75" cy="300" r="8"/><circle cx="98" cy="309" r="8"/><circle cx="118" cy="290" r="8"/><circle cx="138" cy="302" r="8"/>
+      <circle cx="176" cy="230" r="8"/><circle cx="198" cy="244" r="8"/><circle cx="220" cy="225" r="8"/><circle cx="245" cy="238" r="8"/><circle cx="265" cy="218" r="8"/>
+      <circle cx="310" cy="135" r="8"/><circle cx="333" cy="150" r="8"/><circle cx="355" cy="128" r="8"/><circle cx="380" cy="142" r="8"/><circle cx="405" cy="120" r="8"/>
+    </g>
+    <text class="warn" x="285" y="320">Looks strongly related</text>
+  </g>
+
+  <g transform="translate(670,125)">
+    <text class="panel" x="225" y="0" text-anchor="middle">The same points grouped by lot</text>
+    <path class="grid" d="M0 90h450M0 180h450M0 270h450M112 25v335M225 25v335M337 25v335"/>
+    <path class="axis" d="M0 25v335h450"/>
+    <text class="small" x="225" y="397" text-anchor="middle">Idsat</text>
+    <text class="small" transform="translate(-48,195) rotate(-90)" text-anchor="middle">Function Min Yield</text>
+
+    <g class="lotC"><circle cx="55" cy="315" r="8"/><circle cx="75" cy="300" r="8"/><circle cx="98" cy="309" r="8"/><circle cx="118" cy="290" r="8"/><circle cx="138" cy="302" r="8"/></g>
+    <g class="lotB"><circle cx="176" cy="230" r="8"/><circle cx="198" cy="244" r="8"/><circle cx="220" cy="225" r="8"/><circle cx="245" cy="238" r="8"/><circle cx="265" cy="218" r="8"/></g>
+    <g class="lotA"><circle cx="310" cy="135" r="8"/><circle cx="333" cy="150" r="8"/><circle cx="355" cy="128" r="8"/><circle cx="380" cy="142" r="8"/><circle cx="405" cy="120" r="8"/></g>
+
+    <path class="lotlineC" d="M48 307L145 296"/>
+    <path class="lotlineB" d="M170 237L272 225"/>
+    <path class="lotlineA" d="M303 142L412 126"/>
+
+    <circle class="lotA" cx="80" cy="430" r="7"/><text class="small" x="94" y="436">Lot A</text>
+    <circle class="lotB" cx="180" cy="430" r="7"/><text class="small" x="194" y="436">Lot B</text>
+    <circle class="lotC" cx="280" cy="430" r="7"/><text class="small" x="294" y="436">Lot C</text>
+  </g>
+
+  <rect class="note" x="205" y="595" width="790" height="52"/>
+  <text class="small" x="600" y="627" text-anchor="middle">Before assigning a process cause, check lot, wafer, site, test condition, and related parameters.</text>
+</svg>
