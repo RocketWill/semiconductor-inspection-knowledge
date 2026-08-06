@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Product die, scribe line, and WAT test-key layout</title>
+  <desc id="desc">Four product dies surround a cross-shaped scribe line. A WAT test key with probe pads is placed in the horizontal scribe line, and dashed red lines mark the later dicing paths.</desc>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <style>
+    .die { fill:#f8fafc; stroke:#111827; stroke-width:3; rx:12; }
+    .die-grid { stroke:#cbd5e1; stroke-width:1.5; }
+    .main { fill:none; stroke:#111827; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+    .thin { fill:none; stroke:#64748b; stroke-width:2; }
+    .orange { fill:none; stroke:#f59e0b; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+    .red { fill:none; stroke:#dc2626; stroke-width:4; stroke-dasharray:12 10; }
+    .pad { fill:#dbeafe; stroke:#2563eb; stroke-width:2.5; rx:5; }
+    .key { fill:#fff7ed; stroke:#f59e0b; stroke-width:3; rx:10; }
+    .label { font: 600 24px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill:#111827; }
+    .small { font: 500 19px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill:#475569; }
+    .note { font: 600 21px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill:#dc2626; }
+  </style>
+
+  <rect class="die" x="92" y="70" width="410" height="230"/>
+  <rect class="die" x="698" y="70" width="410" height="230"/>
+  <rect class="die" x="92" y="375" width="410" height="230"/>
+  <rect class="die" x="698" y="375" width="410" height="230"/>
+
+  <g opacity="0.75">
+    <path class="die-grid" d="M145 125h304M145 175h304M145 225h304M200 95v175M275 95v175M350 95v175"/>
+    <path class="die-grid" d="M751 125h304M751 175h304M751 225h304M806 95v175M881 95v175M956 95v175"/>
+    <path class="die-grid" d="M145 430h304M145 480h304M145 530h304M200 400v175M275 400v175M350 400v175"/>
+    <path class="die-grid" d="M751 430h304M751 480h304M751 530h304M806 400v175M881 400v175M956 400v175"/>
+  </g>
+
+  <text class="label" x="297" y="190" text-anchor="middle">Product die</text>
+  <text class="label" x="903" y="190" text-anchor="middle">Product die</text>
+  <text class="label" x="297" y="495" text-anchor="middle">Product die</text>
+  <text class="label" x="903" y="495" text-anchor="middle">Product die</text>
+
+  <path class="red" d="M600 28v619"/>
+  <path class="red" d="M42 337.5h1116"/>
+  <text class="note" x="620" y="54">Dicing path</text>
+  <text class="small" x="78" y="328">Scribe line</text>
+  <text class="small" x="618" y="643">Scribe line</text>
+
+  <rect class="key" x="385" y="312" width="430" height="51"/>
+  <text class="label" x="600" y="292" text-anchor="middle">WAT test key</text>
+
+  <rect class="pad" x="410" y="322" width="42" height="31"/>
+  <rect class="pad" x="748" y="322" width="42" height="31"/>
+  <path class="main" d="M452 337h55l18-13 18 26 18-26 18 26 18-26 18 26 18-13h117"/>
+  <circle cx="600" cy="337" r="15" fill="#ffffff" stroke="#111827" stroke-width="3"/>
+  <path class="main" d="M600 322v-18M588 304h24"/>
+  <text class="small" x="431" y="347" text-anchor="middle">Pad</text>
+  <text class="small" x="769" y="347" text-anchor="middle">Pad</text>
+
+  <rect x="870" y="305" width="182" height="66" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="10"/>
+  <path class="thin" d="M895 351v-29M925 351v-29M955 351v-29"/>
+  <circle cx="895" cy="316" r="5" fill="#2563eb"/>
+  <circle cx="925" cy="316" r="5" fill="#2563eb"/>
+  <circle cx="955" cy="316" r="5" fill="#2563eb"/>
+  <text class="small" x="987" y="344">Probe</text>
+
+  <text class="small" x="600" y="662" text-anchor="middle">Conceptual layout — dimensions and test-key geometry are not to scale</text>
+</svg>
