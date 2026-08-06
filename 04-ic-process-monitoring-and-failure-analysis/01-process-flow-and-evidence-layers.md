@@ -53,6 +53,10 @@ Failure analysis when needed
 | Packaging and final test | 切割與封裝後，產品功能和連接是否仍符合要求 | Final-test result、package-related failure evidence |
 | Failure analysis | 如何把失效位置、電性和物理證據逐步收斂 | Hypothesis、localization result、physical evidence |
 
+![小黑拖著晶圓依序經過晶圓製造、WAT、CP、封裝與最終測試](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/01-manufacturing-and-test-journey.png)
+
+> 圖 1：作者依個人課程筆記設計並重新整理；晶圓製造、WAT、CP、封裝與最終測試位於不同階段，也各自留下不同資料。失效分析從異常結果往回查證，不是取代前面的製程監控與測試。圖中流程為概念示意，不代表特定晶圓廠的實際流程。
+
 這裡最先修正的一個觀念，是 **WAT 不等於 CP**。WAT 偏向利用特別設計的 test structure 觀察製程或元件參數；CP 則是在晶圓仍未切割時，測試 product die 的功能與電性。兩者可能互相呼應，不過回答的問題並不相同。第二篇會再詳細拆開。
 
 ## 2. 製程不是一條只走一次的直線
@@ -113,6 +117,10 @@ Silicon substrate
 | FEOL | Well、STI、gate oxide、gate、source、drain | 隔離、摻雜、氧化層品質、元件尺寸與電性 |
 | MOL | Silicide、contact、local interconnect | 接觸形成、界面、對準與局部串聯電阻 |
 | BEOL | Via、metal、interlayer dielectric、passivation | Open、short、via resistance、金屬完整性與層間可靠度 |
+
+![小黑操作升降台，在 FEOL、MOL 與 BEOL 之間定位異常](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/02-feol-mol-beol-evidence-layers.png)
+
+> 圖 2：作者依個人課程筆記設計並重新整理；簡化剖面將元件、接點與互連分成 FEOL、MOL 與 BEOL 三個工作區域。這張圖只協助定位證據所在的結構層，尺寸、材料厚度與實際製程邊界均未按比例繪製。
 
 不同教材或公司對 MOL 邊界的分法可能略有差異，因此這裡不把表格當成唯一標準。它比較像一張工作地圖：先判斷異常靠近元件、局部接點，還是多層互連，再去查對應製程。
 
@@ -218,6 +226,10 @@ Physical or material verification
 | CP fail-bin pattern | 某類產品功能在特定位置失敗 | 已經知道是哪一道製程造成 |
 | Spatial correlation | 兩組資料可能共享空間趨勢 | 其中一組資料造成另一組結果 |
 | Physical analysis | 局部結構或材料存在特定異常 | 若取樣有限，整片晶圓都具有相同問題 |
+
+![小黑補上電性與物理證據，避免從可見異常直接跳到原因](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/03-evidence-chain-no-shortcut.png)
+
+> 圖 3：作者依個人課程筆記設計並重新整理；可見異常先形成工程假設，接著仍要補上電性與物理證據，才能往原因驗證前進。圖中的橋只表示證據關係，不代表每個案例都使用相同分析方法。
 
 線畫得出來，不代表每一個箭頭都已經被證明。
 
