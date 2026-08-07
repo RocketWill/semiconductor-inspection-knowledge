@@ -46,7 +46,7 @@ Suppose a MOS test structure shows lower-than-expected saturation current. Impla
 
 ## Future Notes
 
-- Failure-analysis localization workflow
+- Detailed electrical and physical failure-localization methods
 - Material-characterization methods and evidence limits
 
 These notes will be added only after later course material provides enough detail to write them properly.

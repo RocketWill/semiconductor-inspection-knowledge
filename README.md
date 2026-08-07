@@ -16,7 +16,7 @@ This repository records how I have been working through that gap after work. It 
 - Material properties, defects, and failure mechanisms
 - Carrier transport and semiconductor electrical behavior
 - I–V, C–V, sheet-resistance, and contact-resistance measurements
-- Process-monitor warnings, optical evidence, and later verification
+- Process-monitor warnings, relationships between WAT and CP, optical evidence, and later verification
 
 ## Where to Start
 
@@ -53,11 +53,19 @@ These three notes are a reasonable place to start. Each comes from a different s
 - [Diode Parameters and Process Monitoring](./03-electrical-characterization-and-process-monitoring/03-diode-parameters-and-process-monitoring.md)
 - [Section Roadmap](./03-electrical-characterization-and-process-monitoring/README.md)
 
+### 04. IC Process Monitoring and Failure-Analysis Evidence
+
+- [Process Flow and Evidence Layers](./04-ic-process-monitoring-and-failure-analysis/01-process-flow-and-evidence-layers.md)
+- [WAT Test Structures and Yield Signals](./04-ic-process-monitoring-and-failure-analysis/02-wat-test-structures-and-yield-signals.md)
+- [Electrical Anomalies and Process Hypotheses](./04-ic-process-monitoring-and-failure-analysis/03-electrical-anomalies-and-process-hypotheses.md)
+- [Section Roadmap](./04-ic-process-monitoring-and-failure-analysis/README.md)
+
 ## Learning Sources
 
 1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
 2. Arizona State University, [*Fundamentals of Semiconductor Characterization*](https://www.coursera.org/learn/fundamentals-of-semiconductor-characterization), Coursera.
 3. Arizona State University, [*Electrical Characterization: Diodes*](https://www.coursera.org/learn/electrical-characterization-diodes), Coursera.
+4. Personal notes from the first day of an in-person course on integrated-circuit failure analysis and yield improvement, August 6, 2026.
 
 ## About These Notes
 
