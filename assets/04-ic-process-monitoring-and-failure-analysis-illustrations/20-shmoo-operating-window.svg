@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual voltage-frequency Shmoo plot</title>
+  <desc id="desc">A grid shows fail, marginal, and pass regions as supply voltage and frequency change, with a nominal point placed near the pass-region boundary.</desc>
+  <defs><style>.bg{fill:#fbfaf7}.ink{fill:#17202a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.h{font-size:28px;font-weight:700}.t{font-size:19px}.s{font-size:15px;fill:#475569}.pass{fill:#a8d5c7}.margin{fill:#f4c76f}.fail{fill:#df8d7d}.grid{stroke:#fbfaf7;stroke-width:4}.axis{stroke:#334155;stroke-width:2}.nom{fill:#17202a;stroke:#fff;stroke-width:4}</style></defs>
+  <rect class="bg" width="1200" height="675"/><text class="ink h" x="600" y="58" text-anchor="middle">One pass point does not show the whole operating window</text>
+  <g transform="translate(250 110)">
+    <rect class="fail grid" x="0" y="0" width="120" height="80"/><rect class="fail grid" x="120" y="0" width="120" height="80"/><rect class="margin grid" x="240" y="0" width="120" height="80"/><rect class="pass grid" x="360" y="0" width="120" height="80"/><rect class="pass grid" x="480" y="0" width="120" height="80"/>
+    <rect class="fail grid" x="0" y="80" width="120" height="80"/><rect class="margin grid" x="120" y="80" width="120" height="80"/><rect class="pass grid" x="240" y="80" width="120" height="80"/><rect class="pass grid" x="360" y="80" width="120" height="80"/><rect class="pass grid" x="480" y="80" width="120" height="80"/>
+    <rect class="fail grid" x="0" y="160" width="120" height="80"/><rect class="margin grid" x="120" y="160" width="120" height="80"/><rect class="pass grid" x="240" y="160" width="120" height="80"/><rect class="pass grid" x="360" y="160" width="120" height="80"/><rect class="pass grid" x="480" y="160" width="120" height="80"/>
+    <rect class="fail grid" x="0" y="240" width="120" height="80"/><rect class="fail grid" x="120" y="240" width="120" height="80"/><rect class="margin grid" x="240" y="240" width="120" height="80"/><rect class="pass grid" x="360" y="240" width="120" height="80"/><rect class="pass grid" x="480" y="240" width="120" height="80"/>
+    <rect class="fail grid" x="0" y="320" width="120" height="80"/><rect class="fail grid" x="120" y="320" width="120" height="80"/><rect class="fail grid" x="240" y="320" width="120" height="80"/><rect class="margin grid" x="360" y="320" width="120" height="80"/><rect class="pass grid" x="480" y="320" width="120" height="80"/>
+    <circle class="nom" cx="420" cy="280" r="15"/><text class="ink s" x="440" y="275">nominal</text><text class="ink s" x="440" y="295">pass point</text>
+  </g>
+  <line class="axis" x1="250" y1="510" x2="850" y2="510"/><line class="axis" x1="250" y1="510" x2="250" y2="110"/>
+  <text class="ink t" x="550" y="552" text-anchor="middle">Frequency increases →</text><text class="ink t" x="185" y="310" text-anchor="middle" transform="rotate(-90 185 310)">Supply voltage increases →</text>
+  <rect class="pass" x="925" y="180" width="34" height="24"/><text class="ink t" x="975" y="200">Pass</text><rect class="margin" x="925" y="235" width="34" height="24"/><text class="ink t" x="975" y="255">Marginal</text><rect class="fail" x="925" y="290" width="34" height="24"/><text class="ink t" x="975" y="310">Fail</text>
+  <text class="ink s" x="600" y="620" text-anchor="middle">Simulated categorical map · No product, specification, voltage, or frequency value</text>
+</svg>

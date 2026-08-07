@@ -14,9 +14,9 @@ A visible defect, an electrical warning, and a failed test bin belong to differe
 
 ---
 
-這一篇原本只是想把第一天課程的 IC 製造流程重新畫一次，結果真正花時間整理的反而是另一件事：**當一個異常出現時，能不能先判斷它位於哪一層？**
+這一篇原本只是想把 IC 製造流程重新畫一次，結果真正花時間整理的反而是另一件事：**當一個異常出現時，能不能先判斷它位於哪一層？**
 
-講義從 IC 設計、光罩、晶圓製造一路談到 WAT、CP、封裝與最終測試，中間又展開 STI、well、gate、contact、via 和 metal interconnect。第一次讀很容易把它們看成一長串站點名稱。但對故障分析來說，只記得名稱還不太夠。至少要先知道一個結構何時形成、後面還經過哪些步驟，以及目前看到的資料屬於哪一種證據。
+從 IC 設計、光罩、晶圓製造一路排到 WAT、CP、封裝與最終測試，中間還有 STI、well、gate、contact、via 和 metal interconnect。第一次整理很容易把它們看成一長串站點名稱。但對故障分析來說，只記得名稱還不太夠。至少要先知道一個結構何時形成、後面還經過哪些步驟，以及目前看到的資料屬於哪一種證據。
 
 這裡先不追求記住數百道製程。先把位置放對。
 
@@ -55,13 +55,13 @@ Failure analysis when needed
 
 ![小黑拖著晶圓依序經過晶圓製造、WAT、CP、封裝與最終測試](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/01-manufacturing-and-test-journey.png)
 
-> 圖 1：作者依個人課程筆記設計並重新整理；晶圓製造、WAT、CP、封裝與最終測試位於不同階段，也各自留下不同資料。失效分析從異常結果往回查證，不是取代前面的製程監控與測試。圖中流程為概念示意，不代表特定晶圓廠的實際流程。
+> 圖 1：作者重新設計並整理；晶圓製造、WAT、CP、封裝與最終測試位於不同階段，也各自留下不同資料。失效分析從異常結果往回查證，不是取代前面的製程監控與測試。圖中流程為概念示意，不代表特定晶圓廠的實際流程。
 
 這裡最先修正的一個觀念，是 **WAT 不等於 CP**。WAT 偏向利用特別設計的 test structure 觀察製程或元件參數；CP 則是在晶圓仍未切割時，測試 product die 的功能與電性。兩者可能互相呼應，不過回答的問題並不相同。第二篇會再詳細拆開。
 
 ## 2. 製程不是一條只走一次的直線
 
-講義把 IC 製造比喻成蓋房子。這個比喻很容易建立初步畫面，因為晶圓不是一次變成完整晶片，而是在同一塊基底上反覆增加材料、轉移圖案、移除材料，再繼續做下一層。
+把 IC 製造先想成蓋房子，確實比較容易建立初步畫面。晶圓不是一次變成完整晶片，而是在同一塊基底上反覆增加材料、轉移圖案、移除材料，再繼續做下一層。
 
 常見操作可以先記成下面這個循環：
 
@@ -95,7 +95,7 @@ Prepare the surface for the next layer
 
 ## 3. 一張剖面圖裡，其實有三段不同的工作
 
-講義中的 CMOS 剖面從矽基板一路畫到 passivation 和 bump。圖很密，第一次看時最顯眼的是一層又一層的 metal，但底下的 transistor、contact 和上方互連並不是同一階段完成的。
+一張從矽基板一路畫到 passivation 和 bump 的 CMOS 剖面很密。第一次看時最顯眼的是一層又一層的 metal，但底下的 transistor、contact 和上方互連並不是同一階段完成的。
 
 為了先建立位置感，這裡分成 FEOL、MOL 和 BEOL 三個工作區域：
 
@@ -120,7 +120,7 @@ Silicon substrate
 
 ![小黑操作升降台，在 FEOL、MOL 與 BEOL 之間定位異常](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/02-feol-mol-beol-evidence-layers.png)
 
-> 圖 2：作者依個人課程筆記設計並重新整理；簡化剖面將元件、接點與互連分成 FEOL、MOL 與 BEOL 三個工作區域。這張圖只協助定位證據所在的結構層，尺寸、材料厚度與實際製程邊界均未按比例繪製。
+> 圖 2：作者重新設計並整理；簡化剖面將元件、接點與互連分成 FEOL、MOL 與 BEOL 三個工作區域。這張圖只協助定位證據所在的結構層，尺寸、材料厚度與實際製程邊界均未按比例繪製。
 
 不同教材或公司對 MOL 邊界的分法可能略有差異，因此這裡不把表格當成唯一標準。它比較像一張工作地圖：先判斷異常靠近元件、局部接點，還是多層互連，再去查對應製程。
 
@@ -128,7 +128,7 @@ Silicon substrate
 
 STI 是 Shallow Trench Isolation，也就是淺溝槽隔離。簡單來說，它在相鄰主動區之間形成絕緣結構，避免本來應該分開工作的元件產生不必要的導通或漏電路徑。
 
-講義中的 Advanced STI 流程大致包含：
+Advanced STI 的簡化流程大致包含：
 
 ```text
 Pad oxide and nitride
@@ -152,11 +152,11 @@ Nitride strip
 
 ## 5. MOS 元件：多個製程結果疊在同一個電性上
 
-STI 與 well 建立元件所在的區域後，還要形成 gate oxide、gate、source 和 drain，並透過不同的 implantation 調整摻雜與 threshold voltage。講義也用 self-aligned gate、LDD 和 hot-carrier effect 說明，元件尺寸、摻雜分布與電場不是互相獨立的。
+STI 與 well 建立元件所在的區域後，還要形成 gate oxide、gate、source 和 drain，並透過不同的 implantation 調整摻雜與 threshold voltage。把 self-aligned gate、LDD 和 hot-carrier effect 放在一起看，也能發現元件尺寸、摻雜分布與電場不是互相獨立的。
 
 這一篇先不推導 MOSFET 方程式，只保留一個後面會反覆用到的關係：一個電性結果常常同時包含多個製程貢獻。
 
-例如 saturation current 偏低時，不能只因為課程前面談過 implantation，就直接判定 implantation 出了問題。它還可能受到下列因素影響：
+例如 saturation current 偏低時，不能只因為剛好先想到 implantation，就直接判定 implantation 出了問題。它還可能受到下列因素影響：
 
 - carrier mobility；
 - gate capacitance and oxide thickness；
@@ -229,7 +229,7 @@ Physical or material verification
 
 ![小黑補上電性與物理證據，避免從可見異常直接跳到原因](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/03-evidence-chain-no-shortcut.png)
 
-> 圖 3：作者依個人課程筆記設計並重新整理；可見異常先形成工程假設，接著仍要補上電性與物理證據，才能往原因驗證前進。圖中的橋只表示證據關係，不代表每個案例都使用相同分析方法。
+> 圖 3：作者重新設計並整理；可見異常先形成工程假設，接著仍要補上電性與物理證據，才能往原因驗證前進。圖中的橋只表示證據關係，不代表每個案例都使用相同分析方法。
 
 線畫得出來，不代表每一個箭頭都已經被證明。
 
@@ -271,4 +271,4 @@ But the software record still describes where and under which conditions the ano
 
 ## Current Scope
 
-I have not worked as a semiconductor process-integration engineer or operated production WAT and CP equipment. The process sequence here is a simplified learning map reconstructed from my course notes. It is not a foundry recipe, and the examples do not represent confidential production conditions. Optical inspection evidence is kept separate from electrical and physical verification throughout the note.
+I have not worked as a semiconductor process-integration engineer or operated production WAT and CP equipment. The process sequence here is a simplified working map based on the cited learning source. It is not a foundry recipe, and the examples do not represent confidential production conditions. Optical inspection evidence is kept separate from electrical and physical verification throughout the note.

@@ -20,7 +20,7 @@ An abnormal electrical parameter is a starting point, not a process diagnosis. I
 
 ## 1. 第一個分流：量錯，還是真的偏移
 
-講義在 drain current 異常後先列出兩個方向：WAT 量測問題，或元件／製程真的發生變化。這個分流很普通，卻應該放在所有漂亮分析圖之前。
+Drain current 出現異常後，至少先保留兩個方向：WAT 量測有問題，或元件／製程真的發生變化。這個分流很普通，卻應該放在所有漂亮分析圖之前。
 
 ```text
 Abnormal result
@@ -42,7 +42,7 @@ Abnormal result
 
 ## 2. Idsat 低，不能只想到 implantation
 
-講義使用簡化的 MOS saturation-current 關係，將影響因子放在同一個式子裡：
+先用簡化的 MOS saturation-current 關係，把幾個影響因子放在同一個式子裡：
 
 $$
 I_{dsat}
@@ -63,7 +63,7 @@ $$
 
 ## 3. 幾個小偏移，可能疊成明顯的電流下降
 
-下面是一個 normalized example，不是課程或產線量測資料。假設相對 reference condition：
+下面是一個 normalized example，不是實際產線量測資料。假設相對 reference condition：
 
 - mobility 下降 5%；
 - $C_{ox}$ 下降 3%；
@@ -81,7 +81,7 @@ $$
 
 ![Idsat 四項小偏移疊加成約百分之十七的 normalized current 下降](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/08-idsat-factor-decomposition.svg)
 
-> 圖 1：作者依個人課程筆記設計並重新計算；四個因子分別只下降 2%–5%，但 overdrive 以平方項進入簡化模型，最後 normalized current 約為 reference 的 0.83。這是用來檢查方向與數量級的示意計算，不代表實際元件參數彼此獨立，也不取代完整 device model。
+> 圖 1：作者重新設計並計算；四個因子分別只下降 2%–5%，但 overdrive 以平方項進入簡化模型，最後 normalized current 約為 reference 的 0.83。這是用來檢查方向與數量級的示意計算，不代表實際元件參數彼此獨立，也不取代完整 device model。
 
 算到這裡容易產生一種「既然算出 17%，原因就拆完了」的感覺，不過這個乘法只是示範疊加。實際參數可能互相耦合，mobility 與 $V_T$ 也可能隨 bias、temperature 和 extraction method 改變。
 
@@ -125,7 +125,7 @@ $$
 
 ![Contact-chain 量測同時包含接點、薄層、金屬與量測導線的貢獻](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/09-contact-chain-components.svg)
 
-> 圖 2：作者依個人課程筆記重新繪製；chain resistance 會累積多個 contact 的影響，但量測路徑仍包含相連薄層、金屬與端點。將總值除以 contact 數量後，其他貢獻不會自動消失。圖中元件與比例均為概念示意。
+> 圖 2：作者重新繪製；chain resistance 會累積多個 contact 的影響，但量測路徑仍包含相連薄層、金屬與端點。將總值除以 contact 數量後，其他貢獻不會自動消失。圖中元件與比例均為概念示意。
 
 因此比較順手的順序是：
 
@@ -154,7 +154,7 @@ $$
 
 ## 7. Correlation 圖有斜率，先看資料怎麼分群
 
-講義第 151–153 頁把 WAT parameter 對 CP yield 或 fail bin 作圖，並提醒可疑趨勢仍要人工判定。原因之一，是所有點混在一起時的斜率，可能只是不同 lot 或 wafer group 的位置不同。
+把 WAT parameter 對 CP yield 或 fail bin 作圖時，可疑趨勢仍要人工判定。原因之一，是所有點混在一起時的斜率，可能只是不同 lot 或 wafer group 的位置不同。
 
 ![所有資料混合時的表面相關，以及依 lot 分組後的弱趨勢](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/10-correlation-and-lot-grouping.svg)
 
@@ -194,7 +194,7 @@ $$
 
 ## 9. 從 correlation 走到 failure analysis
 
-講義將 CP low-yield FA flow 分成 data analysis、electrical analysis、physical／spectral analysis 和 feedback。把儀器名稱先拿掉後，順序反而更容易理解。
+CP low-yield FA flow 可以先分成 data analysis、electrical analysis、physical／spectral analysis 和 feedback。把儀器名稱拿掉後，順序反而更容易理解。
 
 ### Data triage
 
@@ -214,7 +214,7 @@ $$
 
 ### Physical or material verification
 
-課程列出 OM、EMMI、SEM、FIB、TEM、SIMS 和 Auger 等方法。這篇只保留它們可能回答的問題，不展開操作程序：
+OM、EMMI、SEM、FIB、TEM、SIMS 和 Auger 能回答的問題並不相同。這篇只保留各自可能提供的證據，不展開操作程序：
 
 | Method | 比較接近的問題 |
 |---|---|
@@ -237,7 +237,7 @@ $$
 
 ![小黑搬著可被推翻的假設，沿著量測、電性、物理證據與改善驗證逐層前進](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/11-hypothesis-evidence-staircase.png)
 
-> 圖 4：作者依個人課程筆記設計並重新整理；工程假設從 observation 出發，經過量測重現、電性交叉比對、物理證據與 corrective action 後，才逐步接近 root-cause closure。任何一層出現不一致，都可能需要回頭修改假設。
+> 圖 4：作者重新設計並整理；工程假設從 observation 出發，經過量測重現、電性交叉比對、物理證據與 corrective action 後，才逐步接近 root-cause closure。任何一層出現不一致，都可能需要回頭修改假設。
 
 可以先用下面這條鏈檢查目前走到哪裡：
 

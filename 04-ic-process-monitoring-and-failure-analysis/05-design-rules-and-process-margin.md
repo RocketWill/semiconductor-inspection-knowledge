@@ -4,7 +4,7 @@
 
 > **Learning Context**
 >
-> I used to read width, spacing, and enclosure mainly as layout constraints: values that a design-rule check either accepts or rejects. The second class made the missing connection clearer. A layout is a geometric target, while lithography, alignment, etching, and local pattern conditions determine the structure that is actually fabricated. A minimum rule therefore carries some of the process and electrical margin between them.
+> I used to read width, spacing, and enclosure mainly as layout constraints: values that a design-rule check either accepts or rejects. The missing connection was the fabricated structure. A layout is a geometric target, while lithography, alignment, etching, and local pattern conditions determine what is actually formed. A minimum rule therefore carries some of the process and electrical margin between them.
 >
 > This note follows one contact-to-poly spacing example. It shows why leakage can rise sharply near a process limit, while keeping three claims separate: a rule violation, an electrical symptom, and a physically verified bridge are not the same evidence.
 
@@ -14,7 +14,7 @@ A design rule keeps geometric margin between a layout target and the structure t
 
 看到 design rule 的第一個直覺，是把它當成畫 layout 時不能越過的紅線。Width 不夠、spacing 太小，DRC 就會報錯。這個理解沒有錯，只是還少了一段：為什麼紅線會畫在那裡？
 
-課堂前面花了不少頁列出 well、OD、poly、contact、metal 和 via 的尺寸規則。逐條抄下來不太有幫助，因為那些數字屬於特定製程平台。真正讓這一段接起來的，反而是最後的 contact-to-poly leakage 例子。尺寸縮小到某個區域後，電性風險開始快速增加，幾何規則才不再只像 CAD 軟體裡的一組限制。
+Well、OD、poly、contact、metal 和 via 都有各自的尺寸規則。逐條抄下來不太有幫助，因為那些數字屬於特定製程平台。真正讓這一段接起來的，反而是 contact-to-poly leakage 例子。尺寸縮小到某個區域後，電性風險開始快速增加，幾何規則才不再只像 CAD 軟體裡的一組限制。
 
 ## 1. 先記住五種幾何關係
 
@@ -28,7 +28,7 @@ A design rule keeps geometric margin between a layout target and the structure t
 
 ![Width、space、enclosure、extension 與 overlap 的簡化幾何關係](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/15-layout-rule-language.svg)
 
-> 圖 1：作者依第二堂課程筆記重新繪製；五種圖形只用來分辨 layout-rule language，不代表特定 layer、製程節點或實際 design-rule 數值。
+> 圖 1：作者重新繪製；五種圖形只用來分辨 layout-rule language，不代表特定 layer、製程節點或實際 design-rule 數值。
 
 它們看起來都是幾何名詞，不過背後保護的結構不同。例如 line width 太小，可能讓導線形成變得不穩定；contact enclosure 不足，遇到 overlay variation 時可能讓接觸面積變小；相鄰圖形 spacing 太近，製程後則可能提高 bridge 或 leakage 的風險。
 
@@ -50,7 +50,7 @@ Fabricated geometry with variation
 
 ![名義 layout 經過微影、對準與蝕刻後形成帶有 variation 的實體結構](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/16-layout-to-fabricated-geometry.svg)
 
-> 圖 2：作者依第二堂課程筆記重新整理；相同 nominal layout 經過 lithography、overlay 與 etch 後，線寬、邊界與間距可能出現 variation。所有偏移均刻意放大，結構不按比例。
+> 圖 2：作者重新整理；相同 nominal layout 經過 lithography、overlay 與 etch 後，線寬、邊界與間距可能出現 variation。所有偏移均刻意放大，結構不按比例。
 
 這裡原本容易混在一起的是「設計尺寸」和「量到的實體尺寸」。Layout database 裡的 spacing 是設計值，晶圓上的 spacing 則還包含 CD、overlay 與 profile variation。兩個數字即使名稱相同，也不應直接當成同一種 observation。
 
@@ -74,7 +74,7 @@ High-risk or failing region
 
 ## 4. Contact-to-Poly Spacing 讓規則的來源比較具體
 
-課堂把 contact 與 poly 的距離依序縮小：
+把 contact 與 poly 的距離依序縮小後，可以看到這組關係：
 
 ```text
 Spacing:  S1 > S2 > S3 > S4 > S5 > S6
@@ -85,9 +85,9 @@ Leakage:  S1 ≈ S2 ≈ S3 < S4 < S5 ≪ S6
 
 ![Contact-to-poly spacing 縮小時 leakage tendency 進入快速上升區的概念圖](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/17-spacing-leakage-process-margin.svg)
 
-> 圖 3：作者依第二堂課程的 S1–S6 關係重新繪製；曲線只保留「前段相近、後段快速上升」的方向，沒有沿用講義中的 node、尺寸或 leakage 數值，也不代表實際量測分布。
+> 圖 3：作者依 S1–S6 的相對關係重新繪製；曲線只保留「前段相近、後段快速上升」的方向，沒有沿用原例中的 node、尺寸或 leakage 數值，也不代表實際量測分布。
 
-課堂接著把這組結果連回 contact、diffusion 與 poly 的 alignment precision，以及 contact-to-poly spacing 的 process capability。到這裡，minimum spacing rule 的角色才比較清楚：它不是從版圖慣例憑空產生，而是希望正常 variation 發生時，結構仍不要太容易掉進 leakage 急升的區域。
+這組結果可以再連回 contact、diffusion 與 poly 的 alignment precision，以及 contact-to-poly spacing 的 process capability。到這裡，minimum spacing rule 的角色才比較清楚：它不是從版圖慣例憑空產生，而是希望正常 variation 發生時，結構仍不要太容易掉進 leakage 急升的區域。
 
 不過這張概念曲線沒有提供實際 sample size、distribution、measurement condition 或失效判準，因此不能從圖上自行讀出一個新的通用 rule。能留下的是判斷方式，不是數字。
 

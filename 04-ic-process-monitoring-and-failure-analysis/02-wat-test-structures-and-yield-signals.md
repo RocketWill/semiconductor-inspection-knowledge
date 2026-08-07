@@ -22,7 +22,7 @@ WAT 表格裡常會看到 $V_T$、$I_{dsat}$、$R_{sh}$、$R_c$、continuity 或
 
 ## 1. WAT 不是完整產品功能測試
 
-WAT 通常寫成 **Wafer Acceptance Test**，是一種 wafer-level electrical test。講義列出的測試對象包括 MOS transistor、resistor、capacitor、contact、interconnect，以及 continuity、spacing 和 insulation 結構。
+WAT 通常寫成 **Wafer Acceptance Test**，是一種 wafer-level electrical test。常見測試對象包括 MOS transistor、resistor、capacitor、contact、interconnect，以及 continuity、spacing 和 insulation 結構。
 
 這些結構的共同點，是把複雜 IC 中的某一部分抽出來量。它們不需要完成整個產品功能，反而要盡量讓某個製程或元件反應容易被觀察。
 
@@ -33,15 +33,15 @@ WAT 通常寫成 **Wafer Acceptance Test**，是一種 wafer-level electrical te
 | CP | Wafer 上的 product die | 產品電路的功能與電性是否通過？ |
 | Final test | 封裝後 IC | 封裝完成後的產品是否符合測試要求？ |
 
-講義把 WAT 放在製程監控與良率改善的脈絡中。不過 WAT 和製程中的 thickness、CD、endpoint 或 defect inspection 仍不是同一種量測；實際插入時間與測試流程也會依製程平台和工廠做法而不同。這裡只保留一個相對位置：WAT 能在產品功能失效之外，提供另一組較接近製程與基本元件的電性證據。
+WAT 常被放在製程監控與良率改善的脈絡中。不過它和製程中的 thickness、CD、endpoint 或 defect inspection 仍不是同一種量測；實際插入時間與測試流程也會依製程平台和工廠做法而不同。這裡只保留一個相對位置：WAT 能在產品功能失效之外，提供另一組較接近製程與基本元件的電性證據。
 
 ## 2. 為什麼 test line 放在 scribe line
 
-產品晶粒內的面積很珍貴，而且完整 IC 也不適合為了檢查每一個中間結構而直接破壞。因此講義將 test line 和 test key 放在相鄰 die 之間的 scribe line，也就是後續切割會經過的區域。
+產品晶粒內的面積很珍貴，而且完整 IC 也不適合為了檢查每一個中間結構而直接破壞。Test line 和 test key 因此常放在相鄰 die 之間的 scribe line，也就是後續切割會經過的區域。
 
 ![Product die、scribe line、test key 與切割方向的簡化位置圖](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/04-scribe-line-test-key-layout.svg)
 
-> 圖 1：作者依個人課程筆記重新繪製；test key 位於 product die 之間的 scribe line，可在晶圓階段提供探針量測位置，後續再沿切割道分離晶粒。圖中尺寸、測試結構數量與探針配置均為概念示意，不代表特定產品 layout。
+> 圖 1：作者重新繪製；test key 位於 product die 之間的 scribe line，可在晶圓階段提供探針量測位置，後續再沿切割道分離晶粒。圖中尺寸、測試結構數量與探針配置均為概念示意，不代表特定產品 layout。
 
 這樣安排有幾個實際好處：
 
@@ -54,13 +54,13 @@ WAT 通常寫成 **Wafer Acceptance Test**，是一種 wafer-level electrical te
 
 ## 3. Test structure 不是縮小版完整 IC
 
-講義把 test-line MOS 和 product die 中的 MOS 放在一起比較。兩者可能具有相似的材料層與基本元件結構，但用途不同。
+Test-line MOS 和 product die 中的 MOS 可能具有相似的材料層與基本元件結構，但用途不同。
 
 Product circuit 需要完成功能，會包含大量元件、互連、負載、時序條件與設計裕度。Test structure 則刻意把問題縮小，例如固定 $W$、改變 $L$，或固定 $L$、改變 $W$，觀察幾何如何影響 MOS 電流。Contact chain 會串接許多 contact，讓原本很小的接觸電阻累積到比較容易量測的程度。
 
 ![小黑把複雜產品電路拆成 MOS、電阻、接點與絕緣測試結構](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/05-wat-structure-decomposition.png)
 
-> 圖 2：作者依個人課程筆記設計並重新整理；WAT 不是重新量一次完整產品功能，而是使用較單純的 MOS、電阻、接點鏈與導通／絕緣圖形，分別觀察選定的製程與元件反應。
+> 圖 2：作者重新設計並整理；WAT 不是重新量一次完整產品功能，而是使用較單純的 MOS、電阻、接點鏈與導通／絕緣圖形，分別觀察選定的製程與元件反應。
 
 測試結構可以降低問題的複雜度，但不代表一次只剩一個影響因素。
 
@@ -76,7 +76,7 @@ Product circuit 需要完成功能，會包含大量元件、互連、負載、�
 
 ## 4. WAT 能監控的範圍也有限
 
-WAT 很適合觀察 test structure 所代表的電性，但不是所有良率問題都會落在有限的測試面積上。講義特別提醒，particle defect 不能只依賴 WAT 篩選。
+WAT 很適合觀察 test structure 所代表的電性，但不是所有良率問題都會落在有限的測試面積上。Particle defect 就是很直接的反例，不能只依賴 WAT 篩選。
 
 原因不難理解。若一個隨機粒子落在 product die 內，卻沒有落在 scribe-line test key 上，WAT 結果可能維持正常，產品仍然可能因 open、short 或局部結構破壞而失效。
 
@@ -92,7 +92,7 @@ WAT 很適合觀察 test structure 所代表的電性，但不是所有良率問
 
 ## 5. 一個測點通過，不代表整片晶圓穩定
 
-講義後段反覆強調 WAT parameter 具有分布，而且晶圓中心、邊緣與局部區域可能不同。這裡至少要分開三種觀察：
+WAT parameter 不是只有一個代表值。晶圓中心、邊緣與局部區域可能不同，因此這裡至少要分開三種觀察：
 
 1. 分布中心是否接近 target；
 2. 分布寬度是否變大；
@@ -113,7 +113,7 @@ Spec low、target 和 spec high 很容易理解：參數落在上下限之間就
 
 ![穩定、偏移但仍通過，以及部分超出規格的三種分布](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/06-spec-window-and-distribution-shift.svg)
 
-> 圖 3：作者依個人課程筆記重新繪製；三個分布使用相同 spec window。分布由 target 附近往 spec high 移動時，即使大部分數值仍通過，也已顯示 drift；繼續偏移或變寬後，尾端才開始超出規格。曲線為教學示意，不代表實際製程資料。
+> 圖 3：作者重新繪製；三個分布使用相同 spec window。分布由 target 附近往 spec high 移動時，即使大部分數值仍通過，也已顯示 drift；繼續偏移或變寬後，尾端才開始超出規格。曲線為教學示意，不代表實際製程資料。
 
 因此至少要分清楚：
 
@@ -122,7 +122,7 @@ Spec low、target 和 spec high 很容易理解：參數落在上下限之間就
 - **Drift** 表示分布相對歷史或 target 發生移動，不一定已經越界；
 - **Outlier** 可能在整體平均仍正常時先出現。
 
-這篇不把 specification limit 和 statistical process control limit 混在一起。講義目前提供的是 spec low、target 和 spec high；control limit 的計算與設定方式需要另外的製程統計資料，不能直接從同一張圖代替。
+這篇不把 specification limit 和 statistical process control limit 混在一起。目前圖中只有 spec low、target 和 spec high；control limit 的計算與設定方式需要另外的製程統計資料，不能直接用同一張圖代替。
 
 ## 7. 平均值相近，wafer map 仍可能完全不同
 
@@ -144,7 +144,7 @@ WAT map 記錄 test-site parameter，CP map 記錄 product die 的 pass、fail �
 
 ![小黑對齊 WAT parameter map 與 CP fail-bin map，再標記重複的空間區域](../assets/04-ic-process-monitoring-and-failure-analysis-illustrations/07-wat-cp-map-alignment.png)
 
-> 圖 4：作者依個人課程筆記設計並重新整理；比較 WAT 與 CP map 前，先確認 wafer orientation、notch、座標與取樣位置。對齊後出現重複區域，可以支持進一步調查，但空間相關仍不是已驗證的原因。
+> 圖 4：作者重新設計並整理；比較 WAT 與 CP map 前，先確認 wafer orientation、notch、座標與取樣位置。對齊後出現重複區域，可以支持進一步調查，但空間相關仍不是已驗證的原因。
 
 比較前至少要確認：
 
@@ -159,7 +159,7 @@ WAT map 記錄 test-site parameter，CP map 記錄 product die 的 pass、fail �
 
 ## 9. WAT 在規格內，CP 仍可能 marginal fail
 
-講義用 marginal fail 說明另一種邊界情況：某些 WAT parameter 尚未超出規格，product die 卻在較嚴格的 CP condition 下失敗。
+另一種容易忽略的邊界情況是 marginal fail：某些 WAT parameter 尚未超出規格，product die 卻在較嚴格的 CP condition 下失敗。
 
 可能的原因包括：
 
