@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Endpoint and over-etch window</title>
+  <desc id="desc">A conceptual emission signal changes near film clear, followed by a bounded over-etch window before process stop.</desc>
+  <defs>
+    <style>.bg{fill:#fbfaf7}.ink{fill:#17202a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.h{font-size:27px;font-weight:700}.t{font-size:20px}.s{font-size:17px;fill:#475569}.axis{stroke:#334155;stroke-width:2}.curve{stroke:#277da1;stroke-width:5;fill:none}.dash{stroke:#c45d35;stroke-width:2;stroke-dasharray:8 7}.film{fill:#52796f}.over{fill:#f4b860;opacity:.38}.main{fill:#cfe2df}.stop{fill:#e7e9ed}</style>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="ink h" x="600" y="55" text-anchor="middle">Time signal does not remove local variation</text>
+  <line class="axis" x1="120" y1="330" x2="1090" y2="330"/><line class="axis" x1="120" y1="330" x2="120" y2="105"/>
+  <text class="ink t" x="72" y="210" text-anchor="middle" transform="rotate(-90 72 210)">Tracked intensity</text>
+  <text class="ink t" x="1090" y="362" text-anchor="end">Process time</text>
+  <path class="curve" d="M130 275 C205 190 280 185 370 190 C505 196 610 190 690 198 C740 205 765 245 790 286 C865 300 965 297 1070 298"/>
+  <line class="dash" x1="770" y1="92" x2="770" y2="560"/>
+  <text class="ink t" x="770" y="84" text-anchor="middle">Endpoint / film clear</text>
+  <rect class="main" x="120" y="405" width="650" height="72" rx="8"/>
+  <rect class="over" x="770" y="405" width="210" height="72"/>
+  <rect class="stop" x="980" y="405" width="110" height="72" rx="8"/>
+  <text class="ink t" x="445" y="449" text-anchor="middle">Main etch</text>
+  <text class="ink t" x="875" y="449" text-anchor="middle">Over-etch window</text>
+  <text class="ink t" x="1035" y="449" text-anchor="middle">Stop</text>
+  <path class="film" d="M120 535 L770 535 L770 560 L120 585 Z"/>
+  <path class="film" d="M770 560 L980 575 L980 585 L770 585 Z" opacity=".55"/>
+  <text class="ink t" x="120" y="625">Illustrative film remaining</text>
+  <text class="ink s" x="1090" y="650" text-anchor="end">Conceptual signal and timing · Not measured data</text>
+</svg>

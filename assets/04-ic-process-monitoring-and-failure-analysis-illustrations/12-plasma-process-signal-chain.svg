@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Local geometry changes plasma etch results</title>
+  <desc id="desc">A conceptual flow from shared process settings through wide and narrow openings to different local transport and etch outcomes.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#334155"/></marker>
+    <style>
+      .bg{fill:#fbfaf7}.box{fill:#fff;stroke:#334155;stroke-width:2}.soft{fill:#eef5f3;stroke:#52796f;stroke-width:2}.warm{fill:#fff3df;stroke:#c57b30;stroke-width:2}.ink{fill:#17202a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.h{font-size:27px;font-weight:700}.t{font-size:21px}.s{font-size:17px;fill:#475569}.line{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="ink h" x="600" y="62" text-anchor="middle">Same process setting, different local geometry</text>
+  <rect class="box" x="420" y="95" width="360" height="78" rx="12"/>
+  <text class="ink t" x="600" y="128" text-anchor="middle">Gas · power · pressure · time</text>
+  <text class="ink s" x="600" y="154" text-anchor="middle">shared process conditions</text>
+  <path class="line" d="M520 173 C470 215 360 220 305 260"/>
+  <path class="line" d="M680 173 C730 215 840 220 895 260"/>
+  <rect class="soft" x="105" y="265" width="400" height="265" rx="14"/>
+  <text class="ink h" x="305" y="308" text-anchor="middle">Larger opening</text>
+  <rect x="155" y="345" width="300" height="115" fill="#d7dee8"/>
+  <rect x="240" y="345" width="130" height="115" fill="#fbfaf7" stroke="#334155" stroke-width="2"/>
+  <path class="line" d="M275 330 L275 400"/><path class="line" d="M335 330 L335 400"/>
+  <text class="ink s" x="305" y="494" text-anchor="middle">easier reactant access</text>
+  <text class="ink s" x="305" y="518" text-anchor="middle">and byproduct removal</text>
+  <rect class="warm" x="695" y="265" width="400" height="265" rx="14"/>
+  <text class="ink h" x="895" y="308" text-anchor="middle">Smaller opening</text>
+  <rect x="745" y="345" width="300" height="115" fill="#d7dee8"/>
+  <rect x="855" y="345" width="80" height="115" fill="#fbfaf7" stroke="#334155" stroke-width="2"/>
+  <path class="line" d="M875 330 L875 390"/><path class="line" d="M915 330 L915 390"/>
+  <text class="ink s" x="895" y="494" text-anchor="middle">transport can become harder</text>
+  <text class="ink s" x="895" y="518" text-anchor="middle">local etch rate may differ</text>
+  <path class="line" d="M305 530 L305 585 L535 585"/>
+  <path class="line" d="M895 530 L895 585 L665 585"/>
+  <rect class="box" x="535" y="552" width="130" height="66" rx="10"/>
+  <text class="ink t" x="600" y="579" text-anchor="middle">Etch result</text>
+  <text class="ink s" x="600" y="603" text-anchor="middle">may vary</text>
+  <text class="ink s" x="600" y="650" text-anchor="middle">Conceptual · Not to scale · No production recipe or dimensions</text>
+</svg>

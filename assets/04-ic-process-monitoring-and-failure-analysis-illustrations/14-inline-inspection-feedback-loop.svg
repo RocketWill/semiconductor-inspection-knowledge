@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">In-line inspection evidence flow</title>
+  <desc id="desc">Inspection creates a defect map, followed by review, classification, targeted analysis, and process feedback, while root cause remains a separate verification step.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#334155"/></marker>
+    <style>.bg{fill:#fbfaf7}.box{fill:#fff;stroke:#334155;stroke-width:2}.accent{fill:#eef5f3;stroke:#52796f;stroke-width:2}.warn{fill:#fff3df;stroke:#c57b30;stroke-width:2}.ink{fill:#17202a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.h{font-size:27px;font-weight:700}.t{font-size:20px}.s{font-size:16px;fill:#475569}.line{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="ink h" x="600" y="60" text-anchor="middle">From spatial observation to a verification request</text>
+  <rect class="accent" x="70" y="125" width="210" height="92" rx="13"/><text class="ink t" x="175" y="163" text-anchor="middle">Wafer inspection</text><text class="ink s" x="175" y="191" text-anchor="middle">capture observations</text>
+  <rect class="box" x="350" y="125" width="210" height="92" rx="13"/><text class="ink t" x="455" y="163" text-anchor="middle">Defect map</text><text class="ink s" x="455" y="191" text-anchor="middle">location and trend</text>
+  <rect class="box" x="630" y="125" width="210" height="92" rx="13"/><text class="ink t" x="735" y="163" text-anchor="middle">Review</text><text class="ink s" x="735" y="191" text-anchor="middle">microscope or SEM</text>
+  <rect class="box" x="910" y="125" width="210" height="92" rx="13"/><text class="ink t" x="1015" y="163" text-anchor="middle">Classification</text><text class="ink s" x="1015" y="191" text-anchor="middle">describe appearance</text>
+  <path class="line" d="M280 171 L350 171"/><path class="line" d="M560 171 L630 171"/><path class="line" d="M840 171 L910 171"/>
+  <path class="line" d="M1015 217 L1015 320 L815 320"/>
+  <rect class="warn" x="590" y="275" width="225" height="92" rx="13"/><text class="ink t" x="702" y="313" text-anchor="middle">Targeted analysis</text><text class="ink s" x="702" y="341" text-anchor="middle">structure or material evidence</text>
+  <path class="line" d="M590 321 L395 321"/>
+  <rect class="accent" x="170" y="275" width="225" height="92" rx="13"/><text class="ink t" x="282" y="313" text-anchor="middle">Process feedback</text><text class="ink s" x="282" y="341" text-anchor="middle">check and verify</text>
+  <path class="line" d="M282 367 C282 450 705 456 705 400"/>
+  <rect class="box" x="405" y="455" width="390" height="96" rx="13"/><text class="ink t" x="600" y="495" text-anchor="middle">Evidence-supported conclusion</text><text class="ink s" x="600" y="525" text-anchor="middle">only after the relevant checks agree</text>
+  <text class="ink h" x="600" y="611" text-anchor="middle">Classification is not root cause.</text>
+  <text class="ink s" x="600" y="646" text-anchor="middle">Conceptual workflow · Actual routes and sampling depend on the investigation</text>
+</svg>
