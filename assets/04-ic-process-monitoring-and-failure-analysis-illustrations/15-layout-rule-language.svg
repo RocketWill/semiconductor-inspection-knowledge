@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Five common layout-rule relationships</title>
+  <desc id="desc">Conceptual diagrams for width, space, enclosure, extension, and overlap without process-specific dimensions.</desc>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 Z" fill="#334155"/></marker>
+    <style>.bg{fill:#fbfaf7}.ink{fill:#17202a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.h{font-size:28px;font-weight:700}.t{font-size:21px;font-weight:650}.s{font-size:16px;fill:#475569}.shape{fill:#cfe2df;stroke:#52796f;stroke-width:2}.shape2{fill:#f7c983;stroke:#b76822;stroke-width:2}.dim{stroke:#334155;stroke-width:2;marker-start:url(#a);marker-end:url(#a)}</style>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="ink h" x="600" y="58" text-anchor="middle">A small vocabulary for geometric relationships</text>
+  <g transform="translate(75 120)"><text class="ink t" x="95" y="0" text-anchor="middle">Width</text><rect class="shape" x="55" y="50" width="80" height="210"/><line class="dim" x1="55" y1="285" x2="135" y2="285"/><text class="ink s" x="95" y="320" text-anchor="middle">one shape</text></g>
+  <g transform="translate(285 120)"><text class="ink t" x="105" y="0" text-anchor="middle">Space</text><rect class="shape" x="10" y="50" width="65" height="210"/><rect class="shape" x="135" y="50" width="65" height="210"/><line class="dim" x1="75" y1="155" x2="135" y2="155"/><text class="ink s" x="105" y="320" text-anchor="middle">between shapes</text></g>
+  <g transform="translate(515 120)"><text class="ink t" x="105" y="0" text-anchor="middle">Enclosure</text><rect class="shape" x="20" y="65" width="170" height="175"/><rect class="shape2" x="70" y="110" width="70" height="85"/><line class="dim" x1="20" y1="265" x2="70" y2="265"/><text class="ink s" x="105" y="320" text-anchor="middle">outer margin</text></g>
+  <g transform="translate(750 120)"><text class="ink t" x="105" y="0" text-anchor="middle">Extension</text><rect class="shape" x="30" y="110" width="150" height="85"/><rect class="shape2" x="80" y="55" width="50" height="195"/><line class="dim" x1="130" y1="75" x2="180" y2="75"/><text class="ink s" x="105" y="320" text-anchor="middle">beyond an edge</text></g>
+  <g transform="translate(970 120)"><text class="ink t" x="80" y="0" text-anchor="middle">Overlap</text><rect class="shape" x="0" y="75" width="120" height="130"/><rect class="shape2" x="50" y="120" width="120" height="130" opacity=".78"/><line class="dim" x1="50" y1="270" x2="120" y2="270"/><text class="ink s" x="80" y="320" text-anchor="middle">shared region</text></g>
+  <text class="ink s" x="600" y="615" text-anchor="middle">Conceptual geometry · No layer assignment or process-specific value</text>
+</svg>

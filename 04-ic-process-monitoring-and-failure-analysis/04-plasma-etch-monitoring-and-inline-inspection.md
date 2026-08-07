@@ -8,6 +8,10 @@
 >
 > I wanted to separate these two views. One follows the reaction over time; the other preserves spatial evidence after a process step. Neither one, by itself, proves why the process changed or whether the product will eventually fail.
 
+## Short English Note
+
+OES follows changes in plasma emission over time, while in-line inspection preserves where visible anomalies appear. Together they can narrow an investigation, but neither signal verifies a process cause.
+
 這一段課程原本看起來像是兩個主題：前半段用光譜監控 plasma etch，後半段改談 defect inspection。整理到一半才比較能把它們放在同一條線上。兩者都比 WAT 和 CP 更靠近製程，只是一個看時間訊號，另一個看空間分布。
 
 先分開這兩種證據，後面的判斷會簡單很多。
