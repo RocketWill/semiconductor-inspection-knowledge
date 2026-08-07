@@ -1,6 +1,6 @@
 # IC Process Monitoring and Failure-Analysis Evidence
 
-This section came from a gap between inspection results and the manufacturing path behind them. Wafer maps and production context were familiar, but the position of WAT parameters such as threshold voltage, saturation current, and contact resistance in the IC process flow was not. The first in-person class connected process layers, scribe-line test structures, wafer-level distributions, CP bins, and later failure analysis. The goal is not to compress all 154 lecture pages into another process textbook. It is to build enough of a map to ask what was measured, what else affects the value, and what evidence is still missing.
+This section came from a gap between inspection results and the manufacturing path behind them. Wafer maps and production context were familiar, but the position of WAT parameters such as threshold voltage, saturation current, and contact resistance in the IC process flow was not. The first day of the course connected process layers, scribe-line test structures, wafer-level distributions, CP bins, and later failure analysis. The goal is not to compress all 154 lecture pages into another process textbook. It is to build enough of a map to ask what was measured, what else affects the value, and what evidence is still missing.
 
 ## Notes
 
@@ -53,7 +53,7 @@ These notes will be added only after later course material provides enough detai
 
 ## Learning Source
 
-1. Personal notes from the first day of an in-person course on integrated-circuit failure analysis and yield improvement, August 6, 2026.
+1. Hsinchu Science Park Bureau–subsidized course, [*積體電路故障分析技術與良率提升*](https://saturn.sipa.gov.tw/edu/d013_new.jsp?pl_id=26A01&cs_id=15S359) (*IC Failure Analysis Technology and Yield Improvement*, course 15S359), delivered by the Tze-Chiang Foundation of Science & Technology, August 6–7, 2026. These notes cover the first day.
 
 ## Note on Scope
 
