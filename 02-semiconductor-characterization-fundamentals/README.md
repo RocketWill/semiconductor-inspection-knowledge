@@ -8,10 +8,36 @@ This section begins with carriers, transport, and optical response, then moves t
 2. [p–n Junction and Diode I–V](./02-pn-junction-and-diode-iv.md) — Depletion-region formation, built-in voltage, diode I–V behavior, and series-resistance limits.
 3. [MOS Capacitor C–V and Oxide Charge](./03-mos-capacitor-and-oxide-charge.md) — Surface carrier states, C–V response, flat-band voltage, and oxide/interface charge.
 
+## What These Notes Connect
+
+The three notes follow the path from carrier behavior to electrical response:
+
+```text
+Energy bands and carrier concentration
+    ↓
+Carrier transport
+    ↓
+p–n junction and diode I–V
+    ↓
+MOS surface state
+    ↓
+C–V response and oxide/interface charge
+```
+
+The measured curve comes later in the chain. Before interpreting it, I first want to know what physical state produced it and which measurement conditions can change the response.
+
+## What Comes Next
+
+This section stops at the physical meaning behind basic semiconductor responses. The next section moves from those models to measurement and parameter extraction:
+
+[Electrical Characterization and Parameter Extraction](../03-electrical-characterization-and-process-monitoring/README.md)
+
 ## Learning Source
 
 1. Arizona State University, [*Fundamentals of Semiconductor Characterization*](https://www.coursera.org/learn/fundamentals-of-semiconductor-characterization), Coursera.
 
-## Note on Scope
+## Scope
 
-These notes connect the course content with previous work in AOI, camera runtime, and industrial data systems where the link is useful. Most project examples are about measurement context and traceability. They do not imply hands-on experience with Hall measurement or other electrical-characterization equipment.
+These notes are learning notes rather than records of hands-on electrical characterization. My practical connection is mainly optical inspection, camera runtime, and measurement traceability; where that connection is useful, I use it to separate optical evidence from electrical or material evidence.
+
+I have not operated Hall, diode I–V, or MOS C–V characterization equipment in production.
