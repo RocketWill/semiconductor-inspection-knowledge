@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <rect width="1400" height="760" fill="#ffffff"/>
+  <style>
+    .title { font: 600 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+    .label { font: 600 27px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+    .formula { font: 500 25px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2937; }
+    .unit { font: 400 21px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4b5563; }
+    .note { font: 400 19px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #6b7280; }
+  </style>
+
+  <rect x="60" y="105" width="320" height="400" rx="18" fill="#f8fafc" stroke="#111827" stroke-width="3"/>
+  <text x="220" y="205" text-anchor="middle" class="label">Material</text>
+  <circle cx="145" cy="295" r="11" fill="#111827"/>
+  <circle cx="220" cy="350" r="11" fill="#111827"/>
+  <circle cx="300" cy="280" r="11" fill="#111827"/>
+  <circle cx="295" cy="420" r="11" fill="#111827"/>
+  <circle cx="145" cy="455" r="11" fill="#111827"/>
+  <path d="M145 295 L220 350 L300 280 M220 350 L295 420 L145 455" fill="none" stroke="#94a3b8" stroke-width="3"/>
+  <text x="220" y="500" text-anchor="middle" class="formula">ρ</text>
+  <text x="220" y="530" text-anchor="middle" class="unit">[Ω·cm]</text>
+
+  <text x="450" y="305" text-anchor="middle" class="note">thickness t</text>
+  <path d="M400 345 H500" stroke="#2563eb" stroke-width="5"/>
+  <path d="M500 345 l-18 -12 v24 z" fill="#2563eb"/>
+
+  <rect x="520" y="105" width="320" height="400" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="680" y="205" text-anchor="middle" class="label">Thin Film</text>
+  <rect x="590" y="300" width="180" height="75" fill="#60a5fa" stroke="#1d4ed8" stroke-width="3"/>
+  <text x="680" y="460" text-anchor="middle" class="formula">Rsh = ρ / t</text>
+  <text x="680" y="495" text-anchor="middle" class="unit">[Ω/□]</text>
+
+  <text x="910" y="305" text-anchor="middle" class="note">geometry L/W</text>
+  <path d="M860 345 H960" stroke="#2563eb" stroke-width="5"/>
+  <path d="M960 345 l-18 -12 v24 z" fill="#2563eb"/>
+
+  <rect x="980" y="105" width="360" height="400" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+  <text x="1160" y="205" text-anchor="middle" class="label">Patterned Structure</text>
+  <path d="M1060 300 H1260 V345 H1175 V420 H1060 Z" fill="#fb923c" stroke="#c2410c" stroke-width="3"/>
+  <text x="1160" y="470" text-anchor="middle" class="formula">R = Rsh × L/W</text>
+  <text x="1160" y="505" text-anchor="middle" class="unit">[Ω]</text>
+
+  <text x="700" y="600" text-anchor="middle" class="note">Material property ≠ film property</text>
+  <text x="700" y="635" text-anchor="middle" class="note">Film property ≠ structure resistance</text>
+  <text x="700" y="690" text-anchor="middle" class="note">Conceptual schematic; not to scale.</text>
+</svg>
