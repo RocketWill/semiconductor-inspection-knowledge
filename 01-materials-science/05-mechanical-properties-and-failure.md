@@ -44,19 +44,19 @@ flowchart LR
 
 拉伸試驗將試片沿單軸方向拉伸，並記錄載荷與伸長量。為了比較不同尺寸的試片，通常先轉換成工程應力與工程應變。ASTM E8/E8M 的範圍也提醒了一項限制：標準試片量到的強度與延展性，不一定能完整代表成品在不同環境中的實際行為。
 
-$$
+```math
 \sigma_{\mathrm{eng}}=\frac{P}{A_0}
-$$
+```
 
-$$
+```math
 \varepsilon_{\mathrm{eng}}
 =
 \frac{L-L_0}{L_0}
 =
 \frac{\Delta L}{L_0}
-$$
+```
 
-其中 $P$ 為載荷，$A_0$ 為原始截面積，$L_0$ 為原始標距長度。
+其中 $P$ 為載荷， $A_0$ 為原始截面積， $L_0$ 為原始標距長度。
 
 ![工程應力—應變曲線與主要機械性質](../assets/05-mechanical-properties-and-failure-illustrations/01-stress-strain-big-four.svg)
 
@@ -98,25 +98,25 @@ $$
 
 工程應力始終使用原始截面積 $A_0$，真應力則使用當下截面積 $A$：
 
-$$
+```math
 \sigma_{\mathrm{eng}}=\frac{P}{A_0},
 \qquad
 \sigma_{\mathrm{true}}=\frac{P}{A}
-$$
+```
 
 在頸縮發生前，若變形近似均勻且材料體積近似不變，可使用：
 
-$$
+```math
 \sigma_{\mathrm{true}}
 =
 \sigma_{\mathrm{eng}}(1+\varepsilon_{\mathrm{eng}})
-$$
+```
 
-$$
+```math
 \varepsilon_{\mathrm{true}}
 =
 \ln(1+\varepsilon_{\mathrm{eng}})
-$$
+```
 
 ![工程應力與真應力在頸縮後的差異](../assets/05-mechanical-properties-and-failure-illustrations/02-engineering-vs-true-stress.svg)
 
@@ -130,9 +130,9 @@ $$
 
 潛變（creep）是材料在持續應力下，應變隨時間增加的現象。它通常在較高同系溫度下特別重要：
 
-$$
+```math
 T_{\mathrm H}=\frac{T}{T_{\mathrm m}}
-$$
+```
 
 其中溫度需使用絕對溫標。不過，不能以單一固定溫度判斷所有材料是否會潛變；聚合物在室溫附近也可能出現顯著的時間依賴變形。
 
@@ -148,13 +148,13 @@ $$
 
 在穩態潛變且主導機制未改變的有限應力與溫度範圍內，潛變速率常以 Norton–Arrhenius 型經驗關係表示：
 
-$$
+```math
 \dot{\varepsilon}_{s}
 =
 A\sigma^n\exp\left(-\frac{Q_c}{RT}\right)
-$$
+```
 
-其中 $A$ 與 $n$ 依材料與機制而定，$Q_c$ 為潛變活化能。這個式子顯示應力與溫度都會顯著改變潛變速率。
+其中 $A$ 與 $n$ 依材料與機制而定， $Q_c$ 為潛變活化能。這個式子顯示應力與溫度都會顯著改變潛變速率。
 
 ### Arrhenius 外推的限制
 
@@ -188,9 +188,9 @@ Charpy 結果適合比較材料在指定試片與測試條件下的衝擊行為�
 
 在線彈性斷裂力學的 Mode I 張開模式下，應力強度因子可寫成：
 
-$$
+```math
 K_{\mathrm I}=Y\sigma\sqrt{\pi a}
-$$
+```
 
 其中：
 
@@ -200,9 +200,9 @@ $$
 
 當試片厚度、裂紋與載入條件滿足線彈性和平面應變要求時，材料抵抗裂紋成長的臨界值記為 $K_{\mathrm{IC}}$。ASTM E399 也將它限定在具有尖銳裂紋、裂紋尖端塑性區相對較小且高拘束的條件下。簡化判斷為：
 
-$$
+```math
 K_{\mathrm I}\geq K_{\mathrm{IC}}
-$$
+```
 
 ![應力、裂紋尺寸與斷裂韌性的關係](../assets/05-mechanical-properties-and-failure-illustrations/05-fracture-toughness-critical-crack.svg)
 
@@ -216,33 +216,33 @@ $$
 
 假設：
 
-$$
-K_{\mathrm{IC}}=50\ \mathrm{MPa\sqrt m},
+```math
+K_{\mathrm{IC}}=50\ \mathrm{MPa}\sqrt{\mathrm m},
 \qquad
 \sigma=200\ \mathrm{MPa},
 \qquad
 Y=1
-$$
+```
 
 由：
 
-$$
+```math
 a_c
 =
 \frac{1}{\pi}
 \left(\frac{K_{\mathrm{IC}}}{Y\sigma}\right)^2
-$$
+```
 
 可得：
 
-$$
+```math
 a_c
 =
 \frac{1}{\pi}
 \left(\frac{50}{200}\right)^2\ \mathrm m
 \approx
 0.020\ \mathrm m
-$$
+```
 
 也就是約 $20\ \mathrm{mm}$。這個數值只適用於題目設定的理想幾何，而且 $Y=1$ 也是題目假設。若裂紋位於表面、幾何因子不同，或材料出現顯著塑性區，計算方式都需要調整。實際 allowable flaw size 也不直接等於理論臨界值，仍需依設計準則、量測誤差、載荷變動與安全裕度設定。
 

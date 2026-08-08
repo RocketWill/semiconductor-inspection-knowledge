@@ -34,9 +34,9 @@ flowchart LR
 
 | 名詞 | 這一章中的意思 | 例子 |
 | --- | --- | --- |
-| 成分（composition） | 材料中各元素或組成分的比例 | $0.76\ \mathrm{wt\%C}$ 的共析鋼 |
+| 成分（composition） | 材料中各元素或組成分的比例 | $0.76\ \mathrm{wt.}\,\%\,\mathrm{C}$ 的共析鋼 |
 | 相（phase） | 具有相對均勻成分、結構和性質的區域 | 奧氏體、鐵素體、滲碳體 |
-| 相分率（phase fraction） | 各相在材料中所占的比例 | $W_\alpha$、$W_\beta$ |
+| 相分率（phase fraction） | 各相在材料中所占的比例 | $W_\alpha$、 $W_\beta$ |
 | 微觀組織（microstructure） | 各相、晶粒與缺陷的尺寸、形狀、分布和排列 | 粗波來鐵、細波來鐵、貝氏體 |
 | 材料狀態（material state） | 成分、相、組織、殘留應力和製程歷史的綜合結果 | 退火、淬火或回火後的鋼 |
 
@@ -74,17 +74,17 @@ flowchart LR
 
 假設某二元合金位於 $\alpha+\beta$ 兩相區，等溫連線讀到：
 
-$$
-C_\alpha=20\ \mathrm{wt\%B},
+```math
+C_\alpha=20\ \mathrm{wt.}\,\%\,\mathrm{B},
 \qquad
-C_0=40\ \mathrm{wt\%B},
+C_0=40\ \mathrm{wt.}\,\%\,\mathrm{B},
 \qquad
-C_\beta=80\ \mathrm{wt\%B}
-$$
+C_\beta=80\ \mathrm{wt.}\,\%\,\mathrm{B}
+```
 
 則 $\alpha$ 相分率為：
 
-$$
+```math
 W_\alpha
 =
 \frac{C_\beta-C_0}{C_\beta-C_\alpha}
@@ -92,11 +92,11 @@ W_\alpha
 \frac{80-40}{80-20}
 =
 \frac{2}{3}
-$$
+```
 
 $\beta$ 相分率為：
 
-$$
+```math
 W_\beta
 =
 \frac{C_0-C_\alpha}{C_\beta-C_\alpha}
@@ -104,15 +104,15 @@ W_\beta
 \frac{40-20}{80-20}
 =
 \frac{1}{3}
-$$
+```
 
 檢查結果：
 
-$$
+```math
 W_\alpha+W_\beta=1
-$$
+```
 
-這個例題最需要避免的錯誤，是把距離放在相同一側。$\alpha$ 相的比例要使用靠近 $\beta$ 端的線段，$\beta$ 相則使用靠近 $\alpha$ 端的線段。除了檢查兩者相加是否為 $1$，也可以先看總成分比較靠近哪一端，確認比例的大小關係是否合理。
+這個例題最需要避免的錯誤，是把距離放在相同一側。 $\alpha$ 相的比例要使用靠近 $\beta$ 端的線段， $\beta$ 相則使用靠近 $\alpha$ 端的線段。除了檢查兩者相加是否為 $1$，也可以先看總成分比較靠近哪一端，確認比例的大小關係是否合理。
 
 這裡的橫軸使用重量百分比，因此 lever rule 得到的是重量分率；實際數值精度仍受到相圖讀值與平衡假設限制。如果相圖以原子百分比表示，分率的基準也會跟著改變；若需要體積分率，還要考慮各相密度並進一步換算。
 
@@ -127,19 +127,19 @@ $$
 | 共晶（eutectic） | $L\rightarrow\alpha+\beta$ | 一個液相 | 兩個固相 |
 | 共析（eutectoid） | $\gamma\rightarrow\alpha+\beta$ | 一個固相 | 兩個固相 |
 
-鉛—錫焊料是常見的二元共晶相圖例子。以歷史上常用的鉛—錫系統而言，共晶反應約發生在 $183^\circ\mathrm C$ 與 $61.9\ \mathrm{wt\%Sn}$：
+鉛—錫焊料是常見的二元共晶相圖例子。以歷史上常用的鉛—錫系統而言，共晶反應約發生在 $183^\circ\mathrm C$ 與 $61.9\ \mathrm{wt.}\,\%\,\mathrm{Sn}$：
 
-$$
+```math
 L\rightarrow\alpha+\beta
-$$
+```
 
 對偏離共晶成分的合金，冷卻時通常會先形成初生相，再由剩餘液體形成共晶組織。液相與固相共存的溫度區間會影響材料的流動、凝固和接頭形成。不過實際電子製造還會受到焊料系統、氧化、潤濕、加熱曲線和界面反應影響，不能只用一張二元平衡相圖判斷接頭品質。
 
 鋼中的共析反應則完全發生在固態。以亞穩定鐵—滲碳體系統的近似共析成分為例：
 
-$$
+```math
 \gamma\rightarrow\alpha+Fe_3C
-$$
+```
 
 其中：
 
@@ -147,7 +147,7 @@ $$
 - $\alpha$：鐵素體，BCC 結構；
 - $Fe_3C$：滲碳體。
 
-共析成分與溫度常近似寫為 $0.76\ \mathrm{wt\%C}$ 和 $727^\circ\mathrm C$。實際數值會依採用的相圖版本和合金元素而略有差異，因此這裡主要用來建立讀圖概念。
+共析成分與溫度常近似寫為 $0.76\ \mathrm{wt.}\,\%\,\mathrm{C}$ 和 $727^\circ\mathrm C$。實際數值會依採用的相圖版本和合金元素而略有差異，因此這裡主要用來建立讀圖概念。
 
 ## 6. 為什麼還需要時間？
 
@@ -158,9 +158,9 @@ $$
 
 可以用前一章的 Arrhenius 關係理解第二點：
 
-$$
+```math
 D=D_0\exp\left(-\frac{Q_d}{RT}\right)
-$$
+```
 
 接近平衡轉變溫度時，擴散速度較快，但形成新相的驅動力較小；溫度很低時，驅動力雖然增加，擴散卻可能慢到無法在有限時間內完成。兩者競爭，使擴散型相變常在某個中間溫度最快。
 
@@ -191,13 +191,13 @@ TTT（Time–Temperature–Transformation）圖描述材料先快速降至指定
 
 ### 7.3 麻田散鐵（Martensite）
 
-如果冷卻速度足夠快，使奧氏體（austenite）避開擴散型轉變曲線並降至麻田散鐵開始溫度（martensite-start temperature）$M_s$ 以下，便可能形成麻田散鐵（martensite）：
+如果冷卻速度足夠快，使奧氏體（austenite）避開擴散型轉變曲線並降至麻田散鐵開始溫度（martensite-start temperature） $M_s$ 以下，便可能形成麻田散鐵（martensite）：
 
-$$
-\gamma\ (\mathrm{FCC})
+```math
+\gamma\;(\mathrm{FCC})
 \rightarrow
-\text{martensite}\ (\mathrm{BCT\text{-}like\ in\ carbon\ steels})
-$$
+\mathrm{martensite}\;(\text{BCT-like in carbon steels})
+```
 
 更精確地說，主要是鐵晶格產生協同剪切式轉變；碳原子來不及長距離擴散，被困在新的晶格間隙中，使晶格產生明顯扭曲。這種結構會強烈阻礙差排移動，因此未回火麻田散鐵通常具有高硬度和高強度，但延性、韌性和殘留應力需要特別留意。
 
