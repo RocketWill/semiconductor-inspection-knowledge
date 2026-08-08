@@ -4,29 +4,17 @@
 
 > **Learning Context**
 >
-> In inspection work, I usually see a material only after several upstream steps have already changed its surface, geometry, interfaces, or internal state. That history is easy to miss. The image may reflect the material, the process route, or the way the signal was acquired.
+> In inspection work, I usually see a material only after several upstream steps have changed its surface, geometry, interfaces, or internal state. What I can trace most directly is the inspection configuration. The upstream material history is often less visible.
 >
-> I studied phase diagrams and transformation kinetics to understand what may have happened before inspection. The question is not whether an AOI pattern “looks like” a phase change. It is what process and material evidence would be needed before connecting a repeated signal with composition, thermal history, phase composition, or microstructure.
+> Phase diagrams and transformation kinetics helped me separate two questions: what states are available, and which path the material actually followed. A repeated AOI pattern may justify checking composition, batch, or thermal history. It does not identify a phase or microstructure on its own.
 
-## English Summary
+## 1. Processing History and Material State
 
-This chapter follows a processing route into a material state. Composition and the initial condition define the available transformation paths; the time–temperature history influences which ones occur and how far they proceed. Binary phase diagrams identify equilibrium phases, and the lever rule estimates their fractions. A simplified TTT diagram for eutectoid steel then adds kinetics.
+材料名稱和材料狀態需要分開看。即使成分相同，只要經歷的加熱、持溫、冷卻或加工方式不同，最後形成的相、晶粒、析出物和殘留應力都可能不同。材料性質不是掛在材料名稱旁邊的一組固定數字。
 
-The two diagrams answer different questions. A phase diagram shows what is stable near equilibrium. A TTT diagram shows what may form along a specified isothermal path.
+![相同成分經不同熱歷史形成不同微觀組織](../assets/06-processing-and-material-performance-illustrations/01-thermal-history-machine.png)
 
-For inspection work, a repeated image pattern may correlate with a batch or process step. But the image does not reveal phase or microstructure by itself. Process history, material characterization, and controlled comparison are still needed.
-
----
-
-## 1. 這一章要整理的問題
-
-前幾章從鍵結、晶體結構、缺陷和機械性質逐步理解材料行為。不過即使材料成分相同，只要經歷的加熱、持溫、冷卻或加工方式不同，最後形成的相、晶粒、析出物和殘留應力也可能不同。因此，材料性質不能只被理解成材料名稱旁邊的一組固定數值。
-
-這一章主要整理一個問題：**製程與熱歷史如何改變材料的相組成和微觀組織，並進一步影響性能與檢測結果？**
-
-![小黑操作熱歷史機器，使相同成分形成不同組織](../assets/06-processing-and-material-performance-illustrations/01-thermal-history-machine.png)
-
-> 圖 1：作者依個人課程筆記設計並重新整理；相同成分的材料經過慢冷、等溫停留或快速淬火後，可能形成不同的微觀組織。
+> 圖 1：相同成分經歷不同 time–temperature paths 後，可能形成不同 microstructures；結構為概念示意。
 
 這條關係可以先簡化成：
 
@@ -60,7 +48,7 @@ flowchart LR
 
 ![簡化二元共晶相圖與槓桿定則](../assets/06-processing-and-material-performance-illustrations/02-binary-eutectic-and-lever-rule.svg)
 
-> 圖 2：作者依個人課程筆記重新整理；這是一張通用的簡化共晶相圖，標示液相、兩相區、共晶點、等溫連線，以及槓桿定則需要使用的三個成分位置。
+> 圖 2：簡化 binary eutectic phase diagram 與 lever-rule 幾何關係；相界與成分位置只用於概念說明。
 
 ### 3.1 基本讀圖語言
 
@@ -86,31 +74,49 @@ flowchart LR
 
 假設某二元合金位於 $\alpha+\beta$ 兩相區，等溫連線讀到：
 
-$$C_\alpha=20\ \mathrm{wt\%B},\qquad C_0=40\ \mathrm{wt\%B},\qquad C_\beta=80\ \mathrm{wt\%B}$$
+$$
+C_\alpha=20\ \mathrm{wt\%B},
+\qquad
+C_0=40\ \mathrm{wt\%B},
+\qquad
+C_\beta=80\ \mathrm{wt\%B}
+$$
 
 則 $\alpha$ 相分率為：
 
-$$W_\alpha=\frac{C_\beta-C_0}{C_\beta-C_\alpha}
-=\frac{80-40}{80-20}
-=\frac{2}{3}$$
+$$
+W_\alpha
+=
+\frac{C_\beta-C_0}{C_\beta-C_\alpha}
+=
+\frac{80-40}{80-20}
+=
+\frac{2}{3}
+$$
 
 $\beta$ 相分率為：
 
-$$W_\beta=\frac{C_0-C_\alpha}{C_\beta-C_\alpha}
-=\frac{40-20}{80-20}
-=\frac{1}{3}$$
+$$
+W_\beta
+=
+\frac{C_0-C_\alpha}{C_\beta-C_\alpha}
+=
+\frac{40-20}{80-20}
+=
+\frac{1}{3}
+$$
 
 檢查結果：
 
-$$W_\alpha+W_\beta=1$$
+$$
+W_\alpha+W_\beta=1
+$$
 
 這個例題最需要避免的錯誤，是把距離放在相同一側。$\alpha$ 相的比例要使用靠近 $\beta$ 端的線段，$\beta$ 相則使用靠近 $\alpha$ 端的線段。除了檢查兩者相加是否為 $1$，也可以先看總成分比較靠近哪一端，確認比例的大小關係是否合理。
 
-這裡的橫軸使用重量百分比，因此計算結果是近似重量分率。如果相圖以原子百分比表示，分率的基準也會跟著改變；若需要體積分率，還要考慮各相密度並進一步換算。這項計算也假設材料位於指定溫度的兩相平衡區。
+這裡的橫軸使用重量百分比，因此 lever rule 得到的是重量分率；實際數值精度仍受到相圖讀值與平衡假設限制。如果相圖以原子百分比表示，分率的基準也會跟著改變；若需要體積分率，還要考慮各相密度並進一步換算。
 
-> **Engineering Takeaway**
->
-> The lever rule estimates equilibrium phase fractions at a specified temperature and composition. The fraction basis follows the composition axis. It does not predict morphology, grain size, transformation time, or final performance.
+算到這裡只有 phase fraction。組織形貌、晶粒尺寸、轉變時間與最終性能，都還沒有從這條 tie line 裡出現。
 
 ## 5. 共晶與共析：起始相不同
 
@@ -121,15 +127,19 @@ $$W_\alpha+W_\beta=1$$
 | 共晶（eutectic） | $L\rightarrow\alpha+\beta$ | 一個液相 | 兩個固相 |
 | 共析（eutectoid） | $\gamma\rightarrow\alpha+\beta$ | 一個固相 | 兩個固相 |
 
-UC Davis 課程使用鉛—錫或錫—鉍型的共晶相圖說明緩慢凝固。以歷史上常用，也經常作為教材範例的鉛—錫焊料為例，共晶反應約發生在 $183^\circ\mathrm C$ 與 $61.9\ \mathrm{wt\%Sn}$：
+鉛—錫焊料是常見的二元共晶相圖例子。以歷史上常用的鉛—錫系統而言，共晶反應約發生在 $183^\circ\mathrm C$ 與 $61.9\ \mathrm{wt\%Sn}$：
 
-$$L\rightarrow\alpha+\beta$$
+$$
+L\rightarrow\alpha+\beta
+$$
 
 對偏離共晶成分的合金，冷卻時通常會先形成初生相，再由剩餘液體形成共晶組織。液相與固相共存的溫度區間會影響材料的流動、凝固和接頭形成。不過實際電子製造還會受到焊料系統、氧化、潤濕、加熱曲線和界面反應影響，不能只用一張二元平衡相圖判斷接頭品質。
 
 鋼中的共析反應則完全發生在固態。以亞穩定鐵—滲碳體系統的近似共析成分為例：
 
-$$\gamma\rightarrow\alpha+Fe_3C$$
+$$
+\gamma\rightarrow\alpha+Fe_3C
+$$
 
 其中：
 
@@ -148,7 +158,9 @@ $$\gamma\rightarrow\alpha+Fe_3C$$
 
 可以用前一章的 Arrhenius 關係理解第二點：
 
-$$D=D_0\exp\left(-\frac{Q_d}{RT}\right)$$
+$$
+D=D_0\exp\left(-\frac{Q_d}{RT}\right)
+$$
 
 接近平衡轉變溫度時，擴散速度較快，但形成新相的驅動力較小；溫度很低時，驅動力雖然增加，擴散卻可能慢到無法在有限時間內完成。兩者競爭，使擴散型相變常在某個中間溫度最快。
 
@@ -160,34 +172,38 @@ TTT（Time–Temperature–Transformation）圖描述材料先快速降至指定
 
 ![共析鋼的簡化 TTT diagram](../assets/06-processing-and-material-performance-illustrations/03-eutectoid-steel-ttt.svg)
 
-> 圖 3：作者依個人課程筆記重新整理；這張共析鋼 TTT 示意圖比較高溫等溫形成波來鐵、較低溫等溫形成貝氏體，以及快速降至 $M_s$ 以下形成麻田散鐵的路徑，不能用來讀取特定鋼材的工業處理參數。
+> 圖 3：簡化 eutectoid-steel TTT diagram，比較 pearlite、bainite 與 martensite 的轉變路徑；不能用來讀取特定鋼材的工業處理參數。
 
-### 7.1 波來鐵
+### 7.1 波來鐵（Pearlite）
 
-共析奧氏體在較高溫度進行擴散型轉變時，碳需要從形成鐵素體的區域移向滲碳體，最後形成鐵素體與滲碳體交替排列的波來鐵。
+共析奧氏體（eutectoid austenite）在較高溫度進行擴散型轉變時，碳需要從形成鐵素體（ferrite）的區域移向滲碳體（cementite），最後形成鐵素體與滲碳體交替排列的波來鐵（pearlite）。
 
 - 較高轉變溫度：擴散距離較長，通常形成較粗的層片。
 - 較低轉變溫度：成核位置增加、擴散距離縮短，通常形成較細的層片。
 
 細波來鐵通常比粗波來鐵具有較高的強度和硬度，但具體性質仍受到成分、層片間距和先前奧氏體狀態影響。
 
-### 7.2 貝氏體
+### 7.2 貝氏體（Bainite）
 
-在波來鐵轉變溫度以下、麻田散鐵開始溫度以上進行等溫轉變，可以形成貝氏體。它同樣包含鐵素體與碳化物，不過形態不是規則的波來鐵層片。
+在波來鐵轉變溫度以下、麻田散鐵開始溫度以上進行等溫轉變，可以形成貝氏體（bainite）。它同樣包含鐵素體與碳化物（carbides），不過形態不是規則的波來鐵層片。
 
 貝氏體常被描述為具有較好的強度與韌性組合，但上貝氏體、下貝氏體和不同合金中的碳化物分布並不相同，因此不適合只用單一性質標籤概括。
 
-### 7.3 麻田散鐵
+### 7.3 麻田散鐵（Martensite）
 
-如果冷卻速度足夠快，使奧氏體避開擴散型轉變曲線並降至麻田散鐵開始溫度 $M_s$ 以下，便可能形成麻田散鐵：
+如果冷卻速度足夠快，使奧氏體（austenite）避開擴散型轉變曲線並降至麻田散鐵開始溫度（martensite-start temperature）$M_s$ 以下，便可能形成麻田散鐵（martensite）：
 
-$$\gamma\ (\mathrm{FCC})\rightarrow\text{martensite}\ (\mathrm{BCT\text{-}like\ in\ carbon\ steels})$$
+$$
+\gamma\ (\mathrm{FCC})
+\rightarrow
+\text{martensite}\ (\mathrm{BCT\text{-}like\ in\ carbon\ steels})
+$$
 
 更精確地說，主要是鐵晶格產生協同剪切式轉變；碳原子來不及長距離擴散，被困在新的晶格間隙中，使晶格產生明顯扭曲。這種結構會強烈阻礙差排移動，因此未回火麻田散鐵通常具有高硬度和高強度，但延性、韌性和殘留應力需要特別留意。
 
-在含碳鋼中，麻田散鐵通常以過飽和的 BCT 結構描述；碳含量較低時，四方畸變可能不明顯。它和波來鐵、貝氏體的擴散型相變不同，通常被視為近似無擴散、非熱活化的轉變。降至 $M_s$ 以下後，轉變量主要受到溫度下降程度、成分和原始奧氏體狀態控制，而不是單純延長等溫保持時間。
+在含碳鋼中，麻田散鐵通常以過飽和的 BCT 結構描述；碳含量較低時，四方畸變可能不明顯。在一般碳鋼的熱處理脈絡下，martensitic transformation 通常近似 diffusionless，並常呈現 approximately athermal behavior。降至 $M_s$ 以下後，轉變量主要受到溫度下降程度、成分和原始奧氏體狀態控制，不是靠延長等溫保持時間完成。
 
-$M_s$ 不是所有鋼都相同的固定溫度。它會受到碳含量、合金元素和奧氏體狀態影響；冷卻至室溫後，也可能保留部分未轉變的奧氏體。
+$M_s$ 不是所有鋼都相同的固定溫度。它會受到碳含量、合金元素和奧氏體狀態影響；冷卻至室溫後，也可能保留部分未轉變的奧氏體（retained austenite）。
 
 ## 8. 三條熱處理路徑的簡單比較
 
@@ -208,68 +224,49 @@ TTT 圖假設材料快速到達指定溫度後等溫保持；一般工業熱處�
 
 TTT 圖仍然很有價值，因為它能把相變的時間尺度、轉變溫度與產物清楚分開。不過實際使用時，需要確認圖表對應的合金成分、先前奧氏體化條件、晶粒尺寸與量測方法，不能把一張共析鋼示意圖直接套用到其他鋼材。
 
+鋼的例子把這項差異變得很具體。經過可比較的奧氏體化條件後，相同成分仍可能因後續 time–temperature path 不同，形成粗波來鐵、細波來鐵、貝氏體、麻田散鐵或混合組織。
+
 ## 9. Two Recipes Note: Manufacturing History and Inspection Settings
 
-In a six-month on-site wafer-inspection assignment, I worked with trigger timing, wafer motion, multiple camera streams, ROI and template settings, inspection recipes, result aggregation, and history review. The records available to me mainly described the inspection system. They were useful when a pattern appeared only under a particular configuration or remained fixed in one coordinate system.
+During a six-month on-site wafer-inspection assignment, the records available to me mainly described acquisition, inspection configuration, and result history. Trigger timing, wafer motion, camera streams, ROI and template settings were useful when a pattern appeared only under one configuration or stayed fixed in a particular coordinate system.
 
-Studying phase transformations adds a distinction I did not make clearly enough at the time. An inspection recipe describes how the equipment acquires and evaluates a signal. A manufacturing process recipe describes what the material experienced before it reached the inspection station. The names sound similar (and are easy to mix up in practice), but they answer different questions.
+Phase transformations added a distinction I had not made clearly enough at the time. An inspection recipe describes how the equipment acquires and evaluates a signal. A manufacturing process recipe describes what the material experienced before it reached the inspection station. The names sound similar, but they answer different questions.
 
 Those records were enough to investigate acquisition and coordinate-related behavior, but they did not reconstruct the wafer’s upstream thermal or material history. If an anomaly changes after an AOI threshold, illumination, or ROI update, the first explanation may belong to the measurement system. If it follows a process step, batch, thermal exposure, or spatial position on the wafer, an upstream material or process hypothesis becomes more reasonable.
 
-But the image still does not identify a phase or microstructure. In that assignment, I did not have diffraction, cross-sectional analysis, or complete thermal-history evidence, so I could not infer a material transformation from the image.
+But the image still does not identify a phase or microstructure. In that assignment, I did not have diffraction, cross-sectional analysis, or complete thermal-history evidence. A material transformation could not be inferred from the image.
 
 This changes the information I would request during an investigation. I would keep the inspection configuration and manufacturing history as separate records, then compare both with the observed pattern. Otherwise, a stable model output may hide whether the repeated signal came from the material, the process, or the way the image was acquired.
 
-## 10. Linking the Two Records with Industrial AI
+## 10. Process Records and Inspection Evidence
 
-![小黑鋪設製程與 AOI 證據，但橋中央仍待驗證](../assets/06-processing-and-material-performance-illustrations/04-process-aoi-evidence-gap.png)
+![製程紀錄與 AOI 證據之間仍需材料驗證](../assets/06-processing-and-material-performance-illustrations/04-process-aoi-evidence-gap.png)
 
-> 圖 4：作者依個人課程筆記設計並重新整理；製程紀錄與 AOI 可以建立重複模式，不過根因仍需要材料分析或受控實驗補上證據缺口。
+> 圖 4：製程紀錄與 AOI evidence 可以建立重複模式，但 phase、microstructure 與 material mechanism 仍需要材料分析或受控實驗驗證。
 
-My platform work already connects dataset management, training configurations, model evaluation, export, and machine-side deployment. In a separate wafer-inspection project, bright-field and dark-field results were combined before defect classification and measurement. These systems preserve useful model and inspection context. They do not, however, reconstruct the material’s upstream process history.
+My platform work connects dataset management, training configurations, model evaluation, export, and machine-side deployment. In a separate wafer-inspection project, bright-field and dark-field results were combined before defect classification and measurement. Those systems preserved useful model and inspection context. They did not reconstruct the material’s upstream process history.
 
-For a material investigation, I would also want the process path to remain visible in the dataset. Depending on the production line, that may include:
+Inspection records explain how a signal was acquired. Process records describe what the material experienced upstream. Keeping the two records separate makes it possible to compare a repeated pattern with both measurement conditions and the recorded process path. Useful context may include the material or lot, process step and recipe version, thermal path, batch relationship, inspection configuration, and later verification result.
 
-- material grade or specification, incoming lot, and initial condition;
-- process step, recipe version, and equipment ID;
-- temperature profile, hold time, and cooling condition;
-- wafer, panel, or batch relationship;
-- inspection camera, illumination, scale, and model version;
-- follow-up metrology, material characterization, and final disposition.
+AI can compare these fields with defect distributions, identify drift, or show which recorded process variables repeatedly appear with a signal. That is useful for prioritizing an investigation. But correlation is not phase identification, and a model feature is not a transformation mechanism.
 
-AI can compare these fields with defect distributions, detect drift, group similar batches, and identify which process variables repeatedly appear with a signal. That is useful. But correlation is not phase identification, and a model feature is not a transformation mechanism.
+The gap is specific. Model versions and equipment settings explain how a result was produced. Upstream process steps, thermal exposure, batch genealogy, and later characterization help explain what may have happened to the material. Those fields were not fully available in the projects described here, so a verified explanation remained outside the image and software records.
 
-The gap is fairly specific. Model versions and equipment settings explain how a result was produced, while upstream process steps, thermal exposure, batch genealogy, and later characterization help explain what may have happened to the material. Those fields were not fully available in the projects described here.
+## Current Scope
 
-For this kind of system, the model should be able to report which recorded process path is associated with an observation and how stable that association is. A verified explanation still needs a physically plausible mechanism and independent evidence.
+這篇先停在二元相圖、共晶與共析反應、lever rule，以及用共析鋼說明的 TTT、CCT 與 transformation kinetics。
 
-## 11. What the Steel Example Corrected
+完整 Fe–Fe₃C 相圖、析出強化、燒結、薄膜相形成與半導體熱製程都還沒有展開。鋼的例子用來理解成分與 time–temperature history 如何形成不同材料狀態，不能直接套到 silicon wafer 或 thin film。
 
-I had been reading material properties as values attached to a material name. The steel examples made the limitation obvious: after an appropriate and comparable austenitizing condition, the same composition can produce coarse pearlite, fine pearlite, bainite, martensite, or a mixture depending on the subsequent time–temperature path.
+這裡的工程案例描述 inspection acquisition、configuration 與 software records，不代表掌握 upstream manufacturing recipe。AOI pattern 可以和 process history 放在一起比較，但 phase 或 microstructure 仍需要適合的獨立證據。
 
-The phase diagram also became less universal than it first appeared. It is a map of equilibrium states, not a replay of the actual manufacturing route. TTT and CCT diagrams add kinetics, but they still depend on composition and prior conditions.
+## Learning Source
 
-For inspection work, this means a repeated visual pattern should be connected with process history before it is given a material explanation. The pattern can be real and repeatable. The mechanism can still be unresolved.
+- James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
 
-## 12. Notes Beside the Phase and TTT Diagrams
+## Additional References
 
-1. **A phase is not the same as a microstructure.** Pearlite contains ferrite and cementite; its arrangement matters.
-2. **A phase diagram is mainly an equilibrium map.** It does not specify transformation time or guarantee the result of rapid processing.
-3. **The lever rule estimates phase fractions, not morphology or performance.**
-4. **A TTT diagram describes an isothermal path.** Continuous cooling requires a different interpretation and often a CCT diagram.
-5. **TTT and CCT diagrams are material-specific.** Composition, austenitizing condition, and grain size can shift the transformation behavior.
-6. **Martensite is an approximately athermal, diffusionless lattice transformation.** Carbon is trapped because it cannot complete long-range diffusion during rapid cooling; the transformed fraction mainly follows temperature rather than isothermal holding time.
-7. **High hardness is not a complete design target.** Toughness, residual stress, dimensional stability, and service conditions still matter.
-8. **An AOI pattern does not identify a phase.** Diffraction, microscopy, sectioning, thermal records, or another material method may still be required.
-
-這裡使用的是二元相圖、共晶／共析反應和簡化的共析鋼 TTT 圖。完整 Fe–Fe₃C 相圖、析出強化、燒結、薄膜相形成與半導體熱製程都還沒有展開。
-
-鋼的例子主要用來練習如何把平衡狀態與轉變動力學放在一起，不能直接套到矽晶圓或薄膜。可以帶到下一章的，是較基本的判斷順序：先確認材料與初始狀態，再看實際製程路徑和時間尺度，最後用獨立量測確認結果。只有 AOI 圖形時，這條路通常還走不完。
-
-## References
-
-1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
-2. James F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
-3. William D. Callister Jr. and David G. Rethwisch, *Materials Science and Engineering: An Introduction*.
-4. University of Cambridge DoITPoMS, [The Lever Rule](https://eng.libretexts.org/Bookshelves/Materials_Science/TLP_Library_II/12%3A_Phase_Diagrams_and_Solidification/12.7%3A_The_Lever_Rule).
-5. National Bureau of Standards, [*Heat Treatment and Properties of Iron and Steel*](https://nvlpubs.nist.gov/nistpubs/Legacy/MONO/nbsmonograph88.pdf), NBS Monograph 88.
+- James F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
+- William D. Callister Jr. and David G. Rethwisch, *Materials Science and Engineering: An Introduction*.
+- University of Cambridge DoITPoMS, [*The Lever Rule*](https://eng.libretexts.org/Bookshelves/Materials_Science/TLP_Library_II/12%3A_Phase_Diagrams_and_Solidification/12.7%3A_The_Lever_Rule).
+- National Bureau of Standards, [*Heat Treatment and Properties of Iron and Steel*](https://nvlpubs.nist.gov/nistpubs/Legacy/MONO/nbsmonograph88.pdf), NBS Monograph 88.

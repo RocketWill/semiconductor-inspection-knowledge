@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
-  <rect width="960" height="540" fill="#fbfaf7"/>
-  <text x="56" y="48" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">頸縮後：工程應力與真應力開始分開</text>
-  <line x1="100" y1="450" x2="890" y2="450" stroke="#263248" stroke-width="3"/>
-  <line x1="100" y1="450" x2="100" y2="82" stroke="#263248" stroke-width="3"/>
-  <text x="812" y="492" font-family="Arial, sans-serif" font-size="18" fill="#263248">應變</text>
-  <text x="36" y="94" font-family="Arial, sans-serif" font-size="18" fill="#263248">應力</text>
-  <path d="M100 450 C170 350 220 270 285 238 C400 215 515 174 620 158 C680 149 716 165 742 203 C775 250 808 319 840 368"
-        fill="none" stroke="#d84a3a" stroke-width="6"/>
-  <path d="M100 450 C170 350 220 270 285 238 C400 215 515 174 620 158 C700 145 760 124 840 92"
-        fill="none" stroke="#287bb5" stroke-width="6"/>
-  <line x1="620" y1="82" x2="620" y2="450" stroke="#666" stroke-width="2" stroke-dasharray="8 7"/>
-  <text x="578" y="478" font-family="Arial, sans-serif" font-size="16" fill="#555">頸縮開始</text>
-  <line x1="690" y1="254" x2="820" y2="254" stroke="#d84a3a" stroke-width="5"/>
-  <text x="696" y="243" font-family="Arial, sans-serif" font-size="17" fill="#172033">工程應力：固定 A₀</text>
-  <line x1="690" y1="307" x2="820" y2="307" stroke="#287bb5" stroke-width="5"/>
-  <text x="696" y="296" font-family="Arial, sans-serif" font-size="17" fill="#172033">真應力：當下 A</text>
-  <text x="650" y="385" font-family="Arial, sans-serif" font-size="16" fill="#555">局部截面縮小，差異快速增加</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Engineering stress and true stress after necking</title>
+  <desc id="desc">Conceptual comparison showing engineering stress falling after necking while true stress continues upward as local area decreases.</desc>
+  <defs><filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#132238" flood-opacity=".08"/></filter></defs>
+  <rect width="1200" height="675" fill="#f6f3ed"/>
+  <rect x="36" y="30" width="1128" height="603" rx="22" fill="#fffdf9" stroke="#d9d4ca" filter="url(#shadow)"/>
+  <text x="78" y="82" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#17243a">Engineering Stress vs True Stress</text>
+  <text x="78" y="112" font-family="Inter, Arial, sans-serif" font-size="15" fill="#647184">The two measures separate once deformation localizes</text>
+  <g stroke="#dfe3e8"><path d="M126 184H1110 M126 268H1110 M126 352H1110 M126 436H1110 M126 520H1110"/><path d="M286 150V548 M446 150V548 M606 150V548 M766 150V548 M926 150V548"/></g>
+  <path d="M126 548H1110 M126 548V150" stroke="#24344d" stroke-width="2.5"/>
+  <text x="1028" y="590" font-family="Inter, Arial, sans-serif" font-size="17" fill="#3f4d61">Strain</text>
+  <text x="78" y="160" font-family="Inter, Arial, sans-serif" font-size="17" fill="#3f4d61">Stress</text>
+  <path d="M126 548 C220 413 291 326 378 292 C515 272 650 225 778 207 C846 198 893 219 928 266 C966 317 1008 410 1058 472" fill="none" stroke="#c85f32" stroke-width="6" stroke-linecap="round"/>
+  <path d="M126 548 C220 413 291 326 378 292 C515 272 650 225 778 207 C874 192 961 156 1058 105" fill="none" stroke="#2b6f93" stroke-width="6" stroke-linecap="round"/>
+  <path d="M778 144V548" stroke="#8a95a5" stroke-width="2" stroke-dasharray="8 8"/>
+  <rect x="720" y="552" width="116" height="30" rx="15" fill="#26364e"/>
+  <text x="778" y="573" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">Necking begins</text>
+  <g transform="translate(842 174)"><rect width="254" height="102" rx="14" fill="#f7f9fb" stroke="#d8dee6"/><path d="M20 30H62" stroke="#2b6f93" stroke-width="5"/><text x="76" y="35" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#26364e">True stress</text><text x="76" y="55" font-family="Inter, Arial, sans-serif" font-size="13" fill="#687487">uses instantaneous area A</text><path d="M20 78H62" stroke="#c85f32" stroke-width="5"/><text x="76" y="83" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#26364e">Engineering stress</text><text x="76" y="101" font-family="Inter, Arial, sans-serif" font-size="13" fill="#687487">uses original area A₀</text></g>
+  <g transform="translate(833 362)"><rect width="266" height="78" rx="14" fill="#fff8ef" stroke="#e5c6ae"/><text x="18" y="30" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#26364e">Local area shrinks rapidly</text><text x="18" y="54" font-family="Inter, Arial, sans-serif" font-size="14" fill="#687487">Uniform-deformation conversion no longer applies</text></g>
+  <text x="78" y="616" font-family="Inter, Arial, sans-serif" font-size="13" fill="#7a8493">Conceptual comparison · Local neck stress requires additional measurement and correction</text>
 </svg>

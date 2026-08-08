@@ -1,20 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
-  <rect width="960" height="540" fill="#fbfaf7"/>
-  <text x="56" y="48" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">固定應力與溫度下的典型潛變曲線</text>
-  <line x1="100" y1="450" x2="890" y2="450" stroke="#263248" stroke-width="3"/>
-  <line x1="100" y1="450" x2="100" y2="82" stroke="#263248" stroke-width="3"/>
-  <text x="830" y="492" font-family="Arial, sans-serif" font-size="18" fill="#263248">時間 t</text>
-  <text x="35" y="94" font-family="Arial, sans-serif" font-size="18" fill="#263248">應變 ε</text>
-  <path d="M100 425 C155 335 225 307 310 292 C420 272 550 250 650 229 C746 209 790 166 825 82"
-        fill="none" stroke="#d84a3a" stroke-width="6"/>
-  <line x1="310" y1="110" x2="310" y2="450" stroke="#999" stroke-width="2" stroke-dasharray="7 6"/>
-  <line x1="650" y1="110" x2="650" y2="450" stroke="#999" stroke-width="2" stroke-dasharray="7 6"/>
-  <text x="166" y="480" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#172033">第一階段</text>
-  <text x="435" y="480" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#172033">第二階段</text>
-  <text x="715" y="480" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#172033">第三階段</text>
-  <text x="150" y="258" font-family="Arial, sans-serif" font-size="16" fill="#555">速率下降</text>
-  <text x="420" y="226" font-family="Arial, sans-serif" font-size="16" fill="#555">近似穩態速率</text>
-  <text x="714" y="142" font-family="Arial, sans-serif" font-size="16" fill="#555">損傷加速</text>
-  <line x1="400" y1="300" x2="568" y2="269" stroke="#287bb5" stroke-width="3"/>
-  <text x="440" y="329" font-family="Arial, sans-serif" font-size="17" fill="#287bb5">斜率 = ε̇ₛ</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Three stages of creep</title>
+  <desc id="desc">Conceptual strain-time curve at constant stress and temperature, showing primary, secondary, and tertiary creep.</desc>
+  <defs><linearGradient id="creepArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d97745" stop-opacity=".22"/><stop offset="1" stop-color="#d97745" stop-opacity=".02"/></linearGradient><filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#132238" flood-opacity=".08"/></filter></defs>
+  <rect width="1200" height="675" fill="#f6f3ed"/><rect x="36" y="30" width="1128" height="603" rx="22" fill="#fffdf9" stroke="#d9d4ca" filter="url(#shadow)"/>
+  <text x="78" y="82" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#17243a">Creep Under Constant Stress and Temperature</text>
+  <text x="78" y="112" font-family="Inter, Arial, sans-serif" font-size="15" fill="#647184">Strain accumulates with time; the controlling mechanism may still change</text>
+  <g stroke="#dfe3e8"><path d="M126 184H1110 M126 268H1110 M126 352H1110 M126 436H1110 M126 520H1110"/><path d="M286 150V548 M446 150V548 M606 150V548 M766 150V548 M926 150V548"/></g>
+  <path d="M126 548H1110 M126 548V150" stroke="#24344d" stroke-width="2.5"/>
+  <text x="1040" y="590" font-family="Inter, Arial, sans-serif" font-size="17" fill="#3f4d61">Time, t</text><text x="78" y="160" font-family="Inter, Arial, sans-serif" font-size="17" fill="#3f4d61">Strain, ε</text>
+  <rect x="126" y="150" width="260" height="398" fill="#2b6f93" opacity=".035"/><rect x="386" y="150" width="400" height="398" fill="#d97745" opacity=".035"/><rect x="786" y="150" width="282" height="398" fill="#b54e42" opacity=".04"/>
+  <path d="M126 520 C188 404 278 360 386 339 C520 315 665 286 786 260 C914 233 992 183 1068 88 L1068 548H126Z" fill="url(#creepArea)"/>
+  <path d="M126 520 C188 404 278 360 386 339 C520 315 665 286 786 260 C914 233 992 183 1068 88" fill="none" stroke="#c85f32" stroke-width="6" stroke-linecap="round"/>
+  <path d="M386 150V548 M786 150V548" stroke="#8a95a5" stroke-width="1.5" stroke-dasharray="7 7"/>
+  <text x="256" y="581" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#26364e">PRIMARY</text><text x="586" y="581" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#26364e">SECONDARY</text><text x="927" y="581" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#26364e">TERTIARY</text>
+  <text x="202" y="327" font-family="Inter, Arial, sans-serif" font-size="15" fill="#5e6b7d">Decreasing rate</text><text x="492" y="248" font-family="Inter, Arial, sans-serif" font-size="15" fill="#5e6b7d">Near-steady rate</text><text x="873" y="176" font-family="Inter, Arial, sans-serif" font-size="15" fill="#5e6b7d">Accelerating damage</text>
+  <path d="M490 334L681 296" stroke="#2b6f93" stroke-width="3"/><text x="524" y="366" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#2b6f93">Slope = ε̇ₛ</text>
+  <g transform="translate(822 366)"><rect width="248" height="86" rx="14" fill="#fff8ef" stroke="#e5c6ae"/><text x="18" y="30" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#26364e">Mechanism check required</text><text x="18" y="53" font-family="Inter, Arial, sans-serif" font-size="13" fill="#687487">A fitted Arrhenius line is valid only</text><text x="18" y="71" font-family="Inter, Arial, sans-serif" font-size="13" fill="#687487">while the dominant mechanism remains consistent.</text></g>
+  <text x="78" y="616" font-family="Inter, Arial, sans-serif" font-size="13" fill="#7a8493">Conceptual response · Stage boundaries vary with material and test condition</text>
 </svg>

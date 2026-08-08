@@ -1,18 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
-  <rect width="960" height="540" fill="#fbfaf7"/>
-  <text x="56" y="48" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">S–N 曲線：循環越多，可承受的應力振幅通常越低</text>
-  <line x1="100" y1="450" x2="890" y2="450" stroke="#263248" stroke-width="3"/>
-  <line x1="100" y1="450" x2="100" y2="82" stroke="#263248" stroke-width="3"/>
-  <text x="680" y="492" font-family="Arial, sans-serif" font-size="18" fill="#263248">破壞循環數 N（對數尺度）</text>
-  <text x="18" y="94" font-family="Arial, sans-serif" font-size="18" fill="#263248">應力振幅 S</text>
-  <path d="M125 125 C250 170 370 250 505 304 C610 346 720 352 850 352"
-        fill="none" stroke="#287bb5" stroke-width="6"/>
-  <path d="M125 154 C290 210 470 283 850 408"
-        fill="none" stroke="#d84a3a" stroke-width="6"/>
-  <line x1="505" y1="304" x2="850" y2="304" stroke="#287bb5" stroke-width="2" stroke-dasharray="7 6"/>
-  <text x="650" y="290" font-family="Arial, sans-serif" font-size="17" fill="#287bb5">部分鋼材：近似耐久極限</text>
-  <circle cx="720" cy="365" r="7" fill="#d84a3a"/>
-  <line x1="720" y1="365" x2="720" y2="450" stroke="#d84a3a" stroke-width="2" stroke-dasharray="6 5"/>
-  <text x="555" y="400" font-family="Arial, sans-serif" font-size="17" fill="#d84a3a">指定 N 下的疲勞強度</text>
-  <text x="625" y="435" font-family="Arial, sans-serif" font-size="15" fill="#555">許多材料持續下降</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">S–N fatigue curves</title>
+  <desc id="desc">Conceptual S–N curves comparing an approximate endurance-limit plateau with a material whose fatigue strength continues to decrease.</desc>
+  <defs><filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#132238" flood-opacity=".08"/></filter></defs>
+  <rect width="1200" height="675" fill="#f6f3ed"/><rect x="36" y="30" width="1128" height="603" rx="22" fill="#fffdf9" stroke="#d9d4ca" filter="url(#shadow)"/>
+  <text x="78" y="82" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#17243a">S–N Curves and Fatigue Strength</text>
+  <text x="78" y="112" font-family="Inter, Arial, sans-serif" font-size="15" fill="#647184">More cycles generally reduce the sustainable stress amplitude</text>
+  <g stroke="#dfe3e8"><path d="M126 184H1110 M126 268H1110 M126 352H1110 M126 436H1110 M126 520H1110"/><path d="M286 150V548 M446 150V548 M606 150V548 M766 150V548 M926 150V548"/></g>
+  <path d="M126 548H1110 M126 548V150" stroke="#24344d" stroke-width="2.5"/>
+  <text x="861" y="590" font-family="Inter, Arial, sans-serif" font-size="17" fill="#3f4d61">Cycles to failure, N (log scale)</text><text x="78" y="160" font-family="Inter, Arial, sans-serif" font-size="17" fill="#3f4d61">Stress amplitude, S</text>
+  <path d="M152 190 C291 239 424 334 579 394 C700 440 826 447 1080 447" fill="none" stroke="#2b6f93" stroke-width="6" stroke-linecap="round"/>
+  <path d="M152 223 C342 286 565 386 1080 510" fill="none" stroke="#c85f32" stroke-width="6" stroke-linecap="round"/>
+  <path d="M760 447H1080" stroke="#2b6f93" stroke-width="1.5" stroke-dasharray="7 7"/>
+  <g transform="translate(723 327)"><rect width="345" height="64" rx="14" fill="#f2f7fa" stroke="#b9cedb"/><circle cx="23" cy="23" r="7" fill="#2b6f93"/><text x="42" y="28" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#255c78">Approximate endurance limit</text><text x="42" y="49" font-family="Inter, Arial, sans-serif" font-size="13" fill="#687487">Observed in some steels under specified conditions</text></g>
+  <circle cx="849" cy="455" r="7" fill="#c85f32" stroke="#fffdf9" stroke-width="3"/>
+  <path d="M849 455V548" stroke="#c85f32" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <g transform="translate(505 466)"><rect width="315" height="62" rx="14" fill="#fff8ef" stroke="#e5c6ae"/><text x="18" y="26" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#9c4f2c">Fatigue strength at a specified N</text><text x="18" y="47" font-family="Inter, Arial, sans-serif" font-size="13" fill="#687487">Used when no clear plateau is present</text></g>
+  <text x="78" y="616" font-family="Inter, Arial, sans-serif" font-size="13" fill="#7a8493">Conceptual trends · Mean stress, surface condition, environment, and load history still matter</text>
 </svg>

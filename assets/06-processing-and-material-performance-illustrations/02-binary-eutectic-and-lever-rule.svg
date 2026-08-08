@@ -1,45 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">簡化二元共晶相圖與槓桿定則</title>
-  <desc id="desc">溫度對成分的簡化二元共晶相圖，標示液相線、共晶點、相區、等溫連線及槓桿定則使用的成分位置。</desc>
-  <rect width="1200" height="675" fill="#ffffff"/>
-  <style>
-    .axis{stroke:#222;stroke-width:3;fill:none}
-    .curve{stroke:#d7672f;stroke-width:5;fill:none}
-    .guide{stroke:#3778a8;stroke-width:3;stroke-dasharray:10 8;fill:none}
-    .point{fill:#c73d32}
-    .main{font:26px -apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#222}
-    .small{font:21px -apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#444}
-    .blue{fill:#3778a8}
-    .red{fill:#c73d32}
-  </style>
-  <line class="axis" x1="130" y1="555" x2="1080" y2="555"/>
-  <line class="axis" x1="130" y1="555" x2="130" y2="80"/>
-  <path class="curve" d="M130 130 C310 170 430 250 590 380"/>
-  <path class="curve" d="M1080 145 C900 185 760 265 590 380"/>
-  <line class="curve" x1="130" y1="380" x2="1080" y2="380"/>
-  <path class="curve" d="M340 380 C330 425 320 475 280 555"/>
-  <path class="curve" d="M870 380 C880 425 890 475 930 555"/>
-  <text class="main" x="570" y="135">液相 L</text>
-  <text class="main" x="285" y="285">L + α</text>
-  <text class="main" x="820" y="295">L + β</text>
-  <text class="main" x="610" y="525">α + β</text>
-  <text class="main" x="185" y="475">α</text>
-  <text class="main" x="985" y="475">β</text>
-  <text class="small" x="40" y="320" transform="rotate(-90 40 320)">溫度</text>
-  <text class="small" x="555" y="630">成分（wt% B）</text>
-  <text class="small" x="115" y="590">0</text>
-  <text class="small" x="1040" y="590">100</text>
-  <circle class="point" cx="590" cy="380" r="10"/>
-  <text class="small red" x="615" y="368">共晶點</text>
-  <line class="guide" x1="320" y1="475" x2="890" y2="475"/>
-  <line class="guide" x1="510" y1="475" x2="510" y2="555"/>
-  <circle class="point" cx="320" cy="475" r="7"/>
-  <circle class="point" cx="510" cy="475" r="7"/>
-  <circle class="point" cx="890" cy="475" r="7"/>
-  <text class="small blue" x="278" y="515">Cα = 20</text>
-  <text class="small blue" x="467" y="540">C0 = 40</text>
-  <text class="small blue" x="850" y="515">Cβ = 80</text>
-  <text class="small blue" x="520" y="455">等溫連線（tie line）</text>
-  <text class="small" x="735" y="80">液相線以上：完全液態</text>
-  <text class="small" x="735" y="112">溶解度線之間：α + β 共存</text>
+  <title id="title">Binary eutectic phase diagram and lever rule</title>
+  <desc id="desc">Conceptual binary eutectic phase diagram showing phase regions, the eutectic point, a tie line, and three composition positions used by the lever rule.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#132238" flood-opacity=".08"/></filter>
+    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2b6f93" stop-opacity=".12"/><stop offset="1" stop-color="#2b6f93" stop-opacity=".02"/></linearGradient>
+    <linearGradient id="solid" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d97745" stop-opacity=".04"/><stop offset="1" stop-color="#d97745" stop-opacity=".12"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#f6f3ed"/>
+  <rect x="36" y="30" width="1128" height="603" rx="22" fill="#fffdf9" stroke="#d9d4ca" filter="url(#shadow)"/>
+  <text x="78" y="82" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#17243a">Binary Eutectic Diagram and Lever Rule</text>
+  <text x="78" y="112" font-family="Inter, Arial, sans-serif" font-size="15" fill="#647184">Equilibrium phase fields, tie-line compositions, and opposite-side segments</text>
+  <g stroke="#dfe3e8" stroke-width="1"><path d="M132 194H1110 M132 282H1110 M132 370H1110 M132 458H1110 M132 546H1110"/><path d="M292 158V546 M452 158V546 M612 158V546 M772 158V546 M932 158V546"/></g>
+  <path d="M132 546H1110 M132 546V158" stroke="#24344d" stroke-width="2.5"/>
+  <text x="984" y="589" font-family="Inter, Arial, sans-serif" font-size="17" fill="#3f4d61">Composition (wt% B)</text>
+  <text x="80" y="166" font-family="Inter, Arial, sans-serif" font-size="17" fill="#3f4d61">Temperature</text>
+  <text x="124" y="575" font-family="Inter, Arial, sans-serif" font-size="14" fill="#647184">0</text><text x="1084" y="575" font-family="Inter, Arial, sans-serif" font-size="14" fill="#647184">100</text>
+  <path d="M132 168 C310 201 451 276 612 367 C776 278 918 207 1110 181 L1110 158H132Z" fill="url(#liquid)"/>
+  <path d="M132 367H1110V546H960 C925 470 913 416 912 367H612H334 C330 421 314 477 278 546H132Z" fill="url(#solid)"/>
+  <path d="M132 168 C310 201 451 276 612 367" fill="none" stroke="#c85f32" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M1110 181 C918 207 776 278 612 367" fill="none" stroke="#c85f32" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M132 367H1110" stroke="#c85f32" stroke-width="4"/>
+  <path d="M334 367 C330 421 314 477 278 546 M912 367 C913 416 925 470 960 546" fill="none" stroke="#c85f32" stroke-width="4"/>
+  <g font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#26364e"><text x="597" y="185">L</text><text x="337" y="278">L + α</text><text x="839" y="286">L + β</text><text x="562" y="506">α + β</text><text x="204" y="468">α</text><text x="1015" y="468">β</text></g>
+  <circle cx="612" cy="367" r="8" fill="#b94b40" stroke="#fffdf9" stroke-width="3"/><path d="M621 358L688 315" stroke="#8792a2" stroke-width="1.5"/><text x="697" y="310" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#9a3d34">Eutectic point</text>
+  <path d="M318 469H925" stroke="#2b6f93" stroke-width="3" stroke-dasharray="10 8"/>
+  <path d="M510 469V546" stroke="#2b6f93" stroke-width="2" stroke-dasharray="6 6"/>
+  <g fill="#2b6f93" stroke="#fffdf9" stroke-width="3"><circle cx="318" cy="469" r="7"/><circle cx="510" cy="469" r="7"/><circle cx="925" cy="469" r="7"/></g>
+  <text x="528" y="453" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#2b6f93">Tie line</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#2b6f93"><text x="282" y="497">Cα = 20</text><text x="475" y="531">C₀ = 40</text><text x="889" y="497">Cβ = 80</text></g>
+  <g transform="translate(735 395)"><rect width="330" height="58" rx="13" fill="#f4f8fa" stroke="#bed0db"/><text x="18" y="25" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#255c78">Opposite-side segment</text><text x="18" y="45" font-family="Inter, Arial, sans-serif" font-size="13" fill="#687487">Wα uses Cβ − C₀; Wβ uses C₀ − Cα</text></g>
+  <text x="78" y="614" font-family="Inter, Arial, sans-serif" font-size="13" fill="#7a8493">Conceptual equilibrium diagram · Phase boundaries and compositions are illustrative</text>
 </svg>
