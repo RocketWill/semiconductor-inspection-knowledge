@@ -4,42 +4,32 @@
 
 > **Learning Context**
 >
-> In computer vision, a defect usually means an observable abnormality that a model should detect or classify. Materials science uses the same word differently. Vacancies support diffusion, dislocations make plastic deformation possible, and controlled dopants create semiconductor functionality.
+> In computer vision, a defect usually means something observable that a model should detect or classify. Materials science uses the same word differently: a vacancy can support diffusion, a dislocation can make plastic deformation possible, and a controlled dopant can be part of a working semiconductor.
 >
-> I studied crystal defects to separate a structural imperfection from actual damage. The engineering question is not simply whether a defect exists, but whether its type, concentration, location, and interaction remain consistent with the process requirement. AOI cannot identify an atomic-scale defect directly. It can provide evidence that helps define what should be checked next.
+> That difference was easy to miss. This note separates structural imperfection from damage, then asks how far optical evidence can support a material hypothesis. AOI does not identify an atomic-scale defect directly. It shows a signal. Any claim about the underlying mechanism still needs evidence at the right scale.
 
-## English Summary
+理想晶格很適合拿來建立模型，不過真實材料不會完全照著理想位置排列。空位、間隙原子、差排、晶界與第二相粒子，有些在有限溫度下無法避免，有些則由摻雜、加工或熱處理引入。
 
-This chapter examines how imperfections in a crystal become measurable material behavior. Defects are organized across four dimensional scales, from point defects to three-dimensional voids, inclusions, and precipitates. Vacancies and interstitials influence diffusion, while dislocations allow permanent deformation without requiring an entire crystal plane to move at once. Grain boundaries, interfaces, and second-phase particles connect these atomic-scale mechanisms with microstructure.
-
-The distinction I needed was that an imperfection is not automatically damage. Whether it is useful, unavoidable, or harmful depends on its type, concentration, location, interaction, and process context. For wafer inspection, optical evidence may support several material-level hypotheses, but it rarely identifies a unique atomic or microstructural cause without additional characterization.
-
----
-
-本篇主要依據先前翻譯與整理 UC Davis 課程時留下的學習筆記，並沿著一個問題展開：**真實晶體中的缺陷，如何改變原子移動、材料變形和半導體檢測結果？**
-
-第三章先從原子鍵結與理想晶體結構建立基本模型，不過實際材料不可能完全按照理想晶格排列。晶體中會出現空位、間隙原子、差排、晶界和第二相粒子，有些缺陷在熱力學上無法避免，有些則由摻雜、加工或熱處理引入。
-
-剛接觸這些內容時，「缺陷」很容易被理解成材料中不應該存在的錯誤。不過在整理擴散與差排的關係後，可以發現缺陷本身不一定代表材料失效。空位提供替位型原子移動的位置，差排讓金屬能在合理的應力下產生塑性變形，受控制的摻雜原子則是半導體功能的一部分。因此真正需要判斷的，不只是材料中是否存在缺陷，而是缺陷的類型、濃度、位置和尺度是否符合製程與使用需求。
+一開始很容易把「缺陷」理解成材料中不該存在的錯誤。整理過擴散與差排後，這個說法就不太夠用了：空位提供替位型原子移動的位置，差排讓金屬能在合理應力下產生塑性變形，受控制的摻雜原子更是半導體功能的一部分。真正需要判斷的，是缺陷的類型、濃度、位置與尺度是否符合製程和使用條件。
 
 ## 1. Defects as Functional Imperfections
 
-The first distinction is semantic but important: a material defect is not the same thing as an AI defect label. One describes a departure from an ideal structure; the other usually describes something observable in data.
+先把同一個字在兩個領域裡的意思分開：材料缺陷（material defect）不等於 AI dataset 裡的 defect label。前者描述結構偏離理想狀態，後者通常只描述資料中可觀察的異常。
 
 | 缺陷尺度 | 典型例子 | 主要影響 |
 | --- | --- | --- |
 | 點缺陷（0D） | 空位、自間隙原子、替位與間隙雜質 | 擴散、載子濃度、局部晶格應變 |
 | 線缺陷（1D） | 刃狀差排、螺旋差排、混合差排 | 塑性變形、加工硬化、局部應力 |
 | 面缺陷（2D） | 晶界、雙晶界、堆疊錯誤、相界面 | 快速擴散、晶粒滑移、腐蝕與破壞路徑 |
-| 體缺陷（3D） | 孔洞、沉澱物、夾雜物、裂紋 | 局部應力集中、散射、漏電與破壞 |
+| 體缺陷（3D） | 孔隙、空洞、沉澱物、夾雜物 | 局部應力集中、散射、漏電與破壞風險 |
 
-這種分類是依照缺陷在空間中延伸的維度整理，並不是嚴格區分彼此互不相關。例如差排可能終止於晶界，空位也可能聚集形成孔洞；在實際材料中，不同尺度的缺陷經常互相作用。
+這種分類是依照缺陷在空間中延伸的維度整理，並不是把它們切成彼此無關的類別。例如差排可能終止於晶界，空位也可能聚集形成空洞。裂紋在不同脈絡下可被描述為延伸、平面或體積損傷，這裡先不硬塞進 dimensional classification，留到下一篇的斷裂與失效再談。
 
 ## 2. 點缺陷：原子尺度的空缺與錯位
 
 ![空位、自間隙、替位與間隙雜質](../assets/04-crystal-defects-and-microstructure-illustrations/01-point-defects.svg)
 
-> 圖 1：作者依個人課程筆記重新繪製，用來比較空位、自間隙原子、替位雜質與間隙雜質。
+> 圖 1：Vacancy、self-interstitial、substitutional impurity 與 interstitial impurity 的概念比較；原子尺寸與晶格變形不按比例繪製。
 
 ### 2.1 空位
 
@@ -47,7 +37,11 @@ The first distinction is semantic but important: a material defect is not the sa
 
 平衡空位比例常寫成：
 
-$$\frac{N_v}{N}=A\exp\left(-\frac{Q_v}{k_{\mathrm B}T}\right)$$
+$$
+\frac{N_v}{N}
+=
+A\exp\left(-\frac{Q_v}{k_{\mathrm B}T}\right)
+$$
 
 其中：
 
@@ -86,25 +80,35 @@ $$\frac{N_v}{N}=A\exp\left(-\frac{Q_v}{k_{\mathrm B}T}\right)$$
 
 假設某材料的空位形成能為：
 
-$$Q_v=1.0\ \mathrm{eV/atom}$$
+$$
+Q_v=1.0\ \mathrm{eV/atom}
+$$
 
 比較 $500\ \mathrm K$ 與 $1000\ \mathrm K$ 的空位比例。若前因子 $A$ 在兩個溫度下相同，則：
 
-$$\frac{(N_v/N)_{1000}}{(N_v/N)_{500}}=\exp\left[-\frac{Q_v}{k_{\mathrm B}}\left(\frac{1}{1000}-\frac{1}{500}\right)\right]$$
+$$
+\frac{(N_v/N)_{1000}}{(N_v/N)_{500}}
+=
+\exp\left[-\frac{Q_v}{k_{\mathrm B}}\left(\frac{1}{1000}-\frac{1}{500}\right)\right]
+$$
 
 代入：
 
-$$k_{\mathrm B}=8.617\times10^{-5}\ \mathrm{eV/K}$$
+$$
+k_{\mathrm B}=8.617\times10^{-5}\ \mathrm{eV/K}
+$$
 
 可得：
 
-$$\frac{(N_v/N)_{1000}}{(N_v/N)_{500}}\approx 1.1\times10^5$$
+$$
+\frac{(N_v/N)_{1000}}{(N_v/N)_{500}}
+\approx
+1.1\times10^5
+$$
 
-結果表示溫度從 $500\ \mathrm K$ 提高到 $1000\ \mathrm K$ 時，平衡空位比例可能增加約五個數量級。這個例子也能說明，熱處理溫度的改變不能只看成「加熱得更快」，因為缺陷數量與擴散能力本身也會隨溫度產生非常大的變化。
+結果表示溫度從 $500\ \mathrm K$ 提高到 $1000\ \mathrm K$ 時，平衡空位比例可能增加約五個數量級。看到這個差距後，就不太適合把熱處理溫度只理解成「加熱得快一點」。缺陷數量與原子移動能力都可能跟著跨越好幾個數量級。
 
-> **Engineering Takeaway**
->
-> The equilibrium vacancy equation describes a thermodynamic population, not every defect retained after processing. Quenching, irradiation, implantation, plastic deformation, and other non-equilibrium processes may preserve additional defects.
+不過這條式子描述的是熱力學平衡下的缺陷族群，不包含所有製程後留下的缺陷。淬火、輻照、離子植入與塑性變形都可能保留額外的非平衡缺陷。算到這裡，還不能拿平衡空位濃度直接代表實際樣品中的總缺陷量。
 
 ## 4. 點缺陷如何促成固態擴散？
 
@@ -128,7 +132,9 @@ $$\frac{(N_v/N)_{1000}}{(N_v/N)_{500}}\approx 1.1\times10^5$$
 
 擴散係數常表示為：
 
-$$D=D_0\exp\left(-\frac{Q_d}{RT}\right)$$
+$$
+D=D_0\exp\left(-\frac{Q_d}{RT}\right)
+$$
 
 其中：
 
@@ -142,13 +148,15 @@ $$D=D_0\exp\left(-\frac{Q_d}{RT}\right)$$
 
 取自然對數後：
 
-$$\ln D=\ln D_0-\frac{Q_d}{R}\frac{1}{T}$$
+$$
+\ln D=\ln D_0-\frac{Q_d}{R}\frac{1}{T}
+$$
 
 因此在 $\ln D$ 對 $1/T$ 的圖上，斜率為 $-Q_d/R$。
 
 ![Arrhenius 線性化與非穩態擴散趨勢](../assets/04-crystal-defects-and-microstructure-illustrations/02-arrhenius-and-diffusion.svg)
 
-> 圖 2：作者依個人課程筆記重新繪製，用來比較 Arrhenius 線性化與非穩態擴散中的濃度分布變化。
+> 圖 2：Arrhenius linearization 與 concentration profile 隨時間變化的概念比較；兩側圖形用來說明趨勢，不代表同一組實驗資料。
 
 對替位擴散而言，量測到的有效活化能可能同時包含缺陷形成與遷移的貢獻。若溫度、濃度、相組成或主導擴散路徑改變，$D_0$ 與 $Q_d$ 也可能跟著改變，因此不能將同一條 Arrhenius 直線無限制外推。
 
@@ -156,23 +164,35 @@ $$\ln D=\ln D_0-\frac{Q_d}{R}\frac{1}{T}$$
 
 已知銅在黃銅中的擴散係數在 $400^\circ\mathrm C$ 時為：
 
-$$D_1=1.0\times10^{-20}\ \mathrm{m^2/s}$$
+$$
+D_1=1.0\times10^{-20}\ \mathrm{m^2/s}
+$$
 
 若 $Q_d=195\ \mathrm{kJ/mol}$，估算 $600^\circ\mathrm C$ 時的 $D_2$。先換成絕對溫度：
 
-$$T_1=673\ \mathrm K,\qquad T_2=873\ \mathrm K$$
+$$
+T_1=673\ \mathrm K,\qquad T_2=873\ \mathrm K
+$$
 
 將兩個 Arrhenius 式相除，可消去未知的 $D_0$：
 
-$$\ln\left(\frac{D_2}{D_1}\right)=\frac{Q_d}{R}\left(\frac{1}{T_1}-\frac{1}{T_2}\right)$$
+$$
+\ln\left(\frac{D_2}{D_1}\right)
+=
+\frac{Q_d}{R}\left(\frac{1}{T_1}-\frac{1}{T_2}\right)
+$$
 
 代入 $Q_d=195000\ \mathrm{J/mol}$ 與 $R=8.314\ \mathrm{J/(mol\cdot K)}$：
 
-$$\ln\left(\frac{D_2}{D_1}\right)\approx7.99$$
+$$
+\ln\left(\frac{D_2}{D_1}\right)\approx7.99
+$$
 
 因此：
 
-$$D_2\approx2.9\times10^{-17}\ \mathrm{m^2/s}$$
+$$
+D_2\approx2.9\times10^{-17}\ \mathrm{m^2/s}
+$$
 
 雖然溫度只提高 $200^\circ\mathrm C$，擴散係數卻增加約三個數量級。計算完成後，可以先檢查結果的基本趨勢：溫度升高時 $D$ 應該變大；若結果相反，通常需要重新確認溫度倒數的順序或負號。
 
@@ -182,35 +202,27 @@ $$D_2\approx2.9\times10^{-17}\ \mathrm{m^2/s}$$
 
 一維穩態擴散通量為：
 
-$$J=-D\frac{\mathrm dC}{\mathrm dx}$$
+$$
+J=-D\frac{\mathrm dC}{\mathrm dx}
+$$
 
 其中 $J$ 為擴散通量，表示單位時間穿過單位面積的物質量；其正負號取決於座標方向與濃度梯度的定義。式中的負號表示淨擴散方向由高濃度指向低濃度。
 
-例如：
-
-$$D=2.0\times10^{-12}\ \mathrm{m^2/s}$$
-
-$$\frac{\mathrm dC}{\mathrm dx}=-5.0\times10^7\ \mathrm{mol/m^4}$$
-
-則：
-
-$$J=1.0\times10^{-4}\ \mathrm{mol/(m^2\cdot s)}$$
-
-正號表示通量朝所定義的正 $x$ 方向。這裡的負號不是額外的能量損失，而是在描述濃度下降方向與物質移動方向之間的關係。
+這裡的負號不是額外的能量損失。它只是把濃度下降方向和物質移動方向連起來；真正判讀正負號前，仍要先看座標軸怎麼定義。
 
 ### 6.2 菲克第二定律
 
 當濃度分布會隨時間改變時，需使用菲克第二定律。對一維且 $D$ 為常數的情況：
 
-$$\frac{\partial C}{\partial t}=D\frac{\partial^2 C}{\partial x^2}$$
+$$
+\frac{\partial C}{\partial t}
+=
+D\frac{\partial^2 C}{\partial x^2}
+$$
 
 第一定律回答「目前有多少物質通過」，第二定律則回答「某個位置的濃度接下來如何改變」。在摻雜、滲碳或薄膜互擴散問題中，這項差別比背下公式更重要。
 
-上述形式假設一維擴散，並在第二定律中將 $D$ 視為常數。若擴散係數隨濃度、位置或時間改變，或同時存在電場、化學反應與多組分耦合，就需要使用更一般化的模型。
-
-> **Engineering Takeaway**
->
-> Fick's laws are continuum models. Their simplest forms require a defined concentration field and often assume a constant diffusion coefficient. Electric fields, reactions, concentration-dependent diffusivity, and changing defect populations may require a more complete model.
+上述形式把問題簡化成一維擴散，並在第二定律中將 $D$ 視為常數。這是連續體模型，不會逐顆追蹤原子。若擴散係數隨濃度、位置或時間改變，或同時存在電場、化學反應與多組分耦合，就需要使用更完整的模型。
 
 ## 7. 差排：讓塑性變形在較低應力下發生
 
@@ -222,7 +234,7 @@ $$\frac{\partial C}{\partial t}=D\frac{\partial^2 C}{\partial x^2}$$
 
 ![刃狀差排滑移示意](../assets/04-crystal-defects-and-microstructure-illustrations/03-edge-dislocation-glide.svg)
 
-> 圖 3：作者依個人課程筆記重新繪製，用來表示刃狀差排透過局部鍵結重排逐步滑移。
+> 圖 3：刃狀差排透過局部鍵結重排逐步滑移；圖中只呈現概念路徑，不代表實際應力場與晶格比例。
 
 ### 7.1 刃狀、螺旋與混合差排
 
@@ -234,9 +246,7 @@ $$\frac{\partial C}{\partial t}=D\frac{\partial^2 C}{\partial x^2}$$
 
 柏格向量 $\mathbf b$ 描述差排造成的晶格位移大小與方向。差排移動的滑移面和滑移方向受到晶體結構限制，這也是第三章中 FCC、BCC 與 HCP 滑移行為不同的原因之一。
 
-> **Analogy**
->
-> Moving a dislocation is similar to moving a wrinkle across a heavy carpet: local motion gradually produces a larger displacement. The analogy explains why less force is required, but it does not represent lattice periodicity, Burgers vectors, dislocation stress fields, or slip systems.
+把差排往前移動，可以先想成把厚地毯上的皺摺慢慢推過去：局部移動最後累積成較大的位移。這個比喻只是在說明為什麼不必讓整個平面同時移動，並不能代表晶格週期、柏格向量、差排應力場或滑移系統。
 
 ## 8. 晶界與微觀組織
 
@@ -250,7 +260,9 @@ $$\frac{\partial C}{\partial t}=D\frac{\partial^2 C}{\partial x^2}$$
 
 晶粒細化通常能增加晶界數量並提高金屬降伏強度，常以 Hall–Petch 關係描述：
 
-$$\sigma_y=\sigma_0+k_y d^{-1/2}$$
+$$
+\sigma_y=\sigma_0+k_y d^{-1/2}
+$$
 
 其中 $d$ 為平均晶粒尺寸。不過這個關係有適用範圍，也不能直接套用到所有材料、所有晶粒尺度或所有溫度條件。Hall–Petch 關係主要用於一定晶粒尺度範圍內的多晶材料；高度完整的單晶矽沒有一般多晶材料中的晶粒尺寸強化問題。若研究的是多晶矽、金屬薄膜或其他多晶結構，才需要進一步考慮晶界效應。
 
@@ -258,11 +270,7 @@ $$\sigma_y=\sigma_0+k_y d^{-1/2}$$
 
 整理到這裡時，最容易混淆的是「微觀組織」和「晶體結構」。晶體結構描述原子如何週期排列，例如 FCC 或 BCC；微觀組織則包含晶粒尺寸與取向、相組成、沉澱物、孔洞、界面，以及不同缺陷的空間分布。即使兩個材料具有相同化學成分和晶體結構，只要這些特徵的尺寸、數量或分布不同，性質與失效行為仍可能明顯不同。
 
-## 9. Why Crystal Defects Matter for Semiconductor Inspection
-
-> Optical inspection does not directly image vacancies, dislocations, or grain boundaries. It records changes in reflected, transmitted, scattered, or emitted signals. Those changes may be influenced by crystal defects, but they may also arise from surface geometry, thin films, contamination, illumination, or process variation.
->
-> Materials knowledge should therefore help define plausible mechanisms and verification steps. It should not turn every visible feature into a crystal-defect label.
+## 9. 晶體缺陷與半導體檢測證據
 
 矽晶圓通常要求高度完整的單晶結構，不過製程中仍需要面對不同形式的缺陷與非理想狀態：
 
@@ -274,9 +282,9 @@ $$\sigma_y=\sigma_0+k_y d^{-1/2}$$
 
 ![從檢測訊號追查可能的材料根因](../assets/04-crystal-defects-and-microstructure-illustrations/04-inspection-signal-and-root-causes.png)
 
-> 圖 4：作者依個人課程筆記重新整理，用來表示同一個檢測訊號可能對應多種材料與製程假設。
+> 圖 4：同一個檢測訊號可能對應多種材料與製程假設；箭頭表示待查方向，不代表已確認的因果關係。
 
-對檢測工作而言，最重要的限制是：**AOI 看見的是表面或光學訊號，不是空位、差排或晶界本身。** 一個亮點可能來自粒子污染、表面高度、薄膜干涉、粗糙度或局部材料狀態；固定方向的線狀痕跡也可能和刮傷、滑移線、晶向或製程掃描方向有關。
+對檢測工作而言，最重要的限制是：**AOI 看見的是表面或光學訊號，不是空位、差排或晶界本身。** 一個亮點可能來自粒子污染、表面高度、薄膜干涉、粗糙度或局部材料狀態。影像可以先縮小調查範圍，但不會自己補上材料機制。
 
 因此，較合理的做法是把檢測結果當成縮小假設範圍的起點，再依照問題選擇驗證方式。以下只整理各方法主要可以回答的問題；量測原理、解析度、取樣深度與樣品限制會留到後續的材料分析方法筆記：
 
@@ -288,22 +296,13 @@ $$\sigma_y=\sigma_0+k_y d^{-1/2}$$
 | 污染物與元素分布 | EDS、XPS、SIMS | 深度解析度、偵測極限與破壞性不同 |
 | 載子復合相關缺陷 | 光致發光、少數載子壽命量測 | 通常無法單獨指定唯一缺陷種類 |
 
-### 簡單判讀例子
+這些方法回答的問題不同，量測尺度、取樣深度與樣品條件也不同。表格先用來安排下一步，不在這篇展開各儀器的量測原理。
 
-假設晶圓上出現固定方向的細長亮線，不宜直接把它命名為差排，而應先檢查：
+## 10. Label Review and Dataset Semantics
 
-1. 亮線是否具有可量測的表面高低差？
-2. 旋轉晶圓或改變照明方向後，對比是否改變？
-3. 線條方向是否和晶向、wafer notch 或設備掃描方向固定相關？
-4. Raman、XRD 或電子顯微分析是否支持局部應力或晶格異常？
+An anonymized wafer-inspection dataset contained two kinds of labels. Some described a condition across most of the image. Particles and scratches were different because their positions mattered. The original schema represented both with bounding boxes, including boxes that covered nearly the whole wafer.
 
-只有當不同量測結果指向相同機制時，才能提高對根因判斷的信心。這個過程可能比直接替影像分類慢，不過能避免把外觀相似但來源不同的缺陷合併成同一類。
-
-## 10. Label Review Note: What Does “Defect” Mean Here?
-
-In an anonymized wafer-inspection project, the dataset contained two different kinds of labels. Some categories described a condition across most of the wafer image. Particles and scratches described local features with meaningful positions. The original annotation design represented both kinds with bounding boxes, even when a box covered nearly the whole wafer.
-
-I reviewed the data and separated the tasks according to what the annotations actually meant. Whole-image conditions became classification tasks. Particles and scratches remained detection tasks, and the local annotations were reviewed before model comparison. One wafer could therefore have a global classification result and several local detections at the same time. This sounds ordinary after the schema has been corrected. It was less obvious in the original labels.
+I separated the tasks according to what the annotations actually meant. Whole-image conditions became classification tasks. Particles and scratches remained detection tasks, and the local annotations were reviewed before model comparison. One wafer could then carry a global classification result and several local detections at the same time. It sounds ordinary once written that way. The original labels made the distinction much less obvious.
 
 ```text
 Wafer record
@@ -317,7 +316,7 @@ Wafer record
 
 > Figure 5: Detection outputs from the anonymized wafer case. The image shows local particle and scratch results only. A wafer-level appearance class belongs to a separate classification record rather than being forced into another full-image box.
 
-The revised workflow also improved the measured precision and recall, but I would not attribute that change to one model. Task definition, annotation review, dataset preparation, training, and post-processing changed together.
+The revised workflow also improved the measured precision and recall. But that change cannot be assigned to one model: task definition, annotation review, dataset preparation, training, and post-processing changed together.
 
 ![匿名化晶圓案例重新設計前後的 precision 與 recall 比較](../assets/project-screenshots/wafer/precision-recall-comparison.jpg)
 
@@ -333,36 +332,29 @@ Studying crystal defects introduced another distinction. None of those labels id
 
 The label still matters. But it should state what was observed, not quietly claim a mechanism that the available evidence cannot support.
 
-## 11. A Change in the Way I Read Defect Labels
+這次資料結構調整也留下另一個問題：若同一個標籤欄位同時混入整張影像狀態、局部形貌、工程假設與已驗證原因，模型即使學得到影像特徵，輸出仍然很難解讀。比較能追查的紀錄，至少會把下面幾層分開：
 
-The word “defect” initially sounded like something that should be detected, rejected, or removed. That interpretation turned out to be too narrow. Vacancies support diffusion, dislocations make plastic deformation possible, grain boundaries can strengthen a polycrystal, and controlled dopants create semiconductor functionality.
+- 可觀察標籤與空間尺度；
+- 影像及量測條件；
+- 待驗證的工程機制；
+- 製程或批次脈絡；
+- 後續驗證結果，包括仍未解決的狀態。
 
-The engineering question is therefore not simply whether a defect exists. Its type, concentration, spatial distribution, and interaction with the process matter more. The equilibrium vacancy calculation made this especially clear: the formula describes a thermodynamic population, while a real process may preserve additional non-equilibrium defects.
+不是每份 production dataset 都能補齊所有欄位。不過把「未知」留下來，通常比把不確定性包成一個很肯定的類別名稱更有用。這樣模型可以協助 triage 與安排驗證，不必假裝 prediction 已經完成診斷。
 
-For inspection work, this changes how I interpret a class label. A particle, line, or contrast pattern can be valid evidence and still remain far removed from an atomic-scale mechanism. That gap is not a weakness in AOI (it is a boundary of the measurement). The useful step is to preserve the gap in the data and decide what evidence would narrow it.
+## Current Scope
 
-## 12. What I Would Keep in the Dataset
+這篇先停在點缺陷、固態擴散、差排、晶界與微觀組織，以及這些概念如何限制 inspection evidence 的解讀。
 
-The wafer project showed that label design and model design cannot be separated. If a dataset mixes whole-image states, local morphology, engineering hypotheses, and verified causes in one label field, the model may learn the images successfully while the output remains difficult to interpret.
+平衡空位公式不包含所有由非平衡製程保留下來的缺陷；Arrhenius 關係跨越機制改變後，不能直接外推；最簡化的 Fick 定律也只適用於前面列出的擴散條件。這些模型適合建立第一層判斷，不足以替一個光學異常指定材料根因。
 
-A more useful inspection record keeps these levels distinct:
+下一篇會把載入方式、時間與環境條件放進來，繼續看材料如何進入斷裂、疲勞與失效。
 
-- the observable label and its spatial scale;
-- the image and measurement conditions;
-- the proposed engineering mechanism;
-- the process or batch context; and
-- the later verification result, including cases that remain unresolved.
+## Learning Source
 
-Not every production dataset can contain every field. But recording what is unknown is better than converting uncertainty into a confident class name. In practice, this lets the model support triage and verification planning without presenting a prediction as a completed diagnosis.
+- James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
 
-這一章仍有幾個容易用過頭的模型。平衡空位公式不包含所有由非平衡製程保留下來的缺陷；Arrhenius 關係跨越機制改變後，不能直接外推；最簡化的 Fick 定律也假設了特定的擴散條件。它們適合建立第一層理解，不適合替所有微觀組織變化提供同一個答案。
+## Additional References
 
-因此，在 label review 時會先問一個很普通的問題：這個名稱描述的是影像外觀、推測的工程機制，還是已經驗證的原因？如果答案不清楚，先把欄位拆開，通常比繼續調模型更有用。
-
-這裡的範圍先停在點缺陷、擴散、差排、晶界與微觀組織。下一章才把這些機制放進載入、時間與失效條件中。
-
-## References
-
-1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
-2. James F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
-3. William D. Callister Jr. and David G. Rethwisch, *Materials Science and Engineering: An Introduction*.
+- James F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
+- William D. Callister Jr. and David G. Rethwisch, *Materials Science and Engineering: An Introduction*.

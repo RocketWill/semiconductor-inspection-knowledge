@@ -8,33 +8,23 @@
 >
 > The goal is not to infer crystal structure directly from an AOI image. It is to recognize when atomic arrangement offers a physically plausible hypothesis, and to identify what additional evidence would be needed to test it.
 
-## English Summary
-
-This chapter asks how atomic bonding and crystal arrangement appear in measurable material behavior. It starts with valence electrons, then uses the interatomic energy curve to connect bonding with elastic modulus and thermal expansion. SC, BCC, FCC, and HCP are compared through coordination, packing, and slip rather than through unit-cell diagrams alone.
-
-Silicon provides the main engineering example. Each atom forms four directional covalent bonds in a diamond-cubic structure. Calling silicon “FCC” leaves out the two-atom basis that determines its nearest-neighbor arrangement and bonding behavior.
-
-For semiconductor manufacturing, crystal orientation can influence etching, fracture, surface morphology, and some electrical behavior. But orientation is only one possible explanation for a visible pattern. Optical evidence still needs to be separated from a crystal-level hypothesis and its experimental verification.
-
----
-
-本篇主要依據先前翻譯與整理 UC Davis 課程時留下的學習筆記，並沿著一個問題展開：**原子之間如何鍵結與排列，為什麼會改變材料在巨觀尺度下的行為？**
+這一篇先沿著一個問題往下整理：**原子之間如何鍵結與排列，為什麼會改變材料在巨觀尺度下的行為？**
 
 材料的彈性模數、熱膨脹、導電方式和變形傾向看起來是不同性質，不過它們都能向下追溯到原子的電子結構、鍵結方式，以及原子在空間中的排列。這並不表示只知道鍵結類型就能直接預測所有工程性質，因為缺陷、晶粒、溫度和製程同樣會改變結果；鍵結與晶體結構提供的是分析材料行為時的第一層依據。
 
 ## 1. From Valence Electrons to Material Behavior
 
-The useful starting point is not the unit-cell drawing. It is the way valence electrons participate in bonding, because that limits how atoms can arrange, move, and respond to external energy.
+一開始很容易先記住晶胞圖。雖然圖形看熟了，但原子為什麼這樣排列，仍不一定能說清楚。比較有用的起點是價電子如何參與鍵結，因為它會限制原子的排列、移動，以及受到外部能量時的反應。
 
 原子由原子核與核外電子構成，其中最外層的**價電子（valence electrons）**對鍵結與導電行為特別重要。當原子彼此靠近時，電子與原子核之間同時存在吸引和排斥作用；系統會傾向移動到能量較低且相對穩定的狀態，因此形成原子鍵結。
 
-分析工程材料時，可以先確認三個問題：
+在比較不同材料時，可以先確認三件事：
 
 1. 價電子是轉移、共享，還是能在許多原子之間移動？
 2. 鍵結是否具有明顯方向性？
 3. 原子形成規則晶格、局部有序結構，或缺少長程規則排列？
 
-這三個問題能初步連結材料的導電性、剛性、熱膨脹和可塑性。
+這三個問題可以先把電子行為與材料的導電性、剛性、熱膨脹和可塑性連在一起。這還不能構成完整的性質預測，不過比只記住鍵結名稱多了一層判斷依據。
 
 ## 2. 主要鍵結與次級鍵結
 
@@ -44,9 +34,9 @@ The useful starting point is not the unit-cell drawing. It is the way valence el
 | --- | --- | --- | --- | --- |
 | 離子鍵 | 電子由一種原子轉移至另一種原子，形成正、負離子 | 通常不以特定鍵角為主，但晶格需維持電中性 | 氧化物、鹽類陶瓷 | 剛性與熔點通常較高；室溫下多為絕緣體；滑移受電荷排列限制 |
 | 共價鍵 | 相鄰原子共享價電子 | 強 | 矽、鑽石、許多陶瓷與聚合物主鏈 | 鍵結穩定且具方向性；性質與鍵角、網路連結方式密切相關 |
-| 金屬鍵 | 價電子在許多正離子核心之間離域化 | 較弱 | 銅、鋁、鐵等金屬 | 電與熱傳導通常良好；原子面較容易在不破壞整體電中性的情況下滑移 |
+| 金屬鍵 | 價電子在許多正離子核心之間離域化 | 通常較無明顯方向性 | 銅、鋁、鐵等金屬 | 電與熱傳導通常良好；原子排列較能容許滑移，但實際塑性仍受晶體結構與差排控制 |
 
-這些分類是理解材料的起點，不是把材料切成完全獨立的三類。許多陶瓷同時具有離子鍵與共價鍵成分；不同鍵結比例會影響鍵的方向性、彈性和滑移難度。
+這三類鍵結只是起點，不是把材料切成互不相關的三組。許多陶瓷同時具有離子鍵與共價鍵成分；不同鍵結比例會影響鍵的方向性、彈性和滑移難度。
 
 ### 2.2 次級鍵結
 
@@ -66,7 +56,7 @@ $$
 
 ![原子間位能與作用力曲線](../assets/03-atomic-bonding-and-structure-illustrations/bond-energy-force.svg)
 
-> 圖 1：作者依個人課程筆記重新繪製，用來表示原子間位能、平衡距離與回復力之間的關係。
+> 圖 1：原子間位能、平衡距離與回復力的概念關係。
 
 ### 3.1 彈性模數
 
@@ -83,7 +73,7 @@ $$
 - 彈性模數主要描述彈性區的斜率，也就是材料有多難被彈性拉長。
 - 降伏強度與抗拉強度則牽涉差排、缺陷、微觀組織和加工歷史。
 
-因此，提高金屬強度的方法不一定會大幅改變彈性模數。兩者不能直接互換。
+因此，提高金屬強度的方法不一定會大幅改變彈性模數。兩者不能直接互換。平衡距離附近的鍵能曲線可以提供原子尺度的初步解釋，不過要連到巨觀材料的彈性反應時，原子排列、材料方向和量測條件仍然需要一起考慮。
 
 ### 3.2 熱膨脹
 
@@ -91,9 +81,7 @@ $$
 
 這也說明為什麼熱膨脹不能只理解成「原子本身變大」。改變的是原子振動狀態與平均間距。若兩種接合材料具有不同的熱膨脹係數，界面限制自由熱應變時便會產生熱應力。經過反覆溫度循環後，若同時出現塑性變形、黏彈行為、界面滑移或損傷，才可能進一步留下殘留應力，並形成翹曲、裂紋或界面分層。
 
-> **Engineering Takeaway**
->
-> Bonding provides a first-order explanation for stiffness and thermal expansion. It does not predict a component's strength or reliability by itself, because defects, microstructure, geometry, interfaces, and loading history still control the measured response.
+鍵結可以先解釋剛性與熱膨脹的大方向，但不能單獨預測元件的強度或可靠度。缺陷、微觀組織、幾何、界面與載入歷程仍會改變最後量到的反應。
 
 ## 4. 描述晶體結構的基本語言
 
@@ -102,7 +90,7 @@ $$
 - **晶格（lattice）**：在空間中規律重複的幾何點陣。
 - **基底（basis）**：配置在每個晶格點上的原子或原子群。
 
-晶格加上基底，才構成完整的晶體結構。這項區分在理解矽的鑽石立方結構時尤其重要，因為矽雖然與 FCC 晶格有關，但不能直接當成一般 FCC 金屬。
+晶格加上基底，才構成完整的晶體結構。這項區分在理解矽的鑽石立方結構時尤其重要。只看到 FCC 晶格還不夠，因為基底不同，最近鄰排列和鍵結幾何也會跟著改變。
 
 常用的結構描述量包括：
 
@@ -116,7 +104,7 @@ $$
 
 其中，$V_{\mathrm{atoms}}$ 是晶胞內原子占據的總體積，$V_{\mathrm{cell}}$ 是晶胞的總體積。
 
-- **晶向與晶面**：分別以 $[uvw]$ 和 $(hkl)$ 表示；等價方向族與晶面族則寫成 $\langle uvw\rangle$ 和 $\{hkl\}$。
+- **晶向與晶面**：在這篇主要討論的立方晶系中，分別以 $[uvw]$ 和 $(hkl)$ 表示；等價方向族與晶面族則寫成 $\langle uvw\rangle$ 和 $\{hkl\}$。HCP 常改用四指標的 Miller–Bravais notation，避免把三指標寫法直接套到所有晶系。
 
 另外，材料的有序程度也需要分清楚：
 
@@ -141,11 +129,7 @@ APF 反映硬球模型下的幾何堆積程度，不等同材料的密度、強�
 
 FCC 結構通常具有多組容易啟動的 $\{111\}\langle110\rangle$ 密排滑移系統，這是許多 FCC 金屬在常溫下具有良好延展性的重要原因之一。當外力方向改變時，晶粒通常仍能找到適合的滑移組合。
 
-不過，這不是只看「12 個滑移系統」就能完成的判斷。晶粒大小、固溶原子、析出物、加工硬化與載入溫度都會改變差排移動難度。差排本身的結構與運動會在後續章節再詳細整理。
-
-> **Engineering Takeaway**
->
-> Coordination number and APF describe geometric arrangement. Slip behavior requires another layer of information: available slip systems, lattice resistance, defects, temperature, and loading direction.
+不過，這不是只看「12 個滑移系統」就能完成的判斷。配位數與 APF 描述的是幾何排列；真正的滑移行為還要看可用的滑移系統、晶格阻力、缺陷、溫度與載入方向。晶粒大小、固溶原子、析出物和加工硬化也會改變差排移動難度。差排本身的結構與運動會在後續章節再詳細整理。
 
 ## 6. 矽的鑽石立方結構
 
@@ -158,7 +142,7 @@ FCC 結構通常具有多組容易啟動的 $\{111\}\langle110\rangle$ 密排滑
 
 傳統立方晶胞內共有 8 個有效原子，APF 約為 0.34。這個堆積因子明顯低於普通 FCC 的 0.74，因為方向性共價鍵限制了最近鄰排列。
 
-因此需要避免一個常見誤解：
+看到 FCC 布拉菲晶格後，最容易順手把矽也當成一般 FCC 晶體。不過晶格和完整晶體結構不是同一件事，這裡要先把兩者拆開：
 
 > **矽的鑽石立方結構使用 FCC 布拉菲晶格，但矽不是一般的 FCC 晶體。**
 
@@ -189,15 +173,13 @@ FCC 結構通常具有多組容易啟動的 $\{111\}\langle110\rangle$ 密排滑
 
 ![矽晶向、蝕刻形貌與檢測訊號](../assets/03-atomic-bonding-and-structure-illustrations/silicon-orientation-and-inspection.png)
 
-> 圖 2：作者依個人課程筆記重新整理，用來表示矽晶向、各向異性製程形貌與檢測訊號之間可能存在的關係。
+> 圖 2：矽晶向、各向異性蝕刻與可能形成的檢測形貌；概念示意。
 
 ## 8. Why This Matters for Semiconductor Inspection
 
-> A direction-dependent pattern in an inspection image may justify a crystallographic hypothesis, but it does not verify one. The practical task is to separate what the image shows from what crystal structure might explain, then choose a measurement that can test the proposed connection.
-
 在 AOI 或顯微影像中，同樣的亮暗差異未必來自相同原因。表面高度、粗糙度、晶向、薄膜厚度、折射率與殘留物都可能改變反射或散射訊號。因此，檢測影像比較適合被視為異常位置與形貌的線索，而不是直接等同材料根因。
 
-例如，同一批晶圓若在固定方向上重複出現邊緣或紋理差異，可以依序確認：
+若同一批晶圓在固定方向上重複出現邊緣或紋理差異，可以依序確認：
 
 1. 異常是否和 wafer notch 或已知晶向保持固定關係？
 2. 圖樣是否隨製程條件、晶圓旋轉或照明方向改變？
@@ -214,25 +196,17 @@ FCC 結構通常具有多組容易啟動的 $\{111\}\langle110\rangle$ 密排滑
 | 光學輪廓儀或 AFM | 表面高度、粗糙度與形貌 |
 | SEM | 高倍率表面形貌、裂紋與局部結構細節 |
 
-### 簡單判讀例子
-
-假設光學檢測在晶圓邊緣看到一條固定方向的線狀異常：
-
-- 若轉動照明後對比明顯改變，可能和表面斜率或散射方向有關。
-- 若異常方向始終和 wafer notch 保持固定關係，可以進一步檢查晶向或製程各向異性。
-- 若只有特定膜厚區域出現，則需要考慮薄膜干涉，而不是直接判定為晶體缺陷。
-
-這個例子無法只靠影像得到唯一答案，但可以把後續驗證從一般性的「看見異常」縮小成幾個具體假設。
+以晶圓邊緣的固定方向線狀異常為例，轉動照明後對比是否改變、異常是否持續跟著 wafer notch，以及它是否只出現在特定膜厚區域，會分別把問題帶向表面斜率或散射、晶向或製程各向異性，以及薄膜干涉。影像仍然無法給出唯一答案，不過可以把後續驗證縮小成幾個可檢查的假設。
 
 ## 9. Debugging Note: Which Reference Frame Does the Pattern Follow?
 
-During a six-month on-site semiconductor wafer-inspection assignment, I worked on a runtime system that combined multiple camera streams, wafer-motion tracking, trigger-based inspection, ROI and template configuration, result aggregation, and history review.
+During a six-month on-site semiconductor wafer-inspection assignment, I worked on a runtime system that combined multiple camera streams, wafer-motion tracking, trigger-based inspection, ROI and template configuration, result aggregation, and history review. Those parts mattered here because each one could shift where a pattern appeared or which coordinate frame made it look stable.
 
-In that kind of system, a fixed-direction pattern does not immediately imply a material or crystallographic cause. It may originate from camera angle, illumination direction, wafer motion, trigger timing, ROI alignment, image registration, or recipe configuration. The feature can look stable (and still belong to the wrong coordinate frame). My debugging process therefore began at the measurement-system level: acquisition stability, coordinate consistency, repeatability, and the relationship between the feature and the inspection setup.
+In that kind of system, a fixed-direction pattern does not immediately imply a material or crystallographic cause. It may originate from camera angle, illumination direction, wafer motion, trigger timing, ROI alignment, image registration, or recipe configuration. The feature can look stable and still belong to the wrong coordinate frame. That was the first check. My debugging therefore began at the measurement-system level: acquisition stability, coordinate consistency, repeatability, and the relationship between the feature and the inspection setup.
 
 Before studying crystal structure, I would have kept the investigation within those imaging and system-level explanations. This chapter adds another layer. If a feature remains fixed relative to the wafer rather than the camera or motion direction, persists after controlled changes in illumination, and corresponds to a known orientation or anisotropic process step, crystal orientation becomes a physically plausible hypothesis.
 
-But that still requires independent verification. I did not use XRD, Raman spectroscopy, or electron diffraction to confirm a crystal-level cause during this assignment. The AOI image therefore cannot serve as evidence of crystallographic origin.
+But that still requires independent verification. I did not use XRD, Raman spectroscopy, or electron diffraction to confirm a crystal-level cause during this assignment. The AOI image therefore cannot serve as proof of crystallographic origin.
 
 | Reference frame | Possible explanation |
 | --- | --- |
@@ -242,29 +216,18 @@ But that still requires independent verification. I did not use XRD, Raman spect
 
 This three-frame check is now more useful to me than starting with a defect name. It shows when optical debugging is still sufficient and when material characterization may be justified.
 
-## 10. Checks I Would Make Before Using a Crystal-Level Explanation
+## Current Scope
 
-- **Bonding gives first-order trends, not a complete property prediction.** Strength, ductility, toughness, and reliability still depend on defects, microstructure, temperature, and loading.
-- **APF describes geometric packing.** It is not a direct measure of density, strength, or engineering performance.
-- **Crystal structure affects available deformation mechanisms.** Actual behavior still depends on whether those mechanisms can operate under the given conditions.
-- **Silicon should not be treated as an ordinary FCC crystal.** Its FCC Bravais lattice and two-atom basis together form the diamond-cubic structure.
-- **A direction-dependent optical pattern can support a crystallographic hypothesis.** It cannot verify a crystal-level cause without independent evidence.
+這篇先停在原子鍵結、基本晶體結構、矽晶向，以及如何把晶體學概念當成可驗證的工程假設。缺陷、擴散與差排行為會在下一篇繼續整理。
 
-原子間位能曲線讓兩個原本分開記憶的性質連在一起：彈性模數和熱膨脹都與原子間距偏離平衡位置時，能量曲線的形狀有關。矽的例子則補上另一個容易混淆的地方。FCC Bravais lattice 加上 two-atom basis 才構成完整的 diamond-cubic structure；後者會改變最近鄰、配位數、堆積方式與鍵結幾何，不能只因為看到 FCC 就沿用金屬 FCC 的直覺。
+檢測案例來自影像擷取、執行系統與除錯經驗，不包含以 XRD、Raman 光譜、電子繞射或其他材料分析方法驗證晶體層級根因。
 
-回到檢測現場，這一章留下的是一個 debugging 順序：
+## Learning Source
 
-1. 圖形是否固定在 camera frame？
-2. 是否跟著設備運動或掃描方向？
-3. 旋轉 wafer 或改變照明後，圖形是否仍跟著 wafer frame？
-4. 是否存在已知的晶向或異向性製程，可以提出可驗證的假設？
-5. 現有資料是否包含 XRD、Raman 或其他能確認晶體層級原因的證據？
+- James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
 
-前兩層還沒有排除以前，急著談晶向通常太早。即使圖形最後跟著 wafer reference direction，晶體方向也只是下一個值得測試的解釋，不應直接變成缺陷標籤。
+## Additional References
 
-## References
-
-1. James F. Shackelford, [*Materials Science: 10 Things Every Engineer Should Know*](https://www.coursera.org/learn/materials-science), University of California, Davis / Coursera.
-2. James F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
-3. William D. Callister Jr. and David G. Rethwisch, *Materials Science and Engineering: An Introduction*.
-4. Xiezheng Yu et al., [“Wet Anisotropic Etching Characteristics of Si{111} in KOH-Based Solution”](https://pmc.ncbi.nlm.nih.gov/articles/PMC11780415/), *ACS Omega*, 2025.
+- James F. Shackelford, *Introduction to Materials Science for Engineers*, 8th ed.
+- William D. Callister Jr. and David G. Rethwisch, *Materials Science and Engineering: An Introduction*.
+- Xiezheng Yu et al., [“Wet Anisotropic Etching Characteristics of Si{111} in KOH-Based Solution”](https://pmc.ncbi.nlm.nih.gov/articles/PMC11780415/), *ACS Omega*, 2025.
