@@ -1,6 +1,8 @@
 # IC Process Monitoring and Failure-Analysis Evidence
 
-This section came from a gap between inspection results and the manufacturing path behind them. Wafer maps and production context were familiar, but the position of WAT parameters such as threshold voltage, saturation current, and contact resistance in the IC process flow was not. The first day of the course connected process layers, scribe-line test structures, wafer-level distributions, CP bins, and later failure analysis. The second day added process-time signals, in-line defect evidence, and the margin between a layout target and fabricated geometry. The goal is not to turn the course into another process textbook. It is to build enough of a map to ask what was measured, what else affects the value, and what evidence is still missing.
+This section started from a gap in how wafer-inspection results fit into the manufacturing path. Wafer maps and production context were familiar, but the position of WAT parameters such as threshold voltage, saturation current, and contact resistance in the IC process flow was not.
+
+The two-day course helped connect those layers. These notes keep only the parts that help ask three questions: what was measured, what else can affect the result, and what evidence should come next.
 
 ## Notes
 
@@ -13,35 +15,27 @@ This section contains six notes:
 5. [Design Rules and Process Margin](./05-design-rules-and-process-margin.md) — why layout dimensions act as an interface between design intent, fabricated geometry, and electrical risk rather than as an isolated DRC checklist.
 6. [CP Test Marginality and Shmoo Plots](./06-cp-test-marginality-and-shmoo-plots.md) — how probe contact, timing, and swept test conditions reveal the operating margin hidden by a single nominal pass/fail result.
 
-The detailed process sequence will not be repeated unless it helps answer a practical question: which structure was measured, which process layer may be involved, and what should be checked next.
-
 ## What These Notes Connect
 
-Across the two course days, the section moved from process flow and process-time signals into fabricated geometry, in-line inspection, WAT distributions, CP results, and later verification. These topics become easier to follow when treated as one evidence chain:
+The notes connect process conditions to the evidence that appears later in the flow:
 
 ```text
 Process condition
     ↓
-Process-time signal
+In-line signal / inspection
     ↓
 Fabricated geometry
     ↓
-In-line measurement or inspection
+WAT distribution
     ↓
-Test structure
-    ↓
-WAT parameter
-    ↓
-Wafer-level distribution
-    ↓
-CP yield or fail bin
+CP result
     ↓
 Failure hypothesis
     ↓
 Physical verification
 ```
 
-The chain can stop early. An endpoint shift, a visible defect, a design-rule violation, a WAT value, and a CP fail bin belong to different evidence layers. Any one of them may narrow the next check, but none should be promoted directly to a verified mechanism.
+Each layer narrows a different part of the investigation. The next check depends on what the current evidence can actually support.
 
 ## Existing Foundations
 
@@ -51,14 +45,16 @@ The chain can stop early. An endpoint shift, a visible defect, a design-rule vio
 
 ## What Comes Next
 
-The current section now reaches from process evidence to product-test margin. Detailed failure localization and material-characterization evidence will move into a separate section rather than turning this README into an instrument survey.
+This section ends at product-test margin and failure hypothesis. The next section continues with failure localization and physical evidence:
 
-The source material for that next section is available from the second course day. Articles will be added only after each topic has been checked against the existing notes and reduced to one engineering question.
+[Failure Localization and Material Characterization](../05-failure-localization-and-material-characterization/README.md)
 
 ## Learning Source
 
 1. Hsinchu Science Park Bureau–subsidized course, [*積體電路故障分析技術與良率提升*](https://saturn.sipa.gov.tw/edu/d013_new.jsp?pl_id=26A01&cs_id=15S359) (*IC Failure Analysis Technology and Yield Improvement*, course 15S359), delivered by the Tze-Chiang Foundation of Science & Technology, August 6–7, 2026. Notes 01–03 draw mainly on the first day; notes 04–06 draw on the second day.
 
-## Note on Scope
+## Scope
 
-I have not operated production plasma-etch, WAT, or CP equipment; defined foundry design rules or production test programs; or worked as a semiconductor process-integration or failure-analysis engineer. The project connections are limited to experience with wafer-inspection software, especially wafer context, coordinates, recipes, history, and result traceability. Those records can help organize an investigation, but they cannot replace electrical measurement or physical verification. Public notes use redrawn diagrams and conceptual examples rather than original lecture images or confidential production data.
+I have not worked as a semiconductor process-integration or failure-analysis engineer, and I have not operated production plasma-etch, WAT, or CP equipment. My practical connection is mainly wafer-inspection software, including wafer context, coordinates, recipes, history, and result traceability.
+
+The diagrams and examples in this section are simplified conceptual redrawings and do not reproduce lecture slides or production data.
