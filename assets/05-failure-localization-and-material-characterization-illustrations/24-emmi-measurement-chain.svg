@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">EMMI measurement and alignment chain</title>
+  <desc id="desc">A biased device emits weak light that travels through an optical path to a detector, is accumulated into an emission image, and is aligned with layout coordinates.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52606d"/></marker>
+    <style>
+      .bg{fill:#fcfcfb}.ink{fill:#17212b;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.label{font-size:18px;font-weight:650}.small{font-size:15px;fill:#52606d}.micro{font-size:13px;fill:#697684}.rule{stroke:#d5dbe0;stroke-width:1}.box{fill:#fff;stroke:#52606d;stroke-width:1.6}.device{fill:#e6efeb;stroke:#4c7167;stroke-width:2}.optic{fill:#e8f1f5;stroke:#3b7189;stroke-width:1.6}.signal{fill:none;stroke:#52606d;stroke-width:2;marker-end:url(#arrow)}.photon{fill:#efb65c;stroke:#a76525;stroke-width:1.4}.emit{fill:none;stroke:#b94b3f;stroke-width:2;stroke-dasharray:5 4}.grid{stroke:#bdc6cc;stroke-width:1}.hot{fill:#d85c48;opacity:.78}.align{fill:none;stroke:#3b7189;stroke-width:1.5;stroke-dasharray:5 4}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="ink label" x="68" y="52">MEASUREMENT CHAIN</text><text class="ink small" x="68" y="78">The electrical condition and image coordinates travel together</text>
+  <line class="rule" x1="68" y1="102" x2="1132" y2="102"/>
+
+  <rect class="box" x="68" y="174" width="182" height="108" rx="3"/>
+  <text class="ink label" x="159" y="209" text-anchor="middle">Bias and stimulus</text>
+  <text class="ink small" x="159" y="239" text-anchor="middle">voltage · current limit</text><text class="ink small" x="159" y="262" text-anchor="middle">test state</text>
+  <path class="signal" d="M250 228H302"/>
+
+  <rect class="device" x="302" y="158" width="202" height="140" rx="3"/>
+  <text class="ink label" x="403" y="194" text-anchor="middle">Biased DUT</text>
+  <rect x="339" y="222" width="128" height="48" fill="#fff" stroke="#4c7167" stroke-width="1.4"/>
+  <path class="grid" d="M371 222V270M403 222V270M435 222V270M339 246H467"/>
+  <circle class="hot" cx="422" cy="241" r="8"/>
+  <path class="emit" d="M422 218l-13-31M422 218v-36M422 218l15-31"/>
+  <path class="signal" d="M504 228H556"/>
+
+  <rect class="optic" x="556" y="174" width="174" height="108" rx="3"/>
+  <text class="ink label" x="643" y="209" text-anchor="middle">Optical path</text>
+  <circle class="photon" cx="598" cy="246" r="5"/><circle class="photon" cx="620" cy="238" r="5"/><circle class="photon" cx="642" cy="250" r="5"/>
+  <text class="ink small" x="678" y="253" text-anchor="middle">filter</text>
+  <path class="signal" d="M730 228H782"/>
+
+  <rect class="box" x="782" y="174" width="174" height="108" rx="3"/>
+  <text class="ink label" x="869" y="209" text-anchor="middle">Detector</text>
+  <text class="ink small" x="869" y="239" text-anchor="middle">weak photon signal</text><text class="ink small" x="869" y="262" text-anchor="middle">image accumulation</text>
+  <path class="signal" d="M956 228H1008"/>
+
+  <rect class="box" x="1008" y="158" width="124" height="140" rx="3"/>
+  <text class="ink label" x="1070" y="191" text-anchor="middle">Emission</text><text class="ink label" x="1070" y="214" text-anchor="middle">image</text>
+  <rect x="1035" y="233" width="70" height="46" fill="#202a33"/>
+  <circle cx="1078" cy="252" r="11" fill="#efb65c" opacity=".42"/><circle cx="1078" cy="252" r="5" fill="#fff1b8"/>
+
+  <text class="ink label" x="68" y="381">ALIGNMENT</text><line class="rule" x1="68" y1="404" x2="1132" y2="404"/>
+  <rect class="box" x="302" y="447" width="202" height="108" rx="3"/>
+  <text class="ink label" x="403" y="480" text-anchor="middle">Layout coordinates</text>
+  <path class="grid" d="M336 504H470M336 530H470M369 494V544M414 494V544M451 494V544"/>
+  <circle cx="422" cy="517" r="7" fill="none" stroke="#b94b3f" stroke-width="2"/>
+  <path class="align" d="M1070 298V356H548V501H504"/>
+  <path class="signal" d="M504 501H620"/>
+  <rect class="device" x="620" y="447" width="300" height="108" rx="3"/>
+  <text class="ink label" x="770" y="484" text-anchor="middle">Localized search region</text>
+  <text class="ink small" x="770" y="516" text-anchor="middle">hotspot + fail net + nearby structure</text>
+  <text class="ink micro" x="770" y="540" text-anchor="middle">not yet a physical cause</text>
+
+  <line class="rule" x1="68" y1="610" x2="1132" y2="610"/>
+  <text class="ink micro" x="68" y="638">CONCEPTUAL SYSTEM · NOT TO SCALE · Detector type, spectrum, exposure, optics, and DUT conditions are intentionally unspecified.</text>
+</svg>

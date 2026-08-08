@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Field-related and recombination photo emission</title>
+  <desc id="desc">Two conceptual panels compare carrier energy release in a high-field region with electron-hole recombination across an energy gap.</desc>
+  <defs>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#3b7189"/></marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#b94b3f"/></marker>
+    <style>
+      .bg{fill:#fcfcfb}.ink{fill:#17212b;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.label{font-size:18px;font-weight:650}.small{font-size:15px;fill:#52606d}.micro{font-size:13px;fill:#697684}.rule{stroke:#d5dbe0;stroke-width:1}.panelA{fill:#f5f9fb;stroke:#3b7189;stroke-width:1.5}.panelR{fill:#f4f8f5;stroke:#4c7167;stroke-width:1.5}.band{fill:none;stroke:#364856;stroke-width:2}.field{fill:none;stroke:#3b7189;stroke-width:2.2;marker-end:url(#arrowBlue)}.release{fill:none;stroke:#b94b3f;stroke-width:2;marker-end:url(#arrowRed)}.electron{fill:#3b7189}.hole{fill:#fff;stroke:#a76525;stroke-width:2}.photon{fill:none;stroke:#ef9f34;stroke-width:2.4}.zone{fill:#dcebf2;opacity:.8}.dash{fill:none;stroke:#84919a;stroke-width:1.5;stroke-dasharray:5 5}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="ink label" x="68" y="52">TWO EMISSION PATHS</text><text class="ink small" x="68" y="78">Bias direction and carrier behavior change the interpretation</text>
+  <line class="rule" x1="68" y1="102" x2="1132" y2="102"/>
+
+  <rect class="panelA" x="68" y="137" width="500" height="416" rx="3"/>
+  <text class="ink label" x="98" y="177">F-PE · Field-related emission</text>
+  <text class="ink small" x="98" y="204">carrier gains energy in a high-field region</text>
+  <rect class="zone" x="342" y="233" width="154" height="226"/>
+  <text class="ink micro" x="419" y="253" text-anchor="middle">high-field region</text>
+  <path class="band" d="M108 326C220 326 280 298 350 274S450 270 524 270"/>
+  <path class="band" d="M108 428C220 428 280 400 350 376S450 372 524 372"/>
+  <text class="ink small" x="116" y="311">E c</text><text class="ink small" x="116" y="454">E v</text>
+  <circle class="electron" cx="188" cy="318" r="7"/><circle class="electron" cx="276" cy="302" r="7"/><circle class="electron" cx="376" cy="272" r="7"/>
+  <path class="field" d="M196 304C232 284 249 285 268 291"/><path class="field" d="M284 287C319 258 340 253 368 263"/>
+  <path class="release" d="M382 281C398 306 410 323 428 342"/>
+  <path class="photon" d="M428 342l12-11 12 11 12-11 12 11 12-11"/>
+  <text class="ink small" x="415" y="402" text-anchor="middle">energy released during scattering</text>
+  <text class="ink micro" x="98" y="515">Examples to examine: reverse junction · high-field MOS region · leakage path</text>
+
+  <rect class="panelR" x="632" y="137" width="500" height="416" rx="3"/>
+  <text class="ink label" x="662" y="177">R-PE · Recombination emission</text>
+  <text class="ink small" x="662" y="204">electron and hole recombine across the energy gap</text>
+  <line class="band" x1="682" y1="286" x2="1082" y2="286"/><line class="band" x1="682" y1="416" x2="1082" y2="416"/>
+  <text class="ink small" x="690" y="271">E c</text><text class="ink small" x="690" y="442">E v</text>
+  <circle class="electron" cx="846" cy="278" r="8"/>
+  <circle class="hole" cx="846" cy="424" r="8"/>
+  <path class="release" d="M846 296V403"/>
+  <path class="photon" d="M872 350l12-11 12 11 12-11 12 11 12-11"/>
+  <text class="ink small" x="962" y="355">photon emission</text>
+  <path class="dash" d="M752 246V454"/><text class="ink micro" x="766" y="476">forward carrier injection</text>
+  <text class="ink micro" x="662" y="515">Examples to examine: forward-biased junction · latch-up current path</text>
+
+  <line class="rule" x1="68" y1="594" x2="1132" y2="594"/>
+  <text class="ink micro" x="68" y="622">CONCEPTUAL ENERGY DIAGRAM · NOT TO SCALE · Spectrum, efficiency, band shape, and full scattering processes are not represented.</text>
+</svg>
