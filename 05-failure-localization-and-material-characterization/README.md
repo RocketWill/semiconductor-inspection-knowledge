@@ -11,7 +11,7 @@ The previous section focused on process signals, WAT, and CP results. Here the q
 
 ## How I Read These Methods
 
-Each method answers a different question. EMMI helps narrow an electrically active location; SEM and EDS add structural and elemental evidence; FIB exposes a buried region; voltage contrast helps compare electrical behavior.
+Each method answers a different question. EMMI helps narrow an electrically active location; SEM and EDS add structural and elemental evidence; FIB exposes a buried region or prepares a targeted TEM lamella; voltage contrast helps compare electrical behavior.
 
 The useful part is how these results connect, rather than expecting one image to finish the failure analysis.
 

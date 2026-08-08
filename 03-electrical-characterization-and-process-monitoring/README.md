@@ -19,10 +19,16 @@ The three notes deal with different measurements, but the same problem keeps app
 
 Once I stopped treating these quantities as interchangeable, the formulas became easier to follow, and so did the limits of each measurement.
 
+## What Comes Next
+
+This section stops at measurement and parameter extraction. The next section follows those values into process monitoring, WAT distributions, CP results, and testable process hypotheses:
+
+[IC Process Monitoring and Failure-Analysis Evidence](../04-ic-process-monitoring-and-failure-analysis/README.md)
+
 ## Learning Source
 
 1. Arizona State University, [*Electrical Characterization: Diodes*](https://www.coursera.org/learn/electrical-characterization-diodes), Coursera.
 
-## Note on Scope
+## Scope
 
 I have not carried out four-point-probe or TLM measurements in a production characterization role. The project connections in these notes are limited to habits carried over from wafer-inspection software: keeping a value linked to its wafer context, measurement conditions, spatial position, history, and later verification.
