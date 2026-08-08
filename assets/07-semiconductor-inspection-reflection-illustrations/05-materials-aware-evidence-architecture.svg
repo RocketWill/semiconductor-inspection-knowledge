@@ -1,78 +1,98 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
-  <rect width="1200" height="675" fill="#ffffff"/>
-  <style>
-    text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#222}
-    .title{font-size:31px;font-weight:680}
-    .head{font-size:22px;font-weight:680}
-    .body{font-size:18px;fill:#4c4c4c}
-    .box{fill:#fff;stroke:#272727;stroke-width:2.5}
-    .arrow{fill:none;stroke:#dd6b2c;stroke-width:3.5;marker-end:url(#arrow)}
-    .return{fill:none;stroke:#2b78b8;stroke-width:3.5;stroke-dasharray:9 8;marker-end:url(#blueArrow)}
-  </style>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3 z" fill="#dd6b2c"/></marker>
-    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3 z" fill="#2b78b8"/></marker>
+    <style>
+      text { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #172033; }
+      .title { font-size: 29px; font-weight: 700; }
+      .subtitle { font-size: 15px; fill: #667085; }
+      .stage { font-size: 16px; font-weight: 700; }
+      .body { font-size: 13px; fill: #526071; }
+      .tiny { font-size: 12px; fill: #697586; }
+      .inverse-head { font-size: 16px; font-weight: 700; fill: #ffffff; }
+      .inverse-body { font-size: 13px; fill: #d7deea; }
+      .node { fill: #fff; stroke: #aeb8c6; stroke-width: 1.5; }
+      .flow { fill: none; stroke: #5b6675; stroke-width: 2.5; marker-end: url(#arrow); }
+      .feedback { fill: none; stroke: #2f6ea5; stroke-width: 2.5; stroke-dasharray: 7 6; marker-end: url(#blueArrow); }
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3 Z" fill="#5b6675"/></marker>
+    <marker id="blueArrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3 Z" fill="#2f6ea5"/></marker>
   </defs>
 
-  <text x="600" y="52" text-anchor="middle" class="title">Inspection evidence chain</text>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <text x="54" y="54" class="title">Materials-Aware Inspection Evidence Architecture</text>
+  <text x="54" y="82" class="subtitle">A traceable path from how an observation was produced to how a hypothesis was verified</text>
 
-  <g transform="translate(50,100)">
-    <rect width="260" height="105" rx="16" class="box"/>
-    <text x="130" y="35" text-anchor="middle" class="head">製造脈絡</text>
-    <text x="130" y="67" text-anchor="middle" class="body">製程、批次、設備、時間</text>
-    <text x="130" y="91" text-anchor="middle" class="body">材料規格與初始狀態</text>
+  <text x="54" y="126" class="tiny">SOURCE CONTEXT</text>
+  <g transform="translate(54 145)">
+    <rect width="260" height="88" rx="8" class="node"/>
+    <circle cx="26" cy="26" r="8" fill="#b58a21"/>
+    <text x="46" y="31" class="stage">Manufacturing context</text>
+    <text x="22" y="58" class="body">process · lot · equipment · time</text>
+    <text x="22" y="77" class="body">material specification · initial state</text>
   </g>
-  <g transform="translate(50,250)">
-    <rect width="260" height="105" rx="16" class="box"/>
-    <text x="130" y="35" text-anchor="middle" class="head">檢測脈絡</text>
-    <text x="130" y="67" text-anchor="middle" class="body">相機、光源、Trigger、ROI</text>
-    <text x="130" y="91" text-anchor="middle" class="body">Recipe 與座標系統</text>
+  <g transform="translate(54 255)">
+    <rect width="260" height="88" rx="8" class="node"/>
+    <circle cx="26" cy="26" r="8" fill="#3979a8"/>
+    <text x="46" y="31" class="stage">Inspection context</text>
+    <text x="22" y="58" class="body">camera · illumination · trigger · ROI</text>
+    <text x="22" y="77" class="body">recipe · coordinates · model version</text>
   </g>
-  <g transform="translate(50,400)">
-    <rect width="260" height="105" rx="16" class="box"/>
-    <text x="130" y="35" text-anchor="middle" class="head">AI 觀察</text>
-    <text x="130" y="67" text-anchor="middle" class="body">Class、Box、Mask、Score</text>
-    <text x="130" y="91" text-anchor="middle" class="body">尺寸、位置與分布</text>
-  </g>
-
-  <g transform="translate(405,245)">
-    <rect width="245" height="120" rx="20" fill="#f6f6f6" stroke="#272727" stroke-width="3"/>
-    <text x="123" y="48" text-anchor="middle" class="head">Evidence Record</text>
-    <text x="123" y="80" text-anchor="middle" class="body">保留來源、關係與未知值</text>
-  </g>
-
-  <g transform="translate(745,110)">
-    <rect width="240" height="95" rx="16" class="box"/>
-    <text x="120" y="40" text-anchor="middle" class="head">工程假設</text>
-    <text x="120" y="69" text-anchor="middle" class="body">機制與替代解釋</text>
-  </g>
-  <g transform="translate(745,260)">
-    <rect width="240" height="95" rx="16" class="box"/>
-    <text x="120" y="40" text-anchor="middle" class="head">驗證需求</text>
-    <text x="120" y="69" text-anchor="middle" class="body">需要什麼額外量測？</text>
-  </g>
-  <g transform="translate(745,410)">
-    <rect width="240" height="95" rx="16" class="box"/>
-    <text x="120" y="40" text-anchor="middle" class="head">驗證結果</text>
-    <text x="120" y="69" text-anchor="middle" class="body">電性／材料／製程證據</text>
+  <g transform="translate(54 365)">
+    <rect width="260" height="88" rx="8" class="node"/>
+    <circle cx="26" cy="26" r="8" fill="#7b61a8"/>
+    <text x="46" y="31" class="stage">Model observation</text>
+    <text x="22" y="58" class="body">class · box · mask · confidence</text>
+    <text x="22" y="77" class="body">size · position · distribution</text>
   </g>
 
-  <g transform="translate(1015,245)">
-    <rect width="145" height="120" rx="18" fill="#eaf3fa" stroke="#2b78b8" stroke-width="3"/>
-    <text x="73" y="43" text-anchor="middle" class="head">Agent</text>
-    <text x="73" y="74" text-anchor="middle" class="body">查詢與整理</text>
-    <text x="73" y="99" text-anchor="middle" class="body">不替代驗證</text>
+  <path d="M314 189 C350 189 350 269 388 279" class="flow"/>
+  <path d="M314 299 H388" class="flow"/>
+  <path d="M314 409 C350 409 350 329 388 319" class="flow"/>
+
+  <g transform="translate(388 235)">
+    <rect width="226" height="128" rx="10" fill="#172033"/>
+    <text x="113" y="43" text-anchor="middle" class="inverse-head">Evidence record</text>
+    <text x="113" y="72" text-anchor="middle" class="inverse-body">source · identity · relation</text>
+    <text x="113" y="94" text-anchor="middle" class="inverse-body">conditions · unknowns · status</text>
   </g>
 
-  <path d="M310 152 C365 152 365 265 405 285" class="arrow"/>
-  <path d="M310 302 H405" class="arrow"/>
-  <path d="M310 452 C365 452 365 345 405 325" class="arrow"/>
-  <path d="M650 285 C700 270 700 178 745 158" class="arrow"/>
-  <path d="M865 205 V260" class="arrow"/>
-  <path d="M865 355 V410" class="arrow"/>
-  <path d="M745 458 C680 458 680 370 625 350" class="return"/>
-  <path d="M1015 285 H985" class="return"/>
-  <path d="M1015 325 C980 340 975 395 940 410" class="return"/>
+  <path d="M614 299 H678" class="flow"/>
+  <text x="646" y="286" text-anchor="middle" class="tiny">review</text>
 
-  <text x="600" y="605" text-anchor="middle" class="body">模型可以協助建立關聯；根因仍需物理機制與獨立證據支持</text>
+  <g transform="translate(678 145)">
+    <rect width="250" height="88" rx="8" class="node"/>
+    <text x="22" y="32" class="stage">Engineering hypothesis</text>
+    <text x="22" y="59" class="body">plausible mechanism</text>
+    <text x="22" y="78" class="body">alternative explanations retained</text>
+  </g>
+  <g transform="translate(678 255)">
+    <rect width="250" height="88" rx="8" class="node"/>
+    <text x="22" y="32" class="stage">Verification request</text>
+    <text x="22" y="59" class="body">electrical test · metrology</text>
+    <text x="22" y="78" class="body">material analysis · process review</text>
+  </g>
+  <g transform="translate(678 365)">
+    <rect width="250" height="88" rx="8" class="node"/>
+    <text x="22" y="32" class="stage">Verification result</text>
+    <text x="22" y="59" class="body">supported · contradicted</text>
+    <text x="22" y="78" class="body">unresolved · follow-up required</text>
+  </g>
+
+  <path d="M803 233 V255" class="flow"/>
+  <path d="M803 343 V365" class="flow"/>
+  <path d="M678 409 C635 409 635 353 602 342" class="feedback"/>
+
+  <g transform="translate(980 235)">
+    <rect width="166" height="128" rx="10" fill="#eef5fb" stroke="#79a4c8" stroke-width="1.5"/>
+    <text x="83" y="37" text-anchor="middle" class="stage">AI / Agent</text>
+    <text x="83" y="66" text-anchor="middle" class="body">retrieve records</text>
+    <text x="83" y="88" text-anchor="middle" class="body">compare patterns</text>
+    <text x="83" y="110" text-anchor="middle" class="body">surface missing checks</text>
+  </g>
+  <path d="M980 278 H928" class="feedback"/>
+  <path d="M980 323 C955 336 955 385 928 397" class="feedback"/>
+
+  <rect x="54" y="522" width="1092" height="84" rx="8" fill="#fff" stroke="#d5dce6"/>
+  <text x="78" y="554" class="stage">Interpretation boundary</text>
+  <text x="78" y="580" class="body">AI can organize associations and missing evidence. A verified cause still requires an appropriate physical mechanism and independent evidence.</text>
+  <text x="1146" y="643" text-anchor="end" class="tiny">Conceptual architecture · not a deployed production system</text>
 </svg>

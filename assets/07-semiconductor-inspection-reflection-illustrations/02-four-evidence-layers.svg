@@ -1,79 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <style>
+      text { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #182230; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 15px; fill: #667085; }
+      .head { font-size: 18px; font-weight: 700; }
+      .kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.1px; }
+      .body { font-size: 15px; fill: #344054; }
+      .muted { font-size: 14px; fill: #667085; }
+    </style>
+  </defs>
   <rect width="1200" height="675" fill="#ffffff"/>
-  <style>
-    text{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;fill:#222}
-    .title{font-size:31px;font-weight:680}
-    .head{font-size:24px;font-weight:680}
-    .body{font-size:20px}
-    .small{font-size:18px;fill:#555}
-    .card{fill:#fff;stroke:#252525;stroke-width:2.5}
-  </style>
-  <text x="600" y="55" text-anchor="middle" class="title">同一個異常，需要不同證據回答不同問題</text>
+  <text x="60" y="58" class="title">One Anomaly, Four Evidence Layers</text>
+  <text x="60" y="86" class="subtitle">Each layer answers a different question. None can substitute for the others.</text>
 
-  <g transform="translate(55,105)">
-    <rect width="255" height="455" rx="18" class="card"/>
-    <rect width="255" height="72" rx="18" fill="#eaf3fa"/>
-    <rect y="54" width="255" height="18" fill="#eaf3fa"/>
-    <text x="128" y="45" text-anchor="middle" class="head">光學證據</text>
-    <text x="24" y="118" class="small">可回答</text>
-    <text x="24" y="155" class="body">位置與形貌</text>
-    <text x="24" y="190" class="body">大小、對比與分布</text>
-    <text x="24" y="225" class="body">是否重複出現</text>
-    <line x1="24" y1="258" x2="231" y2="258" stroke="#d8d8d8"/>
-    <text x="24" y="300" class="small">不能單獨確認</text>
-    <text x="24" y="337" class="body">載子濃度</text>
-    <text x="24" y="372" class="body">漏電機制</text>
-    <text x="24" y="407" class="body">缺陷能階</text>
+  <g transform="translate(60 128)">
+    <rect width="1080" height="104" rx="8" fill="#f2f7fc" stroke="#bdd4ea"/>
+    <rect width="7" height="104" rx="3" fill="#3979a8"/>
+    <text x="30" y="30" class="kicker" fill="#3979a8">OPTICAL</text>
+    <text x="30" y="61" class="head">What is visible, and where?</text>
+    <text x="470" y="42" class="body">Position · morphology · size · contrast · distribution</text>
+    <text x="470" y="72" class="muted">Does not establish carrier concentration, defect energy levels, or a leakage mechanism.</text>
   </g>
 
-  <g transform="translate(335,105)">
-    <rect width="255" height="455" rx="18" class="card"/>
-    <rect width="255" height="72" rx="18" fill="#fff0e7"/>
-    <rect y="54" width="255" height="18" fill="#fff0e7"/>
-    <text x="128" y="45" text-anchor="middle" class="head">電性證據</text>
-    <text x="24" y="118" class="small">可回答</text>
-    <text x="24" y="155" class="body">電阻與漏電</text>
-    <text x="24" y="190" class="body">I–V／C–V 行為</text>
-    <text x="24" y="225" class="body">載子壽命與遷移率</text>
-    <line x1="24" y1="258" x2="231" y2="258" stroke="#d8d8d8"/>
-    <text x="24" y="300" class="small">不能單獨確認</text>
-    <text x="24" y="337" class="body">表面形貌</text>
-    <text x="24" y="372" class="body">污染來源</text>
-    <text x="24" y="407" class="body">完整製程因果</text>
+  <g transform="translate(60 246)">
+    <rect width="1080" height="104" rx="8" fill="#fff5ef" stroke="#edc9b4"/>
+    <rect width="7" height="104" rx="3" fill="#c86735"/>
+    <text x="30" y="30" class="kicker" fill="#c86735">ELECTRICAL</text>
+    <text x="30" y="61" class="head">How does the device respond?</text>
+    <text x="470" y="42" class="body">Resistance · leakage · lifetime · I–V · C–V</text>
+    <text x="470" y="72" class="muted">Does not by itself identify visible morphology or its physical origin.</text>
   </g>
 
-  <g transform="translate(615,105)">
-    <rect width="255" height="455" rx="18" class="card"/>
-    <rect width="255" height="72" rx="18" fill="#fff8df"/>
-    <rect y="54" width="255" height="18" fill="#fff8df"/>
-    <text x="128" y="45" text-anchor="middle" class="head">製程證據</text>
-    <text x="24" y="118" class="small">可回答</text>
-    <text x="24" y="155" class="body">批次與設備</text>
-    <text x="24" y="190" class="body">Recipe 與時間</text>
-    <text x="24" y="225" class="body">異常從何時開始</text>
-    <line x1="24" y1="258" x2="231" y2="258" stroke="#d8d8d8"/>
-    <text x="24" y="300" class="small">不能單獨確認</text>
-    <text x="24" y="337" class="body">材料是否已改變</text>
-    <text x="24" y="372" class="body">哪個機制主導</text>
-    <text x="24" y="407" class="body">是否具有電性影響</text>
+  <g transform="translate(60 364)">
+    <rect width="1080" height="104" rx="8" fill="#fff9e8" stroke="#ead897"/>
+    <rect width="7" height="104" rx="3" fill="#b58a21"/>
+    <text x="30" y="30" class="kicker" fill="#9a741b">PROCESS</text>
+    <text x="30" y="61" class="head">What happened before measurement?</text>
+    <text x="470" y="42" class="body">Lot · equipment · recipe · temperature · time · process step</text>
+    <text x="470" y="72" class="muted">Does not prove that a specific material change or electrical mechanism occurred.</text>
   </g>
 
-  <g transform="translate(895,105)">
-    <rect width="255" height="455" rx="18" class="card"/>
-    <rect width="255" height="72" rx="18" fill="#edf5eb"/>
-    <rect y="54" width="255" height="18" fill="#edf5eb"/>
-    <text x="128" y="45" text-anchor="middle" class="head">材料分析</text>
-    <text x="24" y="118" class="small">可回答</text>
-    <text x="24" y="155" class="body">成分與晶相</text>
-    <text x="24" y="190" class="body">應力與界面</text>
-    <text x="24" y="225" class="body">微觀結構</text>
-    <line x1="24" y1="258" x2="231" y2="258" stroke="#d8d8d8"/>
-    <text x="24" y="300" class="small">不能單獨確認</text>
-    <text x="24" y="337" class="body">完整時間順序</text>
-    <text x="24" y="372" class="body">設備條件變化</text>
-    <text x="24" y="407" class="body">量產因果鏈</text>
+  <g transform="translate(60 482)">
+    <rect width="1080" height="104" rx="8" fill="#f2f8f3" stroke="#bfd8c4"/>
+    <rect width="7" height="104" rx="3" fill="#4d8a60"/>
+    <text x="30" y="30" class="kicker" fill="#4d8a60">MATERIAL</text>
+    <text x="30" y="61" class="head">What changed in the material?</text>
+    <text x="470" y="42" class="body">Composition · phase · stress · interface · microstructure</text>
+    <text x="470" y="72" class="muted">Does not reconstruct the complete process history or causal sequence on its own.</text>
   </g>
 
-  <path d="M165 600 H1035" stroke="#d13b32" stroke-width="4" stroke-linecap="round"/>
-  <text x="600" y="642" text-anchor="middle" class="body" fill="#d13b32">證據需要互相連結，但不能互相取代</text>
+  <line x1="60" y1="626" x2="1140" y2="626" stroke="#182230" stroke-width="1.5"/>
+  <text x="600" y="653" text-anchor="middle" class="body">Connect the records. Keep the evidence boundaries.</text>
 </svg>
