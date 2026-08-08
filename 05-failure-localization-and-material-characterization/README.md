@@ -2,6 +2,10 @@
 
 The previous section focused on process signals, WAT, and CP results. Here the question changes: once an electrical or spatial anomaly has been narrowed down, what can different physical signals tell me about the suspected structure?
 
+![A hand-drawn failure-analysis workbench connecting an electrical anomaly with localization and physical evidence](../assets/05-failure-localization-and-material-characterization-illustrations/20-failure-analysis-evidence-workbench.png)
+
+> A conceptual failure-analysis path. These methods are not a mandatory sequence: each adds a different kind of localization or physical evidence, and no single signal completes the diagnosis.
+
 ## Notes
 
 1. [Layout-Induced Failures: Antenna Effect and Latch-Up](./01-layout-induced-failures-antenna-and-latchup.md) — how layout can create electrical risk during plasma processing or through parasitic CMOS paths.
