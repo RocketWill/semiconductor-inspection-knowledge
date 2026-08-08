@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Parasitic CMOS structure and equivalent SCR feedback</title>
+  <desc id="desc">A simplified CMOS cross-section maps a parasitic PNP and NPN pair to an equivalent regenerative feedback path through well and substrate resistance.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#b94b3f"/></marker>
+    <style>
+      .bg{fill:#fcfcfb}.ink{fill:#17212b;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.label{font-size:18px;font-weight:650}.small{font-size:15px;fill:#52606d}.micro{font-size:13px;fill:#697684}.rule{stroke:#d5dbe0;stroke-width:1}.well{fill:#dbeaf0;stroke:#376a82;stroke-width:2}.sub{fill:#e7eee9;stroke:#4c7167;stroke-width:2}.pplus{fill:#efbd70;stroke:#9a6421;stroke-width:1.5}.nplus{fill:#9ecbd7;stroke:#376a82;stroke-width:1.5}.contact{fill:#465663}.node{fill:#fff;stroke:#364856;stroke-width:2}.res{fill:none;stroke:#52606d;stroke-width:2}.feedback{fill:none;stroke:#b94b3f;stroke-width:2.5;marker-end:url(#arrow)}.map{fill:none;stroke:#8a959e;stroke-width:1.5;stroke-dasharray:5 5}.device{fill:#fff;stroke:#364856;stroke-width:2}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="ink label" x="66" y="54">STRUCTURE</text><text class="ink label" x="754" y="54">EQUIVALENT FEEDBACK PATH</text>
+  <line class="rule" x1="66" y1="78" x2="1134" y2="78"/><line class="rule" x1="690" y1="105" x2="690" y2="586"/>
+
+  <g aria-label="simplified CMOS cross-section">
+    <rect class="sub" x="82" y="252" width="560" height="280" rx="2"/>
+    <path class="well" d="M92 252H364V454H92Z"/>
+    <text class="ink label" x="228" y="286" text-anchor="middle">N-well</text>
+    <text class="ink label" x="505" y="505" text-anchor="middle">P-substrate</text>
+
+    <rect class="pplus" x="122" y="211" width="76" height="62" rx="2"/><text class="ink small" x="160" y="247" text-anchor="middle">P+</text>
+    <rect class="nplus" x="257" y="211" width="76" height="62" rx="2"/><text class="ink small" x="295" y="247" text-anchor="middle">N+</text>
+    <rect class="nplus" x="428" y="211" width="76" height="62" rx="2"/><text class="ink small" x="466" y="247" text-anchor="middle">N+</text>
+    <rect class="pplus" x="548" y="211" width="76" height="62" rx="2"/><text class="ink small" x="586" y="247" text-anchor="middle">P+</text>
+    <rect class="contact" x="277" y="181" width="36" height="30"/><rect class="contact" x="568" y="181" width="36" height="30"/>
+    <text class="ink micro" x="295" y="165" text-anchor="middle">well contact</text><text class="ink micro" x="586" y="165" text-anchor="middle">substrate contact</text>
+
+    <path class="feedback" d="M160 284C205 332 242 359 283 383"/>
+    <path class="feedback" d="M466 286C420 335 388 365 347 401"/>
+    <circle class="node" cx="300" cy="403" r="44"/><text class="ink label" x="300" y="409" text-anchor="middle">PNP</text>
+    <circle class="node" cx="430" cy="403" r="44"/><text class="ink label" x="430" y="409" text-anchor="middle">NPN</text>
+    <path class="feedback" d="M344 391H384"/><path class="feedback" d="M386 421H346"/>
+    <text class="ink micro" x="365" y="370" text-anchor="middle">coupled through</text><text class="ink micro" x="365" y="454" text-anchor="middle">local resistance</text>
+  </g>
+
+  <g aria-label="equivalent SCR feedback">
+    <text class="ink small" x="770" y="123">VDD</text><text class="ink small" x="1087" y="560">VSS</text>
+    <line class="res" x1="794" y1="135" x2="794" y2="196"/>
+    <rect class="device" x="752" y="196" width="84" height="66" rx="33"/><text class="ink label" x="794" y="236" text-anchor="middle">PNP</text>
+    <line class="res" x1="794" y1="262" x2="794" y2="311"/>
+    <path class="res" d="M794 311l-12 10 24 18-24 18 24 18-12 10v35"/>
+    <text class="ink small" x="820" y="354">R well</text>
+    <circle class="node" cx="794" cy="437" r="6"/>
+
+    <line class="res" x1="1060" y1="496" x2="1060" y2="543"/>
+    <rect class="device" x="1018" y="430" width="84" height="66" rx="33"/><text class="ink label" x="1060" y="470" text-anchor="middle">NPN</text>
+    <line class="res" x1="1060" y1="385" x2="1060" y2="430"/>
+    <path class="res" d="M1060 311v22l-12 10 24 18-24 18 12 10v22"/>
+    <text class="ink small" x="1084" y="354">R sub</text>
+    <circle class="node" cx="1060" cy="294" r="6"/>
+
+    <path class="feedback" d="M836 229H958C1009 229 1037 253 1057 288"/>
+    <path class="feedback" d="M1018 463H904C850 463 821 454 800 440"/>
+    <text class="ink small" x="928" y="210" text-anchor="middle">base drive</text>
+    <text class="ink small" x="922" y="496" text-anchor="middle">regenerative return path</text>
+    <path class="map" d="M462 403C558 403 632 326 752 229"/><path class="map" d="M332 403C558 520 759 528 1018 463"/>
+  </g>
+
+  <line class="rule" x1="66" y1="610" x2="1134" y2="610"/>
+  <text class="ink micro" x="66" y="638">CONCEPTUAL CROSS-SECTION · NOT TO SCALE · Trigger, holding current, bias, temperature, and complete device geometry are not shown.</text>
+</svg>
