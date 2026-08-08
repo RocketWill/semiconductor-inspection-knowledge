@@ -18,7 +18,7 @@
 | Resistivity | $\rho$ | 材料在指定條件下對電流傳導的阻礙程度 |
 | Sheet resistance | $R_{\mathrm{sh}}$ | 將薄膜電阻率與厚度合併後，用來描述平面導電的量 |
 
-這一組筆記統一使用 $R_{\mathrm{sh}}$ 表示 sheet resistance，$R_s$ 則保留給 diode series resistance。三個量沒有先拆開，後面的四點探針公式就算代得出數字，也很容易說不清楚到底量到了什麼。
+這一組筆記統一使用 $R_{\mathrm{sh}}$ 表示 sheet resistance， $R_s$ 則保留給 diode series resistance。三個量沒有先拆開，後面的四點探針公式就算代得出數字，也很容易說不清楚到底量到了什麼。
 
 ## 2. 從材料到薄膜：為什麼會出現片電阻
 
@@ -28,29 +28,29 @@
 
 對截面均勻、材料性質差異不大的導體，可以先使用：
 
-$$
+```math
 R=\rho\frac{L}{A}
-$$
+```
 
 $R$ 會隨電流路徑 $L$ 增加而增加，也會隨截面積 $A$ 增加而降低。因此同一種材料做成不同尺寸，量到的 resistance 仍然可能不同。電阻率 $\rho$ 比較接近材料層次，但溫度、摻雜、缺陷和材料狀態改變時，它也不會永遠固定。
 
 薄膜的截面積可以寫成 $A=Wt$，所以：
 
-$$
+```math
 R=\rho\frac{L}{Wt}=\left(\frac{\rho}{t}\right)\frac{L}{W}
-$$
+```
 
 把電阻率和厚度合併後得到：
 
-$$
+```math
 R_{\mathrm{sh}}=\frac{\rho}{t},\qquad R=R_{\mathrm{sh}}\frac{L}{W}
-$$
+```
 
 $R_{\mathrm{sh}}$ 常用 $\Omega/\square$ 表示。這裡的 square 不是另一個面積單位，只是利用正方形的 $L/W=1$ 來描述薄膜幾何。若 $R_{\mathrm{sh}}=100\ \Omega/\square$，而結構的 $L/W=10$，理想情況下：
 
-$$
+```math
 R=(100\ \Omega/\square)(10\ \square)=1000\ \Omega
-$$
+```
 
 這個例子只是在提醒：片電阻已經包含材料與厚度，但還不是最後元件的 resistance。
 
@@ -62,9 +62,9 @@ $$
 
 最直接的兩點量測，是用同一對導線送電流並量電壓：
 
-$$
+```math
 R_{\mathrm{measured}}=R_{\mathrm{sample}}+2R_{\mathrm{wire}}+2R_{\mathrm{contact}}+R_{\mathrm{other}}
-$$
+```
 
 除了試片本身，導線、探針接觸、表面氧化或污染，以及儀器連接方式，都可能一起進入數值。試片約為 $1000\ \Omega$ 時，額外混入 $2\ \Omega$ 只約是 $0.2\%$；但試片只有 $1\ \Omega$ 時，同樣的寄生電阻就可能比被測物還大。
 
@@ -76,9 +76,9 @@ $$
 
 量到這裡，可以先得到內側電位差和外側電流的比值：
 
-$$
+```math
 \frac{\Delta V_{\mathrm{inner}}}{I_{\mathrm{outer}}}
-$$
+```
 
 看到單位是 $\Omega$，很容易順手把它叫成 sample resistance。不過這一步還沒得到 sheet resistance；probe configuration、sample geometry 和 correction factor 都還沒有放進來。下一節的 $4.532$，就是把其中一組理想配置接回 $R_{\mathrm{sh}}$ 的幾何因子。
 
@@ -92,23 +92,23 @@ $$
 
 對四支等間距探針，如果薄膜夠薄、試片相對探針間距夠大、材料接近均勻，而且量測位置離邊緣夠遠：
 
-$$
+```math
 R_{\mathrm{sh}}=\frac{\pi}{\ln 2}\frac{\Delta V}{I}\approx4.532\frac{\Delta V}{I}
-$$
+```
 
 試片尺寸有限、量測位置靠近邊緣或探針排列不同時，通常要加入幾何修正：
 
-$$
+```math
 R_{\mathrm{sh}}=\frac{\pi}{\ln 2}\frac{\Delta V}{I}f
-$$
+```
 
 $f$ 代表 correction factor，不是固定等於 1，該用哪個值要看試片形狀、探針間距和量測位置。
 
-假設 $I=1\ \mathrm{mA}$、$\Delta V=20\ \mathrm{mV}$，則 $\Delta V/I=20\ \Omega$。在理想薄膜與標準探針配置下：
+假設 $I=1\ \mathrm{mA}$、 $\Delta V=20\ \mathrm{mV}$，則 $\Delta V/I=20\ \Omega$。在理想薄膜與標準探針配置下：
 
-$$
+```math
 R_{\mathrm{sh}}\approx4.532(20\ \Omega)\approx90.6\ \Omega/\square
-$$
+```
 
 這個數值代表目前位置和目前假設下的片電阻，不代表整片 wafer 都一樣，也看不出變化究竟來自厚度還是材料電阻率。
 

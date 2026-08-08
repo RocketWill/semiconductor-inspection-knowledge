@@ -16,8 +16,8 @@
 
 | Quantity | 符號 | 這裡的理解 |
 | --- | --- | --- |
-| Carrier concentration | $n$、$p$ | 單位體積內可以參與導電的電子或電洞數量 |
-| Mobility | $\mu_n$、$\mu_p$ | 載子在電場下移動的容易程度 |
+| Carrier concentration | $n$、 $p$ | 單位體積內可以參與導電的電子或電洞數量 |
+| Mobility | $\mu_n$、 $\mu_p$ | 載子在電場下移動的容易程度 |
 | Conductivity | $\sigma$ | 載子數量和移動能力共同形成的傳導結果 |
 
 摻雜可以增加主要載子濃度，缺陷、散射和溫度則會影響 mobility。最後量到的 conductivity，才是這些 contribution 疊在一起後的結果。
@@ -26,42 +26,42 @@
 
 許多原子形成固體後，原本離散的能階彼此接近並展開成能帶。對半導體而言，最常用到的是 valence band、conduction band，以及兩者之間的 bandgap：
 
-$$
+```math
 E_g=E_C-E_V
-$$
+```
 
 電子取得足夠能量並跨越 bandgap 後，conduction band 多出一個可以參與傳導的電子，valence band 則留下可以用電洞描述的空缺。電洞不是另一種基本粒子，而是價帶中未被電子占據狀態的準粒子描述。第一次看到這個說法不太直觀，放進電流與載子輸運的計算後才比較好用。
 
 Fermi level $E_F$ 也不是某一顆電子所在的位置，而是描述能態占據機率的參考。Fermi–Dirac distribution 為：
 
-$$
+```math
 f(E)
 =
 \frac{1}
 {1+\exp\left(\frac{E-E_F}{k_BT}\right)}
-$$
+```
 
 在非簡併、熱平衡的近似下，電子與電洞濃度可以寫成：
 
-$$
+```math
 n
 =
 N_C\exp\left(-\frac{E_C-E_F}{k_BT}\right)
-$$
+```
 
-$$
+```math
 p
 =
 N_V\exp\left(-\frac{E_F-E_V}{k_BT}\right)
-$$
+```
 
-現階段先看指數項的方向就很有用：$E_F$ 越接近 $E_C$，$n$ 越高；越接近 $E_V$，$p$ 越高。$N_C$、$N_V$ 也會隨溫度變化，所以溫度的影響不只藏在指數項裡。
+現階段先看指數項的方向就很有用： $E_F$ 越接近 $E_C$， $n$ 越高；越接近 $E_V$， $p$ 越高。 $N_C$、 $N_V$ 也會隨溫度變化，所以溫度的影響不只藏在指數項裡。
 
-對本徵半導體，$n=p=n_i$。在相同近似下：
+對本徵半導體， $n=p=n_i$。在相同近似下：
 
-$$
+```math
 np=n_i^2
-$$
+```
 
 摻入 donor 後，電子通常成為多數載子；摻入 acceptor 後，電洞通常成為多數載子。不過 n 型或 p 型不代表材料只剩下一種載子。電子與電洞仍然同時存在，只是濃度可能差很多。
 
@@ -69,9 +69,9 @@ $$
 
 沒有外加電場時，載子仍進行隨機熱運動，平均後不形成固定方向的淨電流。施加電場 $\mathcal{E}$ 後，在低電場、近似線性的範圍內：
 
-$$
+```math
 |v_d|=\mu|\mathcal{E}|
-$$
+```
 
 電子的實際漂移方向與電場相反，電洞則與電場同方向。工程計算通常先把 mobility $\mu$ 當成正值，方向另外處理。
 
@@ -83,28 +83,28 @@ Mobility 可能受到晶格振動、ionized impurity scattering、缺陷、界�
 
 在均勻材料、低電場，而且載子輸運可以用 drift mobility 近似時：
 
-$$
+```math
 \sigma=q\left(n\mu_n+p\mu_p\right)
-$$
+```
 
 接著可得到：
 
-$$
+```math
 J=\sigma\mathcal{E},\qquad \rho=\frac{1}{\sigma}
-$$
+```
 
 這裡的 $\rho$ 是材料 resistivity，不是某個元件直接量到的 resistance。元件的幾何、接點和接面還沒放進來。
 
-單位可以順手驗一次。若 $\mu_n=1000\ \mathrm{cm^2/(V\cdot s)}$、$\mathcal{E}=100\ \mathrm{V/cm}$：
+單位可以順手驗一次。若 $\mu_n=1000\ \mathrm{cm^2/(V\cdot s)}$、 $\mathcal{E}=100\ \mathrm{V/cm}$：
 
-$$
+```math
 |v_d|
 =
 \left(1000\ \mathrm{cm^2/(V\cdot s)}\right)
 \left(100\ \mathrm{V/cm}\right)
 =
 1.0\times10^5\ \mathrm{cm/s}
-$$
+```
 
 算式很短，留下它主要是確認最後真的得到速度單位。這個線性關係到了高電場、速度飽和或明顯非均勻結構時，就不應繼續直接套用。
 
@@ -120,21 +120,21 @@ $$
 
 光子能量為：
 
-$$
+```math
 E_{\mathrm{ph}}
 =
 h\nu
 =
 \frac{hc}{\lambda}
-$$
+```
 
 若波長使用 nm、能量使用 eV，可用：
 
-$$
+```math
 E_{\mathrm{ph}}(\mathrm{eV})
 \approx
 \frac{1240}{\lambda(\mathrm{nm})}
-$$
+```
 
 例如 $620\ \mathrm{nm}$ 對應約 $2.0\ \mathrm{eV}$。當光子能量足以跨越 bandgap 時，可能產生 electron–hole pair。不過能量足夠只是第一個條件，不代表每個入射光子都會被吸收；材料厚度、表面反射和允許的 transition 仍然會改變結果。
 

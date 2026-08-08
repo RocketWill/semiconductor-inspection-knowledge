@@ -16,17 +16,17 @@
 
 在完全游離與非簡併近似下：
 
-$$
+```math
 n_n\approx N_D,\qquad p_p\approx N_A
-$$
+```
 
 少數載子則仍滿足熱平衡關係：
 
-$$
+```math
 np=n_i^2
-$$
+```
 
-這些近似不是這篇要推導的重點，但後面的 built-in voltage 會再用到 $N_D$、$N_A$ 和 $n_i$。
+這些近似不是這篇要推導的重點，但後面的 built-in voltage 會再用到 $N_D$、 $N_A$ 和 $n_i$。
 
 ## 2. 載子擴散如何形成 Depletion Region
 
@@ -46,9 +46,9 @@ P 型與 N 型半導體剛接觸時，接面兩側存在很大的濃度差。電
 
 固定電荷建立的 electric field 會推動載子產生 drift，方向和原本的 diffusion contribution 相反。在熱平衡下，兩者互相抵消，合成後沒有淨電流：
 
-$$
+```math
 \text{diffusion current}+\text{drift current}=0
-$$
+```
 
 這不代表電子與電洞完全靜止。這個差異很重要：「量到零」可能是內部沒有活動，也可能是幾個相反作用剛好抵消。只看最後的淨值，兩種情況很容易混在一起。
 
@@ -58,16 +58,16 @@ $$
 
 在突變接面、熱平衡與非簡併近似下，built-in voltage 可以寫成：
 
-$$
+```math
 V_{bi}
 =
 \frac{k_BT}{q}
 \ln\left(
 \frac{N_AN_D}{n_i^2}
 \right)
-$$
+```
 
-從這個式子可以先讀出幾個方向：$N_A$ 或 $N_D$ 增加時，$V_{bi}$ 通常增加；溫度不只出現在 $k_BT/q$，也會透過 $n_i$ 進入結果；材料改變時，相關能帶與本徵載子條件也會不同。
+從這個式子可以先讀出幾個方向： $N_A$ 或 $N_D$ 增加時， $V_{bi}$ 通常增加；溫度不只出現在 $k_BT/q$，也會透過 $n_i$ 進入結果；材料改變時，相關能帶與本徵載子條件也會不同。
 
 所以 $V_{bi}$ 不是只由「P 型和 N 型接在一起」決定。摻雜、溫度和材料都在裡面。
 
@@ -83,9 +83,9 @@ Reverse bias 則加強原有電場，使 depletion region 變寬，多數載子�
 
 ## 6. Basic Diode I–V Model
 
-在簡單的 diffusion-current model 中，$n=1$。為了描述真實曲線對理想模型的偏離，常把 ideality factor $n$ 放進二極體方程式：
+在簡單的 diffusion-current model 中， $n=1$。為了描述真實曲線對理想模型的偏離，常把 ideality factor $n$ 放進二極體方程式：
 
-$$
+```math
 I
 =
 I_0
@@ -94,15 +94,15 @@ I_0
 \frac{V_D}{nV_T}
 \right)-1
 \right]
-$$
+```
 
 其中：
 
-$$
+```math
 V_T=\frac{k_BT}{q}
-$$
+```
 
-$I_0$ 設定簡化模型中的 current scale，$V_D$ 是真正落在 junction 上的電壓，$V_T$ 隨溫度改變。$n$ 可以表示曲線偏離 simple diffusion behavior 的程度，但不能只靠一個數值就替非理想行為指定唯一機制。
+$I_0$ 設定簡化模型中的 current scale， $V_D$ 是真正落在 junction 上的電壓， $V_T$ 隨溫度改變。 $n$ 可以表示曲線偏離 simple diffusion behavior 的程度，但不能只靠一個數值就替非理想行為指定唯一機制。
 
 在適當的 forward-bias 區間，semi-log I–V 會接近直線。如何選擇 fitting window，並由曲線估計 $I_0$ 與 $n$，接到 [Diode Parameter Extraction and Measurement Limits](../03-electrical-characterization-and-process-monitoring/03-diode-parameters-and-process-monitoring.md)。
 
@@ -110,15 +110,15 @@ $I_0$ 設定簡化模型中的 current scale，$V_D$ 是真正落在 junction �
 
 真實二極體除了 junction，還包含 contact、semiconductor region 和 interconnect resistance。這些 contribution 可以先合併成等效 series resistance $R_s$：
 
-$$
+```math
 V=V_D+IR_s
-$$
+```
 
-電流較小時，$IR_s$ 壓降不明顯，terminal voltage 大部分落在 junction 上。Forward current 增加後，$IR_s$ 也跟著增加，這時儀器施加的 $V$ 就不能直接當成 $V_D$。
+電流較小時， $IR_s$ 壓降不明顯，terminal voltage 大部分落在 junction 上。Forward current 增加後， $IR_s$ 也跟著增加，這時儀器施加的 $V$ 就不能直接當成 $V_D$。
 
 ![真實二極體中的 junction voltage 與 series-resistance drop](../assets/02-semiconductor-characterization-illustrations/04-diode-series-resistance.png)
 
-> 圖 2：外加電壓分配在 p–n junction 與 series resistance 上；高 forward current 時，$IR_s$ 壓降使量測 I–V 偏離簡單 junction model。
+> 圖 2：外加電壓分配在 p–n junction 與 series resistance 上；高 forward current 時， $IR_s$ 壓降使量測 I–V 偏離簡單 junction model。
 
 把接觸、current crowding、自熱和材料電阻都放進固定的 $R_s$，仍然是一種簡化。這一節只想留下物理上的差別：terminal voltage 和 junction voltage 不一定相同。如何從量測曲線估計 $R_s$，留在後面的 parameter-extraction note。
 
