@@ -24,7 +24,7 @@ These three notes are a reasonable place to start. Each comes from a different s
 
 1. [Crystal Defects and Microstructure](./01-materials-science/04-crystal-defects-and-microstructure.md) — why an AI defect label is not the same thing as an atomic or microstructural defect.
 2. [MOS Capacitor C–V and Oxide Charge](./02-semiconductor-characterization-fundamentals/03-mos-capacitor-and-oxide-charge.md) — an example of moving from a physical model to a measured curve while keeping the assumptions visible.
-3. [Diode Parameters and Process Monitoring](./03-electrical-characterization-and-process-monitoring/03-diode-parameters-and-process-monitoring.md) — how a curve or monitor warning can be separated into parameters before a process cause is proposed.
+3. [Diode Parameter Extraction and Measurement Limits](./03-electrical-characterization-and-process-monitoring/03-diode-parameters-and-process-monitoring.md) — how fitting regions separate saturation current, ideality factor, and series resistance without hiding measurement limits.
 
 ## Notes
 
@@ -46,11 +46,11 @@ These three notes are a reasonable place to start. Each comes from a different s
 - [MOS Capacitor C–V and Oxide Charge](./02-semiconductor-characterization-fundamentals/03-mos-capacitor-and-oxide-charge.md)
 - [Section Roadmap](./02-semiconductor-characterization-fundamentals/README.md)
 
-### 03. Electrical Characterization and Process Monitoring
+### 03. Electrical Characterization and Parameter Extraction
 
 - [Resistivity, Sheet Resistance, and Four-Point Probe](./03-electrical-characterization-and-process-monitoring/01-resistivity-sheet-resistance-and-four-point-probe.md)
 - [Contact Resistance and the Transfer Length Method](./03-electrical-characterization-and-process-monitoring/02-contact-resistance-and-transfer-length-method.md)
-- [Diode Parameters and Process Monitoring](./03-electrical-characterization-and-process-monitoring/03-diode-parameters-and-process-monitoring.md)
+- [Diode Parameter Extraction and Measurement Limits](./03-electrical-characterization-and-process-monitoring/03-diode-parameters-and-process-monitoring.md)
 - [Section Roadmap](./03-electrical-characterization-and-process-monitoring/README.md)
 
 ### 04. IC Process Monitoring and Failure-Analysis Evidence
