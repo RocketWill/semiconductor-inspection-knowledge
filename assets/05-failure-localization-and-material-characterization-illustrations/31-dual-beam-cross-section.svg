@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Dual beam cross-section geometry</title>
+  <desc id="desc">An angled ion beam mills a trench beside a protected target while a vertical electron beam observes the exposed cross-section.</desc>
+  <defs><marker id="arrowE" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#3b7189"/></marker><marker id="arrowI" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#4c7167"/></marker><style>.bg{fill:#fcfcfb}.ink{fill:#17212b;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.label{font-size:18px;font-weight:650}.small{font-size:15px;fill:#52606d}.micro{font-size:13px;fill:#697684}.rule{stroke:#d5dbe0;stroke-width:1}.sample{fill:#e7eeeb;stroke:#4c7167;stroke-width:2}.layer{stroke:#8b969f;stroke-width:1.3}.protect{fill:#efbd70;stroke:#a76525;stroke-width:1.5}.target{fill:#d85c48}.ebeam{stroke:#3b7189;stroke-width:4;marker-end:url(#arrowE)}.ibeam{stroke:#4c7167;stroke-width:5;marker-end:url(#arrowI)}.view{fill:#fff;stroke:#3b7189;stroke-width:1.5}.dash{stroke:#b94b3f;stroke-width:1.5;stroke-dasharray:5 4}</style></defs>
+  <rect class="bg" width="1200" height="675"/><text class="ink label" x="68" y="52">DUAL-BEAM CROSS-SECTION</text><text class="ink small" x="68" y="78">Mill from one direction, observe the newly exposed face from another</text><line class="rule" x1="68" y1="102" x2="1132" y2="102"/>
+  <line class="ebeam" x1="660" y1="137" x2="660" y2="250"/><text class="ink label" x="686" y="164">electron beam</text>
+  <line class="ibeam" x1="220" y1="151" x2="440" y2="322"/><text class="ink label" x="182" y="143">ion beam</text>
+  <path class="sample" d="M122 332H418L468 470H690L742 332H1078V550H122Z"/>
+  <line class="layer" x1="122" y1="382" x2="436" y2="382"/><line class="layer" x1="724" y1="382" x2="1078" y2="382"/>
+  <line class="layer" x1="122" y1="430" x2="453" y2="430"/><line class="layer" x1="707" y1="430" x2="1078" y2="430"/>
+  <rect class="protect" x="584" y="296" width="152" height="36" rx="3"/><text class="ink micro" x="660" y="287" text-anchor="middle">protective layer</text>
+  <circle class="target" cx="660" cy="424" r="9"/><line class="dash" x1="660" y1="332" x2="660" y2="534"/>
+  <text class="ink small" x="678" y="454">target near exposed face</text><text class="ink small" x="458" y="502">milled trench</text>
+  <rect class="view" x="824" y="174" width="254" height="106" rx="3"/><text class="ink label" x="951" y="207" text-anchor="middle">Observation</text><text class="ink small" x="951" y="236" text-anchor="middle">stop, image, then decide</text><text class="ink small" x="951" y="258" text-anchor="middle">whether to mill farther</text>
+  <path d="M690 420C770 392 808 323 850 280" fill="none" stroke="#3b7189" stroke-width="1.7" marker-end="url(#arrowE)"/>
+  <line class="rule" x1="68" y1="594" x2="1132" y2="594"/><text class="ink micro" x="68" y="622">CONCEPTUAL GEOMETRY · NOT TO SCALE · Beam angle, sample tilt, trench dimensions, and layer thickness are not process values.</text>
+</svg>
