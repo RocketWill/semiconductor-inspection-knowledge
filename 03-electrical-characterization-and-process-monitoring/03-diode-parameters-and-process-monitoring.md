@@ -1,22 +1,16 @@
-# Diode Parameters and Process Monitoring
+# Diode Parameter Extraction and Measurement Limits
 
-## 先把曲線分段，再回頭看製程
+## 先把曲線分段，再決定讀哪個參數
 
 > **Learning Context**
 >
-> After learning the basic p–n junction model, I still tended to read a diode I–V curve as one result: normal or abnormal. This note takes a slower approach. The low-, medium-, and high-current regions do not carry the same information, and forcing one equation across the full curve can hide the mechanism I am trying to estimate.
+> After learning the basic p–n junction model, I still tried to read a diode I–V curve as one result: normal or abnormal. What took longer to sort out was where each parameter came from. The exponential region can support estimates of saturation current and ideality factor, while the high-current region brings series resistance and self-heating into view.
 >
-> The second half follows a process-monitor example in which a polysilicon resistor measured about 40% below its target. The useful part was not finding one cause quickly. It was learning to separate geometry, film thickness, and resistivity before deciding what the electrical result could actually support.
+> The fitting window is therefore part of the result. A clean straight line is useful, but only if the original I–V data, temperature, differentiation method, and measurement limits still support it.
 
-## Short English Note
+## 1. 從 I–V 開始
 
-This note separates the regions used to estimate diode parameters, then works through a polysilicon process-monitor example in which geometry, thickness, and resistivity change in the same direction.
-
-## 1. 這次先不重畫 p–n 接面
-
-前面的筆記已經整理過空乏區、內建電場，以及順向與逆向偏壓下的基本行為。這次不再把同一套圖畫一次，而是從真正拿到 I–V 曲線之後開始：
-
-> 已經取得一條二極體 I–V 曲線後，可以從哪一段讀出哪些參數？
+空乏區、內建電場，以及順向與逆向偏壓下的基本行為，已經放在 [P–N Junction and Diode I–V](../02-semiconductor-characterization-fundamentals/02-pn-junction-and-diode-iv.md)。這一篇不再重畫接面，而是從拿到 I–V curve 之後開始：哪一段曲線可以拿來讀哪個參數？
 
 理想二極體方程式為：
 
@@ -29,37 +23,25 @@ I_0
 \right]
 $$
 
-其中：
+$I_0$ 是反向飽和電流，$n$ 是 ideality factor，$T$ 則是絕對溫度。公式本身不難認，麻煩的是實際曲線不會從頭到尾都照著同一組近似走。若沒有先選區間，最後雖然能 fit 出參數，卻不一定說得清楚它們代表哪一段行為。
 
-| 符號 | 意義 |
-| --- | --- |
-| $I$ | 二極體電流 |
-| $I_0$ | 反向飽和電流，也常寫成 $I_S$ |
-| $q$ | 元電荷 |
-| $V$ | 二極體兩端電壓 |
-| $n$ | ideality factor |
-| $k$ | 波茲曼常數 |
-| $T$ | 絕對溫度 |
+## 2. 同一條 I–V，要分區看
 
-公式本身不難認，麻煩的是實際曲線不會從頭到尾都照著它走。一開始很容易把整條曲線當成一個結果，後來才慢慢分清楚，不同區間其實在說不同的事。
+順向 I–V 可以先粗略看成三段：
 
-## 2. 同一條 I–V 曲線，要分區看
+- 低電流區的訊號比較弱，漏電、儀器解析度和接觸狀態都可能混進來；
+- 中間指數區在半對數圖上比較接近直線，$I_0$ 和 $n$ 主要從這裡估；
+- 高電流區開始看得見 series resistance，電流再往上時還要留意 self-heating。
 
-整理課程圖時，暫時把順向 I–V 曲線切成三段：
+![二極體 I–V 曲線的低、中與高電流區](../assets/03-electrical-characterization-illustrations/05-diode-iv-regions.png)
 
-- **低電流區**的訊號比較弱，漏電、儀器解析度和接觸狀態都可能混進來。
-- **中間指數區**在半對數圖上比較接近直線，$I_0$ 和 $n$ 主要從這裡估。
-- **高電流區**開始看得見 series resistance，電流再往上時還要小心自熱。
+> 圖 1：低電流區先留意弱訊號與非理想效應，中間指數區用來估計 $I_0$ 與 $n$，高電流區則逐漸受到 $R_s$ 與自熱影響。區間邊界為概念示意，不代表固定偏壓。
 
-![小黑分區閱讀二極體 I–V 曲線](../assets/03-electrical-characterization-illustrations/05-diode-iv-regions.png)
+這三段沒有固定分界。先切開只是避免把一條方程式硬套到整條曲線；真正使用哪一段，還是要回頭看元件、溫度、儀器範圍和原始資料。
 
-> 圖 1：作者依個人課程筆記設計並重新整理；低電流區先留意弱訊號與非理想效應，中間區用來估計指數模型參數，高電流區則開始受到串聯電阻與可能的自熱影響。
+## 3. Exponential Region：Saturation Current 和 Ideality Factor
 
-這三段沒有固定的分界線。先這樣切，只是避免把同一個模型硬套在整條曲線上；真正用哪一段，還是要回頭看元件、溫度、儀器範圍和原始數據。
-
-## 3. 中間直線區可以估計飽和電流
-
-當順向電壓相對熱電壓已經夠大，指數項遠大於 1，式子可以先簡化成：
+當順向電壓相對熱電壓已經夠大，指數項遠大於 1，可以先寫成：
 
 $$
 I
@@ -78,31 +60,11 @@ $$
 \frac{q}{nkT}V
 $$
 
-換成 $\ln I$ 對 $V$ 後，中間那一段應該接近直線。把直線往 $V=0$ 外推，截距可以拿來估計 $I_0$。
+換成 $\ln I$ 對 $V$ 後，中間那一段應該接近直線。往 $V=0$ 外推的截距可用來估計 $I_0$；若圖上讀到的量級約為 $10^{-10}\ \mathrm{A}$，保留這個量級通常比多寫幾位小數有意義。
 
-課程示例讀到的量級約為：
+這裡曾經卡了一下：外推到 $V=0$，不代表二極體在零偏壓下真的持續流過同樣大小的淨電流。它只是由選定直線區估出來的模型參數。Fitting window 一換，截距也可能跟著移動。
 
-$$
-I_0
-\approx
-1\times10^{-10}\ \mathrm{A}
-$$
-
-這裡曾經卡了一下：外推到 $V=0$，不代表二極體在零偏壓下真的持續流過同樣大小的淨電流。這只是由直線區估出來的參數。Fitting window 一換，截距也可能跟著移動，所以只留下 $I_0$ 的數字其實不太夠，原始曲線和溫度也要一起留著。
-
-## 4. 斜率裡還藏著 ideality factor
-
-由：
-
-$$
-\ln I
-=
-\ln I_0
-+
-\frac{q}{nkT}V
-$$
-
-可得半對數圖的斜率：
+同一條直線的斜率為：
 
 $$
 \frac{d\ln I}{dV}
@@ -121,25 +83,13 @@ n
 \right)^{-1}
 $$
 
-在室溫附近：
+在室溫附近，$kT/q\approx25.8\ \mathrm{mV}$。$n$ 接近 1 時，選定區間通常較接近 diffusion-dominated behavior；接近 2 時，depletion-region recombination 可能較明顯。但這只提供判斷方向，不是單一機制的證明。
 
-$$
-\frac{kT}{q}
-\approx
-25.8\ \mathrm{mV}
-$$
+剛接觸 $n$ 時，很容易把它看成另一個「越接近 1 越好」的分數。其實它比較像某一段曲線呈現出的行為。若 $n$ 明顯小於 1 或大於 2，先回頭檢查 fitting window、$R_s$、漏電、溫度和量測設定，比直接替它指定原因穩妥。
 
-$n$ 可以提供一個方向，看看選定區間比較接近哪一種傳輸行為：
+## 4. High-Current Region：Series Resistance
 
-- $n$ 接近 1：通常較接近擴散主導；
-- $n$ 接近 2：空乏區中的復合可能較明顯；
-- $n$ 明顯小於 1 或大於 2：先檢查擬合區間、series resistance、漏電、溫度和量測設定，不急著替它指定單一物理原因。
-
-剛接觸這個參數時，很容易把它看成另一個「愈接近 1 愈好」的分數。不過它比較像是某一段曲線呈現出的行為。離開原本的偏壓範圍、溫度和擬合方式後，單獨比較 $n$ 的大小很容易失去意義。
-
-## 5. 高電流區開始彎，先想到 series resistance
-
-實際二極體不只有接面，接觸、半導體區域與金屬導線都會帶入 series resistance。把 $R_s$ 放進模型後：
+實際二極體不只有接面。接觸、半導體區域與金屬導線都會帶入 series resistance。把 $R_s$ 放進模型後：
 
 $$
 I
@@ -152,29 +102,25 @@ I_0
 \right]
 $$
 
-外加電壓可先拆成：
+外加電壓可以先拆成：
 
 $$
-V
-=
-V_D+IR_s
+V=V_D+IR_s
 $$
 
-電流還小時，$IR_s$ 不明顯，外加電壓大多落在二極體接面上。電流拉高後，series resistance 分走的電壓愈來愈多，半對數曲線也就慢慢離開中段的直線。
+電流還小時，$IR_s$ 不明顯，外加電壓大多落在二極體接面上。電流拉高後，series resistance 分走的電壓增加，半對數曲線也就慢慢離開中段直線。
 
-這裡順便記一下符號。$R_s$ 是二極體的 series resistance；前兩篇的 $R_{\mathrm{sh}}$ 是 sheet resistance。兩個長得很像，但不是同一個量。
+這裡的符號要順手分開：$R_s$ 是 diode series resistance，前兩篇的 $R_{\mathrm{sh}}$ 是 sheet resistance。長得很像，但不是同一個量。
 
-## 6. 想辦法把彎曲的資料拉成直線
+## 5. Conductance Transformation
 
-只靠肉眼看高電流區彎了多少，很難穩定估計 $R_s$。課程裡的做法是先算 differential conductance：
+只靠肉眼看高電流區彎了多少，很難穩定估計 $R_s$。先定義 differential conductance：
 
 $$
-G_D
-=
-\frac{dI}{dV}
+G_D=\frac{dI}{dV}
 $$
 
-在順向指數項遠大於 1 的近似下，將含有 $R_s$ 的方程式重新整理，可以得到：
+在順向指數項遠大於 1 的近似下，可以整理成：
 
 $$
 \frac{I}{G_D}
@@ -184,75 +130,44 @@ $$
 IR_s
 $$
 
-把式子重新排過後，會變成和下面這條直線一樣的形式：
+把 $I$ 放在橫軸、$I/G_D$ 放在縱軸後，斜率對應 $R_s$，縱軸截距則是 $nkT/q$。
+
+![二極體 I–V 資料的 conductance transformation](../assets/03-electrical-characterization-illustrations/06-conductance-transformation.png)
+
+> 圖 2：由原始 I–V 計算 $G_D=dI/dV$，再將 $I/G_D$ 對 $I$ 作圖；斜率與截距可分別估計 $R_s$ 與 $n$。微分會放大量測雜訊，因此轉換後的直線不能脫離原始資料解讀。
+
+假設擬合斜率約為 $0.01\ \mathrm{V/mA}$：
 
 $$
-y=b+mx
-$$
-
-橫軸放 $I$、縱軸放 $I/G_D$ 時：
-
-- 斜率對應 $R_s$；
-- 縱軸截距對應 $nkT/q$；
-- 有了溫度後，可以再由截距估計 $n$。
-
-![小黑將二極體 I–V 曲線轉換為直線](../assets/03-electrical-characterization-illustrations/06-conductance-transformation.png)
-
-> 圖 2：作者依個人課程筆記設計並重新整理；先由原始 I–V 資料計算微分電導，再將 $I/G_D$ 對 $I$ 作圖。斜率與截距可分別用來估計 $R_s$ 與 $n$，不過微分也會放大量測雜訊。
-
-課程示例中的直線斜率約為：
-
-$$
-0.01\ \mathrm{V/mA}
-$$
-
-換算後：
-
-$$
-\begin{aligned}
 R_s
-&=
-0.01\ \mathrm{V/mA}\\
-&=
-10\ \mathrm{V/A}\\
-&=
+=
+0.01\ \mathrm{V/mA}
+=
 10\ \Omega
-\end{aligned}
 $$
 
-若縱軸截距約為 $0.0295\ \mathrm{V}$，室溫下可估得：
+若截距約為 $0.0295\ \mathrm{V}$，室溫下：
 
 $$
-\begin{aligned}
 n
-&=
-\frac{0.0295}{0.0258}\\
-&\approx
-1.14
-\end{aligned}
+\approx
+\frac{0.0295}{0.0258}
+\approx1.14
 $$
 
-算出來約為 $1.14$。不過原始數值本來就是從圖上讀的，這裡寫成約 $1.1$ 至 $1.2$ 反而比較誠實，沒有必要假裝精確到很多小數位。
+原始數值是從圖上近似讀取，最後寫成約 $1.1$ 至 $1.2$ 反而比較誠實。算到很多小數位，不會讓圖上的讀值突然變得更準。
 
-## 7. 直線變好看了，雜訊不會跟著消失
+## 6. 直線變好看了，雜訊不會跟著消失
 
-第一次看到這個轉換時，注意力都放在「曲線終於變成直線」上。後來才想到，$G_D=dI/dV$ 需要對量測資料做微分，局部雜訊也會一起被放大。
+第一次看到 conductance transformation，很容易先注意到「曲線終於變成直線」。但 $G_D=dI/dV$ 需要對量測資料做微分，局部雜訊也會一起被放大。
 
-如果真的拿它做擬合，旁邊至少還要記：
+如果 fit 看起來怪，會先回頭看幾件事：原始 I–V 是否平順、電壓步距與掃描方向是否合理、微分或 smoothing 方法有沒有改變局部斜率，以及擬合區間是否已經碰到 self-heating 或儀器 compliance。Residual pattern 也要留著，只看 $R^2$ 很容易漏掉固定方向的偏差。
 
-- 原始 $I$–$V$ 資料，不只保存轉換後的直線；
-- 電壓步距與掃描方向；
-- 溫度與等待時間；
-- 微分方法與是否做過平滑；
-- 擬合使用的電流區間；
-- residual pattern，而不只是一個 $R^2$；
-- 是否已進入自熱或儀器 compliance 限制。
+高電流有助於把 $R_s$ 顯示出來，不代表電流越高越好。接面一旦開始升溫，原本固定 $T$ 的假設也會鬆動。能用的區間通常落在訊號已經明顯、但自熱還沒太嚴重的中間位置。
 
-高電流有助於把 $R_s$ 顯示出來，不代表電流愈高愈好。接面一旦開始升溫，原本固定 $T$ 的假設也會跟著鬆動。最後還是在訊號夠明顯和自熱還沒太嚴重之間，找一段比較可信的區間。
+## 7. A Bridge to Process Monitoring
 
-## 8. 換一題：電阻為什麼低了約 40%？
-
-後半段換成一個製程監控的例子：某個 polysilicon resistor 的量測電阻比目標低了約 40%。第一個猜測通常會落在摻雜濃度，不過把公式重新展開後，會發現幾何和薄膜厚度也都在裡面：
+一個 polysilicon monitor 的 resistance 若比 target 低約 40%，不能直接翻譯成「doping 增加 40%」。因為：
 
 $$
 R
@@ -260,188 +175,23 @@ R
 \rho\frac{L}{Wt}
 $$
 
-也可以寫成：
+量到的 $R$ 同時包含平面幾何 $L/W$、薄膜厚度 $t$ 和材料電阻率 $\rho$。原本例子裡，$L/W$ 下降、$t$ 增加、$\rho$ 降低，三項剛好都把 resistance 往下推；其中最大的 contribution 與 $\rho$ 的變化一致。
 
-$$
-R
-=
-R_{\mathrm{sh}}\frac{L}{W}
-$$
+![Polysilicon monitor resistance shift 的可能 contributions](../assets/03-electrical-characterization-illustrations/07-process-monitor-resistance-drift.png)
 
-其中：
+> 圖 3：幾何、薄膜厚度與材料電阻率都可能使 monitor resistance 下降；多個 contribution 同方向疊加時，單一電阻值仍不能指出唯一製程原因。
 
-$$
-R_{\mathrm{sh}}
-=
-\frac{\rho}{t}
-$$
+這個小例子留在這裡，只是提醒 parameter shift 裡可能混著哪些 contribution。Monitor value 可以顯示「有東西變了」，但它本身不能指出是哪一個 process variable 造成變化。後續如何把 electrical abnormality 分成可驗證的 process hypotheses，接到 [Electrical Anomalies and Process Hypotheses](../04-ic-process-monitoring-and-failure-analysis/03-electrical-anomalies-and-process-hypotheses.md)。
 
-先不急著猜製程，單看式子就有幾種可能：
+## What I Would Keep with the Fit
 
-- 長度 $L$ 變短；
-- 寬度 $W$ 變寬；
-- 薄膜厚度 $t$ 增加；
-- 材料電阻率 $\rho$ 降低；
-- 或幾項變化同時發生。
+- 使用的 fitting window，以及為什麼選這一段；
+- 原始 I–V、溫度、掃描方向與量測步距；
+- differentiation 或 smoothing 方法；
+- residual，以及是否已出現 self-heating 或 compliance limitation。
 
-![小黑拆解製程監控電阻下降的來源](../assets/03-electrical-characterization-illustrations/07-process-monitor-resistance-drift.png)
-
-> 圖 3：作者依個人課程筆記設計並重新整理；幾何尺寸、薄膜厚度與材料電阻率的變化都可能使電阻下降。幾個因素同方向疊加時，仍不能把警報直接歸因於單一製程參數。
-
-## 9. 還是分開算一遍比較清楚
-
-把課程案例的目標值和實測值放在一起：
-
-| 項目 | 目標值 | 實測值 |
-| --- | ---: | ---: |
-| 長度 $L$ | $10\ \mu\mathrm{m}$ | $9.9\ \mu\mathrm{m}$ |
-| 寬度 $W$ | $1.0\ \mu\mathrm{m}$ | $1.04\ \mu\mathrm{m}$ |
-| 厚度 $t$ | $200\ \mathrm{nm}$ | $210\ \mathrm{nm}$ |
-| 平均硼濃度 | $6\times10^{16}\ \mathrm{cm^{-3}}$ | $1\times10^{17}\ \mathrm{cm^{-3}}$ |
-| 電阻率 $\rho$ | 約 $0.3\ \Omega\cdot\mathrm{cm}$ | 約 $0.2\ \Omega\cdot\mathrm{cm}$ |
-
-### 先看平面幾何
-
-$$
-\frac{(L/W)_{\mathrm{measured}}}{(L/W)_{\mathrm{target}}}
-=
-\frac{9.9/1.04}{10/1}
-\approx
-0.952
-$$
-
-單看平面幾何，電阻約下降 $4.8\%$。不大，但不是零。
-
-### 再看厚度
-
-因為電阻和厚度成反比：
-
-$$
-\frac{R_{\mathrm{measured}}}{R_{\mathrm{target}}}
-\bigg|_{\mathrm{thickness}}
-=
-\frac{200}{210}
-\approx
-0.952
-$$
-
-厚度增加又把電阻往下推了約 $4.8\%$。
-
-### 最後放入材料電阻率
-
-目標厚度：
-
-$$
-200\ \mathrm{nm}
-=
-2.0\times10^{-5}\ \mathrm{cm}
-$$
-
-因此目標電阻約為：
-
-$$
-\begin{aligned}
-R_{\mathrm{target}}
-&=
-\frac{0.3}{2.0\times10^{-5}}
-\left(\frac{10}{1}\right)\\
-&=
-1.5\times10^5\ \Omega
-\end{aligned}
-$$
-
-實測厚度：
-
-$$
-210\ \mathrm{nm}
-=
-2.1\times10^{-5}\ \mathrm{cm}
-$$
-
-實測條件對應：
-
-$$
-\begin{aligned}
-R_{\mathrm{measured}}
-&=
-\frac{0.2}{2.1\times10^{-5}}
-\left(\frac{9.9}{1.04}\right)\\
-&\approx
-9.06\times10^4\ \Omega
-\end{aligned}
-$$
-
-所以：
-
-$$
-\frac{R_{\mathrm{measured}}}{R_{\mathrm{target}}}
-\approx
-\frac{90.6}{150}
-\approx
-0.604
-$$
-
-也就是約下降：
-
-$$
-39.6\%
-$$
-
-算到最後大約下降 $39.6\%$，和量到的幅度差不多。幾何和厚度各自只推了一小段，主要變化還是在電阻率，不過三項剛好都朝同一個方向走。若一開始就把整個 40% 都算在摻雜上，另外兩項會直接被忽略。
-
-另一個還沒完全補齊的地方，是化學分析得到的總摻雜濃度不一定等於電性上真正有效的載子濃度。要確認它和電阻率之間的關係，可能還要搭配片電阻、Hall measurement、活化率或其他電性資料。這裡先不把兩者直接畫上等號。
-
-## 10. Monitor 先說「有事」，還沒說原因
-
-這個例子最有用的地方，不是剛好算出接近 40%，而是把幾個原本混在一起的問題拆開。
-
-第一層只是量測結果：電阻比目標低。接著要確認儀器、探針、溫度和測試結構有沒有問題，並透過重複量測看看異常是否真的存在。量測站得住腳後，才輪到 $L$、$W$、$t$、$R_{\mathrm{sh}}$ 和 $\rho$。
-
-至於摻雜、活化、沉積、蝕刻或熱處理，這些都還只是下一步要查的方向。Monitor value 可以說「這裡值得調查」，卻不能單靠一個數字就宣布是哪一道製程出了問題。
-
-## 11. A Small Connection to Runtime History
-
-The process-monitor example reminded me of the history records in a wafer-inspection runtime I had built. Each result remained linked to its wafer session, camera, recipe, timestamp, ROI, and processing status.
-
-An electrical warning needs a different set of records, but the same traceability problem appears: the test structure, wafer position, measurement setup, process history, and later verification must remain connected to the value.
-
-The runtime connection stops at recordkeeping; the electrical interpretation still depends on the measurement and later verification.
-
-## 12. 這次整理後，先看的東西不太一樣了
-
-以前看到曲線偏離理想模型，比較容易先找一個參數把它配回去。這次重新算過後，反而會先看偏離發生在哪一段：低電流、中間指數區，還是高電流區？區段不同，限制也不同。用哪一段做擬合，本身就應該和結果一起記錄。
-
-製程監控也是類似的情況。電阻下降 40%，並不是「摻雜增加 40%」的另一種寫法。幾何、厚度和材料電阻率都會進入結果，而且化學濃度與有效載子濃度之間，還隔著活化與傳輸行為。
-
-目前比較順手的順序，是先保留原始量測和條件，接著拆參數，最後才寫下製程假設。這樣沒有直接猜原因來得快，不過之後回頭檢查時，不會只剩下一個看起來合理、卻找不到依據的結論。
-
-## 13. 先寫在旁邊，免得之後忘記
-
-### Diode I–V
-
-- 溫度是否已記錄，而且量測期間足夠穩定？
-- $I_0$ 與 $n$ 使用哪一段半對數直線區擬合？
-- 高電流區是否已受到 $R_s$、自熱或 compliance 影響？
-- $G_D$ 的微分方法、平滑方式和電壓步距是否保留？
-- 正向與反向掃描是否一致？
-- 單一 ideality factor 是否真的能描述選定區間？
-
-### Process monitor
-
-- 警報是否能用重複量測再現？
-- test structure 的 $L$、$W$ 與厚度是否有獨立量測？
-- 使用的是 $R$、$R_{\mathrm{sh}}$，還是由厚度回推的 $\rho$？
-- 摻雜資料代表總濃度，還是 electrically active concentration？
-- wafer position、lot、tool、recipe 與時間是否能對齊？
-- 目前寫下的是 observation、hypothesis，還是已驗證的 root cause？
-
-## Questions Left Open
-
-1. 若 ideality factor 會隨偏壓改變，應該如何選擇一個具有代表性的報告方式？
-2. 微分電導法對電壓步距與平滑參數有多敏感，怎樣才不會把真正的局部變化一起抹掉？
-3. 自熱開始出現時，能否只從單次 I–V sweep 判斷，還是需要脈衝量測或不同掃描速度比較？
-4. SIMS、Hall measurement 與片電阻 map 的空間解析度不同時，應該如何建立合理的對齊與比較方式？
+選了哪一段曲線，本來就是結果的一部分，不只是前處理細節。
 
 ## References
 
-1. Arizona State University, [*Electrical Characterization: Diodes*](https://www.coursera.org/learn/electrical-characterization-diodes), Coursera.
+- Arizona State University, [*Electrical Characterization: Diodes*](https://www.coursera.org/learn/electrical-characterization-diodes), Coursera.
