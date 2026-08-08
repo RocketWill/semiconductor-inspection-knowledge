@@ -10,6 +10,10 @@ After several years of working on these systems, a gap in my own understanding b
 
 This repository records how I have been working through that gap after work. It does not replace formal materials analysis or semiconductor characterization. The purpose is more practical: to understand what an inspection result can support, what still remains a hypothesis, and what evidence would be needed next.
 
+![A hand-drawn conceptual sketch of an inspection signal passing through an evidence check](./assets/root-readme-illustrations/01-inspection-evidence-gap.png)
+
+> A conceptual sketch of the evidence gap: model output can narrow the question, but it does not identify a material or electrical cause by itself.
+
 ## Current Focus
 
 - Processing–structure–properties–performance relationships
