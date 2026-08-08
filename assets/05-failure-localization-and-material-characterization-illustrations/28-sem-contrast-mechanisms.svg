@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">SEM contrast mechanisms</title>
+  <desc id="desc">Three panels show topographic secondary electron collection, edge enhancement, and atomic-number-related backscattered electron contrast.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52606d"/></marker>
+    <style>
+      .bg{fill:#fcfcfb}.ink{fill:#17212b;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.label{font-size:18px;font-weight:650}.small{font-size:15px;fill:#52606d}.micro{font-size:13px;fill:#697684}.rule{stroke:#d5dbe0;stroke-width:1}.panel{fill:#fff;stroke:#9ba6ae;stroke-width:1.4}.sample{fill:#e8efec;stroke:#4c7167;stroke-width:1.7}.se{fill:none;stroke:#b94b3f;stroke-width:1.8;marker-end:url(#arrow)}.detector{fill:#dcebf2;stroke:#3b7189;stroke-width:1.5}.bright{fill:#d9e1e6}.mid{fill:#9eacb6}.dark{fill:#53616c}.matA{fill:#dcebe6;stroke:#4c7167;stroke-width:1.4}.matB{fill:#a9cbd7;stroke:#3b7189;stroke-width:1.4}.beam{stroke:#364856;stroke-width:2.2;marker-end:url(#arrow)}.note{fill:#fff3e1;stroke:#a76525;stroke-width:1.2}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="ink label" x="68" y="52">CONTRAST STARTS WITH THE SIGNAL</text>
+  <text class="ink small" x="68" y="78">Brightness can change for more than one reason</text>
+  <line class="rule" x1="68" y1="102" x2="1132" y2="102"/>
+
+  <rect class="panel" x="68" y="138" width="322" height="390" rx="3"/>
+  <text class="ink label" x="92" y="174">SE · surface orientation</text>
+  <path class="sample" d="M98 388H194V304H292V388H360V474H98Z"/>
+  <rect class="detector" x="292" y="208" width="64" height="38" rx="3"/><text class="ink micro" x="324" y="232" text-anchor="middle">SED</text>
+  <path class="se" d="M210 301C245 264 277 243 300 235"/><path class="se" d="M286 304C304 278 316 260 321 246"/>
+  <path class="se" d="M151 384C191 345 238 286 298 238" opacity=".45"/>
+  <text class="ink small" x="105" y="438">faces toward detector</text><text class="ink small" x="105" y="461">may collect more SE</text>
+
+  <rect class="panel" x="439" y="138" width="322" height="390" rx="3"/>
+  <text class="ink label" x="463" y="174">SE · edge effect</text>
+  <line class="beam" x1="600" y1="203" x2="600" y2="278"/>
+  <path class="sample" d="M469 340H574V286H626V340H731V474H469Z"/>
+  <path class="se" d="M579 294l-38-49"/><path class="se" d="M589 289l-16-65"/><path class="se" d="M611 289l16-65"/><path class="se" d="M621 294l38-49"/>
+  <rect class="bright" x="491" y="405" width="70" height="38"/><rect class="mid" x="561" y="405" width="78" height="38"/><rect class="bright" x="639" y="405" width="70" height="38"/>
+  <text class="ink micro" x="600" y="465" text-anchor="middle">edges may appear brighter</text>
+
+  <rect class="panel" x="810" y="138" width="322" height="390" rx="3"/>
+  <text class="ink label" x="834" y="174">BSE · average atomic number</text>
+  <line class="beam" x1="971" y1="203" x2="971" y2="278"/>
+  <rect class="matA" x="840" y="300" width="131" height="112"/><rect class="matB" x="971" y="300" width="131" height="112"/>
+  <path class="se" d="M915 302C886 269 879 245 886 219"/><path class="se" d="M1028 302C1062 269 1070 240 1063 211"/><path class="se" d="M1038 302C1083 277 1093 254 1094 230"/>
+  <rect class="mid" x="858" y="438" width="104" height="38"/><rect class="bright" x="980" y="438" width="104" height="38"/>
+  <text class="ink micro" x="971" y="501" text-anchor="middle">higher yield often appears brighter</text>
+
+  <rect class="note" x="198" y="558" width="804" height="52" rx="3"/>
+  <text class="ink small" x="600" y="590" text-anchor="middle">A grayscale difference needs detector, geometry, charging, orientation, and material context before interpretation.</text>
+  <text class="ink micro" x="68" y="644">CONCEPTUAL CONTRAST · NOT TO SCALE · Gray levels are illustrative and do not represent calibrated signal intensity.</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual EDS spectrum</title>
+  <desc id="desc">A simulated EDS spectrum shows a continuum background, characteristic peaks, and two nearby peaks that require additional lines for separation.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52606d"/></marker>
+    <style>
+      .bg{fill:#fcfcfb}.ink{fill:#17212b;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.label{font-size:18px;font-weight:650}.small{font-size:15px;fill:#52606d}.micro{font-size:13px;fill:#697684}.rule{stroke:#d5dbe0;stroke-width:1}.axis{stroke:#52606d;stroke-width:1.8}.grid{stroke:#e0e4e7;stroke-width:1}.continuum{fill:#e8eef1;stroke:#7f8d97;stroke-width:1.8}.spectrum{fill:none;stroke:#2f6f8f;stroke-width:2.6}.peak{stroke:#b94b3f;stroke-width:2;stroke-dasharray:5 4}.callout{fill:#fff3e1;stroke:#a76525;stroke-width:1.4}.tag{fill:#fff;stroke:#8b969f;stroke-width:1.2}.flow{stroke:#52606d;stroke-width:1.5;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="ink label" x="68" y="52">EDS SPECTRUM</text>
+  <text class="ink small" x="68" y="78">Characteristic peaks sit on a continuum background</text>
+  <line class="rule" x1="68" y1="102" x2="1132" y2="102"/>
+
+  <line class="axis" x1="106" y1="508" x2="786" y2="508"/><line class="axis" x1="106" y1="508" x2="106" y2="148"/>
+  <text class="ink small" x="446" y="548" text-anchor="middle">X-ray energy</text>
+  <text class="ink small" x="48" y="330" text-anchor="middle" transform="rotate(-90 48 330)">counts</text>
+  <path class="grid" d="M106 418H786M106 328H786M106 238H786M276 148V508M446 148V508M616 148V508"/>
+
+  <path class="continuum" d="M106 508V398C174 328 252 310 344 326C455 345 574 389 786 452V508Z"/>
+  <path class="spectrum" d="M106 398C174 328 252 310 344 326L364 321L379 202L394 322C435 336 470 344 500 357L520 349L532 269L542 348L553 275L564 365C628 392 696 425 786 452"/>
+  <text class="ink micro" x="210" y="369">continuum background</text>
+
+  <line class="peak" x1="379" y1="202" x2="379" y2="508"/>
+  <text class="ink label" x="379" y="180" text-anchor="middle">Peak A</text><text class="ink micro" x="379" y="530" text-anchor="middle">candidate energy</text>
+  <line class="peak" x1="532" y1="269" x2="532" y2="508"/><line class="peak" x1="553" y1="275" x2="553" y2="508"/>
+
+  <rect class="callout" x="820" y="150" width="312" height="126" rx="3"/>
+  <text class="ink label" x="844" y="183">Peak position</text>
+  <text class="ink small" x="844" y="213">compare with characteristic lines</text>
+  <text class="ink small" x="844" y="239">from the element database</text>
+  <text class="ink micro" x="844" y="260">one element usually has several lines</text>
+
+  <rect class="tag" x="820" y="306" width="312" height="104" rx="3"/>
+  <text class="ink label" x="844" y="340">Nearby peaks</text>
+  <text class="ink small" x="844" y="370">check additional characteristic lines</text>
+  <text class="ink small" x="844" y="393">before assigning the element</text>
+  <line class="flow" x1="786" y1="283" x2="814" y2="348"/>
+
+  <rect class="tag" x="820" y="440" width="312" height="104" rx="3"/>
+  <text class="ink label" x="844" y="474">Peak height</text>
+  <text class="ink small" x="844" y="504">is not a direct concentration scale</text>
+  <text class="ink micro" x="844" y="527">generation, absorption, geometry, detector</text>
+
+  <line class="rule" x1="68" y1="594" x2="1132" y2="594"/>
+  <text class="ink micro" x="68" y="622">SIMULATED SPECTRUM · Energy, counts, background, and peak labels are illustrative; no real material measurement is shown.</text>
+</svg>

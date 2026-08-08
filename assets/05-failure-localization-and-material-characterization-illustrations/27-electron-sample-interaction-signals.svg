@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Electron sample interaction signals</title>
+  <desc id="desc">An electron beam enters a sample and creates nested conceptual source regions for secondary electrons, backscattered electrons, and X-rays.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#52606d"/></marker>
+    <style>
+      .bg{fill:#fcfcfb}.ink{fill:#17212b;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.label{font-size:18px;font-weight:650}.small{font-size:15px;fill:#52606d}.micro{font-size:13px;fill:#697684}.rule{stroke:#d5dbe0;stroke-width:1}.sample{fill:#eef2f1;stroke:#4c7167;stroke-width:2}.beam{stroke:#364856;stroke-width:5;marker-end:url(#arrow)}.se{fill:#efbd70;stroke:#a76525;stroke-width:1.5}.bse{fill:#b9d8e3;stroke:#3b7189;stroke-width:1.5}.xray{fill:#dcebe6;stroke:#4c7167;stroke-width:1.5}.escape{fill:none;stroke:#b94b3f;stroke-width:2;marker-end:url(#arrow)}.scatter{fill:none;stroke:#3b7189;stroke-width:2;marker-end:url(#arrow)}.wave{fill:none;stroke:#a76525;stroke-width:2.2}.guide{stroke:#8b969f;stroke-width:1.2;stroke-dasharray:4 4}.tag{fill:#fff;stroke:#8b969f;stroke-width:1.2}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text class="ink label" x="68" y="52">ONE BEAM, SEVERAL SIGNALS</text>
+  <text class="ink small" x="68" y="78">The source region grows as the interaction extends into the sample</text>
+  <line class="rule" x1="68" y1="102" x2="1132" y2="102"/>
+
+  <line class="beam" x1="420" y1="135" x2="420" y2="235"/>
+  <text class="ink small" x="448" y="160">primary electron beam</text>
+  <rect class="sample" x="120" y="245" width="600" height="300" rx="3"/>
+  <text class="ink small" x="142" y="278">sample surface</text>
+
+  <path class="xray" d="M420 260C326 292 294 390 343 488C365 530 397 540 420 540C443 540 475 530 497 488C546 390 514 292 420 260Z"/>
+  <path class="bse" d="M420 260C351 285 331 347 362 413C377 445 400 457 420 457C440 457 463 445 478 413C509 347 489 285 420 260Z"/>
+  <path class="se" d="M420 260C384 272 374 298 390 322C399 336 410 341 420 341C430 341 441 336 450 322C466 298 456 272 420 260Z"/>
+  <path class="escape" d="M398 278C365 248 336 229 300 211"/>
+  <text class="ink label" x="230" y="190">SE</text><text class="ink micro" x="230" y="212">near-surface escape</text>
+  <path class="scatter" d="M452 337C522 296 560 248 590 191"/>
+  <text class="ink label" x="608" y="178">BSE</text><text class="ink micro" x="608" y="200">primary electrons scattered out</text>
+  <path class="wave" d="M480 440l14-10 14 10 14-10 14 10 14-10 14 10"/>
+  <text class="ink label" x="583" y="446">X-ray</text><text class="ink micro" x="583" y="468">continuum + characteristic</text>
+
+  <text class="ink label" x="790" y="162">Relative source region</text>
+  <line class="guide" x1="790" y1="190" x2="1110" y2="190"/>
+  <rect class="tag" x="790" y="218" width="115" height="54" rx="3"/><rect class="se" x="806" y="236" width="36" height="18" rx="9"/><text class="ink small" x="860" y="251">SE</text>
+  <rect class="tag" x="790" y="292" width="205" height="54" rx="3"/><rect class="bse" x="806" y="310" width="94" height="18" rx="9"/><text class="ink small" x="918" y="325">BSE</text>
+  <rect class="tag" x="790" y="366" width="310" height="54" rx="3"/><rect class="xray" x="806" y="384" width="190" height="18" rx="9"/><text class="ink small" x="1013" y="399">X-ray</text>
+  <text class="ink small" x="790" y="462">Same nominal beam position</text>
+  <text class="ink small" x="790" y="488">does not mean the same sampled volume.</text>
+
+  <line class="rule" x1="68" y1="594" x2="1132" y2="594"/>
+  <text class="ink micro" x="68" y="622">CONCEPTUAL INTERACTION VOLUME · NOT TO SCALE · Shape and depth vary with material, beam energy, geometry, and other conditions.</text>
+</svg>
