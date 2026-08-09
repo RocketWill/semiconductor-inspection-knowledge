@@ -1,5 +1,7 @@
 # Beyond the Defect Label
 
+[English version](./beyond-the-defect-label.en.md)
+
 ## 從光學檢測訊號走向可檢驗的調查假設
 
 > **工程統整**
