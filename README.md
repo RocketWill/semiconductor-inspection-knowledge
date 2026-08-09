@@ -40,9 +40,21 @@ Failure Localization and Material Evidence
 
 The path is not completely linear. Later notes often point back to an earlier model when a signal or measurement needs a more careful interpretation.
 
+## Featured Synthesis
+
+### [Beyond the Defect Label](./beyond-the-defect-label.en.md)
+
+[中文版](./beyond-the-defect-label.md)
+
+After working through the notes below, I wanted to try a different question:
+
+> If a new wafer-inspection signal appeared, what would I check next, and what evidence would actually change my interpretation?
+
+This synthetic, non-production case follows how the interpretation changes after the signal is re-checked, the data are separated by lot, and surface evidence is added. It stops before assigning a fictional root cause.
+
 ## Where to Start
 
-These three notes are a reasonable place to start. Each comes from a different section of the repository:
+For the underlying learning path, these three notes are a reasonable place to start. Each comes from a different section of the repository:
 
 1. [Crystal Defects, Diffusion, and Microstructure](./01-materials-science/04-crystal-defects-and-microstructure.md) — why an AI defect label is not the same thing as an atomic or microstructural defect.
 2. [MOS Capacitor C–V and Oxide Charge](./02-semiconductor-characterization-fundamentals/03-mos-capacitor-and-oxide-charge.md) — an example of moving from a physical model to a measured curve while keeping the assumptions visible.
