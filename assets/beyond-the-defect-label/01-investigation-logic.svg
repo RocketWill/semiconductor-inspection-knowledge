@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence-guided investigation workflow</title>
+  <desc id="desc">A professional flow diagram showing how an optical signal is validated, converted into competing hypotheses, tested with discriminating evidence, and stopped at the current evidence boundary.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#374151"/>
+    </marker>
+    <style>
+      .canvas { fill: #ffffff; }
+      .eyebrow { font: 600 14px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 1.8px; fill: #6b7280; }
+      .title { font: 700 30px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #6b7280; }
+      .step { fill: #ffffff; stroke: #d1d5db; stroke-width: 1.5; rx: 12; }
+      .step-accent { fill: #fff9df; stroke: #e8b817; stroke-width: 1.8; rx: 12; }
+      .branch { fill: #f9fafb; stroke: #d1d5db; stroke-width: 1.5; rx: 10; }
+      .boundary { fill: #111827; rx: 10; }
+      .number { fill: #111827; }
+      .number-accent { fill: #fece14; }
+      .number-text { font: 700 13px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; text-anchor: middle; dominant-baseline: middle; }
+      .number-text-dark { font: 700 13px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; text-anchor: middle; dominant-baseline: middle; }
+      .label { font: 650 19px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .label-center { font: 650 17px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; text-anchor: middle; }
+      .body { font: 400 14px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #6b7280; }
+      .body-center { font: 400 13px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #6b7280; text-anchor: middle; }
+      .boundary-label { font: 650 18px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; text-anchor: middle; }
+      .connector { fill: none; stroke: #374151; stroke-width: 1.8; marker-end: url(#arrow); }
+      .feedback { fill: none; stroke: #9ca3af; stroke-width: 1.6; stroke-dasharray: 6 6; marker-end: url(#arrow); }
+      .divider { stroke: #e5e7eb; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect class="canvas" width="1200" height="675"/>
+  <text class="eyebrow" x="64" y="52">INVESTIGATION LOGIC</text>
+  <text class="title" x="64" y="91">From optical signal to evidence boundary</text>
+  <text class="subtitle" x="64" y="119">Select the next check by the hypothesis it can distinguish—not by a fixed instrument sequence.</text>
+  <line class="divider" x1="64" y1="142" x2="1136" y2="142"/>
+
+  <rect class="step" x="64" y="172" width="250" height="92"/>
+  <circle class="number" cx="92" cy="200" r="15"/>
+  <text class="number-text" x="92" y="201">1</text>
+  <text class="label" x="118" y="205">Optical signal</text>
+  <text class="body" x="88" y="235">Record the observation and</text>
+  <text class="body" x="88" y="255">its acquisition context.</text>
+
+  <path class="connector" d="M314 218 H352"/>
+  <rect class="step" x="362" y="172" width="250" height="92"/>
+  <circle class="number" cx="390" cy="200" r="15"/>
+  <text class="number-text" x="390" y="201">2</text>
+  <text class="label" x="416" y="205">Validate</text>
+  <text class="body" x="386" y="235">Repeat acquisition; check raw</text>
+  <text class="body" x="386" y="255">data, versions, and coordinates.</text>
+
+  <path class="connector" d="M612 218 H650"/>
+  <rect class="step" x="660" y="172" width="250" height="92"/>
+  <circle class="number" cx="688" cy="200" r="15"/>
+  <text class="number-text" x="688" y="201">3</text>
+  <text class="label" x="714" y="205">Keep alternatives</text>
+  <text class="body" x="684" y="235">Retain competing explanations</text>
+  <text class="body" x="684" y="255">that a new result can separate.</text>
+
+  <path class="connector" d="M910 218 H920"/>
+  <rect class="step-accent" x="930" y="172" width="206" height="92"/>
+  <circle class="number-accent" cx="958" cy="200" r="15"/>
+  <text class="number-text-dark" x="958" y="201">4</text>
+  <text class="label" x="984" y="205">Select evidence</text>
+  <text class="body" x="954" y="235">Choose the check that best</text>
+  <text class="body" x="954" y="255">separates alternatives.</text>
+
+  <path class="connector" d="M1033 264 V316 H233 V344"/>
+  <path class="connector" d="M1033 316 H600 V344"/>
+  <path class="connector" d="M1033 316 H967 V344"/>
+
+  <rect class="branch" x="64" y="354" width="338" height="112"/>
+  <text class="eyebrow" x="88" y="384">ELECTRICAL</text>
+  <text class="label" x="88" y="414">Electrical evidence</text>
+  <text class="body" x="88" y="441">Distribution · margin · repeatability</text>
+
+  <rect class="branch" x="431" y="354" width="338" height="112"/>
+  <text class="eyebrow" x="455" y="384">LOCALIZATION</text>
+  <text class="label" x="455" y="414">Localization evidence</text>
+  <text class="body" x="455" y="441">Hotspot · coordinate · candidate region</text>
+
+  <rect class="branch" x="798" y="354" width="338" height="112"/>
+  <text class="eyebrow" x="822" y="384">PHYSICAL / MATERIAL</text>
+  <text class="label" x="822" y="414">Physical evidence</text>
+  <text class="body" x="822" y="441">Morphology · composition · structure</text>
+
+  <path class="connector" d="M233 466 V514 H520"/>
+  <path class="connector" d="M600 466 V514"/>
+  <path class="connector" d="M967 466 V514 H680"/>
+  <rect class="boundary" x="430" y="524" width="340" height="72"/>
+  <text class="boundary-label" x="600" y="555">Current evidence boundary</text>
+  <text class="body-center" x="600" y="580" fill="#d1d5db">State supported claims; keep the rest unresolved.</text>
+
+  <path class="feedback" d="M430 560 H336 C296 560 278 536 278 504 V492"/>
+  <text class="body" x="64" y="631">Evidence updates confidence; it does not automatically establish causation.</text>
+</svg>

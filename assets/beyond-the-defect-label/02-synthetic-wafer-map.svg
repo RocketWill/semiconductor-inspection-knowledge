@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Synthetic wafer maps with recurring edge-region optical signals</title>
+  <desc id="desc">Three clean wafer maps show low-contrast optical signals recurring near the right edge. A summary panel separates observations from facts that remain unknown.</desc>
+  <defs>
+    <clipPath id="clip-a"><circle cx="220" cy="342" r="152"/></clipPath>
+    <clipPath id="clip-b"><circle cx="540" cy="342" r="152"/></clipPath>
+    <clipPath id="clip-c"><circle cx="860" cy="342" r="152"/></clipPath>
+    <pattern id="die-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <rect x="1" y="1" width="25" height="25" rx="2" fill="#f9fafb" stroke="#d1d5db" stroke-width="1"/>
+    </pattern>
+    <style>
+      .canvas { fill: #ffffff; }
+      .eyebrow { font: 600 14px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 1.8px; fill: #6b7280; }
+      .title { font: 700 30px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #6b7280; }
+      .wafer { fill: url(#die-grid); stroke: #374151; stroke-width: 2.5; }
+      .signal-strong { fill: #fece14; stroke: #b88700; stroke-width: 1; }
+      .signal-soft { fill: #fff0a8; stroke: #ddb523; stroke-width: 1; }
+      .wafer-label { font: 650 17px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; text-anchor: middle; }
+      .wafer-note { font: 400 13px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #6b7280; text-anchor: middle; }
+      .panel { fill: #f9fafb; stroke: #e5e7eb; stroke-width: 1.5; rx: 12; }
+      .panel-title { font: 650 15px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .panel-body { font: 400 14px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4b5563; }
+      .dot-known { fill: #fece14; stroke: #b88700; stroke-width: 1; }
+      .dot-unknown { fill: #ffffff; stroke: #6b7280; stroke-width: 1.5; }
+      .divider { stroke: #e5e7eb; stroke-width: 1; }
+      .legend { font: 400 13px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #6b7280; }
+    </style>
+  </defs>
+
+  <rect class="canvas" width="1200" height="675"/>
+  <text class="eyebrow" x="64" y="52">SYNTHETIC CASE CONTEXT</text>
+  <text class="title" x="64" y="91">Recurring edge-region optical signal</text>
+  <text class="subtitle" x="64" y="119">A repeated spatial pattern is an observation—not a material mechanism or verified process cause.</text>
+  <line class="divider" x1="64" y1="142" x2="1136" y2="142"/>
+
+  <text class="wafer-label" x="220" y="174">WAFER A</text>
+  <text class="wafer-label" x="540" y="174">WAFER B</text>
+  <text class="wafer-label" x="860" y="174">WAFER C</text>
+
+  <circle class="wafer" cx="220" cy="342" r="152"/>
+  <circle class="wafer" cx="540" cy="342" r="152"/>
+  <circle class="wafer" cx="860" cy="342" r="152"/>
+
+  <path d="M205 492 L220 477 L235 492" fill="#ffffff" stroke="#374151" stroke-width="2.5"/>
+  <path d="M525 492 L540 477 L555 492" fill="#ffffff" stroke="#374151" stroke-width="2.5"/>
+  <path d="M845 492 L860 477 L875 492" fill="#ffffff" stroke="#374151" stroke-width="2.5"/>
+
+  <g clip-path="url(#clip-a)">
+    <rect class="signal-soft" x="332" y="273" width="27" height="27" rx="2"/>
+    <rect class="signal-strong" x="360" y="301" width="27" height="27" rx="2"/>
+    <rect class="signal-strong" x="360" y="329" width="27" height="27" rx="2"/>
+    <rect class="signal-soft" x="332" y="357" width="27" height="27" rx="2"/>
+  </g>
+  <g clip-path="url(#clip-b)">
+    <rect class="signal-soft" x="652" y="245" width="27" height="27" rx="2"/>
+    <rect class="signal-strong" x="680" y="273" width="27" height="27" rx="2"/>
+    <rect class="signal-strong" x="680" y="301" width="27" height="27" rx="2"/>
+    <rect class="signal-strong" x="680" y="329" width="27" height="27" rx="2"/>
+    <rect class="signal-soft" x="652" y="357" width="27" height="27" rx="2"/>
+  </g>
+  <g clip-path="url(#clip-c)">
+    <rect class="signal-soft" x="972" y="301" width="27" height="27" rx="2"/>
+    <rect class="signal-strong" x="1000" y="329" width="27" height="27" rx="2"/>
+    <rect class="signal-strong" x="1000" y="357" width="27" height="27" rx="2"/>
+    <rect class="signal-soft" x="972" y="385" width="27" height="27" rx="2"/>
+  </g>
+
+  <text class="wafer-note" x="220" y="526">Similar edge region</text>
+  <text class="wafer-note" x="540" y="526">Different extent and intensity</text>
+  <text class="wafer-note" x="860" y="526">Non-random spatial recurrence</text>
+
+  <rect class="panel" x="1030" y="190" width="106" height="304"/>
+  <text class="panel-title" x="1050" y="222">LEGEND</text>
+  <circle class="dot-known" cx="1050" cy="254" r="6"/>
+  <text class="legend" x="1066" y="259">Signal</text>
+  <circle class="dot-unknown" cx="1050" cy="286" r="6"/>
+  <text class="legend" x="1066" y="291">No signal</text>
+  <line class="divider" x1="1050" y1="314" x2="1116" y2="314"/>
+  <text class="panel-title" x="1050" y="345">STATUS</text>
+  <text class="legend" x="1050" y="376">Observed</text>
+  <text class="legend" x="1050" y="404">Cause</text>
+  <text class="legend" x="1050" y="424">unresolved</text>
+  <text class="legend" x="1050" y="462">Not to scale</text>
+
+  <rect class="panel" x="64" y="556" width="1072" height="92"/>
+  <line class="divider" x1="600" y1="574" x2="600" y2="630"/>
+
+  <circle class="dot-known" cx="92" cy="585" r="7"/>
+  <text class="panel-title" x="112" y="590">Observed</text>
+  <text class="panel-body" x="112" y="618">Recurring optical signal near a comparable</text>
+  <text class="panel-body" x="112" y="638">wafer-edge region.</text>
+
+  <circle class="dot-unknown" cx="628" cy="585" r="7"/>
+  <text class="panel-title" x="648" y="590">Not yet known</text>
+  <text class="panel-body" x="648" y="618">Electrical impact · material mechanism</text>
+  <text class="panel-body" x="648" y="638">Causal process step</text>
+</svg>
